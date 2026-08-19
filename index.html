@@ -3,94 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RandomlyTools – Free Online Random Generators & Pickers</title>
-  <meta name="description" content="Free, fast, and private random tools: name generators, number pickers, Discord usernames, shop names, restaurant titles, Japanese names, Instagram handles & brand creators.">
-  <link rel="canonical" href="https://randomlytools.pages.dev/">
+  <title>Random Name Generator – Free First & Full Name Maker | RandomlyTools</title>
+  <meta name="description" content="Generate realistic random male, female, and full names by country and origin: India, US, UK, Canada, Australia, Japan, Germany, France, Italy, Spain, Brazil, Mexico, and Korea.">
+  <link rel="canonical" href="https://randomlytools.pages.dev/random-name-generator/">
   <link rel="stylesheet" href="/assets/css/style.css">
   
-  <meta property="og:title" content="RandomlyTools – Free Online Random Generators & Pickers">
-  <meta property="og:description" content="Discover 10 free, instant client-side random generators for names, numbers, usernames, shops, restaurants, and brand ideas.">
-  <meta property="og:url" content="https://randomlytools.pages.dev/">
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Random Name Generator – Free First & Full Name Maker | RandomlyTools">
+  <meta property="og:description" content="Generate random male, female, and full names by country and origin with one click. Free, private, client-side name generator.">
+  <meta property="og:url" content="https://randomlytools.pages.dev/random-name-generator/">
   <meta property="og:type" content="website">
 
+  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebSite",
-        "name": "RandomlyTools",
-        "url": "https://randomlytools.pages.dev/",
-        "description": "Simple Random Tools for Everyday Use. Fast, free, privacy-first generators.",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://randomlytools.pages.dev/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "@type": "WebApplication",
+        "name": "Random Name Generator",
+        "url": "https://randomlytools.pages.dev/random-name-generator/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A free online random name generator to create realistic first names and full names with country/origin, male, and female filters."
       },
       {
-        "@type": "ItemList",
-        "name": "Featured Random Utilities",
+        "@type": "BreadcrumbList",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
-            "name": "Random Name Generator",
-            "url": "https://randomlytools.pages.dev/random-name-generator/"
+            "name": "Home",
+            "item": "https://randomlytools.pages.dev/"
           },
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Random Number Picker",
-            "url": "https://randomlytools.pages.dev/random-number-picker/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Random Dog Name Generator",
-            "url": "https://randomlytools.pages.dev/random-dog-name-generator/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "Random Discord Name Generator",
-            "url": "https://randomlytools.pages.dev/random-discord-name-generator/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "name": "Random Shop Name Generator",
-            "url": "https://randomlytools.pages.dev/random-shop-name-generator/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 6,
-            "name": "Random Restaurant Name Generator",
-            "url": "https://randomlytools.pages.dev/random-restaurant-name-generator/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 7,
-            "name": "Random Japanese Name Generator",
-            "url": "https://randomlytools.pages.dev/random-japanese-name-generator/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 8,
-            "name": "Random Instagram Username Generator",
-            "url": "https://randomlytools.pages.dev/random-instagram-username-generator/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 9,
-            "name": "Random Coffee Shop Name Generator",
-            "url": "https://randomlytools.pages.dev/random-coffee-shop-name-generator/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 10,
-            "name": "Random Company & Brand Name Generator",
-            "url": "https://randomlytools.pages.dev/random-company-brand-name-generator/"
+            "name": "Random Name Generator",
+            "item": "https://randomlytools.pages.dev/random-name-generator/"
           }
         ]
       }
@@ -109,8 +64,8 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
       <nav class="nav-links">
-        <a href="/" class="active">All Tools</a>
-        <a href="/random-name-generator/">Names</a>
+        <a href="/">All Tools</a>
+        <a href="/random-name-generator/" class="active">Names</a>
         <a href="/random-number-picker/">Numbers</a>
         <a href="/random-discord-name-generator/">Usernames</a>
         <a href="/random-company-brand-name-generator/">Brands</a>
@@ -120,162 +75,192 @@
   </header>
 
   <main class="container page-intro">
-    <div class="tool-header" style="margin-bottom: 2rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
-      <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.03em;">Simple Random Tools for Everyday Use</h1>
-      <p style="font-size: 1.15rem; color: var(--text-muted); margin-top: 0.5rem;">
-        Fast, free, and privacy-focused random generators. Generate names, numbers, usernames, and creative business ideas with zero lag.
+    <div class="breadcrumbs">
+      <a href="/">Home</a> <span>/</span> <span>Random Name Generator</span>
+    </div>
+
+    <div class="tool-header" style="margin-bottom: 1.5rem;">
+      <h1>Random Name Generator</h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 720px;">
+        Pick realistic male, female, or mixed first names and full names filtered by country origin. 100% free and runs securely in your browser.
       </p>
     </div>
 
-    <!-- Search & Filter Controls -->
-    <div style="max-width: 720px; margin: 0 auto 2rem auto;">
-      <div style="position: relative; margin-bottom: 1rem;">
-        <input type="text" id="tool-search-input" class="form-control" placeholder="Search random tools (e.g. names, numbers, discord, shop, coffee)..." style="padding-left: 2.75rem; height: 3rem; font-size: 1.05rem; box-shadow: var(--shadow-sm);">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="position: absolute; left: 1rem; top: 0.85rem; color: var(--text-muted); pointer-events: none;"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-      </div>
-
-      <div class="presets-bar" style="justify-content: center; margin-bottom: 0;">
-        <button type="button" class="preset-chip active category-filter-btn" data-category="all">All Tools (10)</button>
-        <button type="button" class="preset-chip category-filter-btn" data-category="names">Names & People</button>
-        <button type="button" class="preset-chip category-filter-btn" data-category="numbers">Numbers & Math</button>
-        <button type="button" class="preset-chip category-filter-btn" data-category="social">Gaming & Social</button>
-        <button type="button" class="preset-chip category-filter-btn" data-category="business">Business & Food</button>
-      </div>
-    </div>
-
     <!-- AdSense Compliant Placeholder -->
     <div class="ad-slot-container">
       <div class="ad-slot-label">Advertisement</div>
       <div class="ad-slot-box">Ad Space Available</div>
     </div>
 
-    <!-- 10 Tools Directory Grid -->
-    <section aria-label="Tools Directory">
-      <div id="tools-grid-wrapper" class="tools-grid">
-        
-        <!-- Tool 1 -->
-        <div class="tool-card" data-category="names" data-keywords="name generator male female full first characters baby fake persona data">
-          <div class="tool-card-icon">👤</div>
-          <h2 class="tool-card-title"><a href="/random-name-generator/">Random Name Generator</a></h2>
-          <p class="tool-card-desc">Generate realistic male, female, and full human names with origin filters for writing, testing, and creative projects.</p>
-          <span class="tool-card-badge">Names & People</span>
+    <!-- Tool Workspace -->
+    <section class="tool-workspace" aria-labelledby="tool-heading">
+      <h2 id="tool-heading" class="sr-only" style="display: none;">Name Generator Controls</h2>
+      
+      <form id="name-form" onsubmit="return false;">
+        <div class="controls-grid">
+          
+          <div class="form-group">
+            <label for="country-select">Country / Region</label>
+            <select id="country-select" class="form-select">
+              <option value="all" selected>International / Mixed</option>
+              <option value="in">India</option>
+              <option value="us">United States</option>
+              <option value="uk">United Kingdom</option>
+              <option value="ca">Canada</option>
+              <option value="au">Australia</option>
+              <option value="jp">Japan</option>
+              <option value="de">Germany</option>
+              <option value="fr">France</option>
+              <option value="it">Italy</option>
+              <option value="es">Spain</option>
+              <option value="br">Brazil</option>
+              <option value="mx">Mexico</option>
+              <option value="kr">South Korea</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-pill-group">
+              <label class="radio-pill">
+                <input type="radio" name="gender" value="any" checked>
+                <span>Any</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="gender" value="male">
+                <span>Male</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="gender" value="female">
+                <span>Female</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Name Format</label>
+            <div class="radio-pill-group">
+              <label class="radio-pill">
+                <input type="radio" name="format" value="full" checked>
+                <span>Full Name</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="format" value="first">
+                <span>First Name Only</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="count-select">Number of Names</label>
+            <select id="count-select" class="form-select">
+              <option value="1">1 Name</option>
+              <option value="5" selected>5 Names</option>
+              <option value="10">10 Names</option>
+              <option value="20">20 Names</option>
+              <option value="50">50 Names</option>
+            </select>
+          </div>
+
         </div>
 
-        <!-- Tool 2 -->
-        <div class="tool-card" data-category="numbers" data-keywords="number picker random number generator 1-10 1-100 1-50 min max integers lottery no repeats">
-          <div class="tool-card-icon">🎲</div>
-          <h2 class="tool-card-title"><a href="/random-number-picker/">Random Number Picker</a></h2>
-          <p class="tool-card-desc">Pick random numbers within custom minimum/maximum ranges with single hero display, multiple batching, and no-repeat mode.</p>
-          <span class="tool-card-badge">Numbers & Math</span>
+        <div class="actions-row">
+          <button type="button" id="generate-btn" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            Generate Names
+          </button>
+          <button type="button" id="copy-all-btn" class="btn btn-secondary" style="display: none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy All Names
+          </button>
         </div>
+      </form>
 
-        <!-- Tool 3 -->
-        <div class="tool-card" data-category="names" data-keywords="dog names puppy pet names male female cute funny strong rescue dogs">
-          <div class="tool-card-icon">🐾</div>
-          <h2 class="tool-card-title"><a href="/random-dog-name-generator/">Random Dog Name Generator</a></h2>
-          <p class="tool-card-desc">Find cute, funny, strong, and unique names for your male or female puppy or rescue dog with tailored vibe filters.</p>
-          <span class="tool-card-badge">Names & People</span>
+      <!-- Results Container -->
+      <div id="results-wrapper" class="results-container">
+        <div class="results-header">
+          <span id="results-count-badge" class="results-count">Click "Generate Names" to begin</span>
         </div>
-
-        <!-- Tool 4 -->
-        <div class="tool-card" data-category="social" data-keywords="discord name generator username gaming anime dark cool aesthetic handles tags">
-          <div class="tool-card-icon">🎮</div>
-          <h2 class="tool-card-title"><a href="/random-discord-name-generator/">Random Discord Name Generator</a></h2>
-          <p class="tool-card-desc">Create aesthetic, gaming, anime, and dark username ideas for Discord servers with optional underscores and number decorators.</p>
-          <span class="tool-card-badge">Gaming & Social</span>
+        <div id="results-grid" class="results-grid">
+          <!-- Dynamic Results Injected Here -->
         </div>
-
-        <!-- Tool 5 -->
-        <div class="tool-card" data-category="business" data-keywords="shop name generator store boutique retail grocery clothing electronics fashion indian">
-          <div class="tool-card-icon">🛍️</div>
-          <h2 class="tool-card-title"><a href="/random-shop-name-generator/">Random Shop Name Generator</a></h2>
-          <p class="tool-card-desc">Brainstorm creative retail store names for fashion boutiques, grocery markets, electronics shops, and Indian stores.</p>
-          <span class="tool-card-badge">Business & Food</span>
-        </div>
-
-        <!-- Tool 6 -->
-        <div class="tool-card" data-category="business" data-keywords="restaurant name generator dining food bistro cafe fast food fine dining indian culinary">
-          <div class="tool-card-icon">🍽️</div>
-          <h2 class="tool-card-title"><a href="/random-restaurant-name-generator/">Random Restaurant Name Generator</a></h2>
-          <p class="tool-card-desc">Generate delicious restaurant, bistro, fast food, and Indian eatery name ideas for food trucks, ghost kitchens, and dining rooms.</p>
-          <span class="tool-card-badge">Business & Food</span>
-        </div>
-
-        <!-- Tool 7 -->
-        <div class="tool-card" data-category="names" data-keywords="japanese name generator kanji romaji meanings first names surnames male female authentic">
-          <div class="tool-card-icon">桜</div>
-          <h2 class="tool-card-title"><a href="/random-japanese-name-generator/">Random Japanese Name Generator</a></h2>
-          <p class="tool-card-desc">Authentic Japanese male, female, and full names with genuine Kanji characters, Romaji transliteration, and verified meanings.</p>
-          <span class="tool-card-badge">Names & People</span>
-        </div>
-
-        <!-- Tool 8 -->
-        <div class="tool-card" data-category="social" data-keywords="instagram username generator handles ig aesthetic minimal cool seed keyword social media">
-          <div class="tool-card-icon">📸</div>
-          <h2 class="tool-card-title"><a href="/random-instagram-username-generator/">Random Instagram Username Generator</a></h2>
-          <p class="tool-card-desc">Generate aesthetic, minimal, and creative Instagram handle ideas customized with your personal name or niche keyword.</p>
-          <span class="tool-card-badge">Gaming & Social</span>
-        </div>
-
-        <!-- Tool 9 -->
-        <div class="tool-card" data-category="business" data-keywords="coffee shop name generator cafe roastery cozy artisan espresso kaapi chai latte">
-          <div class="tool-card-icon">☕</div>
-          <h2 class="tool-card-title"><a href="/random-coffee-shop-name-generator/">Random Coffee Shop Name Generator</a></h2>
-          <p class="tool-card-desc">Generate cozy, modern, cute, luxury, and Indian-inspired coffee shop and cafe names for roasteries and espresso bars.</p>
-          <span class="tool-card-badge">Business & Food</span>
-        </div>
-
-        <!-- Tool 10 -->
-        <div class="tool-card" data-category="business" data-keywords="company brand name generator startup tech saas agency luxury modern abstract business">
-          <div class="tool-card-icon">🏢</div>
-          <h2 class="tool-card-title"><a href="/random-company-brand-name-generator/">Random Company & Brand Name Generator</a></h2>
-          <p class="tool-card-desc">Brainstorm distinctive company, tech startup, and digital agency brand names with custom industry archetypes.</p>
-          <span class="tool-card-badge">Business & Food</span>
-        </div>
-
-      </div>
-
-      <div id="no-tools-found" style="display: none; text-align: center; padding: 3rem 1rem; color: var(--text-muted);">
-        <p style="font-size: 1.1rem; font-weight: 500;">No tools found matching your search.</p>
-        <button type="button" id="reset-search-btn" class="btn btn-secondary" style="margin-top: 0.75rem;">Clear Filters</button>
       </div>
     </section>
 
-    <!-- AdSense Compliant Placeholder -->
-    <div class="ad-slot-container">
-      <div class="ad-slot-label">Advertisement</div>
-      <div class="ad-slot-box">Ad Space Available</div>
-    </div>
-
-    <!-- Editorial / SEO Content Section -->
+    <!-- SEO & Informational Content -->
     <section class="content-section">
       <article class="article-content">
-        <h2>Why Use RandomlyTools?</h2>
+        <h2>How to Use the Random Name Generator</h2>
         <p>
-          Whether you are writing a novel, spinning up a new software startup, launching a cozy neighborhood cafe, or picking a fair lottery number, <strong>RandomlyTools</strong> provides clean, lightweight, and mathematically sound random generators.
+          Generating realistic random names is straightforward with our flexible customization controls:
         </p>
+        <ol>
+          <li><strong>Select Country / Region:</strong> Keep as <em>International / Mixed</em> for global variety, or target specific regions such as <em>India</em>, <em>United States</em>, <em>United Kingdom</em>, <em>Japan</em>, <em>Germany</em>, <em>France</em>, <em>Spain</em>, <em>Brazil</em>, or <em>South Korea</em>.</li>
+          <li><strong>Select Gender Preference:</strong> Choose between <em>Male</em>, <em>Female</em>, or <em>Any</em> for a balanced randomized mix.</li>
+          <li><strong>Choose Name Format:</strong> Pick <em>Full Name</em> for culturally authentic first and last name pairings, or <em>First Name Only</em> if you simply need given names.</li>
+          <li><strong>Set Quantity:</strong> Choose between 1 and 50 names, then click <strong>Generate Names</strong>.</li>
+        </ol>
+        <p>
+          Click the copy icon next to any individual name to copy it instantly, or use the <strong>Copy All Names</strong> button to export the entire list.
+        </p>
+
+        <h2>Common Use Cases for Random Names</h2>
         <ul>
-          <li><strong>100% Client-Side Speed:</strong> All generators run instantly inside your web browser using modern JavaScript and high-entropy random algorithms. No server delays or tracking.</li>
-          <li><strong>Zero Cost & No Registration:</strong> Generate and copy as many names, numbers, or brand ideas as you need without signup gates or subscriptions.</li>
-          <li><strong>Curated Quality Datasets:</strong> Unlike generic placeholder tools, our datasets are hand-crafted with cultural accuracy, verified linguistic meanings, and modern naming trends.</li>
+          <li><strong>Authors & Novelists:</strong> Quickly naming characters with culturally accurate first and family names without writer's block.</li>
+          <li><strong>Software Testing & QA:</strong> Populating databases, mockup interfaces, and staging environments with realistic test user profiles across global regions.</li>
+          <li><strong>Tabletop Roleplaying & Gaming:</strong> Creating instant character names for Dungeons & Dragons, RPG campaigns, and simulations.</li>
+          <li><strong>Online Privacy & Anonymity:</strong> Generating placeholder names for non-critical sign-ups and public demos.</li>
         </ul>
 
         <h2>Frequently Asked Questions</h2>
         <div class="faq-list">
           <details class="faq-item">
-            <summary>Are RandomlyTools utilities free for commercial use?</summary>
+            <summary>How does country filtering ensure realistic name combinations?</summary>
             <div class="faq-answer">
-              <p>Yes! All generated outputs are completely free to use for personal, creative, and commercial inspiration. Remember to perform necessary trademark and domain registration checks before launching new businesses.</p>
+              <p>When you select a specific country (such as India or Japan), both the given name and surname are sampled from culturally authentic datasets belonging to that specific region, ensuring natural and compatible full names.</p>
             </div>
           </details>
           <details class="faq-item">
-            <summary>Is my data private when using RandomlyTools?</summary>
+            <summary>Is there a dedicated tool specifically for Japanese Kanji and meanings?</summary>
             <div class="faq-answer">
-              <p>Yes. Because generation happens entirely in your local browser runtime, we do not store, log, or transmit your generated outputs to any remote server.</p>
+              <p>Yes! For authors and language enthusiasts seeking authentic Kanji, Romanization, and verified meanings, explore our dedicated <a href="/random-japanese-name-generator/">Random Japanese Name Generator</a>.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Are generated names saved to a server?</summary>
+            <div class="faq-answer">
+              <p>No. The generator runs completely on your local device using JavaScript. Your queries and generated results are never stored or tracked.</p>
             </div>
           </details>
         </div>
       </article>
+    </section>
+
+    <!-- Related Tools Section -->
+    <section class="related-tools-section">
+      <div class="container" style="padding-left: 0; padding-right: 0;">
+        <h2 style="margin-top: 0; font-size: 1.25rem;">Related Random Tools</h2>
+        <div class="tools-grid" style="margin-top: 1rem; margin-bottom: 0;">
+          <div class="tool-card">
+            <div class="tool-card-icon">#</div>
+            <h3 class="tool-card-title"><a href="/random-number-picker/">Random Number Picker</a></h3>
+            <p class="tool-card-desc">Pick random numbers within custom ranges with no-repeat mode.</p>
+            <span class="tool-card-badge">Math & Numbers</span>
+          </div>
+          <div class="tool-card">
+            <div class="tool-card-icon">🐾</div>
+            <h3 class="tool-card-title"><a href="/random-dog-name-generator/">Dog Name Generator</a></h3>
+            <p class="tool-card-desc">Discover cute, funny, strong, and unique puppy and dog names.</p>
+            <span class="tool-card-badge">Pets</span>
+          </div>
+          <div class="tool-card">
+            <div class="tool-card-icon">桜</div>
+            <h3 class="tool-card-title"><a href="/random-japanese-name-generator/">Japanese Name Generator</a></h3>
+            <p class="tool-card-desc">Authentic Japanese names with verified Kanji, Romaji, and meanings.</p>
+            <span class="tool-card-badge">Names</span>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -328,56 +313,99 @@
   </footer>
 
   <script type="module">
-    const searchInput = document.getElementById('tool-search-input');
-    const filterButtons = document.querySelectorAll('.category-filter-btn');
-    const toolCards = document.querySelectorAll('.tool-card');
-    const noResults = document.getElementById('no-tools-found');
-    const resetBtn = document.getElementById('reset-search-btn');
+    import { PRNG } from '/assets/js/core/prng.js';
+    import { Clipboard } from '/assets/js/core/clipboard.js';
+    import { NamesData } from '/assets/js/data/names-dataset.js';
 
-    let currentCategory = 'all';
+    let currentNames = [];
 
-    function filterTools() {
-      const query = searchInput.value.toLowerCase().trim();
-      let visibleCount = 0;
+    const availableCountryKeys = Object.keys(NamesData.byCountry);
 
-      toolCards.forEach(card => {
-        const cat = card.getAttribute('data-category');
-        const keywords = card.getAttribute('data-keywords') || '';
-        const title = card.querySelector('.tool-card-title').textContent.toLowerCase();
-        const desc = card.querySelector('.tool-card-desc').textContent.toLowerCase();
+    function generateNames() {
+      const countryCode = document.getElementById('country-select').value;
+      const gender = document.querySelector('input[name="gender"]:checked').value;
+      const format = document.querySelector('input[name="format"]:checked').value;
+      const count = parseInt(document.getElementById('count-select').value, 10);
 
-        const matchesCategory = (currentCategory === 'all' || cat === currentCategory);
-        const matchesQuery = !query || title.includes(query) || desc.includes(query) || keywords.includes(query);
+      currentNames = [];
 
-        if (matchesCategory && matchesQuery) {
-          card.style.display = 'flex';
-          visibleCount++;
-        } else {
-          card.style.display = 'none';
+      for (let i = 0; i < count; i++) {
+        // Pick target country
+        let selectedCountry = countryCode;
+        if (selectedCountry === 'all') {
+          selectedCountry = PRNG.pickOne(availableCountryKeys);
         }
-      });
 
-      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        const countryData = NamesData.byCountry[selectedCountry] || NamesData.byCountry.us;
+
+        // Pick first name based on gender
+        let firstPool = [];
+        if (gender === 'male') {
+          firstPool = countryData.male;
+        } else if (gender === 'female') {
+          firstPool = countryData.female;
+        } else {
+          firstPool = [...countryData.male, ...countryData.female];
+        }
+
+        const first = PRNG.pickOne(firstPool);
+
+        if (format === 'full') {
+          const last = PRNG.pickOne(countryData.surnames);
+          currentNames.push(`${first} ${last}`);
+        } else {
+          currentNames.push(first);
+        }
+      }
+
+      renderResults();
     }
 
-    searchInput.addEventListener('input', filterTools);
+    function renderResults() {
+      const grid = document.getElementById('results-grid');
+      const badge = document.getElementById('results-count-badge');
+      const copyAllBtn = document.getElementById('copy-all-btn');
 
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentCategory = btn.getAttribute('data-category');
-        filterTools();
+      if (!currentNames.length) {
+        grid.innerHTML = '<div class="empty-results"><p>No names generated yet.</p></div>';
+        badge.textContent = '0 results';
+        copyAllBtn.style.display = 'none';
+        return;
+      }
+
+      badge.textContent = `Generated ${currentNames.length} ${currentNames.length === 1 ? 'name' : 'names'}`;
+      copyAllBtn.style.display = 'inline-flex';
+
+      grid.innerHTML = currentNames.map((name) => `
+        <div class="result-item">
+          <span class="result-text">${escapeHtml(name)}</span>
+          <button type="button" class="copy-btn" data-name="${escapeHtml(name)}" title="Copy name" aria-label="Copy ${escapeHtml(name)}">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      `).join('');
+
+      grid.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const text = btn.getAttribute('data-name');
+          Clipboard.copyText(text, `Copied "${text}" to clipboard!`);
+        });
       });
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>'"]/g, tag => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[tag] || tag));
+    }
+
+    document.getElementById('generate-btn').addEventListener('click', generateNames);
+    document.getElementById('copy-all-btn').addEventListener('click', () => {
+      if (currentNames.length > 0) {
+        Clipboard.copyText(currentNames.join('\n'), `Copied all ${currentNames.length} names to clipboard!`);
+      }
     });
 
-    resetBtn.addEventListener('click', () => {
-      searchInput.value = '';
-      currentCategory = 'all';
-      filterButtons.forEach(b => b.classList.remove('active'));
-      document.querySelector('[data-category="all"]').classList.add('active');
-      filterTools();
-    });
+    // Generate initial set
+    generateNames();
   </script>
   <script src="/assets/js/core/ui.js"></script>
 </body>
