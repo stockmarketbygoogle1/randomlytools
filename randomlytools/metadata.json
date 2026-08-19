@@ -1,0 +1,6 @@
+{
+  "name": "RandomlyTools",
+  "description": "Simple Random Tools for Everyday Use - 10 free client-side random generators and pickers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

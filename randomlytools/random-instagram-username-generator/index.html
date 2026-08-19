@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Instagram Username Generator – Aesthetic, Minimal & Cool Handles | RandomlyTools</title>
+  <meta name="description" content="Generate aesthetic, minimal, cool, and catchy Instagram username ideas. Customize with your name or niche keyword, underscores, and numbers. Free & fast.">
+  <link rel="canonical" href="https://randomlytools.pages.dev/random-instagram-username-generator/">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+  <meta property="og:title" content="Random Instagram Username Generator – Aesthetic, Minimal & Cool Handles | RandomlyTools">
+  <meta property="og:description" content="Create aesthetic, minimal, and creative Instagram handle ideas with custom keyword inputs.">
+  <meta property="og:url" content="https://randomlytools.pages.dev/random-instagram-username-generator/">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Random Instagram Username Generator",
+        "url": "https://randomlytools.pages.dev/random-instagram-username-generator/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A free online Instagram username creator with aesthetic, minimal, cool, and custom keyword options."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://randomlytools.pages.dev/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Instagram Username Generator",
+            "item": "https://randomlytools.pages.dev/random-instagram-username-generator/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="brand">
+        <span class="brand-icon">R</span>
+        <span class="brand-text">Randomly<span>Tools</span></span>
+      </a>
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <nav class="nav-links">
+        <a href="/">All Tools</a>
+        <a href="/random-name-generator/">Names</a>
+        <a href="/random-number-picker/">Numbers</a>
+        <a href="/random-discord-name-generator/">Usernames</a>
+        <a href="/random-company-brand-name-generator/">Brands</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-intro">
+    <div class="breadcrumbs">
+      <a href="/">Home</a> <span>/</span> <span>Random Instagram Username Generator</span>
+    </div>
+
+    <div class="tool-header" style="margin-bottom: 1.5rem;">
+      <h1>Random Instagram Username Generator</h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 720px;">
+        Brainstorm aesthetic, minimal, creative, and memorable username ideas for your personal profile or brand page.
+      </p>
+    </div>
+
+    <!-- AdSense Compliant Placeholder -->
+    <div class="ad-slot-container">
+      <div class="ad-slot-label">Advertisement</div>
+      <div class="ad-slot-box">Ad Space Available</div>
+    </div>
+
+    <!-- Tool Workspace -->
+    <section class="tool-workspace" aria-labelledby="tool-heading">
+      <h2 id="tool-heading" class="sr-only" style="display: none;">Instagram Generator Controls</h2>
+      
+      <form id="ig-form" onsubmit="return false;">
+        <div class="controls-grid">
+          
+          <div class="form-group">
+            <label for="ig-keyword">Your Name / Seed Keyword (Optional)</label>
+            <input type="text" id="ig-keyword" class="form-control" placeholder="e.g. Maya, Art, Travel, Alex" maxlength="20">
+          </div>
+
+          <div class="form-group">
+            <label>Aesthetic Style</label>
+            <div class="radio-pill-group">
+              <label class="radio-pill">
+                <input type="radio" name="ig-style" value="aesthetic" checked>
+                <span>Aesthetic</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="ig-style" value="minimal">
+                <span>Minimal</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="ig-style" value="cool">
+                <span>Cool</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="ig-style" value="gaming">
+                <span>Gaming</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="ig-style" value="funny">
+                <span>Funny</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Formatting Options</label>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.25rem;">
+              <label style="display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer;">
+                <input type="checkbox" id="ig-underscores" checked> Include Dots / Underscores
+              </label>
+              <label style="display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer;">
+                <input type="checkbox" id="ig-numbers"> Include Numbers
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="ig-count-select">Number of Ideas</label>
+            <select id="ig-count-select" class="form-select">
+              <option value="5">5 Ideas</option>
+              <option value="10" selected>10 Ideas</option>
+              <option value="20">20 Ideas</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="actions-row">
+          <button type="button" id="ig-generate-btn" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            Generate Usernames
+          </button>
+          <button type="button" id="ig-copy-all-btn" class="btn btn-secondary" style="display: none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy All Usernames
+          </button>
+        </div>
+      </form>
+
+      <!-- Results Container -->
+      <div id="ig-results-wrapper" class="results-container">
+        <div class="results-header">
+          <span id="ig-results-count-badge" class="results-count">Click "Generate Usernames" to begin</span>
+        </div>
+        <div id="ig-results-grid" class="results-grid">
+          <!-- Dynamic Instagram handles -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="content-section">
+      <article class="article-content">
+        <div class="disclaimer-callout">
+          <strong>Notice:</strong> Generated handles are creative ideas. We do not check real-time availability on Instagram or guarantee that any username is currently unallocated.
+        </div>
+
+        <h2>Best Practices for Instagram Handles</h2>
+        <p>
+          Your Instagram handle (@username) is your central digital billboard. To create an effective handle:
+        </p>
+        <ul>
+          <li><strong>Keep it Clean & Consistent:</strong> Avoid using more than one period or underscore, as complex punctuation makes your profile harder to tag in comments and stories.</li>
+          <li><strong>Reflect Your Content Niche:</strong> If your account centers on photography, adding suffixes like <em>.lens</em> or <em>visuals</em> immediately clarifies your focus for new visitors.</li>
+          <li><strong>Future-Proof Your Handle:</strong> Pick a handle you won't outgrow as your personal brand or business expands.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>What characters are allowed in Instagram usernames?</summary>
+            <div class="faq-answer">
+              <p>Instagram allows letters (a-z), numbers (0-9), periods (.), and underscores (_). Spaces and symbols like dashes or exclamation marks are not permitted.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Can I use these handles for TikTok or Pinterest as well?</summary>
+            <div class="faq-answer">
+              <p>Yes! These aesthetic and creative handle formulas work great across TikTok, Pinterest, YouTube Shorts, and Threads.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+    </section>
+
+    <!-- Related Tools Section -->
+    <section class="related-tools-section">
+      <div class="container" style="padding-left: 0; padding-right: 0;">
+        <h2 style="margin-top: 0; font-size: 1.25rem;">Related Social & Identity Tools</h2>
+        <div class="tools-grid" style="margin-top: 1rem; margin-bottom: 0;">
+          <div class="tool-card">
+            <div class="tool-card-icon">🎮</div>
+            <h3 class="tool-card-title"><a href="/random-discord-name-generator/">Discord Name Generator</a></h3>
+            <p class="tool-card-desc">Cool, gaming, anime, and dark username ideas for Discord.</p>
+            <span class="tool-card-badge">Gaming</span>
+          </div>
+          <div class="tool-card">
+            <div class="tool-card-icon">👤</div>
+            <h3 class="tool-card-title"><a href="/random-name-generator/">Random Name Generator</a></h3>
+            <p class="tool-card-desc">Realistic first and full names for characters and testing.</p>
+            <span class="tool-card-badge">Names</span>
+          </div>
+          <div class="tool-card">
+            <div class="tool-card-icon">🏢</div>
+            <h3 class="tool-card-title"><a href="/random-company-brand-name-generator/">Brand Name Generator</a></h3>
+            <p class="tool-card-desc">Brainstorm creative business, startup, and brand titles.</p>
+            <span class="tool-card-badge">Business</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand">
+            <span class="brand-icon">R</span>
+            <span class="brand-text">Randomly<span>Tools</span></span>
+          </a>
+          <p>Simple Random Tools for Everyday Use. Fast, free, and privacy-focused client-side generators.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Popular Tools</h4>
+          <ul>
+            <li><a href="/random-name-generator/">Random Name Generator</a></li>
+            <li><a href="/random-number-picker/">Random Number Picker</a></li>
+            <li><a href="/random-dog-name-generator/">Dog Name Generator</a></li>
+            <li><a href="/random-discord-name-generator/">Discord Name Generator</a></li>
+            <li><a href="/random-company-brand-name-generator/">Brand Name Generator</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>More Tools</h4>
+          <ul>
+            <li><a href="/random-shop-name-generator/">Shop Name Generator</a></li>
+            <li><a href="/random-restaurant-name-generator/">Restaurant Name Generator</a></li>
+            <li><a href="/random-japanese-name-generator/">Japanese Name Generator</a></li>
+            <li><a href="/random-instagram-username-generator/">Instagram Generator</a></li>
+            <li><a href="/random-coffee-shop-name-generator/">Coffee Shop Names</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Trust & Legal</h4>
+          <ul>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/disclaimer/">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RandomlyTools. All rights reserved. Free utilities for personal and commercial inspiration.</p>
+        <p>Built for speed and user privacy.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { PRNG } from '/assets/js/core/prng.js';
+    import { Clipboard } from '/assets/js/core/clipboard.js';
+    import { InstagramData } from '/assets/js/data/instagram-dataset.js';
+
+    let currentIgNames = [];
+
+    function generateIgNames() {
+      const keywordRaw = document.getElementById('ig-keyword').value.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+      const style = document.querySelector('input[name="ig-style"]:checked').value;
+      const count = parseInt(document.getElementById('ig-count-select').value, 10);
+      const useUnderscores = document.getElementById('ig-underscores').checked;
+      const useNumbers = document.getElementById('ig-numbers').checked;
+
+      const pool = InstagramData[style] || InstagramData.aesthetic;
+      currentIgNames = [];
+
+      for (let i = 0; i < count; i++) {
+        const seed = keywordRaw || PRNG.pickOne(pool);
+        const modifier = PRNG.pickOne(pool);
+        const sep = useUnderscores ? (Math.random() < 0.5 ? '_' : '.') : '';
+
+        let handle = '';
+        const roll = Math.random();
+        if (roll < 0.3) {
+          const prefix = PRNG.pickOne(InstagramData.prefixes);
+          handle = `${prefix}${sep}${seed}`;
+        } else if (roll < 0.6) {
+          const suffix = PRNG.pickOne(InstagramData.suffixes);
+          handle = `${seed}${sep}${suffix}`;
+        } else {
+          handle = `${seed}${sep}${modifier}`;
+        }
+
+        if (useNumbers && Math.random() < 0.5) {
+          handle += PRNG.randomInt(1, 99);
+        }
+
+        currentIgNames.push(handle);
+      }
+
+      renderResults();
+    }
+
+    function renderResults() {
+      const grid = document.getElementById('ig-results-grid');
+      const badge = document.getElementById('ig-results-count-badge');
+      const copyAllBtn = document.getElementById('ig-copy-all-btn');
+
+      if (!currentIgNames.length) {
+        grid.innerHTML = '<div class="empty-results"><p>No Instagram usernames generated yet.</p></div>';
+        badge.textContent = '0 results';
+        copyAllBtn.style.display = 'none';
+        return;
+      }
+
+      badge.textContent = `Generated ${currentIgNames.length} username ideas`;
+      copyAllBtn.style.display = 'inline-flex';
+
+      grid.innerHTML = currentIgNames.map((name) => `
+        <div class="result-item">
+          <span class="result-text">@${escapeHtml(name)}</span>
+          <button type="button" class="copy-btn" data-name="${escapeHtml(name)}" title="Copy handle" aria-label="Copy ${escapeHtml(name)}">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      `).join('');
+
+      grid.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const text = btn.getAttribute('data-name');
+          Clipboard.copyText(`@${text}`, `Copied "@${text}" to clipboard!`);
+        });
+      });
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>'"]/g, tag => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[tag] || tag));
+    }
+
+    document.getElementById('ig-generate-btn').addEventListener('click', generateIgNames);
+    document.getElementById('ig-copy-all-btn').addEventListener('click', () => {
+      if (currentIgNames.length > 0) {
+        Clipboard.copyText(currentIgNames.map(n => `@${n}`).join('\n'), `Copied all ${currentIgNames.length} handles to clipboard!`);
+      }
+    });
+
+    generateIgNames();
+  </script>
+  <script src="/assets/js/core/ui.js"></script>
+</body>
+</html>

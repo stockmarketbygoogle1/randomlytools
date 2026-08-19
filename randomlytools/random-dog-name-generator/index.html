@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Dog Name Generator – Cute, Funny & Unique Puppy Names | RandomlyTools</title>
+  <meta name="description" content="Generate cute, funny, strong, unique, and regional-inspired male or female dog names instantly. Perfect for puppies and adopted rescue dogs. Free & fast.">
+  <link rel="canonical" href="https://randomlytools.pages.dev/random-dog-name-generator/">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+  <meta property="og:title" content="Random Dog Name Generator – Cute, Funny & Unique Puppy Names | RandomlyTools">
+  <meta property="og:description" content="Discover cute, strong, funny, and unique dog names for male and female puppies with one click.">
+  <meta property="og:url" content="https://randomlytools.pages.dev/random-dog-name-generator/">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Random Dog Name Generator",
+        "url": "https://randomlytools.pages.dev/random-dog-name-generator/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A free online random dog name generator providing cute, funny, strong, unique, short, and culture-inspired name ideas for puppies."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://randomlytools.pages.dev/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Dog Name Generator",
+            "item": "https://randomlytools.pages.dev/random-dog-name-generator/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="brand">
+        <span class="brand-icon">R</span>
+        <span class="brand-text">Randomly<span>Tools</span></span>
+      </a>
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <nav class="nav-links">
+        <a href="/">All Tools</a>
+        <a href="/random-name-generator/">Names</a>
+        <a href="/random-number-picker/">Numbers</a>
+        <a href="/random-discord-name-generator/">Usernames</a>
+        <a href="/random-company-brand-name-generator/">Brands</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-intro">
+    <div class="breadcrumbs">
+      <a href="/">Home</a> <span>/</span> <span>Random Dog Name Generator</span>
+    </div>
+
+    <div class="tool-header" style="margin-bottom: 1.5rem;">
+      <h1>Random Dog Name Generator</h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 720px;">
+        Find the perfect name for your puppy or rescue dog with personality, vibe, and cultural inspiration filters.
+      </p>
+    </div>
+
+    <!-- AdSense Compliant Placeholder -->
+    <div class="ad-slot-container">
+      <div class="ad-slot-label">Advertisement</div>
+      <div class="ad-slot-box">Ad Space Available</div>
+    </div>
+
+    <!-- Tool Workspace -->
+    <section class="tool-workspace" aria-labelledby="tool-heading">
+      <h2 id="tool-heading" class="sr-only" style="display: none;">Dog Name Generator Controls</h2>
+      
+      <form id="dog-name-form" onsubmit="return false;">
+        <div class="controls-grid">
+          
+          <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-pill-group">
+              <label class="radio-pill">
+                <input type="radio" name="dog-gender" value="any" checked>
+                <span>Any</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="dog-gender" value="male">
+                <span>Male</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="dog-gender" value="female">
+                <span>Female</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Name Style & Inspiration</label>
+            <div class="radio-pill-group">
+              <label class="radio-pill">
+                <input type="radio" name="dog-vibe" value="all" checked>
+                <span>All Styles</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="dog-vibe" value="cute">
+                <span>Cute</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="dog-vibe" value="funny">
+                <span>Funny</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="dog-vibe" value="strong">
+                <span>Strong</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="dog-vibe" value="unique">
+                <span>Unique</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="dog-vibe" value="short">
+                <span>Short</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="dog-vibe" value="indianInspiration">
+                <span>Indian-inspired</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="dog-vibe" value="japaneseInspiration">
+                <span>Japanese-inspired</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="dog-vibe" value="britishInspiration">
+                <span>British-inspired</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="dog-vibe" value="americanInspiration">
+                <span>American-inspired</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="dog-count-select">Number of Names</label>
+            <select id="dog-count-select" class="form-select">
+              <option value="1">1 Name</option>
+              <option value="5" selected>5 Names</option>
+              <option value="10">10 Names</option>
+              <option value="20">20 Names</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="actions-row">
+          <button type="button" id="dog-generate-btn" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="M10 8h4"/><path d="M12 12v6"/></svg>
+            Generate Dog Names
+          </button>
+          <button type="button" id="dog-copy-all-btn" class="btn btn-secondary" style="display: none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy All Names
+          </button>
+        </div>
+      </form>
+
+      <!-- Results Container -->
+      <div id="dog-results-wrapper" class="results-container">
+        <div class="results-header">
+          <span id="dog-results-count-badge" class="results-count">Click "Generate Dog Names" to begin</span>
+        </div>
+        <div id="dog-results-grid" class="results-grid">
+          <!-- Dog names dynamic injection -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="content-section">
+      <article class="article-content">
+        <h2>How to Choose the Best Dog Name</h2>
+        <p>
+          Naming a new puppy or rescue dog is an exciting milestone. Here are several practical tips dog trainers recommend when selecting a name:
+        </p>
+        <ul>
+          <li><strong>Keep it 1 to 2 syllables:</strong> Short names like <em>Max</em>, <em>Luna</em>, or <em>Milo</em> are easier for dogs to recognize and respond to quickly during recall training.</li>
+          <li><strong>Use crisp consonant sounds:</strong> Hard consonants (like <em>K</em>, <em>T</em>, or <em>Ch</em> in <em>Tucker</em> or <em>Charlie</em>) catch a dog's attention more distinctly than soft vowels.</li>
+          <li><strong>Avoid names that sound like commands:</strong> Names that rhyme with "Sit" (like <em>Kit</em>) or "No" (like <em>Bo</em>) can cause confusion during obedience sessions.</li>
+        </ul>
+
+        <h2>Dog Name Styles & Inspirations</h2>
+        <p>
+          Our generator features multiple personality and regional inspiration filters to match your pet’s unique character:
+        </p>
+        <ul>
+          <li><strong>Cute & Sweet:</strong> Food-inspired and playful names like <em>Peanut</em>, <em>Mochi</em>, and <em>Biscuit</em>.</li>
+          <li><strong>Funny & Humorous:</strong> Punny, cheerful names like <em>Bark Twain</em>, <em>Sir Waggington</em>, and <em>Nacho</em>.</li>
+          <li><strong>Strong & Powerful:</strong> Mythological and guardian titles like <em>Titan</em>, <em>Thor</em>, <em>Zeus</em>, and <em>Diesel</em>.</li>
+          <li><strong>Regional Inspirations:</strong> Playful cultural styles including Indian-inspired (<em>Sheru</em>, <em>Simba</em>, <em>Veeru</em>), Japanese-inspired (<em>Hachi</em>, <em>Kuma</em>, <em>Yoshi</em>), British-inspired (<em>Winston</em>, <em>Barnaby</em>, <em>Archie</em>), and American-inspired (<em>Cooper</em>, <em>Tucker</em>, <em>Maverick</em>).</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Can I rename an adult rescue dog?</summary>
+            <div class="faq-answer">
+              <p>Yes! Dogs are adaptable and learn new names quickly when paired with positive reinforcement, treats, and affection over 1 to 2 weeks.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Are these dog names suitable for other pets?</summary>
+            <div class="faq-answer">
+              <p>Absolutely. Many of our cute, funny, and unique names are equally popular for cats, rabbits, birds, and other companion animals.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+    </section>
+
+    <!-- Related Tools Section -->
+    <section class="related-tools-section">
+      <div class="container" style="padding-left: 0; padding-right: 0;">
+        <h2 style="margin-top: 0; font-size: 1.25rem;">Related Random Tools</h2>
+        <div class="tools-grid" style="margin-top: 1rem; margin-bottom: 0;">
+          <div class="tool-card">
+            <div class="tool-card-icon">👤</div>
+            <h3 class="tool-card-title"><a href="/random-name-generator/">Random Name Generator</a></h3>
+            <p class="tool-card-desc">Generate realistic male, female, and full human names by country.</p>
+            <span class="tool-card-badge">Names</span>
+          </div>
+          <div class="tool-card">
+            <div class="tool-card-icon">🎮</div>
+            <h3 class="tool-card-title"><a href="/random-discord-name-generator/">Discord Name Generator</a></h3>
+            <p class="tool-card-desc">Cool, gaming, and unique handles for Discord and gaming.</p>
+            <span class="tool-card-badge">Usernames</span>
+          </div>
+          <div class="tool-card">
+            <div class="tool-card-icon">桜</div>
+            <h3 class="tool-card-title"><a href="/random-japanese-name-generator/">Japanese Name Generator</a></h3>
+            <p class="tool-card-desc">Authentic Japanese names with genuine Kanji and cultural meanings.</p>
+            <span class="tool-card-badge">Names</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand">
+            <span class="brand-icon">R</span>
+            <span class="brand-text">Randomly<span>Tools</span></span>
+          </a>
+          <p>Simple Random Tools for Everyday Use. Fast, free, and privacy-focused client-side generators.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Popular Tools</h4>
+          <ul>
+            <li><a href="/random-name-generator/">Random Name Generator</a></li>
+            <li><a href="/random-number-picker/">Random Number Picker</a></li>
+            <li><a href="/random-dog-name-generator/">Dog Name Generator</a></li>
+            <li><a href="/random-discord-name-generator/">Discord Name Generator</a></li>
+            <li><a href="/random-company-brand-name-generator/">Brand Name Generator</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>More Tools</h4>
+          <ul>
+            <li><a href="/random-shop-name-generator/">Shop Name Generator</a></li>
+            <li><a href="/random-restaurant-name-generator/">Restaurant Name Generator</a></li>
+            <li><a href="/random-japanese-name-generator/">Japanese Name Generator</a></li>
+            <li><a href="/random-instagram-username-generator/">Instagram Generator</a></li>
+            <li><a href="/random-coffee-shop-name-generator/">Coffee Shop Names</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Trust & Legal</h4>
+          <ul>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/disclaimer/">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RandomlyTools. All rights reserved. Free utilities for personal and commercial inspiration.</p>
+        <p>Built for speed and user privacy.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { PRNG } from '/assets/js/core/prng.js';
+    import { Clipboard } from '/assets/js/core/clipboard.js';
+    import { DogNamesData } from '/assets/js/data/dog-names-dataset.js';
+
+    let currentDogNames = [];
+
+    function generateDogNames() {
+      const gender = document.querySelector('input[name="dog-gender"]:checked').value;
+      const vibe = document.querySelector('input[name="dog-vibe"]:checked').value;
+      const count = parseInt(document.getElementById('dog-count-select').value, 10);
+
+      let pool = [];
+
+      if (vibe !== 'all' && DogNamesData[vibe]) {
+        pool = [...DogNamesData[vibe]];
+      } else {
+        if (gender === 'male') {
+          pool = [...DogNamesData.male];
+        } else if (gender === 'female') {
+          pool = [...DogNamesData.female];
+        } else {
+          pool = [...DogNamesData.male, ...DogNamesData.female, ...DogNamesData.cute, ...DogNamesData.strong, ...DogNamesData.unique];
+        }
+      }
+
+      currentDogNames = PRNG.sample(pool, count, false);
+      renderResults();
+    }
+
+    function renderResults() {
+      const grid = document.getElementById('dog-results-grid');
+      const badge = document.getElementById('dog-results-count-badge');
+      const copyAllBtn = document.getElementById('dog-copy-all-btn');
+
+      if (!currentDogNames.length) {
+        grid.innerHTML = '<div class="empty-results"><p>No dog names generated yet.</p></div>';
+        badge.textContent = '0 results';
+        copyAllBtn.style.display = 'none';
+        return;
+      }
+
+      badge.textContent = `Generated ${currentDogNames.length} ${currentDogNames.length === 1 ? 'dog name' : 'dog names'}`;
+      copyAllBtn.style.display = 'inline-flex';
+
+      grid.innerHTML = currentDogNames.map((name) => `
+        <div class="result-item">
+          <span class="result-text">🐾 ${escapeHtml(name)}</span>
+          <button type="button" class="copy-btn" data-name="${escapeHtml(name)}" title="Copy dog name" aria-label="Copy ${escapeHtml(name)}">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      `).join('');
+
+      grid.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const text = btn.getAttribute('data-name');
+          Clipboard.copyText(text, `Copied "${text}" to clipboard!`);
+        });
+      });
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>'"]/g, tag => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[tag] || tag));
+    }
+
+    document.getElementById('dog-generate-btn').addEventListener('click', generateDogNames);
+    document.getElementById('dog-copy-all-btn').addEventListener('click', () => {
+      if (currentDogNames.length > 0) {
+        Clipboard.copyText(currentDogNames.join('\n'), `Copied all ${currentDogNames.length} dog names to clipboard!`);
+      }
+    });
+
+    generateDogNames();
+  </script>
+  <script src="/assets/js/core/ui.js"></script>
+</body>
+</html>

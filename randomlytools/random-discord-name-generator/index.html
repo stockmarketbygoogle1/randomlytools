@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Discord Name Generator – Cool, Gaming & Anime Usernames | RandomlyTools</title>
+  <meta name="description" content="Generate cool, gaming, anime, dark, and aesthetic usernames for Discord. Includes underscore, prefix, and number customizers. Free & instant.">
+  <link rel="canonical" href="https://randomlytools.pages.dev/random-discord-name-generator/">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+  <meta property="og:title" content="Random Discord Name Generator – Cool, Gaming & Anime Usernames | RandomlyTools">
+  <meta property="og:description" content="Generate unique, aesthetic, and gaming usernames for Discord with one click. Free client-side username maker.">
+  <meta property="og:url" content="https://randomlytools.pages.dev/random-discord-name-generator/">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Random Discord Name Generator",
+        "url": "https://randomlytools.pages.dev/random-discord-name-generator/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A free online Discord username generator with gaming, anime, cool, dark, and funny username filters."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://randomlytools.pages.dev/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Discord Name Generator",
+            "item": "https://randomlytools.pages.dev/random-discord-name-generator/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="brand">
+        <span class="brand-icon">R</span>
+        <span class="brand-text">Randomly<span>Tools</span></span>
+      </a>
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <nav class="nav-links">
+        <a href="/">All Tools</a>
+        <a href="/random-name-generator/">Names</a>
+        <a href="/random-number-picker/">Numbers</a>
+        <a href="/random-discord-name-generator/" class="active">Usernames</a>
+        <a href="/random-company-brand-name-generator/">Brands</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-intro">
+    <div class="breadcrumbs">
+      <a href="/">Home</a> <span>/</span> <span>Random Discord Name Generator</span>
+    </div>
+
+    <div class="tool-header" style="margin-bottom: 1.5rem;">
+      <h1>Random Discord Name Generator</h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 720px;">
+        Create aesthetic, gaming, anime, and dark username ideas for Discord with custom styling and formatting.
+      </p>
+    </div>
+
+    <!-- AdSense Compliant Placeholder -->
+    <div class="ad-slot-container">
+      <div class="ad-slot-label">Advertisement</div>
+      <div class="ad-slot-box">Ad Space Available</div>
+    </div>
+
+    <!-- Tool Workspace -->
+    <section class="tool-workspace" aria-labelledby="tool-heading">
+      <h2 id="tool-heading" class="sr-only" style="display: none;">Discord Name Generator Controls</h2>
+      
+      <form id="discord-form" onsubmit="return false;">
+        <div class="controls-grid">
+          
+          <div class="form-group">
+            <label>Theme / Style</label>
+            <div class="radio-pill-group">
+              <label class="radio-pill">
+                <input type="radio" name="discord-theme" value="cool" checked>
+                <span>Cool</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="discord-theme" value="gaming">
+                <span>Gaming</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="discord-theme" value="anime">
+                <span>Anime</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="discord-theme" value="dark">
+                <span>Dark</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="discord-theme" value="funny">
+                <span>Funny</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="discord-theme" value="short">
+                <span>Short</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Decorations & Elements</label>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.25rem;">
+              <label style="display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer;">
+                <input type="checkbox" id="include-numbers"> Include Numbers (e.g. 77, 99)
+              </label>
+              <label style="display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; cursor: pointer;">
+                <input type="checkbox" id="include-underscores"> Include Underscores (_)
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discord-count-select">Number of Usernames</label>
+            <select id="discord-count-select" class="form-select">
+              <option value="5">5 Usernames</option>
+              <option value="10" selected>10 Usernames</option>
+              <option value="20">20 Usernames</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="actions-row">
+          <button type="button" id="discord-generate-btn" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a10 10 0 0 0-10 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+            Generate Discord Names
+          </button>
+          <button type="button" id="discord-copy-all-btn" class="btn btn-secondary" style="display: none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy All Usernames
+          </button>
+        </div>
+      </form>
+
+      <!-- Results Container -->
+      <div id="discord-results-wrapper" class="results-container">
+        <div class="results-header">
+          <span id="discord-results-count-badge" class="results-count">Click "Generate Discord Names" to begin</span>
+        </div>
+        <div id="discord-results-grid" class="results-grid">
+          <!-- Discord dynamic results -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="content-section">
+      <article class="article-content">
+        <div class="disclaimer-callout">
+          <strong>Notice:</strong> Generated names are creative suggestions. We do not check real-time availability on Discord or guarantee that any username is currently unregistered.
+        </div>
+
+        <h2>Creating a Memorable Discord Username</h2>
+        <p>
+          Your Discord handle defines your identity across gaming servers, community voice channels, and developer spaces. Consider these tips when choosing your handle:
+        </p>
+        <ul>
+          <li><strong>Reflect Your Playstyle or Interest:</strong> If you focus on competitive FPS or RPGs, tags like <em>ManaSurge</em> or <em>ClutchGod</em> instantly signal your gaming focus.</li>
+          <li><strong>Keep it Readable:</strong> While underscores and numbers help create uniqueness, avoid excessive symbols that make your username hard to type when friends search for you.</li>
+          <li><strong>Brand Consistency:</strong> If you stream on Twitch or post gaming clips on YouTube, try matching your Discord handle with your primary social media handles.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Does Discord still use 4-digit discriminators (#0000)?</summary>
+            <div class="faq-answer">
+              <p>Discord has migrated to unique alphanumeric usernames (without the old #0001 discriminators) alongside customizable Server Display Names. If a handle is taken, adding underscores, prefixes, or numbers can help create an available variant.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Can I use these usernames on Steam, Xbox, or PlayStation?</summary>
+            <div class="faq-answer">
+              <p>Yes! These suggestions are versatile and work great across Steam, Twitch, Xbox Live, PlayStation Network, and other gaming platforms.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+    </section>
+
+    <!-- Related Tools Section -->
+    <section class="related-tools-section">
+      <div class="container" style="padding-left: 0; padding-right: 0;">
+        <h2 style="margin-top: 0; font-size: 1.25rem;">Related Random Tools</h2>
+        <div class="tools-grid" style="margin-top: 1rem; margin-bottom: 0;">
+          <div class="tool-card">
+            <div class="tool-card-icon">📸</div>
+            <h3 class="tool-card-title"><a href="/random-instagram-username-generator/">Instagram Username Generator</a></h3>
+            <p class="tool-card-desc">Generate aesthetic, minimal, and creative handles for Instagram.</p>
+            <span class="tool-card-badge">Social Media</span>
+          </div>
+          <div class="tool-card">
+            <div class="tool-card-icon">👤</div>
+            <h3 class="tool-card-title"><a href="/random-name-generator/">Random Name Generator</a></h3>
+            <p class="tool-card-desc">Generate realistic male, female, and full names.</p>
+            <span class="tool-card-badge">Names</span>
+          </div>
+          <div class="tool-card">
+            <div class="tool-card-icon">🏢</div>
+            <h3 class="tool-card-title"><a href="/random-company-brand-name-generator/">Brand Name Generator</a></h3>
+            <p class="tool-card-desc">Brainstorm creative company, startup, and brand titles.</p>
+            <span class="tool-card-badge">Business</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand">
+            <span class="brand-icon">R</span>
+            <span class="brand-text">Randomly<span>Tools</span></span>
+          </a>
+          <p>Simple Random Tools for Everyday Use. Fast, free, and privacy-focused client-side generators.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Popular Tools</h4>
+          <ul>
+            <li><a href="/random-name-generator/">Random Name Generator</a></li>
+            <li><a href="/random-number-picker/">Random Number Picker</a></li>
+            <li><a href="/random-dog-name-generator/">Dog Name Generator</a></li>
+            <li><a href="/random-discord-name-generator/">Discord Name Generator</a></li>
+            <li><a href="/random-company-brand-name-generator/">Brand Name Generator</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>More Tools</h4>
+          <ul>
+            <li><a href="/random-shop-name-generator/">Shop Name Generator</a></li>
+            <li><a href="/random-restaurant-name-generator/">Restaurant Name Generator</a></li>
+            <li><a href="/random-japanese-name-generator/">Japanese Name Generator</a></li>
+            <li><a href="/random-instagram-username-generator/">Instagram Generator</a></li>
+            <li><a href="/random-coffee-shop-name-generator/">Coffee Shop Names</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Trust & Legal</h4>
+          <ul>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/disclaimer/">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RandomlyTools. All rights reserved. Free utilities for personal and commercial inspiration.</p>
+        <p>Built for speed and user privacy.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { PRNG } from '/assets/js/core/prng.js';
+    import { Clipboard } from '/assets/js/core/clipboard.js';
+    import { DiscordData } from '/assets/js/data/discord-dataset.js';
+
+    let currentDiscordNames = [];
+
+    function generateDiscordNames() {
+      const theme = document.querySelector('input[name="discord-theme"]:checked').value;
+      const count = parseInt(document.getElementById('discord-count-select').value, 10);
+      const includeNumbers = document.getElementById('include-numbers').checked;
+      const includeUnderscores = document.getElementById('include-underscores').checked;
+
+      const basePool = DiscordData[theme] || DiscordData.cool;
+      currentDiscordNames = [];
+
+      for (let i = 0; i < count; i++) {
+        let base = PRNG.pickOne(basePool);
+        
+        // Randomly combine with prefixes or suffixes
+        const roll = Math.random();
+        if (roll < 0.25) {
+          const prefix = PRNG.pickOne(DiscordData.prefixes);
+          base = includeUnderscores ? `${prefix}_${base}` : `${prefix}${base}`;
+        } else if (roll < 0.5) {
+          const suffix = PRNG.pickOne(DiscordData.suffixes);
+          base = includeUnderscores ? `${base}_${suffix}` : `${base}${suffix}`;
+        } else if (includeUnderscores && Math.random() < 0.4) {
+          base = `_${base}_`;
+        }
+
+        if (includeNumbers) {
+          const num = PRNG.randomInt(10, 99);
+          base = `${base}${num}`;
+        }
+
+        currentDiscordNames.push(base);
+      }
+
+      renderResults();
+    }
+
+    function renderResults() {
+      const grid = document.getElementById('discord-results-grid');
+      const badge = document.getElementById('discord-results-count-badge');
+      const copyAllBtn = document.getElementById('discord-copy-all-btn');
+
+      if (!currentDiscordNames.length) {
+        grid.innerHTML = '<div class="empty-results"><p>No Discord names generated yet.</p></div>';
+        badge.textContent = '0 results';
+        copyAllBtn.style.display = 'none';
+        return;
+      }
+
+      badge.textContent = `Generated ${currentDiscordNames.length} usernames`;
+      copyAllBtn.style.display = 'inline-flex';
+
+      grid.innerHTML = currentDiscordNames.map((name) => `
+        <div class="result-item">
+          <span class="result-text">🎮 ${escapeHtml(name)}</span>
+          <button type="button" class="copy-btn" data-name="${escapeHtml(name)}" title="Copy username" aria-label="Copy ${escapeHtml(name)}">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      `).join('');
+
+      grid.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const text = btn.getAttribute('data-name');
+          Clipboard.copyText(text, `Copied "${text}" to clipboard!`);
+        });
+      });
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>'"]/g, tag => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[tag] || tag));
+    }
+
+    document.getElementById('discord-generate-btn').addEventListener('click', generateDiscordNames);
+    document.getElementById('discord-copy-all-btn').addEventListener('click', () => {
+      if (currentDiscordNames.length > 0) {
+        Clipboard.copyText(currentDiscordNames.join('\n'), `Copied all ${currentDiscordNames.length} usernames to clipboard!`);
+      }
+    });
+
+    generateDiscordNames();
+  </script>
+  <script src="/assets/js/core/ui.js"></script>
+</body>
+</html>

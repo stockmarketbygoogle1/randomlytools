@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Number Picker – Generate Numbers in Any Range (1-10, 1-100) | RandomlyTools</title>
+  <meta name="description" content="Pick random numbers within custom minimum and maximum ranges. Includes quick presets (1-10, 1-100), repeat/no-repeat mode, and instant copying. Free & fast.">
+  <link rel="canonical" href="https://randomlytools.pages.dev/random-number-picker/">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+  <meta property="og:title" content="Random Number Picker – Generate Numbers in Any Range | RandomlyTools">
+  <meta property="og:description" content="Pick random numbers within custom ranges with repeats or unique mode. Free client-side random number generator.">
+  <meta property="og:url" content="https://randomlytools.pages.dev/random-number-picker/">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Random Number Picker",
+        "url": "https://randomlytools.pages.dev/random-number-picker/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A free online random number picker to generate single or multiple random integers within any custom range with no-repeat mode."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://randomlytools.pages.dev/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Random Number Picker",
+            "item": "https://randomlytools.pages.dev/random-number-picker/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="brand">
+        <span class="brand-icon">R</span>
+        <span class="brand-text">Randomly<span>Tools</span></span>
+      </a>
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <nav class="nav-links">
+        <a href="/">All Tools</a>
+        <a href="/random-name-generator/">Names</a>
+        <a href="/random-number-picker/" class="active">Numbers</a>
+        <a href="/random-discord-name-generator/">Usernames</a>
+        <a href="/random-company-brand-name-generator/">Brands</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-intro">
+    <div class="breadcrumbs">
+      <a href="/">Home</a> <span>/</span> <span>Random Number Picker</span>
+    </div>
+
+    <div class="tool-header" style="margin-bottom: 1.5rem;">
+      <h1>Random Number Picker</h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 720px;">
+        Generate single or multiple random integers within any custom range with instant repeat/no-repeat options.
+      </p>
+    </div>
+
+    <!-- AdSense Compliant Placeholder -->
+    <div class="ad-slot-container">
+      <div class="ad-slot-label">Advertisement</div>
+      <div class="ad-slot-box">Ad Space Available</div>
+    </div>
+
+    <!-- Tool Workspace -->
+    <section class="tool-workspace" aria-labelledby="tool-heading">
+      <h2 id="tool-heading" class="sr-only" style="display: none;">Number Picker Controls</h2>
+
+      <!-- Presets -->
+      <div class="presets-bar">
+        <span class="presets-label">Quick Presets:</span>
+        <button type="button" class="preset-chip" data-min="1" data-max="10" data-count="1">1 – 10</button>
+        <button type="button" class="preset-chip" data-min="1" data-max="20" data-count="1">1 – 20</button>
+        <button type="button" class="preset-chip" data-min="1" data-max="50" data-count="1">1 – 50</button>
+        <button type="button" class="preset-chip" data-min="1" data-max="100" data-count="1">1 – 100</button>
+        <button type="button" class="preset-chip" data-min="0" data-max="99" data-count="1">00 – 99 (2-Digit)</button>
+        <button type="button" class="preset-chip" data-min="100" data-max="999" data-count="1">100 – 999 (3-Digit)</button>
+      </div>
+
+      <form id="number-form" onsubmit="return false;">
+        <div class="controls-grid">
+          
+          <div class="form-group">
+            <label for="min-input">Minimum Number</label>
+            <input type="number" id="min-input" class="form-control" value="1" step="1">
+          </div>
+
+          <div class="form-group">
+            <label for="max-input">Maximum Number</label>
+            <input type="number" id="max-input" class="form-control" value="100" step="1">
+          </div>
+
+          <div class="form-group">
+            <label for="count-input">Count (Quantity)</label>
+            <input type="number" id="count-input" class="form-control" value="1" min="1" max="500" step="1">
+          </div>
+
+          <div class="form-group">
+            <label>Duplicates</label>
+            <div class="radio-pill-group">
+              <label class="radio-pill">
+                <input type="radio" name="repeats" value="no" checked>
+                <span>No Repeats</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="repeats" value="yes">
+                <span>Allow Repeats</span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="actions-row">
+          <button type="button" id="pick-btn" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+            Pick Number
+          </button>
+          <button type="button" id="copy-all-btn" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy Results
+          </button>
+        </div>
+      </form>
+
+      <!-- Results Container -->
+      <div id="results-wrapper" class="results-container">
+        <div id="single-hero-display" class="number-hero-display">
+          <div id="hero-value" class="number-hero-value">42</div>
+          <div id="hero-range-label" style="font-size: 0.9rem; color: var(--text-muted);">Range: 1 to 100</div>
+        </div>
+
+        <div id="multi-results-header" class="results-header" style="display: none;">
+          <span id="multi-count-badge" class="results-count">Results</span>
+        </div>
+        <div id="multi-results-grid" class="results-grid" style="display: none;">
+          <!-- Multi numbers rendered here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO & Informational Content -->
+    <section class="content-section">
+      <article class="article-content">
+        <h2>How to Pick a Random Number</h2>
+        <p>
+          Our random number picker allows you to generate unbiased integers across any span. Here is how to configure your selection:
+        </p>
+        <ol>
+          <li><strong>Set the Lower & Upper Bounds:</strong> Enter your minimum and maximum values (e.g., 1 and 100, or custom negative numbers).</li>
+          <li><strong>Select Quantity:</strong> Pick 1 number for simple draws, or specify up to 500 numbers for lotteries, simulations, or statistical samples.</li>
+          <li><strong>Toggle Repeats:</strong> Select <em>No Repeats</em> to ensure every drawn number in the batch is unique, or <em>Allow Repeats</em> for independent selections with replacement.</li>
+        </ol>
+
+        <h2>Popular Random Number Ranges</h2>
+        <ul>
+          <li><strong>Random Number 1 to 10:</strong> Ideal for quick decisions, assigning priority rankings, or selecting among top 10 items.</li>
+          <li><strong>Random Number 1 to 100:</strong> Great for percentage probability checks, classroom drawings, and random item allocation.</li>
+          <li><strong>2-Digit Numbers (00–99):</strong> Commonly used for raffle ticket drawings, table seating arrangements, and code verification tests.</li>
+          <li><strong>3-Digit Numbers (100–999):</strong> Helpful for generating random IDs, test order numbers, and statistical sampling keys.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>How does the random number generator ensure fairness?</summary>
+            <div class="faq-answer">
+              <p>Our tool utilizes the modern Web Cryptography API (<code>crypto.getRandomValues</code>) where available in your browser, ensuring high-entropy, mathematically uniform pseudorandom selection without algorithmic bias.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>What happens if the requested count exceeds the available range?</summary>
+            <div class="faq-answer">
+              <p>When operating in "No Repeats" mode, the maximum number of unique results cannot exceed the size of the range (Max - Min + 1). The tool automatically bounds the count to the maximum possible unique items in the range.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Can I pick negative random numbers?</summary>
+            <div class="faq-answer">
+              <p>Yes! You can enter negative values (such as -50 to +50) and the tool will calculate the appropriate range automatically.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+    </section>
+
+    <!-- Related Tools Section -->
+    <section class="related-tools-section">
+      <div class="container" style="padding-left: 0; padding-right: 0;">
+        <h2 style="margin-top: 0; font-size: 1.25rem;">Related Random Tools</h2>
+        <div class="tools-grid" style="margin-top: 1rem; margin-bottom: 0;">
+          <div class="tool-card">
+            <div class="tool-card-icon">👤</div>
+            <h3 class="tool-card-title"><a href="/random-name-generator/">Random Name Generator</a></h3>
+            <p class="tool-card-desc">Generate realistic male, female, and full names for characters or data.</p>
+            <span class="tool-card-badge">Names</span>
+          </div>
+          <div class="tool-card">
+            <div class="tool-card-icon">🎮</div>
+            <h3 class="tool-card-title"><a href="/random-discord-name-generator/">Discord Name Generator</a></h3>
+            <p class="tool-card-desc">Create cool, gaming, anime, and dark usernames for Discord.</p>
+            <span class="tool-card-badge">Usernames</span>
+          </div>
+          <div class="tool-card">
+            <div class="tool-card-icon">🏢</div>
+            <h3 class="tool-card-title"><a href="/random-company-brand-name-generator/">Brand Name Generator</a></h3>
+            <p class="tool-card-desc">Brainstorm creative company, startup, and tech business names.</p>
+            <span class="tool-card-badge">Business</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand">
+            <span class="brand-icon">R</span>
+            <span class="brand-text">Randomly<span>Tools</span></span>
+          </a>
+          <p>Simple Random Tools for Everyday Use. Fast, free, and privacy-focused client-side generators.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Popular Tools</h4>
+          <ul>
+            <li><a href="/random-name-generator/">Random Name Generator</a></li>
+            <li><a href="/random-number-picker/">Random Number Picker</a></li>
+            <li><a href="/random-dog-name-generator/">Dog Name Generator</a></li>
+            <li><a href="/random-discord-name-generator/">Discord Name Generator</a></li>
+            <li><a href="/random-company-brand-name-generator/">Brand Name Generator</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>More Tools</h4>
+          <ul>
+            <li><a href="/random-shop-name-generator/">Shop Name Generator</a></li>
+            <li><a href="/random-restaurant-name-generator/">Restaurant Name Generator</a></li>
+            <li><a href="/random-japanese-name-generator/">Japanese Name Generator</a></li>
+            <li><a href="/random-instagram-username-generator/">Instagram Generator</a></li>
+            <li><a href="/random-coffee-shop-name-generator/">Coffee Shop Names</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Trust & Legal</h4>
+          <ul>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/disclaimer/">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RandomlyTools. All rights reserved. Free utilities for personal and commercial inspiration.</p>
+        <p>Built for speed and user privacy.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { PRNG } from '/assets/js/core/prng.js';
+    import { Clipboard } from '/assets/js/core/clipboard.js';
+
+    let currentNumbers = [];
+
+    function pickNumbers() {
+      let min = parseInt(document.getElementById('min-input').value, 10);
+      let max = parseInt(document.getElementById('max-input').value, 10);
+      let count = parseInt(document.getElementById('count-input').value, 10);
+      const allowRepeats = document.querySelector('input[name="repeats"]:checked').value === 'yes';
+
+      if (isNaN(min)) min = 1;
+      if (isNaN(max)) max = 100;
+      if (isNaN(count) || count < 1) count = 1;
+      if (count > 500) count = 500;
+
+      if (min > max) {
+        [min, max] = [max, min];
+        document.getElementById('min-input').value = min;
+        document.getElementById('max-input').value = max;
+      }
+
+      currentNumbers = PRNG.pickNumbers(min, max, count, allowRepeats);
+      renderResults(min, max);
+    }
+
+    function renderResults(min, max) {
+      const heroDisplay = document.getElementById('single-hero-display');
+      const heroValue = document.getElementById('hero-value');
+      const heroLabel = document.getElementById('hero-range-label');
+
+      const multiHeader = document.getElementById('multi-results-header');
+      const multiGrid = document.getElementById('multi-results-grid');
+      const multiBadge = document.getElementById('multi-count-badge');
+
+      if (currentNumbers.length === 1) {
+        heroDisplay.style.display = 'block';
+        heroValue.textContent = currentNumbers[0];
+        heroLabel.textContent = `Range: ${min} to ${max}`;
+
+        multiHeader.style.display = 'none';
+        multiGrid.style.display = 'none';
+      } else {
+        heroDisplay.style.display = 'none';
+        multiHeader.style.display = 'flex';
+        multiGrid.style.display = 'grid';
+
+        multiBadge.textContent = `Generated ${currentNumbers.length} numbers (Range ${min} to ${max})`;
+
+        multiGrid.innerHTML = currentNumbers.map((num) => `
+          <div class="result-item">
+            <span class="result-text" style="font-family: var(--font-mono); font-size: 1.2rem;">${num}</span>
+            <button type="button" class="copy-btn" data-num="${num}" title="Copy number" aria-label="Copy ${num}">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+          </div>
+        `).join('');
+
+        multiGrid.querySelectorAll('.copy-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const val = btn.getAttribute('data-num');
+            Clipboard.copyText(val, `Copied number ${val}!`);
+          });
+        });
+      }
+    }
+
+    // Event Listeners
+    document.getElementById('pick-btn').addEventListener('click', pickNumbers);
+
+    document.getElementById('copy-all-btn').addEventListener('click', () => {
+      if (currentNumbers.length > 0) {
+        Clipboard.copyText(currentNumbers.join(', '), `Copied ${currentNumbers.length} numbers to clipboard!`);
+      }
+    });
+
+    // Preset Buttons
+    document.querySelectorAll('.preset-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.getElementById('min-input').value = chip.getAttribute('data-min');
+        document.getElementById('max-input').value = chip.getAttribute('data-max');
+        document.getElementById('count-input').value = chip.getAttribute('data-count');
+        pickNumbers();
+      });
+    });
+
+    // Initialize
+    pickNumbers();
+  </script>
+  <script src="/assets/js/core/ui.js"></script>
+</body>
+</html>

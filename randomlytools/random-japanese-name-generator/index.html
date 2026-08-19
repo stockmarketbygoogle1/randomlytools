@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Japanese Name Generator – Authentic Kanji, Romaji & Meanings | RandomlyTools</title>
+  <meta name="description" content="Generate authentic Japanese male, female, and full names with real Kanji characters, Romaji pronunciations, and verified cultural meanings. Free & private.">
+  <link rel="canonical" href="https://randomlytools.pages.dev/random-japanese-name-generator/">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+  <meta property="og:title" content="Random Japanese Name Generator – Authentic Kanji, Romaji & Meanings | RandomlyTools">
+  <meta property="og:description" content="Discover authentic Japanese given names and surnames with genuine Kanji and verified meanings.">
+  <meta property="og:url" content="https://randomlytools.pages.dev/random-japanese-name-generator/">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Random Japanese Name Generator",
+        "url": "https://randomlytools.pages.dev/random-japanese-name-generator/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A curated Japanese name generator with authentic Kanji, Romaji transliteration, and verified cultural meanings."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://randomlytools.pages.dev/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Japanese Name Generator",
+            "item": "https://randomlytools.pages.dev/random-japanese-name-generator/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="brand">
+        <span class="brand-icon">R</span>
+        <span class="brand-text">Randomly<span>Tools</span></span>
+      </a>
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <nav class="nav-links">
+        <a href="/">All Tools</a>
+        <a href="/random-name-generator/">Names</a>
+        <a href="/random-number-picker/">Numbers</a>
+        <a href="/random-discord-name-generator/">Usernames</a>
+        <a href="/random-company-brand-name-generator/">Brands</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-intro">
+    <div class="breadcrumbs">
+      <a href="/">Home</a> <span>/</span> <span>Random Japanese Name Generator</span>
+    </div>
+
+    <div class="tool-header" style="margin-bottom: 1.5rem;">
+      <h1>Random Japanese Name Generator</h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 720px;">
+        Generate authentic Japanese male, female, or full names complete with genuine Kanji characters, Romaji transliteration, and verified cultural meanings.
+      </p>
+    </div>
+
+    <!-- AdSense Compliant Placeholder -->
+    <div class="ad-slot-container">
+      <div class="ad-slot-label">Advertisement</div>
+      <div class="ad-slot-box">Ad Space Available</div>
+    </div>
+
+    <!-- Tool Workspace -->
+    <section class="tool-workspace" aria-labelledby="tool-heading">
+      <h2 id="tool-heading" class="sr-only" style="display: none;">Japanese Name Generator Controls</h2>
+      
+      <form id="jp-form" onsubmit="return false;">
+        <div class="controls-grid">
+          
+          <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-pill-group">
+              <label class="radio-pill">
+                <input type="radio" name="jp-gender" value="any" checked>
+                <span>Any</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="jp-gender" value="male">
+                <span>Male</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="jp-gender" value="female">
+                <span>Female</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Format</label>
+            <div class="radio-pill-group">
+              <label class="radio-pill">
+                <input type="radio" name="jp-format" value="full" checked>
+                <span>Full Name (Surname + Given)</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="jp-format" value="first">
+                <span>Given Name Only</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="jp-count-select">Number of Names</label>
+            <select id="jp-count-select" class="form-select">
+              <option value="1">1 Name</option>
+              <option value="5" selected>5 Names</option>
+              <option value="10">10 Names</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="actions-row">
+          <button type="button" id="jp-generate-btn" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/></svg>
+            Generate Japanese Names
+          </button>
+          <button type="button" id="jp-copy-all-btn" class="btn btn-secondary" style="display: none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy All Names
+          </button>
+        </div>
+      </form>
+
+      <!-- Results Container -->
+      <div id="jp-results-wrapper" class="results-container">
+        <div class="results-header">
+          <span id="jp-results-count-badge" class="results-count">Click "Generate Japanese Names" to begin</span>
+        </div>
+        <div id="jp-results-grid" class="results-grid">
+          <!-- Dynamic Japanese names -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="content-section">
+      <article class="article-content">
+        <h2>Understanding Japanese Naming Traditions</h2>
+        <p>
+          Japanese names are rich in cultural symbolism and history. When reading and generating Japanese names, consider these important linguistic concepts:
+        </p>
+        <ul>
+          <li><strong>Name Order:</strong> In traditional Japanese order, the family name (surname) precedes the given name (e.g., <em>Sato Ren</em>). In Western contexts, this is often reversed to <em>Ren Sato</em>.</li>
+          <li><strong>Kanji & Symbolism:</strong> Most Japanese names are written in Kanji characters, where each character holds specific meanings connected to nature, virtues, prosperity, seasons, or personal hopes.</li>
+          <li><strong>Romaji Transliteration:</strong> Romaji is the Roman alphabet transcription that helps non-Japanese speakers pronounce the characters accurately.</li>
+        </ul>
+
+        <h2>Authentic Curated Dataset</h2>
+        <p>
+          Our database uses carefully selected, historically verified Japanese given names and surnames. We do not generate artificial or nonsensical combinations to ensure respectful and accurate cultural representation for writers, linguists, and researchers.
+        </p>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Why do different Kanji have the same Romaji pronunciation?</summary>
+            <div class="faq-answer">
+              <p>In Japanese, many distinct Kanji characters share the same phonetic reading (homophones). For example, the name "Ren" can be written with the Kanji 蓮 (meaning lotus) or other characters depending on parent choice.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Can I use these names for fiction, manga, or novel characters?</summary>
+            <div class="faq-answer">
+              <p>Yes! These names provide culturally grounded character names for authors, game developers, anime enthusiasts, and screenwriters.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+    </section>
+
+    <!-- Related Tools Section -->
+    <section class="related-tools-section">
+      <div class="container" style="padding-left: 0; padding-right: 0;">
+        <h2 style="margin-top: 0; font-size: 1.25rem;">Related Name Generators</h2>
+        <div class="tools-grid" style="margin-top: 1rem; margin-bottom: 0;">
+          <div class="tool-card">
+            <div class="tool-card-icon">👤</div>
+            <h3 class="tool-card-title"><a href="/random-name-generator/">Random Name Generator</a></h3>
+            <p class="tool-card-desc">Generate realistic first and full names across international cultures.</p>
+            <span class="tool-card-badge">Names</span>
+          </div>
+          <div class="tool-card">
+            <div class="tool-card-icon">🐾</div>
+            <h3 class="tool-card-title"><a href="/random-dog-name-generator/">Dog Name Generator</a></h3>
+            <p class="tool-card-desc">Cute, funny, and unique pet names for puppies.</p>
+            <span class="tool-card-badge">Pets</span>
+          </div>
+          <div class="tool-card">
+            <div class="tool-card-icon">🎮</div>
+            <h3 class="tool-card-title"><a href="/random-discord-name-generator/">Discord Name Generator</a></h3>
+            <p class="tool-card-desc">Cool anime, gaming, and dark username creator.</p>
+            <span class="tool-card-badge">Usernames</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand">
+            <span class="brand-icon">R</span>
+            <span class="brand-text">Randomly<span>Tools</span></span>
+          </a>
+          <p>Simple Random Tools for Everyday Use. Fast, free, and privacy-focused client-side generators.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Popular Tools</h4>
+          <ul>
+            <li><a href="/random-name-generator/">Random Name Generator</a></li>
+            <li><a href="/random-number-picker/">Random Number Picker</a></li>
+            <li><a href="/random-dog-name-generator/">Dog Name Generator</a></li>
+            <li><a href="/random-discord-name-generator/">Discord Name Generator</a></li>
+            <li><a href="/random-company-brand-name-generator/">Brand Name Generator</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>More Tools</h4>
+          <ul>
+            <li><a href="/random-shop-name-generator/">Shop Name Generator</a></li>
+            <li><a href="/random-restaurant-name-generator/">Restaurant Name Generator</a></li>
+            <li><a href="/random-japanese-name-generator/">Japanese Name Generator</a></li>
+            <li><a href="/random-instagram-username-generator/">Instagram Generator</a></li>
+            <li><a href="/random-coffee-shop-name-generator/">Coffee Shop Names</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Trust & Legal</h4>
+          <ul>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/disclaimer/">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RandomlyTools. All rights reserved. Free utilities for personal and commercial inspiration.</p>
+        <p>Built for speed and user privacy.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { PRNG } from '/assets/js/core/prng.js';
+    import { Clipboard } from '/assets/js/core/clipboard.js';
+    import { JapaneseNamesData } from '/assets/js/data/japanese-dataset.js';
+
+    let currentJpNames = [];
+
+    function generateJpNames() {
+      const gender = document.querySelector('input[name="jp-gender"]:checked').value;
+      const format = document.querySelector('input[name="jp-format"]:checked').value;
+      const count = parseInt(document.getElementById('jp-count-select').value, 10);
+
+      let givenPool = [];
+      if (gender === 'male') {
+        givenPool = [...JapaneseNamesData.male];
+      } else if (gender === 'female') {
+        givenPool = [...JapaneseNamesData.female];
+      } else {
+        givenPool = [...JapaneseNamesData.male, ...JapaneseNamesData.female];
+      }
+
+      currentJpNames = [];
+      for (let i = 0; i < count; i++) {
+        const given = PRNG.pickOne(givenPool);
+        if (format === 'full') {
+          const surname = PRNG.pickOne(JapaneseNamesData.surnames);
+          currentJpNames.push({
+            kanji: `${surname.kanji} ${given.kanji}`,
+            romaji: `${surname.romaji} ${given.romaji}`,
+            meaning: `${given.meaning} (Family: ${surname.meaning})`
+          });
+        } else {
+          currentJpNames.push({
+            kanji: given.kanji,
+            romaji: given.romaji,
+            meaning: given.meaning
+          });
+        }
+      }
+
+      renderResults();
+    }
+
+    function renderResults() {
+      const grid = document.getElementById('jp-results-grid');
+      const badge = document.getElementById('jp-results-count-badge');
+      const copyAllBtn = document.getElementById('jp-copy-all-btn');
+
+      if (!currentJpNames.length) {
+        grid.innerHTML = '<div class="empty-results"><p>No Japanese names generated yet.</p></div>';
+        badge.textContent = '0 results';
+        copyAllBtn.style.display = 'none';
+        return;
+      }
+
+      badge.textContent = `Generated ${currentJpNames.length} names`;
+      copyAllBtn.style.display = 'inline-flex';
+
+      grid.innerHTML = currentJpNames.map((item) => `
+        <div class="result-item" style="flex-direction: column; align-items: flex-start; gap: 0.25rem;">
+          <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+            <span class="result-text" style="font-size: 1.25rem; font-weight: 700;">${escapeHtml(item.kanji)}</span>
+            <button type="button" class="copy-btn" data-text="${escapeHtml(item.romaji)} (${escapeHtml(item.kanji)})" title="Copy Japanese name" aria-label="Copy ${escapeHtml(item.romaji)}">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+          </div>
+          <span style="font-size: 1rem; color: var(--primary); font-weight: 600;">${escapeHtml(item.romaji)}</span>
+          <span class="result-subtext">${escapeHtml(item.meaning)}</span>
+        </div>
+      `).join('');
+
+      grid.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const text = btn.getAttribute('data-text');
+          Clipboard.copyText(text, `Copied "${text}" to clipboard!`);
+        });
+      });
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>'"]/g, tag => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[tag] || tag));
+    }
+
+    document.getElementById('jp-generate-btn').addEventListener('click', generateJpNames);
+    document.getElementById('jp-copy-all-btn').addEventListener('click', () => {
+      if (currentJpNames.length > 0) {
+        const text = currentJpNames.map(n => `${n.romaji} (${n.kanji}) - ${n.meaning}`).join('\n');
+        Clipboard.copyText(text, `Copied all ${currentJpNames.length} Japanese names to clipboard!`);
+      }
+    });
+
+    generateJpNames();
+  </script>
+  <script src="/assets/js/core/ui.js"></script>
+</body>
+</html>
