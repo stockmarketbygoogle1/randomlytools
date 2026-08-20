@@ -1,4 +1,5 @@
 import path from 'path';
+import fs from 'fs';
 import { defineConfig } from 'vite';
 
 export default defineConfig(() => {
@@ -25,11 +26,30 @@ export default defineConfig(() => {
         },
       },
     },
+
+    plugins: [
+      {
+        name: 'copy-seo-files',
+        closeBundle() {
+          fs.copyFileSync(
+            path.resolve(__dirname, 'robots.txt'),
+            path.resolve(__dirname, 'dist/robots.txt')
+          );
+
+          fs.copyFileSync(
+            path.resolve(__dirname, 'sitemap.xml'),
+            path.resolve(__dirname, 'dist/sitemap.xml')
+          );
+        },
+      },
+    ],
+
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
       },
     },
+
     server: {
       port: 3000,
       host: '0.0.0.0',
