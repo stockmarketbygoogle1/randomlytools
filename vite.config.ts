@@ -11,6 +11,7 @@ export default defineConfig({
         main: path.resolve(__dirname, 'index.html'),
         randomNameGenerator: path.resolve(__dirname, 'random-name-generator/index.html'),
         randomNumberPicker: path.resolve(__dirname, 'random-number-picker/index.html'),
+        randomTeamGenerator: path.resolve(__dirname, 'random-team-generator/index.html'),
         randomDogNameGenerator: path.resolve(__dirname, 'random-dog-name-generator/index.html'),
         randomDiscordNameGenerator: path.resolve(__dirname, 'random-discord-name-generator/index.html'),
         randomShopNameGenerator: path.resolve(__dirname, 'random-shop-name-generator/index.html'),
