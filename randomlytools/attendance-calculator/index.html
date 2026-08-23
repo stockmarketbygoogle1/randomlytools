@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Calculator – 75% Attendance & Percentage Calculator | RandomlyTools</title>
+  <meta name="description" content="Free attendance calculator to calculate attendance percentage, check 75% attendance, find classes you can miss, and calculate classes needed to reach your target.">
+  <link rel="canonical" href="https://randomlytools.in/attendance-calculator/">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <meta property="og:title" content="Attendance Calculator – 75% Attendance & Percentage Calculator | RandomlyTools">
+  <meta property="og:description" content="Calculate attendance percentage, check 75% attendance, find classes you can miss, and calculate classes needed to reach your target.">
+  <meta property="og:url" content="https://randomlytools.in/attendance-calculator/">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebApplication",
+        "name":"Attendance Calculator",
+        "url":"https://randomlytools.in/attendance-calculator/",
+        "applicationCategory":"UtilitiesApplication",
+        "operatingSystem":"All",
+        "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+        "description":"Free online attendance calculator for attendance percentage, 75% attendance, classes to attend, and classes that can be missed."
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://randomlytools.in/"},
+          {"@type":"ListItem","position":2,"name":"Attendance Calculator","item":"https://randomlytools.in/attendance-calculator/"}
+        ]
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {"@type":"Question","name":"How to calculate attendance percentage?","acceptedAnswer":{"@type":"Answer","text":"Attendance percentage is calculated by dividing classes attended by total classes and multiplying by 100. For example, attending 75 out of 100 classes gives 75% attendance."}},
+          {"@type":"Question","name":"How many classes can I miss to maintain 75% attendance?","acceptedAnswer":{"@type":"Answer","text":"Enter your total classes and attended classes in the calculator. It calculates the maximum additional classes you can miss while staying at or above your 75% target."}},
+          {"@type":"Question","name":"How many classes do I need to attend to reach 75% attendance?","acceptedAnswer":{"@type":"Answer","text":"Enter your current attendance and select a 75% target. The calculator determines how many consecutive classes you need to attend to reach the target."}},
+          {"@type":"Question","name":"What is a 75 attendance calculator?","acceptedAnswer":{"@type":"Answer","text":"A 75 attendance calculator helps students check their current attendance and work out how many classes they can miss or need to attend to maintain or reach 75% attendance."}},
+          {"@type":"Question","name":"How does an attendance percentage calculator work?","acceptedAnswer":{"@type":"Answer","text":"It uses classes attended and total classes to calculate attendance percentage, then compares the result with your selected target attendance."}}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    .attendance-calculator-card{max-width:720px;margin:0 auto;background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow-sm)}
+    .attendance-fields{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .attendance-targets{display:flex;flex-wrap:wrap;gap:.5rem;margin:.75rem 0 1.25rem}
+    .attendance-target{border:1px solid var(--border-color);background:var(--bg-surface-subtle);color:var(--text-secondary);border-radius:999px;padding:.5rem .8rem;cursor:pointer;font-weight:600}
+    .attendance-target.active,.attendance-target:hover{border-color:var(--primary);color:var(--text-primary)}
+    .attendance-result{margin-top:1.25rem;padding:1.25rem;border:1px solid var(--border-color);border-radius:var(--radius-md);background:var(--bg-surface-subtle)}
+    .attendance-result-main{text-align:center;margin-bottom:1rem}.attendance-percent{font-size:2.4rem;font-weight:800;color:var(--text-primary)}
+    .attendance-status{font-weight:700;margin-top:.25rem}.attendance-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+    .attendance-stat{padding:.8rem;border:1px solid var(--border-color);border-radius:var(--radius-sm);background:var(--bg-surface)}.attendance-stat-label{display:block;font-size:.78rem;color:var(--text-muted);margin-bottom:.2rem}.attendance-stat-value{font-weight:700;color:var(--text-primary)}
+    .attendance-error{color:var(--accent-red);font-size:.9rem;margin-top:.75rem;display:none}
+    .attendance-note{font-size:.85rem;color:var(--text-muted);margin-top:1rem}
+    @media(max-width:600px){.attendance-fields,.attendance-stats{grid-template-columns:1fr}.attendance-calculator-card{padding:1rem}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a>
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <nav class="nav-links">
+        <a href="/">All Tools</a><a href="/random-name-generator/">Names</a><a href="/random-number-picker/">Numbers</a><a href="/random-discord-name-generator/">Usernames</a><a href="/random-company-brand-name-generator/">Brands</a><a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-intro">
+    <div class="breadcrumbs"><a href="/">Home</a> <span>/</span> <span>Attendance Calculator</span></div>
+    <div class="tool-header" style="text-align:center;max-width:800px;margin:0 auto 2rem;">
+      <h1>Attendance Calculator</h1>
+      <p class="section-subtitle">Calculate your attendance percentage, check 75% attendance, find how many classes you can miss, and see how many classes you need to attend to reach your target.</p>
+    </div>
+
+    <div class="attendance-calculator-card">
+      <div class="attendance-fields">
+        <div class="form-group"><label class="form-label" for="attended">Classes Attended</label><input class="form-control" id="attended" type="number" min="0" step="1" placeholder="e.g. 60"></div>
+        <div class="form-group"><label class="form-label" for="total">Total Classes</label><input class="form-control" id="total" type="number" min="1" step="1" placeholder="e.g. 80"></div>
+      </div>
+
+      <div class="form-group" style="margin-top:1rem;">
+        <label class="form-label">Required Attendance</label>
+        <div class="attendance-targets" role="group" aria-label="Required attendance">
+          <button type="button" class="attendance-target" data-target="60">60%</button>
+          <button type="button" class="attendance-target" data-target="65">65%</button>
+          <button type="button" class="attendance-target" data-target="70">70%</button>
+          <button type="button" class="attendance-target active" data-target="75">75%</button>
+          <button type="button" class="attendance-target" data-target="80">80%</button>
+          <button type="button" class="attendance-target" data-target="85">85%</button>
+          <button type="button" class="attendance-target" data-target="90">90%</button>
+        </div>
+        <input class="form-control" id="target" type="number" min="1" max="100" step="0.1" value="75" aria-label="Custom target attendance percentage">
+      </div>
+
+      <button type="button" id="calculate" class="btn btn-primary" style="width:100%;margin-top:.5rem;">Calculate Attendance</button>
+      <div id="error" class="attendance-error" role="alert"></div>
+
+      <div id="result" class="attendance-result" hidden>
+        <div class="attendance-result-main"><div class="attendance-percent" id="percentage">0%</div><div class="attendance-status" id="status"></div></div>
+        <div class="attendance-stats">
+          <div class="attendance-stat"><span class="attendance-stat-label">Target Attendance</span><span class="attendance-stat-value" id="targetOut">75%</span></div>
+          <div class="attendance-stat"><span class="attendance-stat-label">Classes Attended</span><span class="attendance-stat-value" id="attendedOut">0</span></div>
+          <div class="attendance-stat"><span class="attendance-stat-label">Total Classes</span><span class="attendance-stat-value" id="totalOut">0</span></div>
+          <div class="attendance-stat"><span class="attendance-stat-label" id="actionLabel">Can Miss</span><span class="attendance-stat-value" id="actionValue">0</span></div>
+        </div>
+        <p class="attendance-note" id="message"></p>
+      </div>
+    </div>
+
+    <div class="ad-slot-container"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-box">Ad Space Available</div></div>
+
+    <article class="article-content" style="max-width:800px;margin:2rem auto;">
+      <h2>How to Calculate Attendance Percentage</h2>
+      <p>Attendance percentage is calculated by dividing the number of classes you attended by the total number of classes and multiplying the result by 100.</p>
+      <p><strong>Attendance Percentage = (Classes Attended ÷ Total Classes) × 100</strong></p>
+      <p>For example, if you attended 75 out of 100 classes, your attendance is 75%.</p>
+
+      <h2>75% Attendance Calculator</h2>
+      <p>A 75 attendance calculator helps you check whether your current attendance is at least 75%. Enter your classes attended and total classes above, select 75%, and the calculator will show whether you are above, at, or below the target.</p>
+      <p>If your attendance is below the target, the calculator also estimates how many consecutive classes you need to attend to reach it. If you are above the target, it calculates how many classes you can miss while remaining at or above the selected percentage.</p>
+
+      <h2>Attendance Percentage Calculator</h2>
+      <p>This online attendance calculator works with any target percentage from 1% to 100%, so it can be used for different school, college, or university attendance requirements. Always check your institution's own attendance policy because required percentages can vary.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>How to calculate attendance percentage?</h3>
+      <p>Divide classes attended by total classes and multiply by 100. For example, 60 attended classes out of 80 total classes gives 75% attendance.</p>
+      <h3>How many classes can I miss to maintain 75% attendance?</h3>
+      <p>Enter your current attended and total classes and select 75%. The calculator shows the maximum additional classes you can miss while staying at or above 75%.</p>
+      <h3>How many classes do I need to attend to reach 75% attendance?</h3>
+      <p>If your current attendance is below 75%, the calculator works out the number of consecutive classes you need to attend to reach the target.</p>
+      <h3>What is a 75 attendance calculator?</h3>
+      <p>It is an online tool that checks current attendance against a 75% target and helps calculate classes to attend or classes that can be missed.</p>
+      <h3>How does an attendance percentage calculator work?</h3>
+      <p>It calculates your current percentage from attended and total classes, then compares it with the target attendance you select.</p>
+
+      <h2>Related Tools</h2>
+      <p>Looking for another quick calculator? Explore the <a href="/random-number-picker/">Random Number Picker</a> and other free tools on <a href="/">RandomlyTools</a>.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><p>Simple Random Tools for Everyday Use. Fast, free, and privacy-focused client-side generators.</p></div>
+        <div class="footer-column"><h4>Popular Tools</h4><ul><li><a href="/random-name-generator/">Random Name Generator</a></li><li><a href="/random-number-picker/">Random Number Picker</a></li><li><a href="/random-dog-name-generator/">Dog Name Generator</a></li><li><a href="/random-discord-name-generator/">Discord Name Generator</a></li><li><a href="/random-company-brand-name-generator/">Brand Name Generator</a></li></ul></div>
+        <div class="footer-column"><h4>More Tools</h4><ul><li><a href="/random-shop-name-generator/">Shop Name Generator</a></li><li><a href="/random-restaurant-name-generator/">Restaurant Name Generator</a></li><li><a href="/random-japanese-name-generator/">Japanese Name Generator</a></li><li><a href="/random-instagram-username-generator/">Instagram Generator</a></li><li><a href="/random-coffee-shop-name-generator/">Coffee Shop Names</a></li><li><a href="/random-team-generator/">Random Team Generator</a></li><li><a href="/attendance-calculator/">Attendance Calculator</a></li></ul></div>
+        <div class="footer-column"><h4>Trust & Legal</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Service</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 RandomlyTools. All rights reserved. Free utilities for personal and commercial inspiration.</p><p>Built for speed and user privacy.</p></div>
+    </div>
+  </footer>
+  <script src="/assets/js/core/ui.js"></script>
+  <script>
+    (() => {
+      const attendedEl=document.getElementById('attended');
+      const totalEl=document.getElementById('total');
+      const targetEl=document.getElementById('target');
+      const result=document.getElementById('result');
+      const error=document.getElementById('error');
+      const fmt=n=>Number.isInteger(n)?String(n):n.toFixed(2).replace(/0+$/,'').replace(/\.$/,'');
+      document.querySelectorAll('.attendance-target').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.attendance-target').forEach(x=>x.classList.remove('active'));btn.classList.add('active');targetEl.value=btn.dataset.target;}));
+      function calculate(){
+        const attended=Number(attendedEl.value), total=Number(totalEl.value), target=Number(targetEl.value);
+        error.style.display='none'; error.textContent='';
+        if(!Number.isFinite(attended)||!Number.isFinite(total)||!Number.isFinite(target)||total<1||attended<0||attended>total||target<=0||target>100){error.textContent='Please enter valid values. Classes attended cannot be greater than total classes, and target must be between 1% and 100%.';error.style.display='block';result.hidden=true;return;}
+        const pct=attended/total*100;
+        let label,value,message,status;
+        if(pct>=target){
+          // Largest integer x such that attended/(total+x) >= target/100.
+          const canMiss=Math.floor(attended*100/target-total+1e-10);
+          label='Can Miss'; value=Math.max(0,canMiss);
+          status=pct>target?'Above Your Target':'At Your Target';
+          message=value===0?`You cannot miss another class if you want to stay at or above ${fmt(target)}%.`:`You can miss ${value} more ${value===1?'class':'classes'} and remain at or above ${fmt(target)}%.`;
+        }else{
+          // Smallest integer x such that (attended+x)/(total+x) >= target/100.
+          const needed=Math.ceil((target*total/100-attended)/(1-target/100)-1e-10);
+          label='Need to Attend'; value=Math.max(0,needed);
+          status='Below Your Target';
+          message=`You need to attend ${value} consecutive ${value===1?'class':'classes'} to reach ${fmt(target)}% attendance.`;
+        }
+        document.getElementById('percentage').textContent=fmt(pct)+'%';
+        document.getElementById('status').textContent=status;
+        document.getElementById('targetOut').textContent=fmt(target)+'%';
+        document.getElementById('attendedOut').textContent=fmt(attended);
+        document.getElementById('totalOut').textContent=fmt(total);
+        document.getElementById('actionLabel').textContent=label;
+        document.getElementById('actionValue').textContent=fmt(value);
+        document.getElementById('message').textContent=message;
+        result.hidden=false;
+      }
+      document.getElementById('calculate').addEventListener('click',calculate);
+      [attendedEl,totalEl,targetEl].forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter')calculate();}));
+    })();
+  </script>
+</body>
+</html>
