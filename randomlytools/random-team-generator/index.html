@@ -1,0 +1,532 @@
+cat /home/claude/team-tool/random-team-generator/index.html
+Output
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Team Generator – Create Random Teams Free</title>
+  <meta name="description" content="Randomly split names into fair teams with our free Random Team Generator. Choose the number of teams, shuffle participants, and copy your results instantly. No signup required.">
+  <link rel="canonical" href="https://randomlytools.in/random-team-generator/">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <meta property="og:title" content="Random Team Generator – Create Random Teams Free">
+  <meta property="og:description" content="Randomly split names into fair teams. Choose the number of teams, shuffle participants, and copy your results instantly. Free & client-side.">
+  <meta property="og:url" content="https://randomlytools.in/random-team-generator/">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Random Team Generator",
+        "url": "https://randomlytools.in/random-team-generator/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A free online random team generator that splits a list of names into fair, randomly shuffled teams or groups with no signup required."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://randomlytools.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Random Team Generator",
+            "item": "https://randomlytools.in/random-team-generator/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="brand">
+        <span class="brand-icon">R</span>
+        <span class="brand-text">Randomly<span>Tools</span></span>
+      </a>
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <nav class="nav-links">
+        <a href="/">All Tools</a>
+        <a href="/random-name-generator/">Names</a>
+        <a href="/random-number-picker/">Numbers</a>
+        <a href="/random-discord-name-generator/">Usernames</a>
+        <a href="/random-company-brand-name-generator/">Brands</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-intro">
+    <div class="breadcrumbs">
+      <a href="/">Home</a> <span>/</span> <span>Random Team Generator</span>
+    </div>
+
+    <div class="tool-header" style="margin-bottom: 1.5rem;">
+      <h1>Random Team Generator</h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 720px;">
+        Paste a list of names and instantly split them into fair, randomly shuffled teams — free, private, and no signup required.
+      </p>
+    </div>
+
+    <!-- AdSense Compliant Placeholder -->
+    <div class="ad-slot-container">
+      <div class="ad-slot-label">Advertisement</div>
+      <div class="ad-slot-box">Ad Space Available</div>
+    </div>
+
+    <!-- Tool Workspace -->
+    <section class="tool-workspace" aria-labelledby="tool-heading">
+      <h2 id="tool-heading" class="sr-only" style="display: none;">Team Generator Controls</h2>
+
+      <form id="team-form" onsubmit="return false;">
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label for="names-input">Participant Names</label>
+          <textarea
+            id="names-input"
+            class="form-control"
+            placeholder="Enter one name per line&#10;&#10;Aayush&#10;Rahul&#10;Aman&#10;Rohit"
+            aria-describedby="participant-count"
+          ></textarea>
+          <span id="participant-count" class="field-message">Participants: 0</span>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 0.5rem;">
+          <label id="team-count-label">Number of Teams</label>
+          <div class="radio-pill-group" role="radiogroup" aria-labelledby="team-count-label">
+            <label class="radio-pill">
+              <input type="radio" name="team-count" value="2" checked>
+              <span>2</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="team-count" value="3">
+              <span>3</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="team-count" value="4">
+              <span>4</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="team-count" value="5">
+              <span>5</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="team-count" value="6">
+              <span>6</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="team-count" value="7">
+              <span>7</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="team-count" value="8">
+              <span>8</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="team-count" value="9">
+              <span>9</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="team-count" value="10">
+              <span>10</span>
+            </label>
+          </div>
+        </div>
+
+        <p id="form-status" class="field-message" role="status" aria-live="polite" style="min-height: 1.2em; margin-top: 0.75rem;"></p>
+
+        <div class="actions-row">
+          <button type="button" id="generate-btn" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 2.1l4 4-4 4"/><path d="M3 12.6v-2a4 4 0 0 1 4-4h14"/><path d="M7 21.9l-4-4 4-4"/><path d="M21 11.4v2a4 4 0 0 1-4 4H3"/></svg>
+            Generate Teams
+          </button>
+          <button type="button" id="reshuffle-btn" class="btn btn-secondary" style="display: none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+            Reshuffle Teams
+          </button>
+          <button type="button" id="copy-all-btn" class="btn btn-secondary" style="display: none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy Results
+          </button>
+          <button type="button" id="clear-btn" class="btn btn-outline">
+            Clear
+          </button>
+        </div>
+      </form>
+
+      <!-- Results Container -->
+      <div id="results-wrapper" class="results-container">
+        <div id="empty-state" class="empty-results">
+          <div class="empty-icon">🎲</div>
+          <p>Enter names above and click <strong>Generate Teams</strong> to see your randomly split teams here.</p>
+        </div>
+        <div id="teams-results-header" class="results-header" style="display: none;">
+          <span id="teams-count-badge" class="results-count">Results</span>
+        </div>
+        <div id="teams-results-grid" class="teams-results-grid" style="display: none;">
+          <!-- Team cards rendered here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO & Informational Content -->
+    <section class="content-section">
+      <article class="article-content">
+        <h2>How to Use the Random Team Generator</h2>
+        <ol>
+          <li><strong>Add Your Participants:</strong> Paste or type one name per line into the text box. The participant counter updates live as you type, and blank lines are ignored automatically.</li>
+          <li><strong>Choose the Number of Teams:</strong> Pick anywhere from 2 to 10 teams using the quick-select pills.</li>
+          <li><strong>Click Generate Teams:</strong> The tool instantly shuffles your list and splits everyone into evenly sized, randomly assigned teams.</li>
+          <li><strong>Reshuffle or Copy:</strong> Not happy with the mix? Hit <em>Reshuffle Teams</em> for a fresh random split without re-typing names, or use <em>Copy Results</em> to grab a clean, ready-to-share list.</li>
+        </ol>
+
+        <h2>How Does the Random Team Generator Work?</h2>
+        <p>
+          This random team maker uses a proper Fisher-Yates shuffle (powered by your browser's cryptographic random number generator where available) to randomize your participant list, then distributes names evenly across the number of teams you choose. If the group doesn't divide evenly — say, 10 people into 3 teams — the extra participants are spread out fairly, so no team ever has more than one extra member than another. Every name is guaranteed a spot; nobody is left out.
+        </p>
+
+        <h2>Random Team Generator Features</h2>
+        <ul>
+          <li><strong>Fair, Even Distribution:</strong> Team sizes never differ by more than one member.</li>
+          <li><strong>Live Participant Counter:</strong> See exactly how many names you've entered as you type.</li>
+          <li><strong>2 to 10 Teams:</strong> Flexible group sizing for any activity, from a two-team match to a ten-group tournament.</li>
+          <li><strong>Instant Reshuffle:</strong> Generate a new random split of the same list with one click.</li>
+          <li><strong>One-Click Copy:</strong> Copy a clean, readable list of every team straight to your clipboard.</li>
+          <li><strong>100% Client-Side:</strong> Names are processed entirely in your browser — nothing is ever sent to a server.</li>
+        </ul>
+
+        <h2>When to Use a Random Team Generator</h2>
+        <p>
+          Anytime you need to split a group into smaller teams without bias, a random group generator saves time and keeps things fair. It removes the awkwardness of manual picking and the perception of favoritism that can come from choosing teams by hand.
+        </p>
+
+        <h2>Random Team Generator for Sports</h2>
+        <p>
+          Coaches and casual players can use this team randomizer to quickly form balanced squads for practice matches, pickup games, or intramural tournaments — just paste your player list and generate as many teams as you need.
+        </p>
+
+        <h2>Random Team Generator for Classrooms</h2>
+        <p>
+          Teachers can use it to randomly divide students into project groups, discussion teams, or classroom activities in seconds, helping students work with different classmates throughout the term instead of the same friend groups every time.
+        </p>
+
+        <h2>Random Team Generator for Work and Events</h2>
+        <p>
+          For office icebreakers, team-building exercises, workshop breakout groups, or Secret Santa-style draws, this tool gives you an instant, unbiased way to split colleagues or event attendees into random groups — no spreadsheet required.
+        </p>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>What is a random team generator?</summary>
+            <div class="faq-answer">
+              <p>A random team generator is a free online tool that takes a list of names and randomly splits them into a set number of teams or groups, so nobody has to manually pick sides.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>How does the random team generator divide people?</summary>
+            <div class="faq-answer">
+              <p>It shuffles your full list of names using a Fisher-Yates algorithm, then distributes the shuffled names evenly across your chosen number of teams. If the group doesn't divide evenly, the leftover members are spread out so team sizes never differ by more than one.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Can I create teams from a list of names?</summary>
+            <div class="faq-answer">
+              <p>Yes. Paste or type one name per line into the text box, choose your number of teams, and click Generate Teams.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Can I create uneven numbers of teams?</summary>
+            <div class="faq-answer">
+              <p>You can choose any number of teams from 2 to 10. If your participant count doesn't divide evenly by that number, the tool automatically balances team sizes so the difference is never more than one person.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Is the team generator free?</summary>
+            <div class="faq-answer">
+              <p>Yes, it's completely free with no signup, no limits, and no data sent to any server — everything runs locally in your browser.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Can I reshuffle the teams?</summary>
+            <div class="faq-answer">
+              <p>Yes. After generating teams, click Reshuffle Teams to get a fresh random arrangement of the same participant list without re-entering any names.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Can I use this for sports teams?</summary>
+            <div class="faq-answer">
+              <p>Absolutely. It works well for pickup games, practice squads, and tournament brackets where you need a fast, unbiased way to split players.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Can I use this for classrooms?</summary>
+            <div class="faq-answer">
+              <p>Yes, teachers commonly use it to randomly assign students to project groups or classroom activities.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Can I copy the generated teams?</summary>
+            <div class="faq-answer">
+              <p>Yes. Click Copy Results after generating teams to copy a clean, readable list of every team and its members to your clipboard.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+    </section>
+
+    <!-- Related Tools Section -->
+    <section class="related-tools-section">
+      <div class="container" style="padding-left: 0; padding-right: 0;">
+        <h2 style="margin-top: 0; font-size: 1.25rem;">Related Random Tools</h2>
+        <div class="tools-grid" style="margin-top: 1rem; margin-bottom: 0;">
+          <div class="tool-card">
+            <div class="tool-card-icon">🎲</div>
+            <h3 class="tool-card-title"><a href="/random-number-picker/">Random Number Picker</a></h3>
+            <p class="tool-card-desc">Pick random numbers within a custom range with repeat/no-repeat mode.</p>
+            <span class="tool-card-badge">Numbers</span>
+          </div>
+          <div class="tool-card">
+            <div class="tool-card-icon">👤</div>
+            <h3 class="tool-card-title"><a href="/random-name-generator/">Random Name Generator</a></h3>
+            <p class="tool-card-desc">Generate realistic male, female, and full human names.</p>
+            <span class="tool-card-badge">Names</span>
+          </div>
+          <div class="tool-card">
+            <div class="tool-card-icon">🎮</div>
+            <h3 class="tool-card-title"><a href="/random-discord-name-generator/">Discord Name Generator</a></h3>
+            <p class="tool-card-desc">Create aesthetic, gaming, and anime username ideas for Discord.</p>
+            <span class="tool-card-badge">Usernames</span>
+          </div>
+          <div class="tool-card">
+            <div class="tool-card-icon">📸</div>
+            <h3 class="tool-card-title"><a href="/random-instagram-username-generator/">Instagram Username Generator</a></h3>
+            <p class="tool-card-desc">Generate aesthetic, minimal Instagram handle ideas.</p>
+            <span class="tool-card-badge">Usernames</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand">
+            <span class="brand-icon">R</span>
+            <span class="brand-text">Randomly<span>Tools</span></span>
+          </a>
+          <p>Simple Random Tools for Everyday Use. Fast, free, and privacy-focused client-side generators.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Popular Tools</h4>
+          <ul>
+            <li><a href="/random-name-generator/">Random Name Generator</a></li>
+            <li><a href="/random-number-picker/">Random Number Picker</a></li>
+            <li><a href="/random-dog-name-generator/">Dog Name Generator</a></li>
+            <li><a href="/random-discord-name-generator/">Discord Name Generator</a></li>
+            <li><a href="/random-company-brand-name-generator/">Brand Name Generator</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>More Tools</h4>
+          <ul>
+            <li><a href="/random-team-generator/">Team Generator</a></li>
+            <li><a href="/random-shop-name-generator/">Shop Name Generator</a></li>
+            <li><a href="/random-restaurant-name-generator/">Restaurant Name Generator</a></li>
+            <li><a href="/random-japanese-name-generator/">Japanese Name Generator</a></li>
+            <li><a href="/random-instagram-username-generator/">Instagram Generator</a></li>
+            <li><a href="/random-coffee-shop-name-generator/">Coffee Shop Names</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Trust & Legal</h4>
+          <ul>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/disclaimer/">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RandomlyTools. All rights reserved. Free utilities for personal and commercial inspiration.</p>
+        <p>Built for speed and user privacy.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { PRNG } from '/assets/js/core/prng.js';
+    import { Clipboard } from '/assets/js/core/clipboard.js';
+
+    const namesInput = document.getElementById('names-input');
+    const participantCountEl = document.getElementById('participant-count');
+    const formStatus = document.getElementById('form-status');
+
+    const generateBtn = document.getElementById('generate-btn');
+    const reshuffleBtn = document.getElementById('reshuffle-btn');
+    const copyAllBtn = document.getElementById('copy-all-btn');
+    const clearBtn = document.getElementById('clear-btn');
+
+    const emptyState = document.getElementById('empty-state');
+    const teamsResultsHeader = document.getElementById('teams-results-header');
+    const teamsCountBadge = document.getElementById('teams-count-badge');
+    const teamsResultsGrid = document.getElementById('teams-results-grid');
+
+    let currentNames = [];
+    let currentTeams = [];
+
+    function parseNames(rawText) {
+      return rawText
+        .split('\n')
+        .map(line => line.trim())
+        .filter(line => line.length > 0);
+    }
+
+    function getTeamCount() {
+      const checked = document.querySelector('input[name="team-count"]:checked');
+      return checked ? parseInt(checked.value, 10) : 2;
+    }
+
+    function updateParticipantCount() {
+      const count = parseNames(namesInput.value).length;
+      participantCountEl.textContent = `Participants: ${count}`;
+      return count;
+    }
+
+    function setStatus(message, isError) {
+      formStatus.textContent = message || '';
+      formStatus.classList.toggle('field-error', Boolean(isError));
+    }
+
+    function distributeIntoTeams(names, teamCount) {
+      const shuffled = PRNG.sample(names, names.length, false);
+      const teams = Array.from({ length: teamCount }, () => []);
+      shuffled.forEach((name, i) => {
+        teams[i % teamCount].push(name);
+      });
+      return teams;
+    }
+
+    function renderTeams(teams) {
+      teamsResultsGrid.innerHTML = teams.map((team, index) => `
+        <div class="team-card">
+          <div class="team-card-header">
+            <h3>Team ${index + 1}</h3>
+            <span class="team-card-count">${team.length} member${team.length === 1 ? '' : 's'}</span>
+          </div>
+          <ul class="team-member-list">
+            ${team.map(name => `<li>${escapeHTML(name)}</li>`).join('')}
+          </ul>
+        </div>
+      `).join('');
+
+      teamsCountBadge.textContent = `${teams.length} teams · ${teams.reduce((sum, t) => sum + t.length, 0)} participants`;
+
+      emptyState.style.display = 'none';
+      teamsResultsHeader.style.display = 'flex';
+      teamsResultsGrid.style.display = 'grid';
+
+      reshuffleBtn.style.display = 'inline-flex';
+      copyAllBtn.style.display = 'inline-flex';
+    }
+
+    function escapeHTML(str) {
+      return str.replace(/[&<>'"]/g, tag => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+      }[tag] || tag));
+    }
+
+    function generateTeams() {
+      const names = parseNames(namesInput.value);
+      const teamCount = getTeamCount();
+
+      if (names.length === 0) {
+        setStatus('Please enter at least one name to generate teams.', true);
+        return;
+      }
+
+      if (names.length < teamCount) {
+        setStatus(`You need at least ${teamCount} participants to create ${teamCount} teams.`, true);
+        return;
+      }
+
+      setStatus('', false);
+      currentNames = names;
+      currentTeams = distributeIntoTeams(currentNames, teamCount);
+      renderTeams(currentTeams);
+    }
+
+    function reshuffleTeams() {
+      if (currentNames.length === 0) return;
+      const teamCount = getTeamCount();
+
+      if (currentNames.length < teamCount) {
+        setStatus(`You need at least ${teamCount} participants to create ${teamCount} teams.`, true);
+        return;
+      }
+
+      setStatus('', false);
+      currentTeams = distributeIntoTeams(currentNames, teamCount);
+      renderTeams(currentTeams);
+    }
+
+    function copyResults() {
+      if (currentTeams.length === 0) return;
+      const text = currentTeams
+        .map((team, index) => `Team ${index + 1}\n${team.join('\n')}`)
+        .join('\n\n');
+      Clipboard.copyText(text, 'Copied teams to clipboard!');
+    }
+
+    function clearAll() {
+      namesInput.value = '';
+      currentNames = [];
+      currentTeams = [];
+      updateParticipantCount();
+      setStatus('', false);
+
+      emptyState.style.display = 'block';
+      teamsResultsHeader.style.display = 'none';
+      teamsResultsGrid.style.display = 'none';
+      teamsResultsGrid.innerHTML = '';
+
+      reshuffleBtn.style.display = 'none';
+      copyAllBtn.style.display = 'none';
+      namesInput.focus();
+    }
+
+    // Event Listeners
+    namesInput.addEventListener('input', updateParticipantCount);
+    generateBtn.addEventListener('click', generateTeams);
+    reshuffleBtn.addEventListener('click', reshuffleTeams);
+    copyAllBtn.addEventListener('click', copyResults);
+    clearBtn.addEventListener('click', clearAll);
+
+    // Initialize
+    updateParticipantCount();
+  </script>
+  <script src="/assets/js/core/ui.js"></script>
+</body>
+</html>
