@@ -1,0 +1,32 @@
+# RandomlyTools
+
+> RandomlyTools is a fast, free, privacy-focused collection of browser-based utility tools. Tools are designed to run client-side and provide simple results without requiring an account.
+
+## Website
+
+- Homepage: https://randomlytools.in/
+- All Tools: https://randomlytools.in/
+
+## Popular Tools
+
+- Random Name Generator: https://randomlytools.in/random-name-generator/ — Generate random names for people, characters, writing, and other creative uses.
+- Random Number Picker: https://randomlytools.in/random-number-picker/ — Pick random numbers within a chosen range.
+- Random Dog Name Generator: https://randomlytools.in/random-dog-name-generator/ — Generate dog name ideas.
+- Random Discord Name Generator: https://randomlytools.in/random-discord-name-generator/ — Generate random Discord username ideas.
+- Random Instagram Username Generator: https://randomlytools.in/random-instagram-username-generator/ — Generate Instagram username ideas.
+- Random Company & Brand Name Generator: https://randomlytools.in/random-company-brand-name-generator/ — Generate company and brand name ideas.
+- Random Shop Name Generator: https://randomlytools.in/random-shop-name-generator/ — Generate shop name ideas.
+- Random Restaurant Name Generator: https://randomlytools.in/random-restaurant-name-generator/ — Generate restaurant name ideas.
+- Random Japanese Name Generator: https://randomlytools.in/random-japanese-name-generator/ — Generate Japanese name ideas.
+- Random Coffee Shop Name Generator: https://randomlytools.in/random-coffee-shop-name-generator/ — Generate coffee shop name ideas.
+- Random Team Generator: https://randomlytools.in/random-team-generator/ — Split a list of names into random teams.
+- Attendance Calculator: https://randomlytools.in/attendance-calculator/ — Calculate attendance percentage, check a 75% attendance target, and determine classes that can be missed or need to be attended.
+
+## Privacy
+
+RandomlyTools is designed around client-side utility generation. Users should review the individual tool page for any tool-specific information about data handling.
+
+## Important
+
+- Generated names, usernames, and brand suggestions are creative ideas and should be independently checked for availability, trademarks, and platform rules before commercial use.
+- Calculator results are mathematical calculations and do not replace institution-specific academic policies.
