@@ -47,6 +47,11 @@ export default defineConfig(() => {
             path.resolve(__dirname, 'llms.txt'),
             path.resolve(__dirname, 'dist/llms.txt')
           );
+
+          fs.copyFileSync(
+            path.resolve(__dirname, 'ads.txt'),
+            path.resolve(__dirname, 'dist/ads.txt')
+          );
         },
       },
     ],
