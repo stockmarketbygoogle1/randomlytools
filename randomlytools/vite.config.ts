@@ -42,6 +42,11 @@ export default defineConfig(() => {
             path.resolve(__dirname, 'sitemap.xml'),
             path.resolve(__dirname, 'dist/sitemap.xml')
           );
+
+          fs.copyFileSync(
+            path.resolve(__dirname, 'llms.txt'),
+            path.resolve(__dirname, 'dist/llms.txt')
+          );
         },
       },
     ],
