@@ -11,6 +11,7 @@ export default defineConfig(() => {
           randomNameGenerator: path.resolve(__dirname, 'random-name-generator/index.html'),
           randomNumberPicker: path.resolve(__dirname, 'random-number-picker/index.html'),
           randomTeamGenerator: path.resolve(__dirname, 'random-team-generator/index.html'),
+          randomCountryGenerator: path.resolve(__dirname, 'random-country-generator/index.html'),
           attendanceCalculator: path.resolve(__dirname, 'attendance-calculator/index.html'),
           randomDogNameGenerator: path.resolve(__dirname, 'random-dog-name-generator/index.html'),
           randomDiscordNameGenerator: path.resolve(__dirname, 'random-discord-name-generator/index.html'),
@@ -33,25 +34,10 @@ export default defineConfig(() => {
       {
         name: 'copy-seo-files',
         closeBundle() {
-          fs.copyFileSync(
-            path.resolve(__dirname, 'robots.txt'),
-            path.resolve(__dirname, 'dist/robots.txt')
-          );
-
-          fs.copyFileSync(
-            path.resolve(__dirname, 'sitemap.xml'),
-            path.resolve(__dirname, 'dist/sitemap.xml')
-          );
-
-          fs.copyFileSync(
-            path.resolve(__dirname, 'llms.txt'),
-            path.resolve(__dirname, 'dist/llms.txt')
-          );
-
-          fs.copyFileSync(
-            path.resolve(__dirname, 'ads.txt'),
-            path.resolve(__dirname, 'dist/ads.txt')
-          );
+          fs.copyFileSync(path.resolve(__dirname, 'robots.txt'), path.resolve(__dirname, 'dist/robots.txt'));
+          fs.copyFileSync(path.resolve(__dirname, 'sitemap.xml'), path.resolve(__dirname, 'dist/sitemap.xml'));
+          fs.copyFileSync(path.resolve(__dirname, 'llms.txt'), path.resolve(__dirname, 'dist/llms.txt'));
+          fs.copyFileSync(path.resolve(__dirname, 'ads.txt'), path.resolve(__dirname, 'dist/ads.txt'));
         },
       },
     ],
