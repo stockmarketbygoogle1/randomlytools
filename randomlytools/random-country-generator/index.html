@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Country Generator – Pick a Random Country Online</title>
+  <meta name="description" content="Use our free random country generator to pick a random country online. Generate random European countries, EU countries, country names and flags with capitals and continents.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://randomlytools.in/random-country-generator/">
+  <style>
+    body{font-family:Arial,sans-serif;max-width:900px;margin:auto;padding:20px;line-height:1.6}.tool{text-align:center;border:1px solid #ddd;border-radius:16px;padding:30px;margin:25px 0}.result{font-size:2rem;font-weight:700;margin:25px}.flag{font-size:4rem}.controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}button,select{padding:12px 16px;border-radius:8px;border:1px solid #bbb;background:#fff;cursor:pointer}button{font-weight:700}.info{background:#f7f7f7;padding:20px;border-radius:12px;margin:20px 0}h1,h2{line-height:1.25}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Random Country Generator</h1>
+    <p>Pick a random country online with our free Random Country Generator. Generate one or multiple countries, explore European and EU countries, and see each country's flag, capital and continent.</p>
+
+    <section class="tool" aria-label="Random country generator tool">
+      <div class="controls">
+        <label>Region:
+          <select id="region"><option value="all">All Countries</option><option value="europe">Europe</option><option value="eu">European Union (EU)</option><option value="asia">Asia</option><option value="africa">Africa</option><option value="north-america">North America</option><option value="south-america">South America</option><option value="oceania">Oceania</option></select>
+        </label>
+        <label>Countries:
+          <select id="count"><option>1</option><option>3</option><option>5</option><option>10</option></select>
+        </label>
+        <label><input type="checkbox" id="noRepeat" checked> No repeats</label>
+        <button id="generate">Generate Random Country</button>
+      </div>
+      <div id="result" class="result">Click Generate to pick a random country.</div>
+      <button id="copy" type="button">Copy Result</button>
+    </section>
+
+    <section>
+      <h2>Random European Country Generator</h2>
+      <p>Use the Europe filter to pick a random European country. You can also select European Union (EU) to generate a random EU member state. Europe and the European Union are different country groups, so they are kept as separate options.</p>
+
+      <h2>Random Country Name and Flag Generator</h2>
+      <p>This random country name generator displays a country's name together with its flag, capital and continent. It can be useful for geography games, quizzes, classroom activities, travel inspiration and learning about countries.</p>
+
+      <h2>How to Use the Random Country Generator</h2>
+      <ol><li>Choose All Countries or a region such as Europe, Asia or the EU.</li><li>Select how many countries you want to generate.</li><li>Keep No Repeats enabled if you want unique countries.</li><li>Click Generate Random Country and view the results.</li></ol>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>What is a random country generator?</h3><p>It is an online tool that randomly selects a country from the available country list.</p>
+      <h3>How do I generate a random European country?</h3><p>Select Europe in the Region menu and click Generate Random Country.</p>
+      <h3>Can I generate a random EU country?</h3><p>Yes. Select European Union (EU) to randomly choose from EU member states.</p>
+      <h3>Can I generate multiple random countries?</h3><p>Yes. You can generate 1, 3, 5 or 10 countries at a time.</p>
+      <h3>Can I generate a random country with its flag?</h3><p>Yes. The result includes the country's flag, name, capital and continent.</p>
+      <h3>Is this random country generator free?</h3><p>Yes. The tool is free to use and runs directly in your browser.</p>
+    </section>
+  </main>
+
+<script>
+const countries=[
+['Afghanistan','🇦🇫','Kabul','Asia','no'],['Albania','🇦🇱','Tirana','Europe','no'],['Algeria','🇩🇿','Algiers','Africa','no'],['Argentina','🇦🇷','Buenos Aires','South America','no'],['Australia','🇦🇺','Canberra','Oceania','no'],['Austria','🇦🇹','Vienna','Europe','eu'],['Belgium','🇧🇪','Brussels','Europe','eu'],['Brazil','🇧🇷','Brasília','South America','no'],['Canada','🇨🇦','Ottawa','North America','no'],['China','🇨🇳','Beijing','Asia','no'],['Colombia','🇨🇴','Bogotá','South America','no'],['Croatia','🇭🇷','Zagreb','Europe','eu'],['Czechia','🇨🇿','Prague','Europe','eu'],['Denmark','🇩🇰','Copenhagen','Europe','eu'],['Egypt','🇪🇬','Cairo','Africa','no'],['Finland','🇫🇮','Helsinki','Europe','eu'],['France','🇫🇷','Paris','Europe','eu'],['Germany','🇩🇪','Berlin','Europe','eu'],['Greece','🇬🇷','Athens','Europe','eu'],['Hungary','🇭🇺','Budapest','Europe','eu'],['Iceland','🇮🇸','Reykjavík','Europe','no'],['India','🇮🇳','New Delhi','Asia','no'],['Indonesia','🇮🇩','Jakarta','Asia','no'],['Ireland','🇮🇪','Dublin','Europe','eu'],['Italy','🇮🇹','Rome','Europe','eu'],['Japan','🇯🇵','Tokyo','Asia','no'],['Kenya','🇰🇪','Nairobi','Africa','no'],['Malaysia','🇲🇾','Kuala Lumpur','Asia','no'],['Mexico','🇲🇽','Mexico City','North America','no'],['Morocco','🇲🇦','Rabat','Africa','no'],['Netherlands','🇳🇱','Amsterdam','Europe','eu'],['New Zealand','🇳🇿','Wellington','Oceania','no'],['Nigeria','🇳🇬','Abuja','Africa','no'],['Norway','🇳🇴','Oslo','Europe','no'],['Pakistan','🇵🇰','Islamabad','Asia','no'],['Peru','🇵🇪','Lima','South America','no'],['Philippines','🇵🇭','Manila','Asia','no'],['Poland','🇵🇱','Warsaw','Europe','eu'],['Portugal','🇵🇹','Lisbon','Europe','eu'],['Romania','🇷🇴','Bucharest','Europe','eu'],['Singapore','🇸🇬','Singapore','Asia','no'],['South Africa','🇿🇦','Pretoria','Africa','no'],['South Korea','🇰🇷','Seoul','Asia','no'],['Spain','🇪🇸','Madrid','Europe','eu'],['Sweden','🇸🇪','Stockholm','Europe','eu'],['Switzerland','🇨🇭','Bern','Europe','no'],['Thailand','🇹🇭','Bangkok','Asia','no'],['Türkiye','🇹🇷','Ankara','Europe','no'],['Ukraine','🇺🇦','Kyiv','Europe','no'],['United Kingdom','🇬🇧','London','Europe','no'],['United States','🇺🇸','Washington, D.C.','North America','no'],['Vietnam','🇻🇳','Hanoi','Asia','no']
+];
+const region=document.getElementById('region'),count=document.getElementById('count'),result=document.getElementById('result');
+function generate(){let r=region.value;let pool=countries.filter(c=>r==='all'||(r==='eu'?c[4]==='eu':c[3].toLowerCase()===r.replace('-',' ')));let n=Number(count.value);if(n>pool.length)n=pool.length;let arr=[];while(arr.length<n){let c=pool[Math.floor(Math.random()*pool.length)];if(!document.getElementById('noRepeat').checked||!arr.includes(c))arr.push(c)}result.innerHTML=arr.map(c=>`<div><span class="flag">${c[1]}</span> <strong>${c[0]}</strong><br><small>Capital: ${c[2]} · Continent: ${c[3]}</small></div>`).join('<hr>')}
+document.getElementById('generate').onclick=generate;document.getElementById('copy').onclick=()=>navigator.clipboard.writeText(result.innerText);
+</script>
+</body>
+</html>
