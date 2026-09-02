@@ -2,6 +2,8 @@ import path from 'path';
 import fs from 'fs';
 import { defineConfig } from 'vite';
 
+const googleAnalyticsId = 'G-8GT6V10ENG';
+
 export default defineConfig(() => {
   return {
     build: {
@@ -31,6 +33,31 @@ export default defineConfig(() => {
     },
 
     plugins: [
+      {
+        name: 'inject-google-analytics',
+        transformIndexHtml() {
+          return {
+            tags: [
+              {
+                tag: 'script',
+                attrs: {
+                  async: true,
+                  src: `https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`,
+                },
+                injectTo: 'head',
+              },
+              {
+                tag: 'script',
+                children: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${googleAnalyticsId}');`,
+                injectTo: 'head',
+              },
+            ],
+          };
+        },
+      },
       {
         name: 'copy-seo-files',
         closeBundle() {
