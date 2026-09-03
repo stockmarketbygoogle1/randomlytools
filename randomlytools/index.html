@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://randomlytools.in/">
   <link rel="stylesheet" href="/assets/css/style.css">
   <meta property="og:title" content="RandomlyTools – Free Online Random Generators & Pickers">
-  <meta property="og:description" content="Discover free, instant client-side random generators for names, numbers, usernames, countries, shops, restaurants, and brand ideas.">
+  <meta property="og:description" content="Discover free, instant client-side random generators for names, numbers, usernames, countries, shops, restaurants, recipes, and brand ideas.">
   <meta property="og:url" content="https://randomlytools.in/">
   <meta property="og:type" content="website">
   <script type="application/ld+json">
@@ -43,7 +43,8 @@
           {"@type":"ListItem","position":10,"name":"Random Company & Brand Name Generator","url":"https://randomlytools.in/random-company-brand-name-generator/"},
           {"@type":"ListItem","position":11,"name":"Random Team Generator","url":"https://randomlytools.in/random-team-generator/"},
           {"@type":"ListItem","position":12,"name":"Attendance Calculator","url":"https://randomlytools.in/attendance-calculator/"},
-          {"@type":"ListItem","position":13,"name":"Random Country Generator","url":"https://randomlytools.in/random-country-generator/"}
+          {"@type":"ListItem","position":13,"name":"Random Country Generator","url":"https://randomlytools.in/random-country-generator/"},
+          {"@type":"ListItem","position":14,"name":"Recipe Finder by Ingredients","url":"https://randomlytools.in/recipe-finder-by-ingredients/"}
         ]
       }
     ]
@@ -70,15 +71,15 @@
   <main class="container page-intro">
     <div class="tool-header" style="margin-bottom: 2rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
       <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.03em;">Simple Random Tools for Everyday Use</h1>
-      <p style="font-size: 1.15rem; color: var(--text-muted); margin-top: 0.5rem;">Fast, free, and privacy-focused random generators. Generate names, numbers, usernames, and creative business ideas with zero lag.</p>
+      <p style="font-size: 1.15rem; color: var(--text-muted); margin-top: 0.5rem;">Fast, free, and privacy-focused random generators. Generate names, numbers, usernames, recipes, and creative business ideas with zero lag.</p>
     </div>
     <div style="max-width: 720px; margin: 0 auto 2rem auto;">
       <div style="position: relative; margin-bottom: 1rem;">
-        <input type="text" id="tool-search-input" class="form-control" placeholder="Search random tools (e.g. names, numbers, discord, country, shop)..." style="padding-left: 2.75rem; height: 3rem; font-size: 1.05rem; box-shadow: var(--shadow-sm);">
+        <input type="text" id="tool-search-input" class="form-control" placeholder="Search random tools (e.g. names, numbers, discord, country, recipe)..." style="padding-left: 2.75rem; height: 3rem; font-size: 1.05rem; box-shadow: var(--shadow-sm);">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="position: absolute; left: 1rem; top: 0.85rem; color: var(--text-muted); pointer-events: none;"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
       </div>
       <div class="presets-bar" style="justify-content: center; margin-bottom: 0;">
-        <button type="button" class="preset-chip active category-filter-btn" data-category="all">All Tools (13)</button>
+        <button type="button" class="preset-chip active category-filter-btn" data-category="all">All Tools (14)</button>
         <button type="button" class="preset-chip category-filter-btn" data-category="names">Names & People</button>
         <button type="button" class="preset-chip category-filter-btn" data-category="numbers">Numbers & Math</button>
         <button type="button" class="preset-chip category-filter-btn" data-category="social">Gaming & Social</button>
@@ -130,6 +131,9 @@
         <div class="tool-card" data-category="geography" data-keywords="random country generator random country name generator random european country generator random country generator europe random europe country generator random eu country generator random country flag generator countries geography world country name">
           <div class="tool-card-icon">🌍</div><h2 class="tool-card-title"><a href="/random-country-generator/">Random Country Generator</a></h2><p class="tool-card-desc">Generate a random country from around the world for games, geography practice, travel inspiration, quizzes, and creative projects.</p><span class="tool-card-badge">Countries & Geography</span>
         </div>
+        <div class="tool-card" data-category="business" data-keywords="recipe finder recipe generator recipes from ingredients recipes by ingredients recipe finder by ingredients recipe maker ingredients i have what can i make with these ingredients dinner ideas easy recipes cooking food meals vegetarian non vegetarian meal planner">
+          <div class="tool-card-icon">🍳</div><h2 class="tool-card-title"><a href="/recipe-finder-by-ingredients/">Recipe Finder by Ingredients</a></h2><p class="tool-card-desc">Find recipe ideas using the ingredients you already have. Discover easy meals, dinner ideas, and recipes based on your available ingredients.</p><span class="tool-card-badge">Food & Recipes</span>
+        </div>
       </div>
       <div id="no-tools-found" style="display: none; text-align: center; padding: 3rem 1rem; color: var(--text-muted);">
         <p style="font-size: 1.1rem; font-weight: 500;">No tools found matching your search.</p>
@@ -139,7 +143,7 @@
     <div class="ad-slot-container"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-box">Ad Space Available</div></div>
     <section class="content-section"><article class="article-content">
       <h2>Why Use RandomlyTools?</h2>
-      <p>Whether you are writing a novel, spinning up a new software startup, launching a cozy neighborhood cafe, or picking a fair lottery number, <strong>RandomlyTools</strong> provides clean, lightweight, and mathematically sound random generators.</p>
+      <p>Whether you are writing a novel, spinning up a new software startup, launching a cozy neighborhood cafe, finding a meal from ingredients you already have, or picking a fair lottery number, <strong>RandomlyTools</strong> provides clean, lightweight, and mathematically sound random generators and useful everyday tools.</p>
       <ul>
         <li><strong>100% Client-Side Speed:</strong> All generators run instantly inside your web browser using modern JavaScript and high-entropy random algorithms. No server delays or tracking.</li>
         <li><strong>Zero Cost & No Registration:</strong> Generate and copy as many names, numbers, or brand ideas as you need without signup gates or subscriptions.</li>
@@ -153,16 +157,18 @@
     </article></section>
   </main>
   <footer class="site-footer">
-    <div class="container"><div class="footer-grid">
-      <div class="footer-brand"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><p>Simple Random Tools for Everyday Use. Fast, free, and privacy-focused client-side generators.</p></div>
-      <div class="footer-column"><h4>Popular Tools</h4><ul>
-        <li><a href="/random-name-generator/">Random Name Generator</a></li><li><a href="/random-number-picker/">Random Number Picker</a></li><li><a href="/random-dog-name-generator/">Dog Name Generator</a></li><li><a href="/random-discord-name-generator/">Discord Name Generator</a></li><li><a href="/random-company-brand-name-generator/">Brand Name Generator</a></li><li><a href="/attendance-calculator/">Attendance Calculator</a></li>
-      </ul></div>
-      <div class="footer-column"><h4>More Tools</h4><ul>
-        <li><a href="/random-shop-name-generator/">Shop Name Generator</a></li><li><a href="/random-restaurant-name-generator/">Restaurant Name Generator</a></li><li><a href="/random-japanese-name-generator/">Japanese Name Generator</a></li><li><a href="/random-instagram-username-generator/">Instagram Generator</a></li><li><a href="/random-coffee-shop-name-generator/">Coffee Shop Names</a></li><li><a href="/random-team-generator/">Random Team Generator</a></li><li><a href="/random-country-generator/">Random Country Generator</a></li>
-      </ul></div>
-      <div class="footer-column"><h4>Trust & Legal</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Service</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div>
-    </div><div class="footer-bottom"><p>&copy; 2026 RandomlyTools. All rights reserved. Free utilities for personal and commercial inspiration.</p><p>Built for speed and user privacy.</p></div></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><p>Simple Random Tools for Everyday Use. Fast, free, and privacy-focused client-side generators.</p></div>
+        <div class="footer-column"><h4>Popular Tools</h4><ul>
+          <li><a href="/random-name-generator/">Random Name Generator</a></li><li><a href="/random-number-picker/">Random Number Picker</a></li><li><a href="/random-dog-name-generator/">Dog Name Generator</a></li><li><a href="/random-discord-name-generator/">Discord Name Generator</a></li><li><a href="/random-company-brand-name-generator/">Brand Name Generator</a></li><li><a href="/recipe-finder-by-ingredients/">Recipe Finder by Ingredients</a></li>
+        </ul></div>
+        <div class="footer-column"><h4>More Tools</h4><ul>
+          <li><a href="/random-shop-name-generator/">Shop Name Generator</a></li><li><a href="/random-restaurant-name-generator/">Restaurant Name Generator</a></li><li><a href="/random-japanese-name-generator/">Japanese Name Generator</a></li><li><a href="/random-instagram-username-generator/">Instagram Generator</a></li><li><a href="/random-coffee-shop-name-generator/">Coffee Shop Names</a></li><li><a href="/random-team-generator/">Random Team Generator</a></li><li><a href="/random-country-generator/">Random Country Generator</a></li>
+        </ul></div>
+        <div class="footer-column"><h4>Trust & Legal</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Service</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div>
+      </div><div class="footer-bottom"><p>&copy; 2026 RandomlyTools. All rights reserved. Free utilities for personal and commercial inspiration.</p><p>Built for speed and user privacy.</p></div>
+    </div>
   </footer>
   <script type="module">
     const searchInput = document.getElementById('tool-search-input');
