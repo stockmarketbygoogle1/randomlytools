@@ -1,11 +1,13 @@
 import path from 'path';
-import fs from 'fs';
 import { defineConfig } from 'vite';
 
 const googleAnalyticsId = 'G-8GT6V10ENG';
 
 export default defineConfig(() => {
   return {
+    // Static SEO files are kept in /public so Vite copies them directly to dist.
+    publicDir: path.resolve(__dirname, 'public'),
+
     build: {
       rollupOptions: {
         input: {
@@ -57,15 +59,6 @@ gtag('config', '${googleAnalyticsId}');`,
               },
             ],
           };
-        },
-      },
-      {
-        name: 'copy-seo-files',
-        closeBundle() {
-          fs.copyFileSync(path.resolve(__dirname, 'robots.txt'), path.resolve(__dirname, 'dist/robots.txt'));
-          fs.copyFileSync(path.resolve(__dirname, 'sitemap.xml'), path.resolve(__dirname, 'dist/sitemap.xml'));
-          fs.copyFileSync(path.resolve(__dirname, 'llms.txt'), path.resolve(__dirname, 'dist/llms.txt'));
-          fs.copyFileSync(path.resolve(__dirname, 'ads.txt'), path.resolve(__dirname, 'dist/ads.txt'));
         },
       },
     ],
