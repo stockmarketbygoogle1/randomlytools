@@ -147,7 +147,7 @@
   <script type="module">
     import { PRNG } from '/assets/js/core/prng.js';
     import { Clipboard } from '/assets/js/core/clipboard.js';
-    import { SHOP_DATA } from '/assets/js/data/shop-dataset.js';
+    import { ShopData } from '/assets/js/data/shop-dataset.js';
 
     const category = document.getElementById('category');
     const count = document.getElementById('count');
@@ -157,7 +157,7 @@
     const clear = document.getElementById('clear');
 
     function generateNames() {
-      const selected = SHOP_DATA[category.value] || SHOP_DATA.all || SHOP_DATA;
+      const selected = ShopData[category.value] || ShopData.all || ShopData;
       const pool = Array.isArray(selected) ? selected : Object.values(selected).flat();
       const names = PRNG.sample(pool, Number(count.value), false);
       results.innerHTML = names.map((name, i) => `<p><strong>${i + 1}.</strong> ${name}</p>`).join('');
