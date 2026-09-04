@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
 
+# AI search and crawler access
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://randomlytools.in/sitemap.xml
