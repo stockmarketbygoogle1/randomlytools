@@ -1,13 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Shop Name Generator – Free Store Name Ideas</title>
+  <title>Random Shop Name Generator – Free Store Name Ideas | RandomlyTools</title>
   <meta name="description" content="Generate creative shop and store name ideas for retail, local shops, online stores, fashion, food, and more. Free random shop name generator with practical naming tips and FAQs.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://randomlytools.in/random-shop-name-generator/">
-  <meta property="og:title" content="Random Shop Name Generator – Free Store Name Ideas">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <meta property="og:title" content="Random Shop Name Generator – Free Store Name Ideas | RandomlyTools">
   <meta property="og:description" content="Create unique shop and store name ideas for different business types with this free generator.">
   <meta property="og:url" content="https://randomlytools.in/random-shop-name-generator/">
   <meta property="og:type" content="website">
@@ -35,113 +36,154 @@
   </script>
 </head>
 <body>
-  <header>
-    <nav aria-label="Main navigation">
-      <a href="/">RandomlyTools</a>
-      <a href="/tools/">All Tools</a>
-      <a href="/about/">About</a>
-      <a href="/contact/">Contact</a>
-    </nav>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a>
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <nav class="nav-links">
+        <a href="/">All Tools</a>
+        <a href="/random-name-generator/">Names</a>
+        <a href="/random-number-picker/">Numbers</a>
+        <a href="/random-discord-name-generator/">Usernames</a>
+        <a href="/random-company-brand-name-generator/">Brands</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <div class="breadcrumb"><a href="/">Home</a> / Shop Name Generator</div>
+  <main class="container page-intro">
+    <div class="breadcrumbs"><a href="/">Home</a> <span>/</span> <span>Random Shop Name Generator</span></div>
 
-    <section class="hero">
+    <div class="tool-header" style="margin-bottom: 1.5rem;">
       <h1>Random Shop Name Generator</h1>
-      <p>Need a name for a new shop, store, boutique, or online business? Choose a business category and generate fresh shop name ideas in seconds. Use the results as inspiration, then select a name that fits your brand, customers, products, and location.</p>
+      <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 720px;">Need a name for a new shop, store, boutique, or online business? Choose a business category and generate fresh shop name ideas in seconds.</p>
+    </div>
+
+    <div class="ad-slot-container"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-box">Ad Space Available</div></div>
+
+    <section class="tool-workspace" aria-labelledby="tool-heading">
+      <h2 id="tool-heading" class="sr-only" style="display: none;">Shop Name Generator Controls</h2>
+      <form id="shop-form" onsubmit="return false;">
+        <div class="controls-grid">
+          <div class="form-group">
+            <label for="category">Shop Category</label>
+            <select id="category" class="form-select">
+              <option value="all">Any Shop</option>
+              <option value="fashion">Fashion &amp; Clothing</option>
+              <option value="food">Food &amp; Grocery</option>
+              <option value="electronics">Electronics</option>
+              <option value="beauty">Beauty &amp; Cosmetics</option>
+              <option value="home">Home &amp; Lifestyle</option>
+              <option value="book">Books &amp; Stationery</option>
+              <option value="gift">Gifts &amp; General Store</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="count">Number of Ideas</label>
+            <select id="count" class="form-select">
+              <option value="10">10 Ideas</option>
+              <option value="20" selected>20 Ideas</option>
+              <option value="30">30 Ideas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="actions-row">
+          <button type="button" id="generate" class="btn btn-primary">Generate Shop Names</button>
+          <button type="button" id="copy" class="btn btn-secondary">Copy All Names</button>
+          <button type="button" id="clear" class="btn btn-secondary">Clear</button>
+        </div>
+      </form>
+
+      <div id="results-wrapper" class="results-container">
+        <div class="results-header">
+          <span id="results-count" class="results-count">Click &quot;Generate Shop Names&quot; to begin</span>
+        </div>
+        <div id="results" class="results-grid" aria-live="polite"></div>
+      </div>
     </section>
 
-    <div class="ad-placeholder" aria-label="Advertisement">Advertisement</div>
+    <section class="content-section">
+      <article class="article-content">
+        <div class="disclaimer-callout"><strong>Notice:</strong> Generated shop names are brainstorming suggestions. Before using a name commercially, check business-name, trademark, domain, social-handle, and local registration availability independently.</div>
 
-    <section class="tool-card" aria-labelledby="tool-title">
-      <h2 id="tool-title">Generate Shop Name Ideas</h2>
-      <label for="category">Shop category</label>
-      <select id="category">
-        <option value="all">Any Shop</option>
-        <option value="fashion">Fashion & Clothing</option>
-        <option value="food">Food & Grocery</option>
-        <option value="electronics">Electronics</option>
-        <option value="beauty">Beauty & Cosmetics</option>
-        <option value="home">Home & Lifestyle</option>
-        <option value="book">Books & Stationery</option>
-        <option value="gift">Gifts & General Store</option>
-      </select>
-      <label for="count">Number of ideas</label>
-      <select id="count">
-        <option value="10">10</option>
-        <option value="20" selected>20</option>
-        <option value="30">30</option>
-      </select>
-      <button id="generate">Generate Names</button>
-      <button id="copy" type="button">Copy Results</button>
-      <button id="clear" type="button">Clear</button>
-      <div id="results" aria-live="polite"></div>
+        <h2>What Is a Shop Name Generator?</h2>
+        <p>A shop name generator is a brainstorming tool that creates business name ideas from patterns, words, and categories. It is useful when you know what you want to sell but have not decided what your store should be called. RandomlyTools helps you quickly explore several directions instead of spending hours trying to think of names from scratch.</p>
+        <p>The generated names are suggestions, not guarantees that a name is available. Before using a final name, check business-name records, trademarks where relevant, your preferred domain, and social media handles.</p>
+
+        <h2>How to Use the Random Shop Name Generator</h2>
+        <ol>
+          <li>Select the category that best matches your shop.</li>
+          <li>Choose how many ideas you want to see.</li>
+          <li>Generate names and shortlist the ones that are easy to remember.</li>
+          <li>Say your favorite names aloud and check how they look in a logo, signboard, packaging, or website.</li>
+          <li>Before launching, verify availability and make sure the final name does not create a trademark or brand-confusion problem.</li>
+        </ol>
+
+        <h2>Shop Name Ideas by Business Type</h2>
+        <p><strong>Fashion and clothing stores:</strong> Short, stylish names are often easier to remember. Consider words that communicate style, confidence, comfort, or a particular audience without making the name too restrictive.</p>
+        <p><strong>Food and grocery shops:</strong> Friendly and easy-to-pronounce names can work well for local customers. A name connected to freshness, taste, market, pantry, or daily shopping may immediately communicate the store's purpose.</p>
+        <p><strong>Electronics stores:</strong> Names that sound modern and dependable can suit technology businesses. Avoid names that are confusingly similar to established electronics brands.</p>
+        <p><strong>Beauty and cosmetics shops:</strong> Elegant, memorable words can help communicate the desired feeling of the brand. Make sure the name still works if you expand from one product category into related beauty products.</p>
+        <p><strong>Online stores:</strong> An online business can benefit from a name that is easy to spell and type. If possible, choose something customers can understand after hearing it once.</p>
+
+        <h2>How to Choose a Good Store Name</h2>
+        <ul>
+          <li><strong>Keep it memorable:</strong> A simple name is usually easier for customers to recall and recommend.</li>
+          <li><strong>Make it easy to pronounce:</strong> Customers should be comfortable saying the name in conversation.</li>
+          <li><strong>Match the business:</strong> The name should fit your products, target customers, and overall brand personality.</li>
+          <li><strong>Think about growth:</strong> Avoid a name that becomes inaccurate if you add new products or services later.</li>
+          <li><strong>Check spelling:</strong> Complicated spelling can make it harder to search for your shop online.</li>
+          <li><strong>Check availability:</strong> Search relevant business, trademark, domain, and social-media records before committing.</li>
+        </ul>
+
+        <h2>Local Shop Name vs Online Store Name</h2>
+        <p>A local shop may benefit from a name that feels familiar to people in its community, while an online store often needs a name that works across locations and is easy to search. This does not mean a local business needs a location-based name or that an online store cannot use a regional identity. The important point is to choose a name that matches how customers will discover and remember your business.</p>
+
+        <h2>Why Generated Names Need a Final Check</h2>
+        <p>A creative suggestion is only the starting point. A generated name may already be used by another business, protected as a trademark, difficult to register, or unavailable as a domain or social handle. Treat the generator as a brainstorming assistant and do the necessary checks yourself before printing signs, packaging, or marketing materials.</p>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item"><summary>Is this shop name generator free?</summary><div class="faq-answer"><p>Yes. The tool is designed to provide shop and store name ideas without requiring a paid subscription.</p></div></details>
+          <details class="faq-item"><summary>Can I use a generated shop name for my business?</summary><div class="faq-answer"><p>You can use a generated idea as inspiration, but you should first check whether the name is already being used and whether it can legally and practically be used for your business.</p></div></details>
+          <details class="faq-item"><summary>Can I generate names for an online store?</summary><div class="faq-answer"><p>Yes. The generator can be used for e-commerce stores as well as physical shops. For online businesses, pay particular attention to spelling, domain availability, and searchability.</p></div></details>
+          <details class="faq-item"><summary>How many words should a shop name have?</summary><div class="faq-answer"><p>There is no single correct length. A short, clear name is often easier to remember, but a slightly longer name can work if it is distinctive and easy to say.</p></div></details>
+          <details class="faq-item"><summary>Should my shop name describe what I sell?</summary><div class="faq-answer"><p>It can, especially when immediate clarity is important. However, a more distinctive brand name may give you flexibility to expand your product range later.</p></div></details>
+          <details class="faq-item"><summary>Should I include my city in the shop name?</summary><div class="faq-answer"><p>Including a city or neighborhood can help communicate a local identity, but it is optional. Consider whether you might expand to other locations before making the name strongly location-specific.</p></div></details>
+          <details class="faq-item"><summary>Are generated names guaranteed to be unique?</summary><div class="faq-answer"><p>No. Generated ideas are not a legal or trademark-availability check. Always research the name before using it commercially.</p></div></details>
+          <details class="faq-item"><summary>What should I check before finalizing a store name?</summary><div class="faq-answer"><p>Check existing businesses, relevant trademark databases, domain availability, social-media usernames, spelling, pronunciation, and whether the name still fits your long-term business plans.</p></div></details>
+        </div>
+      </article>
     </section>
 
-    <article class="seo-content">
-      <h2>What Is a Shop Name Generator?</h2>
-      <p>A shop name generator is a brainstorming tool that creates business name ideas from patterns, words, and categories. It is useful when you know what you want to sell but have not decided what your store should be called. RandomlyTools helps you quickly explore several directions instead of spending hours trying to think of names from scratch.</p>
-      <p>The generated names are suggestions, not guarantees that a name is available. Before using a final name, check business-name records, trademarks where relevant, your preferred domain, and social media handles.</p>
-
-      <h2>How to Use the Random Shop Name Generator</h2>
-      <ol>
-        <li>Select the category that best matches your shop.</li>
-        <li>Choose how many ideas you want to see.</li>
-        <li>Generate names and shortlist the ones that are easy to remember.</li>
-        <li>Say your favorite names aloud and check how they look in a logo, signboard, packaging, or website.</li>
-        <li>Before launching, verify availability and make sure the final name does not create a trademark or brand-confusion problem.</li>
-      </ol>
-
-      <h2>Shop Name Ideas by Business Type</h2>
-      <p><strong>Fashion and clothing stores:</strong> Short, stylish names are often easier to remember. Consider words that communicate style, confidence, comfort, or a particular audience without making the name too restrictive.</p>
-      <p><strong>Food and grocery shops:</strong> Friendly and easy-to-pronounce names can work well for local customers. A name connected to freshness, taste, market, pantry, or daily shopping may immediately communicate the store's purpose.</p>
-      <p><strong>Electronics stores:</strong> Names that sound modern and dependable can suit technology businesses. Avoid names that are confusingly similar to established electronics brands.</p>
-      <p><strong>Beauty and cosmetics shops:</strong> Elegant, memorable words can help communicate the desired feeling of the brand. Make sure the name still works if you expand from one product category into related beauty products.</p>
-      <p><strong>Online stores:</strong> An online business can benefit from a name that is easy to spell and type. If possible, choose something customers can understand after hearing it once.</p>
-
-      <h2>How to Choose a Good Store Name</h2>
-      <ul>
-        <li><strong>Keep it memorable:</strong> A simple name is usually easier for customers to recall and recommend.</li>
-        <li><strong>Make it easy to pronounce:</strong> Customers should be comfortable saying the name in conversation.</li>
-        <li><strong>Match the business:</strong> The name should fit your products, target customers, and overall brand personality.</li>
-        <li><strong>Think about growth:</strong> Avoid a name that becomes inaccurate if you add new products or services later.</li>
-        <li><strong>Check spelling:</strong> Complicated spelling can make it harder to search for your shop online.</li>
-        <li><strong>Check availability:</strong> Search relevant business, trademark, domain, and social-media records before committing.</li>
-      </ul>
-
-      <h2>Local Shop Name vs Online Store Name</h2>
-      <p>A local shop may benefit from a name that feels familiar to people in its community, while an online store often needs a name that works across locations and is easy to search. This does not mean a local business needs a location-based name or that an online store cannot use a regional identity. The important point is to choose a name that matches how customers will discover and remember your business.</p>
-
-      <h2>Why Generated Names Need a Final Check</h2>
-      <p>A creative suggestion is only the starting point. A generated name may already be used by another business, protected as a trademark, difficult to register, or unavailable as a domain or social handle. Treat the generator as a brainstorming assistant and do the necessary checks yourself before printing signs, packaging, or marketing materials.</p>
-
-      <h2>Frequently Asked Questions</h2>
-      <h3>Is this shop name generator free?</h3>
-      <p>Yes. The tool is designed to provide shop and store name ideas without requiring a paid subscription.</p>
-      <h3>Can I use a generated shop name for my business?</h3>
-      <p>You can use a generated idea as inspiration, but you should first check whether the name is already being used and whether it can legally and practically be used for your business.</p>
-      <h3>Can I generate names for an online store?</h3>
-      <p>Yes. The generator can be used for e-commerce stores as well as physical shops. For online businesses, pay particular attention to spelling, domain availability, and searchability.</p>
-      <h3>How many words should a shop name have?</h3>
-      <p>There is no single correct length. A short, clear name is often easier to remember, but a slightly longer name can work if it is distinctive and easy to say.</p>
-      <h3>Should my shop name describe what I sell?</h3>
-      <p>It can, especially when immediate clarity is important. However, a more distinctive brand name may give you flexibility to expand your product range later.</p>
-      <h3>Should I include my city in the shop name?</h3>
-      <p>Including a city or neighborhood can help communicate a local identity, but it is optional. Consider whether you might expand to other locations before making the name strongly location-specific.</p>
-      <h3>Are generated names guaranteed to be unique?</h3>
-      <p>No. Generated ideas are not a legal or trademark-availability check. Always research the name before using it commercially.</p>
-      <h3>What should I check before finalizing a store name?</h3>
-      <p>Check existing businesses, relevant trademark databases, domain availability, social-media usernames, spelling, pronunciation, and whether the name still fits your long-term business plans.</p>
-
-      <h2>Related Business Tools</h2>
-      <p>After choosing a store concept, you can also explore our <a href="/random-restaurant-name-generator/">Restaurant Name Generator</a>, <a href="/random-coffee-shop-name-generator/">Coffee Shop Name Generator</a>, and other <a href="/tools/">business and name generator tools</a>.</p>
-    </article>
+    <section class="related-tools-section">
+      <div class="container" style="padding-left: 0; padding-right: 0;">
+        <h2 style="margin-top: 0; font-size: 1.25rem;">Related Business Tools</h2>
+        <div class="tools-grid" style="margin-top: 1rem; margin-bottom: 0;">
+          <div class="tool-card"><div class="tool-card-icon">🍽️</div><h3 class="tool-card-title"><a href="/random-restaurant-name-generator/">Restaurant Name Generator</a></h3><p class="tool-card-desc">Bistro, diner, fine dining, and Indian restaurant ideas.</p><span class="tool-card-badge">Food &amp; Drink</span></div>
+          <div class="tool-card"><div class="tool-card-icon">☕</div><h3 class="tool-card-title"><a href="/random-coffee-shop-name-generator/">Coffee Shop Name Generator</a></h3><p class="tool-card-desc">Ideas for cafes, coffeehouses, roasteries, and coffee brands.</p><span class="tool-card-badge">Food &amp; Drink</span></div>
+          <div class="tool-card"><div class="tool-card-icon">🏢</div><h3 class="tool-card-title"><a href="/random-company-brand-name-generator/">Company &amp; Brand Name Generator</a></h3><p class="tool-card-desc">Brainstorm creative company, startup, and brand titles.</p><span class="tool-card-badge">Business</span></div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms/">Terms</a> · <a href="/disclaimer/">Disclaimer</a></p>
-    <p>© RandomlyTools. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a>
+          <p>Simple Random Tools for Everyday Use. Fast, free, and privacy-focused client-side generators.</p>
+        </div>
+        <div class="footer-column"><h4>Popular Tools</h4><ul><li><a href="/random-name-generator/">Random Name Generator</a></li><li><a href="/random-number-picker/">Random Number Picker</a></li><li><a href="/random-dog-name-generator/">Dog Name Generator</a></li><li><a href="/random-discord-name-generator/">Discord Name Generator</a></li></ul></div>
+        <div class="footer-column"><h4>Business Tools</h4><ul><li><a href="/random-shop-name-generator/">Shop Name Generator</a></li><li><a href="/random-restaurant-name-generator/">Restaurant Name Generator</a></li><li><a href="/random-coffee-shop-name-generator/">Coffee Shop Name Generator</a></li><li><a href="/random-company-brand-name-generator/">Company &amp; Brand Name Generator</a></li></ul></div>
+        <div class="footer-column"><h4>Information</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/terms/">Terms</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© RandomlyTools. All rights reserved.</p></div>
+    </div>
   </footer>
 
   <script type="module">
@@ -152,20 +194,51 @@
     const category = document.getElementById('category');
     const count = document.getElementById('count');
     const results = document.getElementById('results');
+    const resultsCount = document.getElementById('results-count');
     const generate = document.getElementById('generate');
     const copy = document.getElementById('copy');
     const clear = document.getElementById('clear');
 
-    function generateNames() {
-      const selected = ShopData[category.value] || ShopData.all || ShopData;
+    const categoryMap = {
+      all: 'all',
+      fashion: 'fashion',
+      food: 'grocery',
+      electronics: 'electronics',
+      beauty: 'general',
+      home: 'general',
+      book: 'general',
+      gift: 'general'
+    };
+
+    function getPool() {
+      const key = categoryMap[category.value] || 'all';
+      const selected = ShopData[key] || ShopData.all;
       const pool = Array.isArray(selected) ? selected : Object.values(selected).flat();
-      const names = PRNG.sample(pool, Number(count.value), false);
-      results.innerHTML = names.map((name, i) => `<p><strong>${i + 1}.</strong> ${name}</p>`).join('');
+      return [...new Set(pool)].filter(Boolean);
+    }
+
+    function generateNames() {
+      const pool = getPool();
+      const requested = Number(count.value);
+      const amount = Math.min(requested, pool.length);
+      const names = PRNG.sample(pool, amount, false);
+
+      results.innerHTML = names.map((name, i) => `<div class="result-card"><span class="result-number">${i + 1}</span><span>${name}</span></div>`).join('');
+      resultsCount.textContent = `${names.length} shop name ideas generated`;
     }
 
     generate.addEventListener('click', generateNames);
-    copy.addEventListener('click', () => Clipboard.copyText(results.innerText));
-    clear.addEventListener('click', () => { results.innerHTML = ''; });
+    copy.addEventListener('click', async () => {
+      if (!results.innerText.trim()) return;
+      await Clipboard.copyText(results.innerText);
+      const original = copy.textContent;
+      copy.textContent = 'Copied!';
+      setTimeout(() => { copy.textContent = original; }, 1200);
+    });
+    clear.addEventListener('click', () => {
+      results.innerHTML = '';
+      resultsCount.textContent = 'Click "Generate Shop Names" to begin';
+    });
   </script>
 </body>
 </html>
