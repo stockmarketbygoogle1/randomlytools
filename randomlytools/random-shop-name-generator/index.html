@@ -145,9 +145,9 @@
   </footer>
 
   <script type="module">
-    import { createSeededRandom } from '/src/utils/prng.ts';
-    import { copyText } from '/src/utils/clipboard.ts';
-    import { SHOP_DATA } from '/src/data/ShopData.ts';
+    import { PRNG } from '/assets/js/core/prng.js';
+    import { Clipboard } from '/assets/js/core/clipboard.js';
+    import { SHOP_DATA } from '/assets/js/data/shop-dataset.js';
 
     const category = document.getElementById('category');
     const count = document.getElementById('count');
@@ -158,19 +158,13 @@
 
     function generateNames() {
       const selected = SHOP_DATA[category.value] || SHOP_DATA.all || SHOP_DATA;
-      const names = [];
-      const random = createSeededRandom(Date.now());
       const pool = Array.isArray(selected) ? selected : Object.values(selected).flat();
-      while (names.length < Number(count.value) && pool.length) {
-        const name = pool[Math.floor(random() * pool.length)];
-        if (!names.includes(name)) names.push(name);
-        if (names.length >= pool.length) break;
-      }
+      const names = PRNG.sample(pool, Number(count.value), false);
       results.innerHTML = names.map((name, i) => `<p><strong>${i + 1}.</strong> ${name}</p>`).join('');
     }
 
     generate.addEventListener('click', generateNames);
-    copy.addEventListener('click', () => copyText(results.innerText));
+    copy.addEventListener('click', () => Clipboard.copyText(results.innerText));
     clear.addEventListener('click', () => { results.innerHTML = ''; });
   </script>
 </body>
