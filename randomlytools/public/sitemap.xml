@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url><loc>https://randomlytools.in/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://randomlytools.in/random-name-generator/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://randomlytools.in/random-number-picker/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
@@ -21,5 +20,21 @@
   <url><loc>https://randomlytools.in/privacy-policy/</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://randomlytools.in/terms/</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://randomlytools.in/disclaimer/</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
-
+  <url><loc>https://randomlytools.in/articles/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://randomlytools.in/articles/how-to-calculate-attendance-percentage/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://randomlytools.in/articles/how-to-randomly-split-people-into-teams/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://randomlytools.in/articles/creative-ways-to-use-a-random-country-generator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://randomlytools.in/articles/how-to-use-a-random-number-picker/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://randomlytools.in/articles/random-username-ideas-for-gaming/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://randomlytools.in/articles/how-to-choose-a-business-name/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://randomlytools.in/articles/how-to-pick-a-random-name-from-a-list/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://randomlytools.in/articles/random-name-generator-for-classroom-activities/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://randomlytools.in/articles/how-to-randomly-assign-people-to-groups/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://randomlytools.in/articles/random-number-generator-vs-random-number-picker/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://randomlytools.in/articles/how-to-generate-random-numbers-without-repeats/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://randomlytools.in/articles/random-team-generator-for-sports/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://randomlytools.in/articles/how-to-choose-a-shop-name/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://randomlytools.in/articles/coffee-shop-name-ideas/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://randomlytools.in/articles/restaurant-name-ideas/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://randomlytools.in/articles/instagram-username-ideas/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
