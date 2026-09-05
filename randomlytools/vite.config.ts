@@ -5,9 +5,7 @@ const googleAnalyticsId = 'G-8GT6V10ENG';
 
 export default defineConfig(() => {
   return {
-    // Static SEO files are kept in /public so Vite copies them directly to dist.
     publicDir: path.resolve(__dirname, 'public'),
-
     build: {
       rollupOptions: {
         input: {
@@ -39,49 +37,29 @@ export default defineConfig(() => {
           randomNumberArticle: path.resolve(__dirname, 'articles/how-to-use-a-random-number-picker/index.html'),
           gamingUsernameArticle: path.resolve(__dirname, 'articles/random-username-ideas-for-gaming/index.html'),
           businessNameArticle: path.resolve(__dirname, 'articles/how-to-choose-a-business-name/index.html'),
+          randomNameListArticle: path.resolve(__dirname, 'articles/how-to-pick-a-random-name-from-a-list/index.html'),
+          classroomNameArticle: path.resolve(__dirname, 'articles/random-name-generator-for-classroom-activities/index.html'),
+          randomGroupsArticle: path.resolve(__dirname, 'articles/how-to-randomly-assign-people-to-groups/index.html'),
+          numberVsPickerArticle: path.resolve(__dirname, 'articles/random-number-generator-vs-random-number-picker/index.html'),
+          noRepeatNumbersArticle: path.resolve(__dirname, 'articles/how-to-generate-random-numbers-without-repeats/index.html'),
+          sportsTeamsArticle: path.resolve(__dirname, 'articles/random-team-generator-for-sports/index.html'),
+          shopNameArticle: path.resolve(__dirname, 'articles/how-to-choose-a-shop-name/index.html'),
+          coffeeShopNamesArticle: path.resolve(__dirname, 'articles/coffee-shop-name-ideas/index.html'),
+          restaurantNamesArticle: path.resolve(__dirname, 'articles/restaurant-name-ideas/index.html'),
+          instagramUsernameArticle: path.resolve(__dirname, 'articles/instagram-username-ideas/index.html'),
         },
       },
     },
-
-    plugins: [
-      {
-        name: 'inject-google-analytics',
-        transformIndexHtml() {
-          return {
-            tags: [
-              {
-                tag: 'script',
-                attrs: {
-                  async: true,
-                  src: `https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`,
-                },
-                injectTo: 'head',
-              },
-              {
-                tag: 'script',
-                children: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${googleAnalyticsId}');`,
-                injectTo: 'head',
-              },
-            ],
-          };
-        },
+    plugins: [{
+      name: 'inject-google-analytics',
+      transformIndexHtml() {
+        return { tags: [
+          { tag: 'script', attrs: { async: true, src: `https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}` }, injectTo: 'head' },
+          { tag: 'script', children: `window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', '${googleAnalyticsId}');`, injectTo: 'head' },
+        ] };
       },
-    ],
-
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, '.'),
-      },
-    },
-
-    server: {
-      port: 3000,
-      host: '0.0.0.0',
-      hmr: process.env.DISABLE_HMR !== 'true',
-      watch: process.env.DISABLE_HMR === 'true' ? null : {},
-    },
+    }],
+    resolve: { alias: { '@': path.resolve(__dirname, '.') } },
+    server: { port: 3000, host: '0.0.0.0', hmr: process.env.DISABLE_HMR !== 'true', watch: process.env.DISABLE_HMR === 'true' ? null : {} },
   };
 });
