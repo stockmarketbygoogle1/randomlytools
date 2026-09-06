@@ -1,3 +1,4 @@
+import fs from 'fs';
 import path from 'path';
 import { defineConfig } from 'vite';
 
@@ -27,6 +28,11 @@ export default defineConfig(() => {
           adsenseRevenueCalculator: path.resolve(__dirname, 'adsense-revenue-calculator/index.html'),
           icelandSalaryCalculator: path.resolve(__dirname, 'iceland-salary-calculator/index.html'),
           cyprusSalaryCalculator: path.resolve(__dirname, 'cyprus-salary-calculator/index.html'),
+          youtubeMoneyCalculator: path.resolve(__dirname, 'youtube-money-calculator/index.html'),
+          youtubeMoneyCalculatorIndia: path.resolve(__dirname, 'youtube-money-calculator-india/index.html'),
+          youtubeMoneyCalculatorIceland: path.resolve(__dirname, 'youtube-money-calculator-iceland/index.html'),
+          youtubeRpmCalculator: path.resolve(__dirname, 'youtube-rpm-calculator/index.html'),
+          youtubeShortsEarningsCalculator: path.resolve(__dirname, 'youtube-shorts-earnings-calculator/index.html'),
           about: path.resolve(__dirname, 'about/index.html'),
           contact: path.resolve(__dirname, 'contact/index.html'),
           privacyPolicy: path.resolve(__dirname, 'privacy-policy/index.html'),
@@ -52,15 +58,27 @@ export default defineConfig(() => {
         },
       },
     },
-    plugins: [{
-      name: 'inject-google-analytics',
-      transformIndexHtml() {
-        return { tags: [
-          { tag: 'script', attrs: { async: true, src: `https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}` }, injectTo: 'head' },
-          { tag: 'script', children: `window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', '${googleAnalyticsId}');`, injectTo: 'head' },
-        ] };
+    plugins: [
+      {
+        name: 'inject-google-analytics',
+        transformIndexHtml() {
+          return {
+            tags: [
+              { tag: 'script', attrs: { async: true, src: `https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}` }, injectTo: 'head' },
+              { tag: 'script', children: `window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', '${googleAnalyticsId}');`, injectTo: 'head' },
+            ],
+          };
+        },
       },
-    }],
+      {
+        name: 'copy-legacy-assets',
+        closeBundle() {
+          const source = path.resolve(__dirname, 'assets');
+          const target = path.resolve(__dirname, 'dist/assets');
+          fs.cpSync(source, target, { recursive: true, force: true });
+        },
+      },
+    ],
     resolve: { alias: { '@': path.resolve(__dirname, '.') } },
     server: { port: 3000, host: '0.0.0.0', hmr: process.env.DISABLE_HMR !== 'true', watch: process.env.DISABLE_HMR === 'true' ? null : {} },
   };
