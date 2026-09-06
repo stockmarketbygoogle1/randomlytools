@@ -13,6 +13,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Add the Iceland-specific tool to the homepage directory without duplicating its markup in every build.
+  const toolsGrid = document.getElementById('tools-grid-wrapper');
+  if (toolsGrid && !toolsGrid.querySelector('[data-tool="iceland-salary-calculator"]')) {
+    const card = document.createElement('div');
+    card.className = 'tool-card';
+    card.dataset.category = 'money';
+    card.dataset.keywords = 'Iceland salary calculator salary tax calculator Iceland tax calculator net salary gross salary take home pay ISK income tax 2026';
+    card.dataset.tool = 'iceland-salary-calculator';
+    card.innerHTML = '<div class="tool-card-icon">🇮🇸</div><h2 class="tool-card-title"><a href="/iceland-salary-calculator/">Iceland Salary Calculator</a></h2><p class="tool-card-desc">Estimate Iceland 2026 take-home pay from gross salary using local withholding tax brackets, pension contribution, and personal tax credit.</p><span class="tool-card-badge">Money & Tax</span>';
+    toolsGrid.appendChild(card);
+
+    const allToolsButton = document.querySelector('.category-filter-btn[data-category="all"]');
+    if (allToolsButton) allToolsButton.textContent = 'All Tools (16)';
+
+    const schemaScript = Array.from(document.querySelectorAll('script[type="application/ld+json"]')).find(script => script.textContent.includes('RandomlyTools Utilities'));
+    if (schemaScript) {
+      try {
+        const schema = JSON.parse(schemaScript.textContent);
+        const list = schema['@graph']?.find(item => item['@type'] === 'ItemList');
+        if (list && Array.isArray(list.itemListElement) && !list.itemListElement.some(item => item.url === 'https://randomlytools.in/iceland-salary-calculator/')) {
+          list.itemListElement.push({ '@type': 'ListItem', position: list.itemListElement.length + 1, name: 'Iceland Salary Calculator', url: 'https://randomlytools.in/iceland-salary-calculator/' });
+          schemaScript.textContent = JSON.stringify(schema);
+        }
+      } catch (_) {
+        // Keep the existing structured data intact if parsing fails.
+      }
+    }
+  }
+
   const filterInput = document.getElementById('tool-search');
   if (filterInput) {
     const toolCards = document.querySelectorAll('.tool-card');
@@ -23,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = card.querySelector('.tool-card-title')?.textContent.toLowerCase() || '';
         const desc = card.querySelector('.tool-card-desc')?.textContent.toLowerCase() || '';
         const badge = card.querySelector('.tool-card-badge')?.textContent.toLowerCase() || '';
-        const matches = title.includes(query) || desc.includes(query) || badge.includes(query);
+        const keywords = card.dataset.keywords?.toLowerCase() || '';
+        const matches = title.includes(query) || desc.includes(query) || badge.includes(query) || keywords.includes(query);
         card.style.display = matches ? 'flex' : 'none';
         if (matches) visibleCount++;
       });
