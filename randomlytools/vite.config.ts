@@ -26,6 +26,7 @@ export default defineConfig(() => {
           recipeFinderByIngredients: path.resolve(__dirname, 'recipe-finder-by-ingredients/index.html'),
           adsenseRevenueCalculator: path.resolve(__dirname, 'adsense-revenue-calculator/index.html'),
           icelandSalaryCalculator: path.resolve(__dirname, 'iceland-salary-calculator/index.html'),
+          cyprusSalaryCalculator: path.resolve(__dirname, 'cyprus-salary-calculator/index.html'),
           about: path.resolve(__dirname, 'about/index.html'),
           contact: path.resolve(__dirname, 'contact/index.html'),
           privacyPolicy: path.resolve(__dirname, 'privacy-policy/index.html'),
