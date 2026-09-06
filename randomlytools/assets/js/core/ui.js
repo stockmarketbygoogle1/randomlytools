@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = document.createElement('div');
     card.className = 'tool-card';
     card.dataset.category = 'money';
-    card.dataset.keywords = 'Iceland salary calculator salary tax calculator Iceland tax calculator net salary gross salary take home pay ISK income tax 2026';
+    card.dataset.keywords = 'Iceland salary calculator Iceland salary calculator 2026 Iceland tax calculator Iceland income tax calculator Iceland paycheck calculator Iceland net salary calculator Iceland gross to net salary take home pay Iceland salary after tax Iceland payroll calculator Iceland tax brackets 2026 Iceland personal tax credit 2026 ISK salary calculator Iceland wage calculator';
     card.dataset.tool = 'iceland-salary-calculator';
-    card.innerHTML = '<div class="tool-card-icon">🇮🇸</div><h2 class="tool-card-title"><a href="/iceland-salary-calculator/">Iceland Salary Calculator</a></h2><p class="tool-card-desc">Estimate Iceland 2026 take-home pay from gross salary using local withholding tax brackets, pension contribution, and personal tax credit.</p><span class="tool-card-badge">Money & Tax</span>';
+    card.innerHTML = '<div class="tool-card-icon">🇮🇸</div><h2 class="tool-card-title"><a href="/iceland-salary-calculator/">Iceland Salary Calculator 2026</a></h2><p class="tool-card-desc">Calculate Iceland 2026 take-home pay from gross salary using withholding tax brackets, pension contribution, and personal tax credit.</p><span class="tool-card-badge">Money & Tax</span>';
     toolsGrid.appendChild(card);
 
     const allToolsButton = document.querySelector('.category-filter-btn[data-category="all"]');
@@ -33,12 +33,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const schema = JSON.parse(schemaScript.textContent);
         const list = schema['@graph']?.find(item => item['@type'] === 'ItemList');
         if (list && Array.isArray(list.itemListElement) && !list.itemListElement.some(item => item.url === 'https://randomlytools.in/iceland-salary-calculator/')) {
-          list.itemListElement.push({ '@type': 'ListItem', position: list.itemListElement.length + 1, name: 'Iceland Salary Calculator', url: 'https://randomlytools.in/iceland-salary-calculator/' });
+          list.itemListElement.push({ '@type': 'ListItem', position: list.itemListElement.length + 1, name: 'Iceland Salary Calculator 2026', url: 'https://randomlytools.in/iceland-salary-calculator/' });
           schemaScript.textContent = JSON.stringify(schema);
         }
       } catch (_) {
         // Keep the existing structured data intact if parsing fails.
       }
+    }
+  }
+
+  // Add the new tool to the site footer for internal linking across the static site.
+  const footerMoreTools = Array.from(document.querySelectorAll('.site-footer .footer-column')).find(column => {
+    const heading = column.querySelector('h4');
+    return heading && heading.textContent.trim().toLowerCase() === 'more tools';
+  });
+  if (footerMoreTools && !footerMoreTools.querySelector('a[href="/iceland-salary-calculator/"]')) {
+    const list = footerMoreTools.querySelector('ul');
+    if (list) {
+      const item = document.createElement('li');
+      item.innerHTML = '<a href="/iceland-salary-calculator/">Iceland Salary Calculator 2026</a>';
+      list.appendChild(item);
     }
   }
 
