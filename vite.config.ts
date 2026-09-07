@@ -5,38 +5,19 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
 
+  // The production website lives in ./randomlytools and is a static
+  // multi-page site. Keep Vite compatible with that layout if it is
+  // invoked directly, while the Cloudflare build uses build-static.mjs.
+  root: path.resolve(__dirname, 'randomlytools'),
+
   build: {
-    rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'index.html'),
-        randomNameGenerator: path.resolve(__dirname, 'random-name-generator/index.html'),
-        randomNumberPicker: path.resolve(__dirname, 'random-number-picker/index.html'),
-        randomTeamGenerator: path.resolve(__dirname, 'random-team-generator/index.html'),
-        randomDogNameGenerator: path.resolve(__dirname, 'random-dog-name-generator/index.html'),
-        randomDiscordNameGenerator: path.resolve(__dirname, 'random-discord-name-generator/index.html'),
-        randomShopNameGenerator: path.resolve(__dirname, 'random-shop-name-generator/index.html'),
-        randomRestaurantNameGenerator: path.resolve(__dirname, 'random-restaurant-name-generator/index.html'),
-        randomJapaneseNameGenerator: path.resolve(__dirname, 'random-japanese-name-generator/index.html'),
-        randomInstagramUsernameGenerator: path.resolve(__dirname, 'random-instagram-username-generator/index.html'),
-        randomCoffeeShopNameGenerator: path.resolve(__dirname, 'random-coffee-shop-name-generator/index.html'),
-        randomCompanyBrandNameGenerator: path.resolve(__dirname, 'random-company-brand-name-generator/index.html'),
-        youtubeMoneyCalculator: path.resolve(__dirname, 'youtube-money-calculator/index.html'),
-        youtubeMoneyCalculatorIndia: path.resolve(__dirname, 'youtube-money-calculator-india/index.html'),
-        youtubeMoneyCalculatorIceland: path.resolve(__dirname, 'youtube-money-calculator-iceland/index.html'),
-        youtubeRpmCalculator: path.resolve(__dirname, 'youtube-rpm-calculator/index.html'),
-        youtubeShortsEarningsCalculator: path.resolve(__dirname, 'youtube-shorts-earnings-calculator/index.html'),
-        about: path.resolve(__dirname, 'about/index.html'),
-        contact: path.resolve(__dirname, 'contact/index.html'),
-        privacyPolicy: path.resolve(__dirname, 'privacy-policy/index.html'),
-        terms: path.resolve(__dirname, 'terms/index.html'),
-        disclaimer: path.resolve(__dirname, 'disclaimer/index.html'),
-      },
-    },
+    outDir: path.resolve(__dirname, 'dist'),
+    emptyOutDir: true,
   },
 
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '.'),
+      '@': path.resolve(__dirname, 'randomlytools'),
     },
   },
 
