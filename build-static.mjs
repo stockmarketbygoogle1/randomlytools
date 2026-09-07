@@ -1,16 +1,24 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const source = path.join(root, 'randomlytools');
+const nestedBuild = path.join(source, 'build-static.mjs');
+const nestedOutput = path.join(source, 'dist');
 const output = path.join(root, 'dist');
 
 if (!fs.existsSync(source)) {
   throw new Error(`Static site directory not found: ${source}`);
 }
+if (!fs.existsSync(nestedBuild)) {
+  throw new Error(`Nested static build script not found: ${nestedBuild}`);
+}
+
+execFileSync(process.execPath, [nestedBuild], { cwd: source, stdio: 'inherit' });
 
 fs.rmSync(output, { recursive: true, force: true });
-fs.cpSync(source, output, { recursive: true });
+fs.cpSync(nestedOutput, output, { recursive: true });
 
-console.log(`Static site copied from ${path.relative(root, source)} to ${path.relative(root, output)}`);
+console.log(`Static site copied from ${path.relative(root, nestedOutput)} to ${path.relative(root, output)}`);
