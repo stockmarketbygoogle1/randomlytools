@@ -20,10 +20,11 @@ if (!fs.existsSync(homepageEnhancements)) {
   throw new Error(`Homepage enhancement script not found: ${homepageEnhancements}`);
 }
 
-// First generate the complete nested static site.
+// Build the existing site first. This preserves the current page generation flow.
 execFileSync(process.execPath, [nestedBuild], { cwd: source, stdio: 'inherit' });
 
-// Then enhance the generated homepage before copying it to the deployment root.
+// The homepage enhancement is intentionally run after the nested build because
+// it modifies the generated homepage inside randomlytools/dist.
 execFileSync(process.execPath, [homepageEnhancements], { cwd: source, stdio: 'inherit' });
 
 fs.rmSync(output, { recursive: true, force: true });
