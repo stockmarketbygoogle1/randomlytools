@@ -37,21 +37,21 @@ const cricketCards = `
   <span class="tool-card-badge">Cricket Tools</span>
 </div>`;
 
-if (!html.includes('/cricket-qualification-calculator/')) {
-  html = html.replace('</div>\n</section>', `${cricketCards}\n</div>\n</section>`);
-}
-
+const toolsGridPattern = /(<section aria-label="Tools Directory"><div id="tools-grid-wrapper" class="tools-grid">[\s\S]*?)(<\/div>\s*<\/section>)/i;
 if (!html.includes('data-category="cricket"')) {
-  html = html.replace('</div>\n</section>', `${cricketCards}\n</div>\n</section>`);
+  if (!toolsGridPattern.test(html)) {
+    throw new Error('Tools Directory grid not found on homepage.');
+  }
+  html = html.replace(toolsGridPattern, `$1${cricketCards}\n$2`);
 }
 
 html = html.replace(/All Tools \(22\)/, 'All Tools (26)');
 
 if (!html.includes('data-category="cricket">Cricket Tools')) {
-  html = html.replace(
-    /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="youtube"[^>]*>YouTube Tools<\/button>)/i,
-    '$1<button type="button" class="preset-chip category-filter-btn" data-category="cricket">Cricket Tools</button>'
-  );
+  const youtubeButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="youtube"[^>]*>YouTube Tools<\/button>)/i;
+  if (youtubeButton.test(html)) {
+    html = html.replace(youtubeButton, '$1<button type="button" class="preset-chip category-filter-btn" data-category="cricket">Cricket Tools</button>');
+  }
 }
 
 const jsonTools = [
