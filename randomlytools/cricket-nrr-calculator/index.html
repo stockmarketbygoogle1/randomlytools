@@ -1,1 +1,118 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Cricket NRR Calculator – Net Run Rate Calculator | RandomlyTools</title><meta name="description" content="Free cricket NRR calculator to calculate net run rate from runs and overs, compare team NRR, and understand cricket net run rate calculations."><meta name="keywords" content="cricket NRR calculator, net run rate calculator, NRR calculator cricket, net run rate calculator cricket, NRR calculation cricket"><meta name="robots" content="index, follow"><link rel="canonical" href="https://randomlytools.in/cricket-nrr-calculator/"><link rel="stylesheet" href="/assets/css/style.css"><meta property="og:title" content="Cricket NRR Calculator – Net Run Rate Calculator"><meta property="og:description" content="Calculate cricket Net Run Rate from runs scored, runs conceded and overs."><meta property="og:url" content="https://randomlytools.in/cricket-nrr-calculator/"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Cricket NRR Calculator","url":"https://randomlytools.in/cricket-nrr-calculator/","applicationCategory":"SportsApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://randomlytools.in/"},{"@type":"ListItem","position":2,"name":"Cricket NRR Calculator","item":"https://randomlytools.in/cricket-nrr-calculator/"}]}]}</script><style>.nrr-card{max-width:820px;margin:auto;background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow-sm)}.nrr-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.nrr-result{margin-top:1rem;padding:1rem;border:1px solid var(--border-color);border-radius:var(--radius-md);background:var(--bg-surface-subtle);text-align:center}.nrr-value{font-size:2.4rem;font-weight:800;color:var(--text-primary)}.nrr-error{display:none;color:var(--accent-red);margin-top:.7rem}@media(max-width:650px){.nrr-grid{grid-template-columns:1fr}.nrr-card{padding:1rem}}</style></head><body><header class="site-header"><div class="container"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><button class="mobile-menu-btn" aria-label="Toggle navigation menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><nav class="nav-links"><a href="/">All Tools</a><a href="/random-name-generator/">Names</a><a href="/random-number-picker/">Numbers</a><a href="/articles/">Articles</a><a href="/about/">About</a></nav></div></header><main class="container page-intro"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><span>Cricket NRR Calculator</span></div><div class="tool-header" style="text-align:center;max-width:850px;margin:0 auto 2rem"><h1>Cricket NRR Calculator</h1><p class="section-subtitle">Calculate Net Run Rate from runs scored, runs conceded and overs. Enter overs as cricket notation such as 19.3 for 19 overs and 3 balls.</p></div><div class="nrr-card"><div class="nrr-grid"><div class="form-group"><label for="rf">Runs For</label><input id="rf" class="form-control" type="number" min="0" step="1" value="160"></div><div class="form-group"><label for="of">Overs Faced</label><input id="of" class="form-control" inputmode="decimal" value="20"></div><div class="form-group"><label for="ra">Runs Against</label><input id="ra" class="form-control" type="number" min="0" step="1" value="150"></div><div class="form-group"><label for="oa">Overs Bowled</label><input id="oa" class="form-control" inputmode="decimal" value="20"></div></div><button id="calc" class="btn btn-primary" style="width:100%;margin-top:1rem">Calculate NRR</button><div id="err" class="nrr-error" role="alert"></div><div id="res" class="nrr-result" hidden><div class="nrr-value" id="value">0.000</div><p id="explain"></p></div></div><div class="ad-slot-container"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-box">Ad Space Available</div></div><article class="article-content" style="max-width:820px;margin:2rem auto"><h2>How to Calculate Net Run Rate in Cricket</h2><p>For a basic completed-innings calculation, NRR is the difference between a team's runs-per-over rate and its opponents' runs-per-over rate.</p><p><strong>NRR = (Runs Scored ÷ Overs Faced) − (Runs Conceded ÷ Overs Bowled)</strong></p><h2>How Cricket Overs Are Converted</h2><p>Cricket overs are not decimal numbers. For example, 19.3 means 19 overs and 3 legal balls. Since one over contains 6 legal balls, 19.3 corresponds to 117 balls. This distinction is important for accurate NRR calculations.</p><h2>NRR and All-Out Innings</h2><p>Official competition regulations can specify how overs are counted when a team is dismissed before using its full allocation. The calculator gives the direct mathematical rate from the inputs you enter; use the tournament's official playing conditions for a live qualification decision.</p><h2>NRR for Qualification Scenarios</h2><p>When teams finish a league stage on equal points, NRR may be used as a tie-breaker. Use the <a href="/cricket-qualification-calculator/">Cricket Qualification Calculator</a> to explore points-table paths, then use this tool for the relevant NRR calculation.</p><h2>Frequently Asked Questions</h2><h3>What is NRR in cricket?</h3><p>Net Run Rate measures the difference between a team's scoring rate and its opponents' scoring rate, usually expressed as runs per over.</p><h3>What does 19.3 overs mean?</h3><p>It means 19 complete overs plus 3 legal balls, not 19.3 decimal overs.</p><h3>Does NRR always decide qualification?</h3><p>No. The official tournament regulations determine the tie-break order.</p></article></main><footer class="site-footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 RandomlyTools. All rights reserved.</p><p><a href="/cricket-qualification-calculator/">Cricket Qualification Calculator</a></p></div></div></footer><script src="/assets/js/core/ui.js"></script><script>(()=>{const ballOvers=v=>{const s=String(v).trim();if(!/^\d+(\.\d+)?$/.test(s))return NaN;const parts=s.split('.');const o=Number(parts[0]);const b=parts[1]?Number(parts[1]):0;if(!Number.isInteger(b)||b<0||b>5)return NaN;return o+b/6;};document.getElementById('calc').addEventListener('click',()=>{const rf=Number(document.getElementById('rf').value),ra=Number(document.getElementById('ra').value),of=ballOvers(document.getElementById('of').value),oa=ballOvers(document.getElementById('oa').value),e=document.getElementById('err'),r=document.getElementById('res');if(!Number.isFinite(rf)||!Number.isFinite(ra)||!Number.isFinite(of)||!Number.isFinite(oa)||rf<0||ra<0||of<=0||oa<=0){e.textContent='Enter valid runs and overs. Overs must use cricket notation such as 19.3.';e.style.display='block';r.hidden=true;return;}e.style.display='none';const n=(rf/of)-(ra/oa);document.getElementById('value').textContent=(n>=0?'+':'')+n.toFixed(3);document.getElementById('explain').textContent='Run rate for: '+(rf/of).toFixed(3)+' • Run rate against: '+(ra/oa).toFixed(3);r.hidden=false;});})();</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cricket NRR Calculator 2026 – Net Run Rate Calculator | RandomlyTools</title>
+<meta name="description" content="Use this free Cricket NRR Calculator to calculate Net Run Rate from runs and overs. Learn how NRR works in cricket, how 19.3 overs are counted, and how NRR affects qualification scenarios.">
+<meta name="keywords" content="cricket NRR calculator, net run rate calculator cricket, NRR calculator cricket, net run rate calculator, cricket net run rate, NRR calculation cricket, NRR calculator IPL, cricket NRR calculation, net run rate formula cricket">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://randomlytools.in/cricket-nrr-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cricket NRR Calculator 2026 – Net Run Rate Calculator">
+<meta property="og:description" content="Calculate cricket Net Run Rate from runs scored, runs conceded and overs using correct cricket over notation.">
+<meta property="og:url" content="https://randomlytools.in/cricket-nrr-calculator/">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebApplication",
+      "name":"Cricket NRR Calculator",
+      "url":"https://randomlytools.in/cricket-nrr-calculator/",
+      "description":"Free cricket Net Run Rate calculator for calculating NRR from runs and overs.",
+      "applicationCategory":"SportsApplication",
+      "operatingSystem":"All",
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://randomlytools.in/"},
+        {"@type":"ListItem","position":2,"name":"Cricket NRR Calculator","item":"https://randomlytools.in/cricket-nrr-calculator/"}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"What is NRR in cricket?","acceptedAnswer":{"@type":"Answer","text":"Net Run Rate is the difference between a team's runs scored per over and runs conceded per over, calculated according to the competition's official playing conditions."}},
+        {"@type":"Question","name":"How is NRR calculated in cricket?","acceptedAnswer":{"@type":"Answer","text":"For a basic completed-innings calculation, NRR is runs scored divided by overs faced minus runs conceded divided by overs bowled."}},
+        {"@type":"Question","name":"What does 19.3 overs mean in cricket?","acceptedAnswer":{"@type":"Answer","text":"19.3 overs means 19 completed overs plus 3 legal balls. It is 117 legal balls, not 19.3 decimal overs."}},
+        {"@type":"Question","name":"Does NRR decide qualification in every cricket tournament?","acceptedAnswer":{"@type":"Answer","text":"No. The official tournament regulations determine the tie-break order and how NRR is applied."}}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+.nrr-card{max-width:820px;margin:auto;background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow-sm)}
+.nrr-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.nrr-result{margin-top:1rem;padding:1rem;border:1px solid var(--border-color);border-radius:var(--radius-md);background:var(--bg-surface-subtle);text-align:center}
+.nrr-value{font-size:2.4rem;font-weight:800;color:var(--text-primary)}
+.nrr-error{display:none;color:var(--accent-red);margin-top:.7rem}
+.info-box{max-width:820px;margin:1.5rem auto;padding:1rem 1.2rem;border:1px solid var(--border-color);border-radius:var(--radius-md);background:var(--bg-surface-subtle)}
+.related-tools{max-width:820px;margin:1.5rem auto;display:flex;flex-wrap:wrap;gap:.7rem}
+.related-tools a{display:inline-block;padding:.65rem .9rem;border:1px solid var(--border-color);border-radius:999px;text-decoration:none}
+@media(max-width:650px){.nrr-grid{grid-template-columns:1fr}.nrr-card{padding:1rem}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><button class="mobile-menu-btn" aria-label="Toggle navigation menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><nav class="nav-links"><a href="/">All Tools</a><a href="/random-name-generator/">Names</a><a href="/random-number-picker/">Numbers</a><a href="/articles/">Articles</a><a href="/about/">About</a></nav></div></header>
+<main class="container page-intro">
+<div class="breadcrumbs"><a href="/">Home</a><span>/</span><span>Cricket NRR Calculator</span></div>
+<div class="tool-header" style="text-align:center;max-width:850px;margin:0 auto 2rem"><h1>Cricket NRR Calculator</h1><p class="section-subtitle">Calculate Net Run Rate (NRR) from runs scored, runs conceded and overs. Enter overs in cricket notation, such as <strong>19.3</strong> for 19 overs and 3 legal balls.</p></div>
+<div class="nrr-card">
+<div class="nrr-grid">
+<div class="form-group"><label for="rf">Runs For</label><input id="rf" class="form-control" type="number" min="0" step="1" value="160" aria-label="Runs scored"></div>
+<div class="form-group"><label for="of">Overs Faced</label><input id="of" class="form-control" inputmode="decimal" value="20" aria-label="Overs faced"></div>
+<div class="form-group"><label for="ra">Runs Against</label><input id="ra" class="form-control" type="number" min="0" step="1" value="150" aria-label="Runs conceded"></div>
+<div class="form-group"><label for="oa">Overs Bowled</label><input id="oa" class="form-control" inputmode="decimal" value="20" aria-label="Overs bowled"></div>
+</div>
+<button id="calc" class="btn btn-primary" style="width:100%;margin-top:1rem">Calculate NRR</button>
+<div id="err" class="nrr-error" role="alert"></div>
+<div id="res" class="nrr-result" hidden><div class="nrr-value" id="value">0.000</div><p id="explain"></p></div>
+</div>
+<div class="info-box"><strong>Quick example:</strong> If a team scores 160 runs in 20 overs and concedes 150 runs in 20 overs, its basic NRR is <strong>+0.500</strong>.</div>
+<div class="ad-slot-container"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-box">Ad Space Available</div></div>
+<article class="article-content" style="max-width:820px;margin:2rem auto">
+<h2>What Is Net Run Rate (NRR) in Cricket?</h2>
+<p>Net Run Rate, commonly called NRR, measures how quickly a cricket team scores runs compared with how quickly it concedes runs. It is widely used in limited-overs league tables when tournament rules require a tie-break between teams on the same points.</p>
+<p>Use this free <strong>Cricket NRR Calculator</strong> to calculate a basic NRR from completed innings. It is useful for IPL, T20, ODI and other competitions where the relevant playing conditions use Net Run Rate.</p>
+<h2>Cricket NRR Formula</h2>
+<p>For a basic completed-innings calculation, the formula is:</p>
+<p><strong>NRR = (Runs Scored ÷ Overs Faced) − (Runs Conceded ÷ Overs Bowled)</strong></p>
+<p>For example, 160 runs from 20 overs gives a scoring rate of 8.000. If the opposition scores 150 from 20 overs, its rate is 7.500. Therefore, NRR = 8.000 − 7.500 = <strong>+0.500</strong>.</p>
+<h2>How to Enter Cricket Overs Correctly</h2>
+<p>Cricket overs are written in overs-and-balls notation, not normal decimal notation. <strong>19.3</strong> means 19 completed overs plus 3 legal balls. Because one over contains 6 legal balls, 19.3 is 117 legal balls, or 19.5 overs mathematically.</p>
+<p>This calculator converts the cricket notation before calculating the rate, so entering 19.3 does not incorrectly treat it as 19.3 decimal overs.</p>
+<h2>NRR Calculator for IPL and Other Tournaments</h2>
+<p>The same basic mathematical NRR formula is useful when checking an IPL or other limited-overs points table, but official tournament regulations matter for qualification. All-out innings, abandoned matches, DLS-adjusted results and competition-specific tie-break rules can affect the official calculation.</p>
+<p>For a qualification question, first identify the possible points-table outcomes and then use the NRR calculation relevant to the scenario.</p>
+<h2>NRR and Qualification Scenarios</h2>
+<p>When several teams finish on equal points, NRR can become the difference between qualifying and elimination if the tournament rules use NRR at that stage. A useful scenario analysis therefore combines points, remaining fixtures and the NRR threshold that must be beaten.</p>
+<p>Use our <a href="/cricket-qualification-calculator/">Cricket Qualification Calculator</a> to explore remaining-match qualification paths.</p>
+<h2>NRR and All-Out Innings</h2>
+<p>Official playing conditions can specify how overs are counted when a team is dismissed before using its full allocation. The calculator above performs the direct calculation from the overs you enter; for an official tournament qualification decision, follow that competition's published rules.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>What is NRR in cricket?</h3>
+<p>NRR is the difference between a team's run-scoring rate and its opponents' run-scoring rate, calculated according to the relevant competition rules.</p>
+<h3>How do I calculate NRR?</h3>
+<p>For a basic completed-innings calculation, divide runs scored by overs faced, divide runs conceded by overs bowled, and subtract the second rate from the first.</p>
+<h3>What does 19.3 overs mean?</h3>
+<p>It means 19 complete overs plus 3 legal balls. It is 117 legal balls, not 19.3 decimal overs.</p>
+<h3>Does NRR always decide qualification?</h3>
+<p>No. The official tournament rules decide which tie-breaker is used and when NRR applies.</p>
+</article>
+<div class="related-tools"><a href="/cricket-qualification-calculator/">Cricket Qualification Calculator</a><a href="/cricket-required-run-rate-calculator/">Required Run Rate Calculator</a><a href="/cricket-chase-calculator/">Cricket Chase Calculator</a></div>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 RandomlyTools. All rights reserved.</p><p><a href="/cricket-qualification-calculator/">Cricket Qualification Calculator</a></p></div></div></footer>
+<script src="/assets/js/core/ui.js"></script>
+<script>
+(()=>{
+const ballOvers=v=>{const s=String(v).trim();if(!/^\d+(\.\d+)?$/.test(s))return NaN;const parts=s.split('.');const o=Number(parts[0]);const b=parts[1]?Number(parts[1]):0;if(!Number.isInteger(b)||b<0||b>5)return NaN;return o+b/6;};
+document.getElementById('calc').addEventListener('click',()=>{const rf=Number(document.getElementById('rf').value),ra=Number(document.getElementById('ra').value),of=ballOvers(document.getElementById('of').value),oa=ballOvers(document.getElementById('oa').value),e=document.getElementById('err'),r=document.getElementById('res');if(!Number.isFinite(rf)||!Number.isFinite(ra)||!Number.isFinite(of)||!Number.isFinite(oa)||rf<0||ra<0||of<=0||oa<=0){e.textContent='Enter valid runs and overs. Overs must use cricket notation such as 19.3.';e.style.display='block';r.hidden=true;return;}e.style.display='none';const n=(rf/of)-(ra/oa);document.getElementById('value').textContent=(n>=0?'+':'')+n.toFixed(3);document.getElementById('explain').textContent='Run rate for: '+(rf/of).toFixed(3)+' • Run rate against: '+(ra/oa).toFixed(3);r.hidden=false;});
+})();
+</script>
+</body>
+</html>
