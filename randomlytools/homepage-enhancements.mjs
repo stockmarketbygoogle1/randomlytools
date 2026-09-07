@@ -37,12 +37,14 @@ const cricketCards = `
   <span class="tool-card-badge">Cricket Tools</span>
 </div>`;
 
-const toolsGridPattern = /(<section aria-label="Tools Directory"><div id="tools-grid-wrapper" class="tools-grid">[\s\S]*?)(<\/div>\s*<\/section>)/i;
-if (!html.includes('data-category="cricket"')) {
-  if (!toolsGridPattern.test(html)) {
-    throw new Error('Tools Directory grid not found on homepage.');
+// The homepage has a separate #no-tools-found block after the real tools grid.
+// Insert the cricket cards before that block so they remain actual visible cards.
+if (!html.includes('href="/cricket-qualification-calculator/"')) {
+  const gridEndMarker = /(<div id="tools-grid-wrapper" class="tools-grid">[\s\S]*?)(<\/div>\s*<div id="no-tools-found")/i;
+  if (!gridEndMarker.test(html)) {
+    throw new Error('Homepage tools grid end marker not found.');
   }
-  html = html.replace(toolsGridPattern, `$1${cricketCards}\n$2`);
+  html = html.replace(gridEndMarker, `$1${cricketCards}\n$2`);
 }
 
 html = html.replace(/All Tools \(22\)/, 'All Tools (26)');
