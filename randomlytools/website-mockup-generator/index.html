@@ -14,7 +14,7 @@
 <meta property="og:description" content="Create a professional website mockup from a URL or screenshot with ready-made multi-device layouts.">
 <meta property="og:url" content="https://randomlytools.in/website-mockup-generator/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Website Mockup Generator","url":"https://randomlytools.in/website-mockup-generator/","description":"Free online website mockup generator for creating multi-device website presentations from a URL or screenshot.","applicationCategory":"DesignApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://randomlytools.in/"},{"@type":"ListItem","position":2,"name":"Website Mockup Generator","item":"https://randomlytools.in/website-mockup-generator/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a website mockup generator?","acceptedAnswer":{"@type":"Answer","text":"A website mockup generator places a website screenshot or preview inside device frames such as laptops, phones and tablets to create a presentation-ready image."}},{"@type":"Question","name":"Can I turn a URL into a website mockup?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter a public website URL to preview it in the mockup workspace. If the site blocks embedded previews, upload a screenshot instead."}},{"@type":"Question","name":"Is this website mockup maker free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The RandomlyTools website mockup generator is a free browser-based tool with no account required for the core workflow."}},{"@type":"Question","name":"What devices are supported?","acceptedAnswer":{"@type":"Answer","text":"The tool supports laptop, tablet and phone presentation layouts."}}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Website Mockup Generator","url":"https://randomlytools.in/website-mockup-generator/","description":"Free online website mockup generator for creating multi-device website presentations from a URL or screenshot.","applicationCategory":"DesignApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://randomlytools.in/"},{"@type":"ListItem","position":2,"name":"Website Mockup Generator","item":"https://randomlytools.in/website-mockup-generator/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a website mockup generator?","acceptedAnswer":{"@type":"Answer","text":"A website mockup generator places a website screenshot or preview inside device frames such as laptops, phones and tablets to create a presentation-ready image."}},{"@type":"Question","name":"Can I turn a URL into a website mockup?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter a public website URL to preview it in the mockup workspace and create a downloadable mockup image."}},{"@type":"Question","name":"Is this website mockup maker free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The RandomlyTools website mockup generator is a free browser-based tool with no account required for the core workflow."}},{"@type":"Question","name":"What devices are supported?","acceptedAnswer":{"@type":"Answer","text":"The tool supports laptop, tablet and phone presentation layouts."}}]}]}
 </script>
 <style>
 .wmg-wrap{max-width:1100px;margin:0 auto}.wmg-tool{background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:1.25rem}.wmg-url{display:flex;gap:.75rem}.wmg-url input{flex:1}.wmg-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}.wmg-tab,.wmg-layout{border:1px solid var(--border-color);background:var(--bg-surface);border-radius:10px;padding:.65rem .9rem;cursor:pointer}.wmg-tab.active,.wmg-layout.active{border-color:var(--text-primary);font-weight:700}.wmg-grid{display:grid;grid-template-columns:240px 1fr;gap:1rem}.wmg-side{border:1px solid var(--border-color);border-radius:12px;padding:1rem}.wmg-side label{display:block;font-weight:700;margin:.9rem 0 .35rem}.wmg-side input[type=color]{width:100%;height:42px;padding:2px}.wmg-side input[type=range]{width:100%}.wmg-canvas{min-height:570px;border:1px solid var(--border-color);border-radius:14px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:2rem;background:#f2f4f7}.stage{position:relative;width:min(850px,100%);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;gap:2.5%;transition:.2s}.device{position:relative;background:#16181d;border-radius:18px;box-shadow:0 18px 38px rgba(0,0,0,.2);padding:10px}.screen{background:white;overflow:hidden;width:100%;height:100%;border-radius:10px}.screen img,.screen iframe{width:100%;height:100%;border:0;display:block;background:#fff}.device-status{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;background:rgba(255,255,255,.92);font-size:.85rem;color:#444;z-index:2}.laptop{width:68%;height:64%}.tablet{width:31%;height:66%;border-radius:20px}.phone{width:17%;height:66%;border-radius:25px}.laptop:after{content:"";position:absolute;left:-7%;right:-7%;bottom:-13px;height:13px;background:#8d9198;border-radius:0 0 8px 8px}.laptop:before{content:"";position:absolute;left:30%;right:30%;bottom:-18px;height:5px;background:#777b82;border-radius:50%}.layout-single .tablet,.layout-single .phone{display:none}.layout-duo .tablet{display:none}.layout-triple .laptop{width:64%}.layout-triple .phone{width:19%}.layout-quad .laptop{width:55%;height:60%}.layout-quad .tablet{width:23%;height:58%}.layout-quad .phone{width:14%;height:58%}.wmg-note{font-size:.9rem;color:var(--text-secondary);margin:.7rem 0 0}.upload-label{display:block;border:1px dashed var(--border-color);border-radius:10px;padding:.75rem;text-align:center;cursor:pointer}.upload-label input{display:none}.wmg-content{max-width:900px;margin:2.5rem auto}.wmg-content h2{margin-top:2rem}@media(max-width:760px){.wmg-grid{grid-template-columns:1fr}.wmg-canvas{min-height:400px;padding:1rem}.stage{aspect-ratio:4/3}.wmg-url{flex-direction:column}.laptop{width:68%;height:50%}.tablet{height:52%}.phone{height:52%}}
@@ -26,34 +26,198 @@
 <div class="tool-header" style="text-align:center;max-width:900px;margin:0 auto 1.75rem"><h1>Free Website Mockup Generator</h1><p class="section-subtitle">Turn a website URL or screenshot into a clean multi-device website mockup online. Choose a ready-made layout for laptop, tablet and phone presentations.</p></div>
 <div class="wmg-wrap"><section class="wmg-tool" aria-label="Website mockup generator">
 <div class="wmg-url"><input id="url" class="form-control" type="url" placeholder="https://example.com" aria-label="Website URL" autocomplete="url"><button id="load" type="button" class="btn btn-primary">Preview URL</button></div>
-<p id="status" class="wmg-note">Enter a public URL and click Preview URL. Some websites block embedded previews; use a screenshot if that happens.</p>
+<p id="status" class="wmg-note">Enter a public URL and click Preview URL. Some websites block embedded previews; the URL screenshot service can still capture many public pages.</p>
 <div class="wmg-tabs"><button type="button" class="wmg-tab active" id="urlMode">URL Preview</button><label class="upload-label wmg-tab">Upload Screenshot<input id="upload" type="file" accept="image/png,image/jpeg,image/webp"></label></div>
 <div class="wmg-grid"><aside class="wmg-side"><strong>Mockup Settings</strong><label>Layout</label><div class="wmg-tabs" style="margin:.25rem 0"><button type="button" class="wmg-layout active" data-layout="duo">Laptop + Phone</button><button type="button" class="wmg-layout" data-layout="triple">Laptop + 2 Phones</button><button type="button" class="wmg-layout" data-layout="quad">Laptop + Tablet + Phone</button><button type="button" class="wmg-layout" data-layout="single">Laptop</button></div><label for="bg">Background</label><input id="bg" type="color" value="#f2f4f7"><label for="radius">Corner Radius</label><input id="radius" type="range" min="6" max="28" value="18"><label for="shadow">Shadow</label><input id="shadow" type="range" min="0" max="40" value="20"><button id="download" type="button" class="btn btn-primary" style="width:100%;margin-top:1rem">Download PNG</button></aside>
 <div class="wmg-canvas" id="canvas"><div class="stage layout-duo" id="stage"><div class="device laptop"><div class="screen"><div class="device-status" id="statusLaptop">Preview will appear here</div><iframe id="frame" title="Website preview" loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe><img id="image" alt="Website screenshot" style="display:none"></div></div><div class="device tablet"><div class="screen"><div class="device-status status-secondary">Preview will appear here</div><iframe class="secondary-frame" title="Tablet website preview" loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe><img class="secondary-image" alt="Website screenshot" style="display:none"></div></div><div class="device phone"><div class="screen"><div class="device-status status-secondary">Preview will appear here</div><iframe class="secondary-frame" title="Phone website preview" loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe><img class="secondary-image" alt="Website screenshot" style="display:none"></div></div></div></div></div>
 </section></div>
 <article class="wmg-content"><h2>What Is a Website Mockup Generator?</h2><p>A website mockup generator creates a presentation image showing a website inside device frames. It is useful for designers, developers, agencies, SaaS founders and anyone who wants to present a website on a laptop, tablet or phone without building a design from scratch.</p>
-<h2>URL to Mockup in a Few Steps</h2><ol><li>Enter a public website URL and select <strong>Preview URL</strong>.</li><li>Choose a multi-device layout.</li><li>Adjust the background, corner radius and shadow.</li><li>Download the finished PNG. If the website blocks an embedded preview, upload a screenshot instead.</li></ol>
+<h2>URL to Mockup in a Few Steps</h2><ol><li>Enter a public website URL and select <strong>Preview URL</strong>.</li><li>Choose a multi-device layout.</li><li>Adjust the background, corner radius and shadow.</li><li>Click <strong>Download PNG</strong>. The tool captures the public URL through a screenshot renderer so the mockup can be exported even when the website blocks iframe embedding.</li></ol>
 <h2>Website Mockup Maker for Multiple Devices</h2><p>A multi-device website mockup is useful when you want to demonstrate responsive design. Laptop, tablet and phone views can show how the same website adapts across screen sizes.</p>
 <h2>Who Can Use This Mockup Generator?</h2><ul><li><strong>Web designers:</strong> present finished websites to clients.</li><li><strong>Developers:</strong> showcase responsive projects in portfolios.</li><li><strong>Agencies:</strong> create consistent presentation images.</li><li><strong>SaaS founders:</strong> prepare product launch graphics.</li><li><strong>Students:</strong> present website projects without Photoshop.</li></ul>
-<h2>Website Mockup vs. Website Screenshot</h2><p>A screenshot shows the page itself. A website mockup adds presentation context by placing that screenshot or preview inside a device frame and controlling the background, spacing and visual style.</p>
-<h2>Free Website Mockup Generator FAQ</h2><h3>Can I create a mockup from a URL?</h3><p>Yes. Enter the URL above to load a live preview. Websites that prevent iframe embedding may need a screenshot upload instead.</p><h3>Is this website mockup maker free?</h3><p>Yes. The core browser-based workflow is free and does not require an account.</p><h3>Can I make a multi-device website mockup?</h3><p>Yes. Use the laptop and phone, laptop with two phones, or laptop + tablet + phone layouts.</p><h3>Why does my URL not appear?</h3><p>Some websites send security headers that prevent other websites from embedding them in an iframe. This is a browser security feature, not a problem with the URL.</p>
+<h2>Website Mockup vs. Website Screenshot</h2><p>A screenshot shows the page itself. A website mockup adds presentation context by placing that screenshot inside a device frame and controlling the background, spacing and visual style.</p>
+<h2>Free Website Mockup Generator FAQ</h2><h3>Can I create a mockup from a URL?</h3><p>Yes. Enter the URL above to load a live preview and use Download PNG to create a mockup from a rendered website screenshot.</p><h3>Is this website mockup maker free?</h3><p>Yes. The core browser-based workflow is free and does not require an account.</p><h3>Can I make a multi-device website mockup?</h3><p>Yes. Use the laptop and phone, laptop with two phones, or laptop + tablet + phone layouts.</p><h3>Why does my URL not appear?</h3><p>Some websites send security headers that prevent other websites from being embedded in an iframe. The PNG export uses a separate screenshot renderer, so it can work even when the live preview is blocked.</p>
 <h2>Related Tools</h2><p><a href="/random-number-picker/">Random Number Picker</a> · <a href="/adsense-revenue-calculator/">AdSense Revenue Calculator</a></p></article></main>
 <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><p>Free, fast and privacy-focused online tools, calculators and useful utilities.</p></div><div class="footer-column"><h4>Popular Tools</h4><ul><li><a href="/random-name-generator/">Random Name Generator</a></li><li><a href="/random-number-picker/">Random Number Picker</a></li><li><a href="/attendance-calculator/">Attendance Calculator</a></li><li><a href="/adsense-revenue-calculator/">AdSense Revenue Calculator</a></li></ul></div><div class="footer-column"><h4>More Tools</h4><ul><li><a href="/iceland-salary-calculator/">Iceland Salary Calculator</a></li><li><a href="/cyprus-salary-calculator/">Cyprus Salary Calculator</a></li><li><a href="/youtube-money-calculator/">YouTube Money Calculator</a></li><li><a href="/random-country-generator/">Random Country Generator</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 RandomlyTools. All rights reserved.</p></div></div></footer>
 <script src="/assets/js/core/ui.js"></script>
 <script>
 (function(){
 'use strict';
-var urlInput=document.getElementById('url'),loadButton=document.getElementById('load'),uploadInput=document.getElementById('upload'),frame=document.getElementById('frame'),image=document.getElementById('image'),stage=document.getElementById('stage'),canvas=document.getElementById('canvas'),bg=document.getElementById('bg'),radius=document.getElementById('radius'),shadow=document.getElementById('shadow'),status=document.getElementById('status'),laptopStatus=document.getElementById('statusLaptop'),secondaryFrames=Array.prototype.slice.call(document.querySelectorAll('.secondary-frame')),secondaryImages=Array.prototype.slice.call(document.querySelectorAll('.secondary-image')),secondaryStatuses=Array.prototype.slice.call(document.querySelectorAll('.status-secondary')),imageData=null,previewTimer=null;
-function normalizeUrl(value){value=(value||'').trim();if(!value)return '';if(!/^https?:\/\//i.test(value))value='https://'+value;try{return new URL(value).href;}catch(e){return '';}}
+var urlInput=document.getElementById('url');
+var loadButton=document.getElementById('load');
+var uploadInput=document.getElementById('upload');
+var frame=document.getElementById('frame');
+var image=document.getElementById('image');
+var stage=document.getElementById('stage');
+var canvas=document.getElementById('canvas');
+var bg=document.getElementById('bg');
+var radius=document.getElementById('radius');
+var shadow=document.getElementById('shadow');
+var status=document.getElementById('status');
+var laptopStatus=document.getElementById('statusLaptop');
+var secondaryFrames=Array.prototype.slice.call(document.querySelectorAll('.secondary-frame'));
+var secondaryImages=Array.prototype.slice.call(document.querySelectorAll('.secondary-image'));
+var secondaryStatuses=Array.prototype.slice.call(document.querySelectorAll('.status-secondary'));
+var imageData=null;
+var currentUrl='';
+var previewTimer=null;
+
+function normalizeUrl(value){
+  value=(value||'').trim();
+  if(!value) return '';
+  if(!/^https?:\/\//i.test(value)) value='https://'+value;
+  try{return new URL(value).href;}catch(e){return '';}
+}
 function clearStatuses(){laptopStatus.style.display='none';secondaryStatuses.forEach(function(el){el.style.display='none';});}
-function showUrlPreview(value){var clean=normalizeUrl(value);if(!clean){status.textContent='Please enter a valid website URL, for example https://example.com.';laptopStatus.textContent='Enter a valid URL';laptopStatus.style.display='flex';return;}urlInput.value=clean;imageData=null;image.style.display='none';frame.style.display='block';secondaryImages.forEach(function(el){el.style.display='none';});secondaryFrames.forEach(function(el){el.style.display='block';});clearStatuses();status.textContent='Loading website preview… If nothing appears after a few seconds, that website may block iframe previews. Try a screenshot upload.';frame.src='about:blank';secondaryFrames.forEach(function(el){el.src='about:blank';});window.setTimeout(function(){frame.src=clean;secondaryFrames.forEach(function(el){el.src=clean;});},20);window.clearTimeout(previewTimer);previewTimer=window.setTimeout(function(){laptopStatus.textContent='If the website is blank, it may block embedded previews. Upload a screenshot to continue.';laptopStatus.style.display='flex';secondaryStatuses.forEach(function(el){el.textContent='Website may block embedded previews';el.style.display='flex';});status.textContent='Preview loaded when the website allows iframe embedding. If it stays blank, upload a screenshot of the page.';},7000);}
-loadButton.addEventListener('click',function(){showUrlPreview(urlInput.value);});urlInput.addEventListener('keydown',function(event){if(event.key==='Enter'){event.preventDefault();showUrlPreview(urlInput.value);}});frame.addEventListener('load',function(){if(frame.src&&frame.src!=='about:blank'){clearStatuses();status.textContent='Preview ready. Some websites can still block embedding because of their own security settings.';window.clearTimeout(previewTimer);}});
-uploadInput.addEventListener('change',function(){var file=uploadInput.files&&uploadInput.files[0];if(!file)return;if(file.size>10*1024*1024){status.textContent='Please choose an image smaller than 10 MB.';uploadInput.value='';return;}if(!/^image\/(png|jpeg|webp)$/i.test(file.type)){status.textContent='Please upload a PNG, JPG or WebP image.';uploadInput.value='';return;}var reader=new FileReader();reader.onload=function(){imageData=reader.result;frame.style.display='none';image.style.display='block';image.src=imageData;secondaryFrames.forEach(function(el){el.style.display='none';});secondaryImages.forEach(function(el){el.style.display='block';el.src=imageData;});clearStatuses();status.textContent='Screenshot loaded. Choose a layout and download your mockup.';};reader.onerror=function(){status.textContent='Could not read that image. Please try another screenshot.';};reader.readAsDataURL(file);});
-document.querySelectorAll('.wmg-layout').forEach(function(button){button.addEventListener('click',function(){document.querySelectorAll('.wmg-layout').forEach(function(item){item.classList.remove('active');});button.classList.add('active');stage.className='stage layout-'+button.getAttribute('data-layout');});});
-bg.addEventListener('input',function(){canvas.style.background=bg.value;});radius.addEventListener('input',function(){document.querySelectorAll('.device').forEach(function(el){el.style.borderRadius=radius.value+'px';});});shadow.addEventListener('input',function(){document.querySelectorAll('.device').forEach(function(el){var n=Number(shadow.value);el.style.boxShadow='0 '+(n*0.9)+'px '+(n*1.9)+'px rgba(0,0,0,.2)';});});
-function roundedRect(ctx,x,y,w,h,r){r=Math.min(r,w/2,h/2);ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
-function downloadCanvas(canvasEl){canvasEl.toBlob(function(blob){if(!blob){status.textContent='PNG export failed. Please try again.';return;}var objectUrl=URL.createObjectURL(blob),link=document.createElement('a');link.href=objectUrl;link.download='website-mockup.png';document.body.appendChild(link);link.click();link.remove();window.setTimeout(function(){URL.revokeObjectURL(objectUrl);},1000);status.textContent='PNG mockup downloaded successfully.';},'image/png');}
-document.getElementById('download').addEventListener('click',function(){if(!imageData){status.textContent='To download a PNG, upload a website screenshot first. Live URL pixels cannot be captured by a normal browser page because of cross-origin security.';return;}var button=this;button.disabled=true;button.textContent='Preparing PNG…';var out=document.createElement('canvas'),dpr=Math.min(window.devicePixelRatio||1,2);out.width=1600*dpr;out.height=1000*dpr;var ctx=out.getContext('2d');ctx.scale(dpr,dpr);ctx.fillStyle=bg.value;ctx.fillRect(0,0,1600,1000);var layout=document.querySelector('.wmg-layout.active').getAttribute('data-layout');var boxes;if(layout==='single')boxes=[{x:300,y:250,w:1000,h:560,r:24}];else if(layout==='triple')boxes=[{x:180,y:270,w:930,h:500,r:24},{x:1150,y:270,w:200,h:500,r:34},{x:1380,y:270,w:120,h:500,r:30}];else if(layout==='quad')boxes=[{x:160,y:280,w:800,h:470,r:24},{x:990,y:300,w:300,h:440,r:28},{x:1320,y:320,w:140,h:420,r:30}];else boxes=[{x:220,y:270,w:1000,h:540,r:24},{x:1260,y:300,w:200,h:500,r:34}];var img=new Image();img.onload=function(){try{boxes.forEach(function(b){ctx.fillStyle='#16181d';roundedRect(ctx,b.x,b.y,b.w,b.h,b.r);ctx.fill();ctx.save();roundedRect(ctx,b.x+12,b.y+12,b.w-24,b.h-24,Math.max(8,b.r-10));ctx.clip();ctx.drawImage(img,b.x+12,b.y+12,b.w-24,b.h-24);ctx.restore();});downloadCanvas(out);}catch(error){status.textContent='PNG export failed. Please try again.';}finally{button.disabled=false;button.textContent='Download PNG';}};img.onerror=function(){status.textContent='Could not prepare the screenshot for PNG export.';button.disabled=false;button.textContent='Download PNG';};img.src=imageData;});
+function showUrlPreview(value){
+  var clean=normalizeUrl(value);
+  if(!clean){status.textContent='Please enter a valid website URL, for example https://example.com.';laptopStatus.textContent='Enter a valid URL';laptopStatus.style.display='flex';return;}
+  currentUrl=clean;
+  urlInput.value=clean;
+  imageData=null;
+  image.style.display='none';
+  frame.style.display='block';
+  secondaryImages.forEach(function(el){el.style.display='none';});
+  secondaryFrames.forEach(function(el){el.style.display='block';});
+  clearStatuses();
+  status.textContent='Loading website preview… If the site blocks iframe embedding, the PNG export can still use the URL screenshot renderer.';
+  frame.src='about:blank';
+  secondaryFrames.forEach(function(el){el.src='about:blank';});
+  window.setTimeout(function(){frame.src=clean;secondaryFrames.forEach(function(el){el.src=clean;});},20);
+  window.clearTimeout(previewTimer);
+  previewTimer=window.setTimeout(function(){
+    laptopStatus.textContent='If the live preview is blank, the site may block embedding. Download PNG can still capture the public URL.';
+    laptopStatus.style.display='flex';
+    secondaryStatuses.forEach(function(el){el.textContent='Live preview may be blocked';el.style.display='flex';});
+    status.textContent='Preview is available when the website allows iframe embedding. Download PNG uses a separate URL screenshot renderer.';
+  },7000);
+}
+loadButton.addEventListener('click',function(){showUrlPreview(urlInput.value);});
+urlInput.addEventListener('keydown',function(event){if(event.key==='Enter'){event.preventDefault();showUrlPreview(urlInput.value);}});
+frame.addEventListener('load',function(){
+  if(frame.src && frame.src!=='about:blank'){
+    clearStatuses();
+    status.textContent='Preview ready. Download PNG can export the URL as a website mockup.';
+    window.clearTimeout(previewTimer);
+  }
+});
+
+uploadInput.addEventListener('change',function(){
+  var file=uploadInput.files && uploadInput.files[0];
+  if(!file) return;
+  if(file.size>10*1024*1024){status.textContent='Please choose an image smaller than 10 MB.';uploadInput.value='';return;}
+  var reader=new FileReader();
+  reader.onload=function(){
+    imageData=reader.result;
+    currentUrl='';
+    frame.style.display='none';
+    image.style.display='block';
+    image.src=imageData;
+    secondaryFrames.forEach(function(el){el.style.display='none';});
+    secondaryImages.forEach(function(el){el.style.display='block';el.src=imageData;});
+    clearStatuses();
+    status.textContent='Screenshot loaded. Choose a layout and download your mockup.';
+  };
+  reader.readAsDataURL(file);
+});
+
+document.querySelectorAll('.wmg-layout').forEach(function(button){
+  button.addEventListener('click',function(){
+    document.querySelectorAll('.wmg-layout').forEach(function(item){item.classList.remove('active');});
+    button.classList.add('active');
+    stage.className='stage layout-'+button.getAttribute('data-layout');
+  });
+});
+bg.addEventListener('input',function(){canvas.style.background=bg.value;});
+radius.addEventListener('input',function(){document.querySelectorAll('.device').forEach(function(el){el.style.borderRadius=radius.value+'px';});});
+shadow.addEventListener('input',function(){document.querySelectorAll('.device').forEach(function(el){var n=Number(shadow.value);el.style.boxShadow='0 '+(n*0.9)+'px '+(n*1.9)+'px rgba(0,0,0,.2)';});});
+
+function roundedRect(ctx,x,y,w,h,r){
+  r=Math.min(r,w/2,h/2);
+  ctx.beginPath();
+  ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();
+}
+function getBoxes(layout){
+  if(layout==='single') return [{x:300,y:250,w:1000,h:560,r:24}];
+  if(layout==='triple') return [{x:230,y:270,w:900,h:500,r:24},{x:1170,y:270,w:220,h:500,r:34},{x:1410,y:270,w:140,h:500,r:30}];
+  if(layout==='quad') return [{x:220,y:280,w:820,h:470,r:24},{x:1080,y:300,w:300,h:440,r:28},{x:1410,y:320,w:130,h:420,r:30}];
+  return [{x:250,y:270,w:1000,h:540,r:24},{x:1310,y:300,w:190,h:500,r:32}];
+}
+function drawMockup(source,done){
+  var out=document.createElement('canvas');
+  out.width=1600;out.height=1000;
+  var ctx=out.getContext('2d');
+  ctx.fillStyle=bg.value;ctx.fillRect(0,0,out.width,out.height);
+  var layout=document.querySelector('.wmg-layout.active').getAttribute('data-layout');
+  var boxes=getBoxes(layout);
+  var img=new Image();
+  img.onload=function(){
+    boxes.forEach(function(b){
+      ctx.save();
+      ctx.shadowColor='rgba(0,0,0,.22)';
+      ctx.shadowBlur=34;
+      ctx.shadowOffsetY=18;
+      ctx.fillStyle='#16181d';
+      roundedRect(ctx,b.x,b.y,b.w,b.h,b.r);ctx.fill();
+      ctx.restore();
+      ctx.save();
+      roundedRect(ctx,b.x+12,b.y+12,b.w-24,b.h-24,Math.max(8,b.r-10));
+      ctx.clip();
+      ctx.drawImage(img,b.x+12,b.y+12,b.w-24,b.h-24);
+      ctx.restore();
+    });
+    out.toBlob(function(blob){
+      if(!blob){done(new Error('PNG creation failed'));return;}
+      var link=document.createElement('a');
+      link.download='website-mockup.png';
+      link.href=URL.createObjectURL(blob);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.setTimeout(function(){URL.revokeObjectURL(link.href);},1000);
+      done(null);
+    },'image/png');
+  };
+  img.onerror=function(){done(new Error('Screenshot could not be loaded'));};
+  img.src=source;
+}
+function getUrlScreenshot(url){
+  return 'https://image.thum.io/get/width/1280/crop/800/noanimate/'+url;
+}
+
+document.getElementById('download').addEventListener('click',function(){
+  var button=this;
+  if(!imageData && !currentUrl){
+    status.textContent='Enter a website URL or upload a screenshot before downloading.';
+    return;
+  }
+  button.disabled=true;
+  button.textContent='Preparing PNG…';
+  status.textContent=imageData?'Creating your PNG mockup…':'Capturing the website URL… This may take a few seconds.';
+  if(imageData){
+    drawMockup(imageData,function(error){
+      button.disabled=false;button.textContent='Download PNG';
+      if(error){status.textContent='PNG export failed. Please try another screenshot.';return;}
+      status.textContent='PNG mockup downloaded successfully.';
+    });
+    return;
+  }
+  var screenshotUrl=getUrlScreenshot(currentUrl);
+  var remoteImage=new Image();
+  remoteImage.crossOrigin='anonymous';
+  remoteImage.onload=function(){
+    drawMockup(screenshotUrl,function(error){
+      button.disabled=false;button.textContent='Download PNG';
+      if(error){status.textContent='The URL screenshot could not be rendered. Please try again in a few seconds or upload a screenshot.';return;}
+      status.textContent='URL website mockup downloaded successfully.';
+    });
+  };
+  remoteImage.onerror=function(){
+    button.disabled=false;button.textContent='Download PNG';
+    status.textContent='The URL screenshot service could not capture this page. Please try again or upload a screenshot.';
+  };
+  remoteImage.src=screenshotUrl+'&_rt='+Date.now();
+});
 })();
 </script>
 </body>
