@@ -11,7 +11,7 @@ if (!fs.existsSync(homepage)) {
 
 let html = fs.readFileSync(homepage, 'utf8');
 
-const cricketCards = `
+const homepageCards = `
 <div class="tool-card" data-category="cricket" data-keywords="cricket qualification calculator playoff qualification scenarios points table simulator IPL cricket playoff NRR qualify">
   <div class="tool-card-icon">🏏</div>
   <h2 class="tool-card-title"><a href="/cricket-qualification-calculator/">Cricket Qualification Calculator</a></h2>
@@ -35,24 +35,37 @@ const cricketCards = `
   <h2 class="tool-card-title"><a href="/cricket-chase-calculator/">Cricket Chase Calculator</a></h2>
   <p class="tool-card-desc">Calculate runs required, required run rate and scoring-rate scenarios for a cricket chase.</p>
   <span class="tool-card-badge">Cricket Tools</span>
+</div>
+<div class="tool-card" data-category="websites" data-keywords="website mockup generator url to mockup website mockup maker link mockup generator mockup generator website mockup online multi device website mockup free website mockup generator website screenshot mockup">
+  <div class="tool-card-icon">🖥️</div>
+  <h2 class="tool-card-title"><a href="/website-mockup-generator/">Website Mockup Generator</a></h2>
+  <p class="tool-card-desc">Turn a website URL or screenshot into a professional multi-device mockup for presentations, portfolios and product showcases.</p>
+  <span class="tool-card-badge">Website & Creator Tools</span>
 </div>`;
 
 // The homepage has a separate #no-tools-found block after the real tools grid.
-// Insert the cricket cards before that block so they remain actual visible cards.
+// Insert the cards before that block so they remain actual searchable homepage cards.
 if (!html.includes('href="/cricket-qualification-calculator/"')) {
   const gridEndMarker = /(<div id="tools-grid-wrapper" class="tools-grid">[\s\S]*?)(<\/div>\s*<div id="no-tools-found")/i;
   if (!gridEndMarker.test(html)) {
     throw new Error('Homepage tools grid end marker not found.');
   }
-  html = html.replace(gridEndMarker, `$1${cricketCards}\n$2`);
+  html = html.replace(gridEndMarker, `$1${homepageCards}\n$2`);
 }
 
-html = html.replace(/All Tools \(22\)/, 'All Tools (26)');
+html = html.replace(/All Tools \(22\)/, 'All Tools (27)');
 
-if (!html.includes('data-category="cricket">Cricket Tools')) {
+// Add dedicated homepage category filters for the newly injected tool groups.
+if (!html.includes('data-category="cricket">Cricket Tools</button>')) {
   const youtubeButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="youtube"[^>]*>YouTube Tools<\/button>)/i;
   if (youtubeButton.test(html)) {
     html = html.replace(youtubeButton, '$1<button type="button" class="preset-chip category-filter-btn" data-category="cricket">Cricket Tools</button>');
+  }
+}
+if (!html.includes('data-category="websites">Website & Creator</button>')) {
+  const cricketButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="cricket"[^>]*>Cricket Tools<\/button>)/i;
+  if (cricketButton.test(html)) {
+    html = html.replace(cricketButton, '$1<button type="button" class="preset-chip category-filter-btn" data-category="websites">Website & Creator</button>');
   }
 }
 
@@ -60,13 +73,17 @@ const jsonTools = [
   ['23', 'Cricket Qualification Calculator', 'https://randomlytools.in/cricket-qualification-calculator/'],
   ['24', 'Cricket NRR Calculator', 'https://randomlytools.in/cricket-nrr-calculator/'],
   ['25', 'Cricket Required Run Rate Calculator', 'https://randomlytools.in/cricket-required-run-rate-calculator/'],
-  ['26', 'Cricket Chase Calculator', 'https://randomlytools.in/cricket-chase-calculator/']
+  ['26', 'Cricket Chase Calculator', 'https://randomlytools.in/cricket-chase-calculator/'],
+  ['27', 'Website Mockup Generator', 'https://randomlytools.in/website-mockup-generator/']
 ];
 
 for (const [position, name, url] of jsonTools) {
   if (!html.includes(`"url":"${url}"`)) {
     const item = `,{"@type":"ListItem","position":${position},"name":"${name}","url":"${url}"}`;
     const marker = /("url":"https:\/\/randomlytools\.in\/youtube-shorts-earnings-calculator\/"})/;
+    if (!marker.test(html)) {
+      throw new Error('Homepage JSON-LD insertion marker not found.');
+    }
     html = html.replace(marker, `$1${item}`);
   }
 }
@@ -75,7 +92,8 @@ const popularLinks = [
   '<li><a href="/cricket-qualification-calculator/">Cricket Qualification Calculator</a></li>',
   '<li><a href="/cricket-nrr-calculator/">Cricket NRR Calculator</a></li>',
   '<li><a href="/cricket-required-run-rate-calculator/">Cricket Required Run Rate Calculator</a></li>',
-  '<li><a href="/cricket-chase-calculator/">Cricket Chase Calculator</a></li>'
+  '<li><a href="/cricket-chase-calculator/">Cricket Chase Calculator</a></li>',
+  '<li><a href="/website-mockup-generator/">Website Mockup Generator</a></li>'
 ].join('');
 
 if (!html.includes('footer-cricket-popular-tools')) {
@@ -89,4 +107,4 @@ if (!html.includes('footer-cricket-popular-tools')) {
 }
 
 fs.writeFileSync(homepage, html);
-console.log('Homepage cricket tool cards and Popular Tools footer links added.');
+console.log('Homepage cricket and website mockup tool cards plus footer links added.');
