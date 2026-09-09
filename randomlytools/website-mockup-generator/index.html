@@ -143,15 +143,15 @@ function getBoxes(layout){
   if(layout==='quad') return [{x:220,y:280,w:820,h:470,r:24},{x:1080,y:300,w:300,h:440,r:28},{x:1410,y:320,w:130,h:420,r:30}];
   return [{x:250,y:270,w:1000,h:540,r:24},{x:1310,y:300,w:190,h:500,r:32}];
 }
-function drawMockup(source,done){
+function drawMockupImage(img,done){
   var out=document.createElement('canvas');
   out.width=1600;out.height=1000;
   var ctx=out.getContext('2d');
+  if(!ctx){done(new Error('Canvas is not supported'));return;}
   ctx.fillStyle=bg.value;ctx.fillRect(0,0,out.width,out.height);
   var layout=document.querySelector('.wmg-layout.active').getAttribute('data-layout');
   var boxes=getBoxes(layout);
-  var img=new Image();
-  img.onload=function(){
+  try{
     boxes.forEach(function(b){
       ctx.save();
       ctx.shadowColor='rgba(0,0,0,.22)';
@@ -166,23 +166,22 @@ function drawMockup(source,done){
       ctx.drawImage(img,b.x+12,b.y+12,b.w-24,b.h-24);
       ctx.restore();
     });
-    out.toBlob(function(blob){
-      if(!blob){done(new Error('PNG creation failed'));return;}
-      var link=document.createElement('a');
-      link.download='website-mockup.png';
-      link.href=URL.createObjectURL(blob);
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      window.setTimeout(function(){URL.revokeObjectURL(link.href);},1000);
-      done(null);
-    },'image/png');
-  };
-  img.onerror=function(){done(new Error('Screenshot could not be loaded'));};
-  img.src=source;
+  }catch(e){done(new Error('The screenshot could not be exported safely'));return;}
+  out.toBlob(function(blob){
+    if(!blob){done(new Error('PNG creation failed'));return;}
+    var link=document.createElement('a');
+    var objectUrl=URL.createObjectURL(blob);
+    link.download='website-mockup.png';
+    link.href=objectUrl;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.setTimeout(function(){URL.revokeObjectURL(objectUrl);},1000);
+    done(null);
+  },'image/png');
 }
 function getUrlScreenshot(url){
-  return 'https://image.thum.io/get/width/1280/crop/800/noanimate/'+url;
+  return 'https://image.thum.io/get/width/1280/crop/800/noanimate/?url='+encodeURIComponent(url);
 }
 
 document.getElementById('download').addEventListener('click',function(){
@@ -195,20 +194,28 @@ document.getElementById('download').addEventListener('click',function(){
   button.textContent='Preparing PNG…';
   status.textContent=imageData?'Creating your PNG mockup…':'Capturing the website URL… This may take a few seconds.';
   if(imageData){
-    drawMockup(imageData,function(error){
+    var localImage=new Image();
+    localImage.onload=function(){
+      drawMockupImage(localImage,function(error){
+        button.disabled=false;button.textContent='Download PNG';
+        if(error){status.textContent='PNG export failed. Please try another screenshot.';return;}
+        status.textContent='PNG mockup downloaded successfully.';
+      });
+    };
+    localImage.onerror=function(){
       button.disabled=false;button.textContent='Download PNG';
-      if(error){status.textContent='PNG export failed. Please try another screenshot.';return;}
-      status.textContent='PNG mockup downloaded successfully.';
-    });
+      status.textContent='The uploaded screenshot could not be read. Please choose another image.';
+    };
+    localImage.src=imageData;
     return;
   }
   var screenshotUrl=getUrlScreenshot(currentUrl);
   var remoteImage=new Image();
   remoteImage.crossOrigin='anonymous';
   remoteImage.onload=function(){
-    drawMockup(screenshotUrl,function(error){
+    drawMockupImage(remoteImage,function(error){
       button.disabled=false;button.textContent='Download PNG';
-      if(error){status.textContent='The URL screenshot could not be rendered. Please try again in a few seconds or upload a screenshot.';return;}
+      if(error){status.textContent='The URL screenshot could not be exported. Please try again in a few seconds or upload a screenshot.';return;}
       status.textContent='URL website mockup downloaded successfully.';
     });
   };
@@ -216,7 +223,7 @@ document.getElementById('download').addEventListener('click',function(){
     button.disabled=false;button.textContent='Download PNG';
     status.textContent='The URL screenshot service could not capture this page. Please try again or upload a screenshot.';
   };
-  remoteImage.src=screenshotUrl+'&_rt='+Date.now();
+  remoteImage.src=screenshotUrl;
 });
 })();
 </script>
