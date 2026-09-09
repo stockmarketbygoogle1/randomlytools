@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.dirname(fileURLToPath(import.meta.url));
 const dist = path.join(root, 'dist');
 
-const instagramUrl = 'https://www.instagram.com/randomlytools';
+const instagramUrl = 'https://www.instagram.com/randomlytools/';
 const threadsUrl = 'https://www.threads.com/@randomlytools';
 
 const socialLinks = `
@@ -30,11 +30,12 @@ function processFile(file) {
   let html = fs.readFileSync(file, 'utf8');
   if (html.includes('randomlytools-header-social')) return false;
 
-  const headerPattern = /(<header\\b[^>]*>[\\s\\S]*?<nav\\b[^>]*class=["'][^"']*nav-links[^"']*["'][^>]*>[\\s\\S]*?<\\/nav>)/i;
+  // Match the real generated header/nav without over-escaping the RegExp.
+  const headerPattern = /(<header\b[^>]*>[\s\S]*?<nav\b[^>]*class=["'][^"']*nav-links[^"']*["'][^>]*>[\s\S]*?<\/nav>)/i;
   if (!headerPattern.test(html)) return false;
 
   html = html.replace(headerPattern, `$1${socialLinks}`);
-  html = html.replace(/<\\/head>/i, `${socialStyles}</head>`);
+  html = html.replace(/<\/head>/i, `${socialStyles}</head>`);
   fs.writeFileSync(file, html);
   return true;
 }
