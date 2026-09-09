@@ -138,12 +138,20 @@ function roundedRect(ctx,x,y,w,h,r){
   ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();
 }
 function getBoxes(layout){
-  if(layout==='single') return [{x:300,y:250,w:1000,h:560,r:24}];
-  if(layout==='triple') return [{x:230,y:270,w:900,h:500,r:24},{x:1170,y:270,w:220,h:500,r:34},{x:1410,y:270,w:140,h:500,r:30}];
-  if(layout==='quad') return [{x:220,y:280,w:820,h:470,r:24},{x:1080,y:300,w:300,h:440,r:28},{x:1410,y:320,w:130,h:420,r:30}];
-  return [{x:250,y:270,w:1000,h:540,r:24},{x:1310,y:300,w:190,h:500,r:32}];
+  if(layout==='single') return [{type:'laptop',x:300,y:250,w:1000,h:560,r:24}];
+  if(layout==='triple') return [{type:'laptop',x:230,y:270,w:900,h:500,r:24},{type:'phone',x:1170,y:270,w:220,h:500,r:34},{type:'phone',x:1410,y:270,w:140,h:500,r:30}];
+  if(layout==='quad') return [{type:'laptop',x:220,y:280,w:820,h:470,r:24},{type:'tablet',x:1080,y:300,w:300,h:440,r:28},{type:'phone',x:1410,y:320,w:130,h:420,r:30}];
+  return [{type:'laptop',x:250,y:270,w:1000,h:540,r:24},{type:'phone',x:1310,y:300,w:190,h:500,r:32}];
 }
-function drawMockupImage(img,done){
+function drawCover(ctx,img,b){
+  var iw=img.naturalWidth||img.width,ih=img.naturalHeight||img.height;
+  if(!iw||!ih)return;
+  var targetRatio=b.w/b.h,sourceRatio=iw/ih,sw=iw,sh=ih,sx=0,sy=0;
+  if(sourceRatio>targetRatio){sw=ih*targetRatio;sx=(iw-sw)/2;}
+  else{sh=iw/targetRatio;sy=(ih-sh)/2;}
+  ctx.drawImage(img,sx,sy,sw,sh,b.x+12,b.y+12,b.w-24,b.h-24);
+}
+function drawMockupImages(images,done){
   var out=document.createElement('canvas');
   out.width=1600;out.height=1000;
   var ctx=out.getContext('2d');
@@ -152,7 +160,7 @@ function drawMockupImage(img,done){
   var layout=document.querySelector('.wmg-layout.active').getAttribute('data-layout');
   var boxes=getBoxes(layout);
   try{
-    boxes.forEach(function(b){
+    boxes.forEach(function(b,index){
       ctx.save();
       ctx.shadowColor='rgba(0,0,0,.22)';
       ctx.shadowBlur=34;
@@ -163,7 +171,8 @@ function drawMockupImage(img,done){
       ctx.save();
       roundedRect(ctx,b.x+12,b.y+12,b.w-24,b.h-24,Math.max(8,b.r-10));
       ctx.clip();
-      ctx.drawImage(img,b.x+12,b.y+12,b.w-24,b.h-24);
+      var img=images[b.type]||images.default;
+      if(img) drawCover(ctx,img,b);
       ctx.restore();
     });
   }catch(e){done(new Error('The screenshot could not be exported safely'));return;}
@@ -180,8 +189,32 @@ function drawMockupImage(img,done){
     done(null);
   },'image/png');
 }
-function getUrlScreenshot(url){
-  return 'https://image.thum.io/get/width/1280/crop/800/noanimate/?url='+encodeURIComponent(url);
+function getUrlScreenshot(url,width,crop){
+  return 'https://image.thum.io/get/width/'+width+'/crop/'+crop+'/noanimate/?url='+encodeURIComponent(url);
+}
+function loadRemoteImage(src,done){
+  var img=new Image();
+  img.crossOrigin='anonymous';
+  img.onload=function(){done(null,img);};
+  img.onerror=function(){done(new Error('Screenshot capture failed'));};
+  img.src=src;
+}
+function captureUrlScreenshots(url,done){
+  var specs={
+    laptop:getUrlScreenshot(url,1280,800),
+    tablet:getUrlScreenshot(url,768,900),
+    phone:getUrlScreenshot(url,390,844)
+  };
+  var result={},keys=['laptop','tablet','phone'],pending=keys.length,failed=false;
+  keys.forEach(function(key){
+    loadRemoteImage(specs[key],function(error,img){
+      if(failed)return;
+      if(error){failed=true;done(error);return;}
+      result[key]=img;
+      pending--;
+      if(pending===0){result.default=result.laptop;done(null,result);}
+    });
+  });
 }
 
 document.getElementById('download').addEventListener('click',function(){
@@ -192,11 +225,11 @@ document.getElementById('download').addEventListener('click',function(){
   }
   button.disabled=true;
   button.textContent='Preparing PNG…';
-  status.textContent=imageData?'Creating your PNG mockup…':'Capturing the website URL… This may take a few seconds.';
+  status.textContent=imageData?'Creating your PNG mockup…':'Capturing responsive laptop, tablet and phone screenshots…';
   if(imageData){
     var localImage=new Image();
     localImage.onload=function(){
-      drawMockupImage(localImage,function(error){
+      drawMockupImages({default:localImage,laptop:localImage,tablet:localImage,phone:localImage},function(error){
         button.disabled=false;button.textContent='Download PNG';
         if(error){status.textContent='PNG export failed. Please try another screenshot.';return;}
         status.textContent='PNG mockup downloaded successfully.';
@@ -209,21 +242,18 @@ document.getElementById('download').addEventListener('click',function(){
     localImage.src=imageData;
     return;
   }
-  var screenshotUrl=getUrlScreenshot(currentUrl);
-  var remoteImage=new Image();
-  remoteImage.crossOrigin='anonymous';
-  remoteImage.onload=function(){
-    drawMockupImage(remoteImage,function(error){
+  captureUrlScreenshots(currentUrl,function(error,images){
+    if(error){
       button.disabled=false;button.textContent='Download PNG';
-      if(error){status.textContent='The URL screenshot could not be exported. Please try again in a few seconds or upload a screenshot.';return;}
-      status.textContent='URL website mockup downloaded successfully.';
+      status.textContent='The URL screenshot service could not capture all device views. Please try again or upload a screenshot.';
+      return;
+    }
+    drawMockupImages(images,function(drawError){
+      button.disabled=false;button.textContent='Download PNG';
+      if(drawError){status.textContent='The URL screenshots could not be exported. Please try again or upload a screenshot.';return;}
+      status.textContent='Responsive URL website mockup downloaded successfully.';
     });
-  };
-  remoteImage.onerror=function(){
-    button.disabled=false;button.textContent='Download PNG';
-    status.textContent='The URL screenshot service could not capture this page. Please try again or upload a screenshot.';
-  };
-  remoteImage.src=screenshotUrl;
+  });
 });
 })();
 </script>
