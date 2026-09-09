@@ -8,6 +8,7 @@ const source = path.join(root, 'randomlytools');
 const nestedBuild = path.join(source, 'build-static.mjs');
 const homepageEnhancements = path.join(source, 'homepage-enhancements.mjs');
 const socialLinksEnhancement = path.join(source, 'social-links-enhancement.mjs');
+const socialHeaderEnhancement = path.join(source, 'social-header-enhancement.mjs');
 const nestedOutput = path.join(source, 'dist');
 const output = path.join(root, 'dist');
 
@@ -23,6 +24,9 @@ if (!fs.existsSync(homepageEnhancements)) {
 if (!fs.existsSync(socialLinksEnhancement)) {
   throw new Error(`Social links enhancement script not found: ${socialLinksEnhancement}`);
 }
+if (!fs.existsSync(socialHeaderEnhancement)) {
+  throw new Error(`Header social enhancement script not found: ${socialHeaderEnhancement}`);
+}
 
 // Build the existing site first. This preserves the current page generation flow.
 execFileSync(process.execPath, [nestedBuild], { cwd: source, stdio: 'inherit' });
@@ -31,9 +35,9 @@ execFileSync(process.execPath, [nestedBuild], { cwd: source, stdio: 'inherit' })
 // it modifies the generated homepage inside randomlytools/dist.
 execFileSync(process.execPath, [homepageEnhancements], { cwd: source, stdio: 'inherit' });
 
-// Add the same social links to every generated HTML page without changing
-// existing page functionality or requiring a shared template rewrite.
+// Keep the existing footer/social enhancement and add the new sitewide header links.
 execFileSync(process.execPath, [socialLinksEnhancement], { cwd: source, stdio: 'inherit' });
+execFileSync(process.execPath, [socialHeaderEnhancement], { cwd: source, stdio: 'inherit' });
 
 fs.rmSync(output, { recursive: true, force: true });
 fs.cpSync(nestedOutput, output, { recursive: true });
