@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "node build-static.mjs && node favicon-setup.mjs && node homepage-enhancements.mjs",
+    "build": "node build-static.mjs && node favicon-setup.mjs && node homepage-enhancements.mjs && node social-links-enhancement.mjs",
     "preview": "vite preview",
     "clean": "rm -rf dist node_modules/.vite"
   },
