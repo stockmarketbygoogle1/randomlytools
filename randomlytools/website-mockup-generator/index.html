@@ -42,134 +42,18 @@
 <script src="/assets/js/core/ui.js"></script>
 <script>
 (function(){
-  'use strict';
-  var urlInput=document.getElementById('url');
-  var loadButton=document.getElementById('load');
-  var uploadInput=document.getElementById('upload');
-  var frame=document.getElementById('frame');
-  var image=document.getElementById('image');
-  var stage=document.getElementById('stage');
-  var canvas=document.getElementById('canvas');
-  var bg=document.getElementById('bg');
-  var radius=document.getElementById('radius');
-  var shadow=document.getElementById('shadow');
-  var status=document.getElementById('status');
-  var laptopStatus=document.getElementById('statusLaptop');
-  var secondaryFrames=Array.prototype.slice.call(document.querySelectorAll('.secondary-frame'));
-  var secondaryImages=Array.prototype.slice.call(document.querySelectorAll('.secondary-image'));
-  var secondaryStatuses=Array.prototype.slice.call(document.querySelectorAll('.status-secondary'));
-  var imageData=null;
-  var previewTimer=null;
-
-  function normalizeUrl(value){
-    value=(value||'').trim();
-    if(!value) return '';
-    if(!/^https?:\/\//i.test(value)) value='https://'+value;
-    try{return new URL(value).href;}catch(e){return '';}
-  }
-
-  function clearStatuses(){
-    laptopStatus.style.display='none';
-    secondaryStatuses.forEach(function(el){el.style.display='none';});
-  }
-
-  function showUrlPreview(value){
-    var clean=normalizeUrl(value);
-    if(!clean){
-      status.textContent='Please enter a valid website URL, for example https://example.com.';
-      laptopStatus.textContent='Enter a valid URL';
-      laptopStatus.style.display='flex';
-      return;
-    }
-    urlInput.value=clean;
-    imageData=null;
-    image.style.display='none';
-    frame.style.display='block';
-    secondaryImages.forEach(function(el){el.style.display='none';});
-    secondaryFrames.forEach(function(el){el.style.display='block';});
-    clearStatuses();
-    status.textContent='Loading website preview… If nothing appears after a few seconds, that website may block iframe previews. Try a screenshot upload.';
-    frame.src='about:blank';
-    secondaryFrames.forEach(function(el){el.src='about:blank';});
-    window.setTimeout(function(){
-      frame.src=clean;
-      secondaryFrames.forEach(function(el){el.src=clean;});
-    },20);
-    window.clearTimeout(previewTimer);
-    previewTimer=window.setTimeout(function(){
-      if(frame.contentWindow){
-        laptopStatus.textContent='If the website is blank, it may block embedded previews. Upload a screenshot to continue.';
-        laptopStatus.style.display='flex';
-        secondaryStatuses.forEach(function(el){el.textContent='Website may block embedded previews';el.style.display='flex';});
-      }
-      status.textContent='Preview loaded when the website allows iframe embedding. If it stays blank, upload a screenshot of the page.';
-    },7000);
-  }
-
-  loadButton.addEventListener('click',function(){showUrlPreview(urlInput.value);});
-  urlInput.addEventListener('keydown',function(event){if(event.key==='Enter'){event.preventDefault();showUrlPreview(urlInput.value);}});
-  frame.addEventListener('load',function(){
-    if(frame.src && frame.src!=='about:blank'){
-      clearStatuses();
-      status.textContent='Preview ready. Some websites can still block embedding because of their own security settings.';
-      window.clearTimeout(previewTimer);
-    }
-  });
-
-  uploadInput.addEventListener('change',function(){
-    var file=uploadInput.files && uploadInput.files[0];
-    if(!file) return;
-    if(file.size>10*1024*1024){status.textContent='Please choose an image smaller than 10 MB.';uploadInput.value='';return;}
-    var reader=new FileReader();
-    reader.onload=function(){
-      imageData=reader.result;
-      frame.style.display='none';
-      image.style.display='block';
-      image.src=imageData;
-      secondaryFrames.forEach(function(el){el.style.display='none';});
-      secondaryImages.forEach(function(el){el.style.display='block';el.src=imageData;});
-      clearStatuses();
-      status.textContent='Screenshot loaded. Choose a layout and download your mockup.';
-    };
-    reader.readAsDataURL(file);
-  });
-
-  document.querySelectorAll('.wmg-layout').forEach(function(button){
-    button.addEventListener('click',function(){
-      document.querySelectorAll('.wmg-layout').forEach(function(item){item.classList.remove('active');});
-      button.classList.add('active');
-      stage.className='stage layout-'+button.getAttribute('data-layout');
-    });
-  });
-
-  bg.addEventListener('input',function(){canvas.style.background=bg.value;});
-  radius.addEventListener('input',function(){document.querySelectorAll('.device').forEach(function(el){el.style.borderRadius=radius.value+'px';});});
-  shadow.addEventListener('input',function(){document.querySelectorAll('.device').forEach(function(el){var n=Number(shadow.value);el.style.boxShadow='0 '+(n*0.9)+'px '+(n*1.9)+'px rgba(0,0,0,.2)';});});
-
-  function roundedRect(ctx,x,y,w,h,r){
-    r=Math.min(r,w/2,h/2);
-    ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();
-  }
-
-  document.getElementById('download').addEventListener('click',function(){
-    if(!imageData){
-      status.textContent='For PNG export, upload a screenshot first. Browser security prevents this page from reading pixels from a cross-origin live iframe.';
-      return;
-    }
-    var out=document.createElement('canvas');
-    out.width=1600;out.height=1000;
-    var ctx=out.getContext('2d');
-    ctx.fillStyle=bg.value;ctx.fillRect(0,0,out.width,out.height);
-    var layout=document.querySelector('.wmg-layout.active').getAttribute('data-layout');
-    var boxes=[];
-    if(layout==='single') boxes=[{x:300,y:250,w:1000,h:560,r:24}];
-    else if(layout==='triple') boxes=[{x:250,y:270,w:900,h:500,r:24},{x:1190,y:270,w:220,h:500,r:34},{x:1420,y:270,w:120,h:500,r:28}];
-    else if(layout==='quad') boxes=[{x:240,y:280,w:820,h:470,r:24},{x:1090,y:300,w:300,h:440,r:28},{x:1410,y:320,w:130,h:420,r:30}];
-    else boxes=[{x:270,y:270,w:1000,h:540,r:24},{x:1320,y:300,w:180,h:500,r:32}];
-    var img=new Image();
-    img.onload=function(){boxes.forEach(function(b){ctx.fillStyle='#16181d';roundedRect(ctx,b.x,b.y,b.w,b.h,b.r);ctx.fill();ctx.save();roundedRect(ctx,b.x+12,b.y+12,b.w-24,b.h-24,Math.max(8,b.r-10));ctx.clip();ctx.drawImage(img,b.x+12,b.y+12,b.w-24,b.h-24);ctx.restore();});var link=document.createElement('a');link.download='website-mockup.png';link.href=out.toDataURL('image/png');link.click();status.textContent='PNG mockup created.';};
-    img.src=imageData;
-  });
+'use strict';
+var urlInput=document.getElementById('url'),loadButton=document.getElementById('load'),uploadInput=document.getElementById('upload'),frame=document.getElementById('frame'),image=document.getElementById('image'),stage=document.getElementById('stage'),canvas=document.getElementById('canvas'),bg=document.getElementById('bg'),radius=document.getElementById('radius'),shadow=document.getElementById('shadow'),status=document.getElementById('status'),laptopStatus=document.getElementById('statusLaptop'),secondaryFrames=Array.prototype.slice.call(document.querySelectorAll('.secondary-frame')),secondaryImages=Array.prototype.slice.call(document.querySelectorAll('.secondary-image')),secondaryStatuses=Array.prototype.slice.call(document.querySelectorAll('.status-secondary')),imageData=null,previewTimer=null;
+function normalizeUrl(value){value=(value||'').trim();if(!value)return '';if(!/^https?:\/\//i.test(value))value='https://'+value;try{return new URL(value).href;}catch(e){return '';}}
+function clearStatuses(){laptopStatus.style.display='none';secondaryStatuses.forEach(function(el){el.style.display='none';});}
+function showUrlPreview(value){var clean=normalizeUrl(value);if(!clean){status.textContent='Please enter a valid website URL, for example https://example.com.';laptopStatus.textContent='Enter a valid URL';laptopStatus.style.display='flex';return;}urlInput.value=clean;imageData=null;image.style.display='none';frame.style.display='block';secondaryImages.forEach(function(el){el.style.display='none';});secondaryFrames.forEach(function(el){el.style.display='block';});clearStatuses();status.textContent='Loading website preview… If nothing appears after a few seconds, that website may block iframe previews. Try a screenshot upload.';frame.src='about:blank';secondaryFrames.forEach(function(el){el.src='about:blank';});window.setTimeout(function(){frame.src=clean;secondaryFrames.forEach(function(el){el.src=clean;});},20);window.clearTimeout(previewTimer);previewTimer=window.setTimeout(function(){laptopStatus.textContent='If the website is blank, it may block embedded previews. Upload a screenshot to continue.';laptopStatus.style.display='flex';secondaryStatuses.forEach(function(el){el.textContent='Website may block embedded previews';el.style.display='flex';});status.textContent='Preview loaded when the website allows iframe embedding. If it stays blank, upload a screenshot of the page.';},7000);}
+loadButton.addEventListener('click',function(){showUrlPreview(urlInput.value);});urlInput.addEventListener('keydown',function(event){if(event.key==='Enter'){event.preventDefault();showUrlPreview(urlInput.value);}});frame.addEventListener('load',function(){if(frame.src&&frame.src!=='about:blank'){clearStatuses();status.textContent='Preview ready. Some websites can still block embedding because of their own security settings.';window.clearTimeout(previewTimer);}});
+uploadInput.addEventListener('change',function(){var file=uploadInput.files&&uploadInput.files[0];if(!file)return;if(file.size>10*1024*1024){status.textContent='Please choose an image smaller than 10 MB.';uploadInput.value='';return;}if(!/^image\/(png|jpeg|webp)$/i.test(file.type)){status.textContent='Please upload a PNG, JPG or WebP image.';uploadInput.value='';return;}var reader=new FileReader();reader.onload=function(){imageData=reader.result;frame.style.display='none';image.style.display='block';image.src=imageData;secondaryFrames.forEach(function(el){el.style.display='none';});secondaryImages.forEach(function(el){el.style.display='block';el.src=imageData;});clearStatuses();status.textContent='Screenshot loaded. Choose a layout and download your mockup.';};reader.onerror=function(){status.textContent='Could not read that image. Please try another screenshot.';};reader.readAsDataURL(file);});
+document.querySelectorAll('.wmg-layout').forEach(function(button){button.addEventListener('click',function(){document.querySelectorAll('.wmg-layout').forEach(function(item){item.classList.remove('active');});button.classList.add('active');stage.className='stage layout-'+button.getAttribute('data-layout');});});
+bg.addEventListener('input',function(){canvas.style.background=bg.value;});radius.addEventListener('input',function(){document.querySelectorAll('.device').forEach(function(el){el.style.borderRadius=radius.value+'px';});});shadow.addEventListener('input',function(){document.querySelectorAll('.device').forEach(function(el){var n=Number(shadow.value);el.style.boxShadow='0 '+(n*0.9)+'px '+(n*1.9)+'px rgba(0,0,0,.2)';});});
+function roundedRect(ctx,x,y,w,h,r){r=Math.min(r,w/2,h/2);ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+function downloadCanvas(canvasEl){canvasEl.toBlob(function(blob){if(!blob){status.textContent='PNG export failed. Please try again.';return;}var objectUrl=URL.createObjectURL(blob),link=document.createElement('a');link.href=objectUrl;link.download='website-mockup.png';document.body.appendChild(link);link.click();link.remove();window.setTimeout(function(){URL.revokeObjectURL(objectUrl);},1000);status.textContent='PNG mockup downloaded successfully.';},'image/png');}
+document.getElementById('download').addEventListener('click',function(){if(!imageData){status.textContent='To download a PNG, upload a website screenshot first. Live URL pixels cannot be captured by a normal browser page because of cross-origin security.';return;}var button=this;button.disabled=true;button.textContent='Preparing PNG…';var out=document.createElement('canvas'),dpr=Math.min(window.devicePixelRatio||1,2);out.width=1600*dpr;out.height=1000*dpr;var ctx=out.getContext('2d');ctx.scale(dpr,dpr);ctx.fillStyle=bg.value;ctx.fillRect(0,0,1600,1000);var layout=document.querySelector('.wmg-layout.active').getAttribute('data-layout');var boxes;if(layout==='single')boxes=[{x:300,y:250,w:1000,h:560,r:24}];else if(layout==='triple')boxes=[{x:180,y:270,w:930,h:500,r:24},{x:1150,y:270,w:200,h:500,r:34},{x:1380,y:270,w:120,h:500,r:30}];else if(layout==='quad')boxes=[{x:160,y:280,w:800,h:470,r:24},{x:990,y:300,w:300,h:440,r:28},{x:1320,y:320,w:140,h:420,r:30}];else boxes=[{x:220,y:270,w:1000,h:540,r:24},{x:1260,y:300,w:200,h:500,r:34}];var img=new Image();img.onload=function(){try{boxes.forEach(function(b){ctx.fillStyle='#16181d';roundedRect(ctx,b.x,b.y,b.w,b.h,b.r);ctx.fill();ctx.save();roundedRect(ctx,b.x+12,b.y+12,b.w-24,b.h-24,Math.max(8,b.r-10));ctx.clip();ctx.drawImage(img,b.x+12,b.y+12,b.w-24,b.h-24);ctx.restore();});downloadCanvas(out);}catch(error){status.textContent='PNG export failed. Please try again.';}finally{button.disabled=false;button.textContent='Download PNG';}};img.onerror=function(){status.textContent='Could not prepare the screenshot for PNG export.';button.disabled=false;button.textContent='Download PNG';};img.src=imageData;});
 })();
 </script>
 </body>
