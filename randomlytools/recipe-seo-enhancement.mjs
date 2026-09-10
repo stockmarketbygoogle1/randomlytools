@@ -47,8 +47,8 @@ const seoSection = `<section class="content-section recipe-seo-content" aria-lab
 <p>Choose Dinner when you need a quick dinner idea from your available ingredients. You can also select Vegetarian or Vegan to narrow the recipe results. For the best matches, add the main ingredients first, such as rice, pasta, chicken, eggs, potatoes, tomatoes, onions, chickpeas or vegetables.</p>
 <h2>Why Ingredient-Based Recipe Search Is Useful</h2>
 <ul><li>Start with your pantry and refrigerator instead of a recipe name.</li><li>Find meals that use more of the ingredients you already own.</li><li>See missing ingredients before deciding what to cook.</li><li>Filter ideas by meal type and dietary preference.</li><li>Reduce unnecessary ingredient shopping and make better use of leftovers.</li></ul>
-<h2>Related Cooking Calculators</h2>
-<p>After choosing a meal, use other RandomlyTools utilities when you need a related calculation. You can explore the <a href="/unit-converter/">Unit Converter</a> for kitchen measurement conversions and return here to find recipe ideas from the ingredients you have.</p>
+<h2>More Free Tools</h2>
+<p>Explore the <a href="/">RandomlyTools home page</a> to discover other free online generators and calculators. Return to this recipe finder whenever you want to turn ingredients you already have into meal ideas.</p>
 </article>
 </section>`;
 
