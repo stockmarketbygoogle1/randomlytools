@@ -9,6 +9,7 @@ const nestedBuild = path.join(source, 'build-static.mjs');
 const homepageEnhancements = path.join(source, 'homepage-enhancements.mjs');
 const socialLinksEnhancement = path.join(source, 'social-links-enhancement.mjs');
 const socialHeaderEnhancement = path.join(source, 'social-header-enhancement.mjs');
+const googleAnalyticsEnhancement = path.join(source, 'google-analytics-enhancement.mjs');
 const nestedOutput = path.join(source, 'dist');
 const output = path.join(root, 'dist');
 
@@ -27,6 +28,9 @@ if (!fs.existsSync(socialLinksEnhancement)) {
 if (!fs.existsSync(socialHeaderEnhancement)) {
   throw new Error(`Header social enhancement script not found: ${socialHeaderEnhancement}`);
 }
+if (!fs.existsSync(googleAnalyticsEnhancement)) {
+  throw new Error(`Google Analytics enhancement script not found: ${googleAnalyticsEnhancement}`);
+}
 
 // Build the existing site first. This preserves the current page generation flow.
 execFileSync(process.execPath, [nestedBuild], { cwd: source, stdio: 'inherit' });
@@ -38,6 +42,9 @@ execFileSync(process.execPath, [homepageEnhancements], { cwd: source, stdio: 'in
 // Keep the existing footer/social enhancement and add the new sitewide header links.
 execFileSync(process.execPath, [socialLinksEnhancement], { cwd: source, stdio: 'inherit' });
 execFileSync(process.execPath, [socialHeaderEnhancement], { cwd: source, stdio: 'inherit' });
+
+// Add Google Analytics to every generated HTML page, idempotently.
+execFileSync(process.execPath, [googleAnalyticsEnhancement], { cwd: source, stdio: 'inherit' });
 
 fs.rmSync(output, { recursive: true, force: true });
 fs.cpSync(nestedOutput, output, { recursive: true });
