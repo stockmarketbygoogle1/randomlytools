@@ -4,47 +4,75 @@
 
 ## Website
 
-- [Homepage](https://randomlytools.in/)
-- [All Tools](https://randomlytools.in/)
+- [Homepage](https://randomlytools.in/) — Free online random generators, calculators, cricket tools, and practical utilities.
+
+## Random Generators
+
+- [Random Name Generator](https://randomlytools.in/random-name-generator/) — Generate random names for people, characters, writing, and creative projects.
+- [Random Number Picker](https://randomlytools.in/random-number-picker/) — Pick random numbers within a chosen range.
+- [Random Team Generator](https://randomlytools.in/random-team-generator/) — Randomly split a list of people into teams.
+- [Random Country Generator](https://randomlytools.in/random-country-generator/) — Generate a random country for games, learning, travel inspiration, and creative activities.
+- [Random Dog Name Generator](https://randomlytools.in/random-dog-name-generator/) — Generate dog name ideas.
+- [Random Discord Name Generator](https://randomlytools.in/random-discord-name-generator/) — Generate Discord username and name ideas.
+- [Random Shop Name Generator](https://randomlytools.in/random-shop-name-generator/) — Generate shop and business name ideas.
+- [Random Restaurant Name Generator](https://randomlytools.in/random-restaurant-name-generator/) — Generate restaurant name ideas.
+- [Random Japanese Name Generator](https://randomlytools.in/random-japanese-name-generator/) — Generate Japanese name ideas.
+- [Random Instagram Username Generator](https://randomlytools.in/random-instagram-username-generator/) — Generate Instagram username ideas.
+- [Random Coffee Shop Name Generator](https://randomlytools.in/random-coffee-shop-name-generator/) — Generate coffee shop name ideas.
+- [Random Company & Brand Name Generator](https://randomlytools.in/random-company-brand-name-generator/) — Generate company and brand name ideas.
+
+## Calculators & Practical Tools
+
+- [Recipe Finder by Ingredients](https://randomlytools.in/recipe-finder-by-ingredients/) — Find recipe ideas based on available ingredients.
+- [Attendance Calculator](https://randomlytools.in/attendance-calculator/) — Calculate attendance percentage and estimate attendance requirements.
+- [AdSense Revenue Calculator](https://randomlytools.in/adsense-revenue-calculator/) — Estimate advertising revenue using traffic and RPM inputs.
+- [Iceland Salary Calculator](https://randomlytools.in/iceland-salary-calculator/) — Estimate gross-to-net salary and take-home pay in Iceland.
+- [Cyprus Salary Calculator](https://randomlytools.in/cyprus-salary-calculator/) — Estimate gross-to-net salary and take-home pay in Cyprus.
+- [YouTube Money Calculator](https://randomlytools.in/youtube-money-calculator/) — Estimate YouTube earnings from views, RPM, and related inputs.
+- [YouTube Money Calculator India](https://randomlytools.in/youtube-money-calculator-india/) — Estimate YouTube earnings for Indian audiences and RPM assumptions.
+- [YouTube Money Calculator Iceland](https://randomlytools.in/youtube-money-calculator-iceland/) — Estimate YouTube earnings using Iceland-related RPM assumptions.
+- [YouTube RPM Calculator](https://randomlytools.in/youtube-rpm-calculator/) — Calculate and estimate YouTube RPM.
+- [YouTube Shorts Earnings Calculator](https://randomlytools.in/youtube-shorts-earnings-calculator/) — Estimate potential YouTube Shorts earnings.
+- [Website Mockup Generator](https://randomlytools.in/website-mockup-generator/) — Create a website mockup for presentations, previews, and creative projects.
 
 ## Cricket Tools
 
 - [Cricket Qualification Calculator](https://randomlytools.in/cricket-qualification-calculator/) — Explore playoff qualification scenarios using points, remaining fixtures, and tie-break conditions.
-- [Cricket Points Table Simulator](https://randomlytools.in/cricket-points-table-simulator/) — Simulate match results and see how points-table positions can change.
 - [Cricket NRR Calculator](https://randomlytools.in/cricket-nrr-calculator/) — Calculate cricket net run rate from runs and overs.
 - [Cricket Required Run Rate Calculator](https://randomlytools.in/cricket-required-run-rate-calculator/) — Calculate the required run rate for a cricket chase.
 - [Cricket Chase Calculator](https://randomlytools.in/cricket-chase-calculator/) — Calculate runs required, remaining balls, and required run rate during a chase.
 
-## Popular Random Generators
+## Articles & Guides
 
-- [Random Name Generator](https://randomlytools.in/random-name-generator/) — Generate random names for people, characters, writing, and other creative uses.
-- [Random Number Picker](https://randomlytools.in/random-number-picker/) — Pick random numbers within a chosen range.
-- [Random Dog Name Generator](https://randomlytools.in/random-dog-name-generator/) — Generate dog name ideas.
-- [Random Discord Name Generator](https://randomlytools.in/random-discord-name-generator/) — Generate random Discord username ideas.
-- [Random Instagram Username Generator](https://randomlytools.in/random-instagram-username-generator/) — Generate Instagram username ideas.
-- [Random Company & Brand Name Generator](https://randomlytools.in/random-company-brand-name-generator/) — Generate company and brand name ideas.
-- [Random Shop Name Generator](https://randomlytools.in/random-shop-name-generator/) — Generate shop name ideas.
-- [Random Restaurant Name Generator](https://randomlytools.in/random-restaurant-name-generator/) — Generate restaurant name ideas.
-- [Random Japanese Name Generator](https://randomlytools.in/random-japanese-name-generator/) — Generate Japanese name ideas.
-- [Random Coffee Shop Name Generator](https://randomlytools.in/random-coffee-shop-name-generator/) — Generate coffee shop name ideas.
-- [Random Team Generator](https://randomlytools.in/random-team-generator/) — Split a list of names into random teams.
-
-## Calculators & Other Tools
-
-- [Attendance Calculator](https://randomlytools.in/attendance-calculator/) — Calculate attendance percentage, check a 75% attendance target, and determine classes that can be missed or need to be attended.
-- [AdSense Revenue Calculator](https://randomlytools.in/adsense-revenue-calculator/) — Estimate advertising revenue using traffic, RPM, and related inputs.
-- [Website Mockup Generator](https://randomlytools.in/website-mockup-generator/) — Create a website mockup for presentations, previews, and creative use.
+- [Articles](https://randomlytools.in/articles/) — Guides and practical articles related to RandomlyTools utilities.
+- [How to Calculate Attendance Percentage](https://randomlytools.in/articles/how-to-calculate-attendance-percentage/) — Learn how attendance percentage is calculated.
+- [How to Randomly Split People Into Teams](https://randomlytools.in/articles/how-to-randomly-split-people-into-teams/) — Methods for randomly dividing people into teams.
+- [Creative Ways to Use a Random Country Generator](https://randomlytools.in/articles/creative-ways-to-use-a-random-country-generator/) — Ideas for games, learning, and creative activities.
+- [How to Use a Random Number Picker](https://randomlytools.in/articles/how-to-use-a-random-number-picker/) — Guide to using a random number picker effectively.
+- [Random Username Ideas for Gaming](https://randomlytools.in/articles/random-username-ideas-for-gaming/) — Ideas and guidance for creating gaming usernames.
+- [How to Choose a Business Name](https://randomlytools.in/articles/how-to-choose-a-business-name/) — Practical considerations for choosing a business name.
+- [How to Pick a Random Name From a List](https://randomlytools.in/articles/how-to-pick-a-random-name-from-a-list/) — Ways to select a random name from a list.
+- [Random Name Generator for Classroom Activities](https://randomlytools.in/articles/random-name-generator-for-classroom-activities/) — Classroom uses for random name selection.
+- [How to Randomly Assign People to Groups](https://randomlytools.in/articles/how-to-randomly-assign-people-to-groups/) — Methods for fair random group assignment.
+- [Random Number Generator vs Random Number Picker](https://randomlytools.in/articles/random-number-generator-vs-random-number-picker/) — Explanation of the difference between the two tools.
+- [How to Generate Random Numbers Without Repeats](https://randomlytools.in/articles/how-to-generate-random-numbers-without-repeats/) — Approaches for generating non-repeating random numbers.
+- [Random Team Generator for Sports](https://randomlytools.in/articles/random-team-generator-for-sports/) — Using random team generation for sports activities.
+- [How to Choose a Shop Name](https://randomlytools.in/articles/how-to-choose-a-shop-name/) — Practical tips for choosing a shop name.
+- [Coffee Shop Name Ideas](https://randomlytools.in/articles/coffee-shop-name-ideas/) — Coffee shop naming ideas and considerations.
+- [Restaurant Name Ideas](https://randomlytools.in/articles/restaurant-name-ideas/) — Restaurant naming ideas and considerations.
+- [Instagram Username Ideas](https://randomlytools.in/articles/instagram-username-ideas/) — Ideas for creating Instagram usernames.
 
 ## About & Policies
 
-- [About RandomlyTools](https://randomlytools.in/about/)
-- [Contact](https://randomlytools.in/contact/)
-- [Privacy Policy](https://randomlytools.in/privacy-policy/)
-- [Terms and Conditions](https://randomlytools.in/terms-and-conditions/)
+- [About RandomlyTools](https://randomlytools.in/about/) — Information about the website and its tools.
+- [Contact](https://randomlytools.in/contact/) — Contact information and support.
+- [Privacy Policy](https://randomlytools.in/privacy-policy/) — Privacy and data-handling information.
+- [Terms](https://randomlytools.in/terms/) — Website terms and conditions.
+- [Disclaimer](https://randomlytools.in/disclaimer/) — Important information about tool results and website use.
 
 ## Usage Notes
 
 - Tool results depend on the inputs and rules described on each individual tool page.
 - Generated names, usernames, and brand suggestions are creative ideas and should be independently checked for availability, trademarks, and platform rules before commercial use.
-- Calculator results are mathematical estimates and do not replace institution-specific rules or official information.
+- Calculator results are estimates unless an individual tool states otherwise; users should verify important financial, salary, tax, or institution-specific information against official sources.
 - Users should review individual tool pages for any tool-specific information about data handling.
