@@ -1,0 +1,29 @@
+# RandomlyTools
+
+RandomlyTools is a free online tools website offering random generators, calculators, cricket tools, and other practical utilities.
+
+## Main Website
+- https://randomlytools.in/
+
+## Cricket Tools
+- https://randomlytools.in/cricket-qualification-calculator/
+- https://randomlytools.in/cricket-points-table-simulator/
+- https://randomlytools.in/cricket-nrr-calculator/
+- https://randomlytools.in/cricket-required-run-rate-calculator/
+- https://randomlytools.in/cricket-chase-calculator/
+- https://randomlytools.in/cricket-score-projection/
+- https://randomlytools.in/cricket-playoff-calculator/
+
+## Other Useful Tools
+- https://randomlytools.in/random-name-generator/
+- https://randomlytools.in/adsense-revenue-calculator/
+- https://randomlytools.in/website-mockup-generator/
+
+## About RandomlyTools
+- https://randomlytools.in/about/
+- https://randomlytools.in/contact/
+- https://randomlytools.in/privacy-policy/
+- https://randomlytools.in/terms-and-conditions/
+
+## Usage
+Use the linked pages to discover and interact with the corresponding RandomlyTools calculators and generators. Tool outputs are generated from the inputs and rules described on each page.
