@@ -7,6 +7,7 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 const source = path.join(root, 'randomlytools');
 const nestedBuild = path.join(source, 'build-static.mjs');
 const homepageEnhancements = path.join(source, 'homepage-enhancements.mjs');
+const recipeSeoEnhancement = path.join(source, 'recipe-seo-enhancement.mjs');
 const socialLinksEnhancement = path.join(source, 'social-links-enhancement.mjs');
 const socialHeaderEnhancement = path.join(source, 'social-header-enhancement.mjs');
 const googleAnalyticsEnhancement = path.join(source, 'google-analytics-enhancement.mjs');
@@ -14,36 +15,25 @@ const nestedOutput = path.join(source, 'dist');
 const output = path.join(root, 'dist');
 const llmsSource = path.join(root, 'llms.txt');
 
-if (!fs.existsSync(source)) {
-  throw new Error(`Static site directory not found: ${source}`);
-}
-if (!fs.existsSync(nestedBuild)) {
-  throw new Error(`Nested static build script not found: ${nestedBuild}`);
-}
-if (!fs.existsSync(homepageEnhancements)) {
-  throw new Error(`Homepage enhancement script not found: ${homepageEnhancements}`);
-}
-if (!fs.existsSync(socialLinksEnhancement)) {
-  throw new Error(`Social links enhancement script not found: ${socialLinksEnhancement}`);
-}
-if (!fs.existsSync(socialHeaderEnhancement)) {
-  throw new Error(`Header social enhancement script not found: ${socialHeaderEnhancement}`);
-}
-if (!fs.existsSync(googleAnalyticsEnhancement)) {
-  throw new Error(`Google Analytics enhancement script not found: ${googleAnalyticsEnhancement}`);
-}
-if (!fs.existsSync(llmsSource)) {
-  throw new Error(`llms.txt source file not found: ${llmsSource}`);
-}
+if (!fs.existsSync(source)) throw new Error(`Static site directory not found: ${source}`);
+if (!fs.existsSync(nestedBuild)) throw new Error(`Nested static build script not found: ${nestedBuild}`);
+if (!fs.existsSync(homepageEnhancements)) throw new Error(`Homepage enhancement script not found: ${homepageEnhancements}`);
+if (!fs.existsSync(recipeSeoEnhancement)) throw new Error(`Recipe SEO enhancement script not found: ${recipeSeoEnhancement}`);
+if (!fs.existsSync(socialLinksEnhancement)) throw new Error(`Social links enhancement script not found: ${socialLinksEnhancement}`);
+if (!fs.existsSync(socialHeaderEnhancement)) throw new Error(`Header social enhancement script not found: ${socialHeaderEnhancement}`);
+if (!fs.existsSync(googleAnalyticsEnhancement)) throw new Error(`Google Analytics enhancement script not found: ${googleAnalyticsEnhancement}`);
+if (!fs.existsSync(llmsSource)) throw new Error(`llms.txt source file not found: ${llmsSource}`);
 
 // Build the existing site first. This preserves the current page generation flow.
 execFileSync(process.execPath, [nestedBuild], { cwd: source, stdio: 'inherit' });
 
-// The homepage enhancement is intentionally run after the nested build because
-// it modifies the generated homepage inside randomlytools/dist.
+// Existing homepage enhancement.
 execFileSync(process.execPath, [homepageEnhancements], { cwd: source, stdio: 'inherit' });
 
-// Keep the existing footer/social enhancement and add the new sitewide header links.
+// Strengthen the Recipe Finder page's search relevance without replacing its source code.
+execFileSync(process.execPath, [recipeSeoEnhancement], { cwd: source, stdio: 'inherit' });
+
+// Existing sitewide social/header enhancements.
 execFileSync(process.execPath, [socialLinksEnhancement], { cwd: source, stdio: 'inherit' });
 execFileSync(process.execPath, [socialHeaderEnhancement], { cwd: source, stdio: 'inherit' });
 
