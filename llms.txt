@@ -1,29 +1,50 @@
 # RandomlyTools
 
-RandomlyTools is a free online tools website offering random generators, calculators, cricket tools, and other practical utilities.
+> RandomlyTools is a fast, free, privacy-focused collection of browser-based random generators, calculators, cricket tools, and practical online utilities. Many tools are designed to run directly in the browser without requiring an account.
 
-## Main Website
-- https://randomlytools.in/
+## Website
+
+- [Homepage](https://randomlytools.in/)
+- [All Tools](https://randomlytools.in/)
 
 ## Cricket Tools
-- https://randomlytools.in/cricket-qualification-calculator/
-- https://randomlytools.in/cricket-points-table-simulator/
-- https://randomlytools.in/cricket-nrr-calculator/
-- https://randomlytools.in/cricket-required-run-rate-calculator/
-- https://randomlytools.in/cricket-chase-calculator/
-- https://randomlytools.in/cricket-score-projection/
-- https://randomlytools.in/cricket-playoff-calculator/
 
-## Other Useful Tools
-- https://randomlytools.in/random-name-generator/
-- https://randomlytools.in/adsense-revenue-calculator/
-- https://randomlytools.in/website-mockup-generator/
+- [Cricket Qualification Calculator](https://randomlytools.in/cricket-qualification-calculator/) — Explore playoff qualification scenarios using points, remaining fixtures, and tie-break conditions.
+- [Cricket Points Table Simulator](https://randomlytools.in/cricket-points-table-simulator/) — Simulate match results and see how points-table positions can change.
+- [Cricket NRR Calculator](https://randomlytools.in/cricket-nrr-calculator/) — Calculate cricket net run rate from runs and overs.
+- [Cricket Required Run Rate Calculator](https://randomlytools.in/cricket-required-run-rate-calculator/) — Calculate the required run rate for a cricket chase.
+- [Cricket Chase Calculator](https://randomlytools.in/cricket-chase-calculator/) — Calculate runs required, remaining balls, and required run rate during a chase.
 
-## About RandomlyTools
-- https://randomlytools.in/about/
-- https://randomlytools.in/contact/
-- https://randomlytools.in/privacy-policy/
-- https://randomlytools.in/terms-and-conditions/
+## Popular Random Generators
 
-## Usage
-Use the linked pages to discover and interact with the corresponding RandomlyTools calculators and generators. Tool outputs are generated from the inputs and rules described on each page.
+- [Random Name Generator](https://randomlytools.in/random-name-generator/) — Generate random names for people, characters, writing, and other creative uses.
+- [Random Number Picker](https://randomlytools.in/random-number-picker/) — Pick random numbers within a chosen range.
+- [Random Dog Name Generator](https://randomlytools.in/random-dog-name-generator/) — Generate dog name ideas.
+- [Random Discord Name Generator](https://randomlytools.in/random-discord-name-generator/) — Generate random Discord username ideas.
+- [Random Instagram Username Generator](https://randomlytools.in/random-instagram-username-generator/) — Generate Instagram username ideas.
+- [Random Company & Brand Name Generator](https://randomlytools.in/random-company-brand-name-generator/) — Generate company and brand name ideas.
+- [Random Shop Name Generator](https://randomlytools.in/random-shop-name-generator/) — Generate shop name ideas.
+- [Random Restaurant Name Generator](https://randomlytools.in/random-restaurant-name-generator/) — Generate restaurant name ideas.
+- [Random Japanese Name Generator](https://randomlytools.in/random-japanese-name-generator/) — Generate Japanese name ideas.
+- [Random Coffee Shop Name Generator](https://randomlytools.in/random-coffee-shop-name-generator/) — Generate coffee shop name ideas.
+- [Random Team Generator](https://randomlytools.in/random-team-generator/) — Split a list of names into random teams.
+
+## Calculators & Other Tools
+
+- [Attendance Calculator](https://randomlytools.in/attendance-calculator/) — Calculate attendance percentage, check a 75% attendance target, and determine classes that can be missed or need to be attended.
+- [AdSense Revenue Calculator](https://randomlytools.in/adsense-revenue-calculator/) — Estimate advertising revenue using traffic, RPM, and related inputs.
+- [Website Mockup Generator](https://randomlytools.in/website-mockup-generator/) — Create a website mockup for presentations, previews, and creative use.
+
+## About & Policies
+
+- [About RandomlyTools](https://randomlytools.in/about/)
+- [Contact](https://randomlytools.in/contact/)
+- [Privacy Policy](https://randomlytools.in/privacy-policy/)
+- [Terms and Conditions](https://randomlytools.in/terms-and-conditions/)
+
+## Usage Notes
+
+- Tool results depend on the inputs and rules described on each individual tool page.
+- Generated names, usernames, and brand suggestions are creative ideas and should be independently checked for availability, trademarks, and platform rules before commercial use.
+- Calculator results are mathematical estimates and do not replace institution-specific rules or official information.
+- Users should review individual tool pages for any tool-specific information about data handling.
