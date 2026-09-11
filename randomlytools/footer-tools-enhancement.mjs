@@ -50,6 +50,14 @@ if (!marker.test(html)) throw new Error('Homepage footer tool columns marker not
 
 html = html.replace(marker, footerTools);
 
+// The footer now has four tool columns plus the brand column. Keep all five
+// columns on one row on desktop while preserving the existing one-column mobile layout.
+const footerLayoutStyle = `<style id="homepage-footer-layout">.site-footer .footer-grid{grid-template-columns:2fr repeat(4,minmax(0,1fr));}.site-footer .footer-column{min-width:0;}@media (max-width:1024px) and (min-width:769px){.site-footer .footer-grid{grid-template-columns:2fr repeat(2,minmax(0,1fr));}.site-footer .footer-grid .footer-column:nth-of-type(4),.site-footer .footer-grid .footer-column:nth-of-type(5){grid-column:span 1;}}</style>`;
+const styleMarker = /<style id="homepage-footer-layout">[\s\S]*?<\/style>/i;
+html = styleMarker.test(html)
+  ? html.replace(styleMarker, footerLayoutStyle)
+  : html.replace('</head>', `${footerLayoutStyle}</head>`);
+
 const requiredPaths = [
   '/random-name-generator/', '/random-number-picker/', '/random-dog-name-generator/',
   '/random-discord-name-generator/', '/random-shop-name-generator/', '/random-restaurant-name-generator/',
