@@ -9,6 +9,7 @@ const nestedBuild = path.join(source, 'build-static.mjs');
 const homepageEnhancements = path.join(source, 'homepage-enhancements.mjs');
 const footerToolsEnhancement = path.join(source, 'footer-tools-enhancement.mjs');
 const recipeSeoEnhancement = path.join(source, 'recipe-seo-enhancement.mjs');
+const recipeImageEnhancement = path.join(source, 'recipe-image-enhancement.mjs');
 const socialLinksEnhancement = path.join(source, 'social-links-enhancement.mjs');
 const socialHeaderEnhancement = path.join(source, 'social-header-enhancement.mjs');
 const googleAnalyticsEnhancement = path.join(source, 'google-analytics-enhancement.mjs');
@@ -22,6 +23,7 @@ if (!fs.existsSync(nestedBuild)) throw new Error(`Nested static build script not
 if (!fs.existsSync(homepageEnhancements)) throw new Error(`Homepage enhancement script not found: ${homepageEnhancements}`);
 if (!fs.existsSync(footerToolsEnhancement)) throw new Error(`Footer tools enhancement script not found: ${footerToolsEnhancement}`);
 if (!fs.existsSync(recipeSeoEnhancement)) throw new Error(`Recipe SEO enhancement script not found: ${recipeSeoEnhancement}`);
+if (!fs.existsSync(recipeImageEnhancement)) throw new Error(`Recipe image enhancement script not found: ${recipeImageEnhancement}`);
 if (!fs.existsSync(socialLinksEnhancement)) throw new Error(`Social links enhancement script not found: ${socialLinksEnhancement}`);
 if (!fs.existsSync(socialHeaderEnhancement)) throw new Error(`Header social enhancement script not found: ${socialHeaderEnhancement}`);
 if (!fs.existsSync(googleAnalyticsEnhancement)) throw new Error(`Google Analytics enhancement script not found: ${googleAnalyticsEnhancement}`);
@@ -39,6 +41,9 @@ execFileSync(process.execPath, [footerToolsEnhancement], { cwd: source, stdio: '
 
 // Strengthen the Recipe Finder page's search relevance without replacing its source code.
 execFileSync(process.execPath, [recipeSeoEnhancement], { cwd: source, stdio: 'inherit' });
+
+// Apply the Recipe Finder hero image enhancement and responsive image rules to the generated page.
+execFileSync(process.execPath, [recipeImageEnhancement], { cwd: source, stdio: 'inherit' });
 
 // Existing sitewide social/header enhancements.
 execFileSync(process.execPath, [socialLinksEnhancement], { cwd: source, stdio: 'inherit' });
