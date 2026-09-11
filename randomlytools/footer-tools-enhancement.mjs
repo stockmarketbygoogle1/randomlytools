@@ -37,6 +37,11 @@ const footerTools = `
 <li><a href="/youtube-money-calculator-iceland/">YouTube Money Calculator Iceland</a></li>
 <li><a href="/youtube-rpm-calculator/">YouTube RPM Calculator</a></li>
 <li><a href="/youtube-shorts-earnings-calculator/">YouTube Shorts Earnings Calculator</a></li>
+<li><a href="/cricket-qualification-calculator/">Cricket Qualification Calculator</a></li>
+<li><a href="/cricket-nrr-calculator/">Cricket NRR Calculator</a></li>
+<li><a href="/cricket-required-run-rate-calculator/">Cricket Required Run Rate Calculator</a></li>
+<li><a href="/cricket-chase-calculator/">Cricket Chase Calculator</a></li>
+<li><a href="/website-mockup-generator/">Website Mockup Generator</a></li>
 <li><a href="/fence-post-depth-calculator/">Fence Post Depth Calculator</a></li>
 </ul></div>`;
 
@@ -58,9 +63,9 @@ const requiredPaths = [
   '/fence-post-depth-calculator/'
 ];
 
-// The four cricket tools and Website Mockup Generator are inserted into the homepage
-// by homepage-enhancements.mjs, so their footer links are validated here even though
-// they are not part of the original nested homepage source.
+// The four cricket tools, Website Mockup Generator and Fence Post Depth Calculator
+// are inserted into the homepage by homepage-enhancements.mjs, so their footer links
+// are validated here even though they are not part of the original nested homepage source.
 const missing = requiredPaths.filter((p) => !html.includes(`href="${p}"`));
 if (missing.length) throw new Error(`Footer link validation failed: ${missing.join(', ')}`);
 
