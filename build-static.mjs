@@ -15,6 +15,7 @@ const googleAnalyticsEnhancement = path.join(source, 'google-analytics-enhanceme
 const nestedOutput = path.join(source, 'dist');
 const output = path.join(root, 'dist');
 const llmsSource = path.join(root, 'llms.txt');
+const uiSource = path.join(source, 'assets', 'js', 'core', 'ui.js');
 
 if (!fs.existsSync(source)) throw new Error(`Static site directory not found: ${source}`);
 if (!fs.existsSync(nestedBuild)) throw new Error(`Nested static build script not found: ${nestedBuild}`);
@@ -25,6 +26,7 @@ if (!fs.existsSync(socialLinksEnhancement)) throw new Error(`Social links enhanc
 if (!fs.existsSync(socialHeaderEnhancement)) throw new Error(`Header social enhancement script not found: ${socialHeaderEnhancement}`);
 if (!fs.existsSync(googleAnalyticsEnhancement)) throw new Error(`Google Analytics enhancement script not found: ${googleAnalyticsEnhancement}`);
 if (!fs.existsSync(llmsSource)) throw new Error(`llms.txt source file not found: ${llmsSource}`);
+if (!fs.existsSync(uiSource)) throw new Error(`Required UI asset not found: ${uiSource}`);
 
 // Build the existing site first. This preserves the current page generation flow.
 execFileSync(process.execPath, [nestedBuild], { cwd: source, stdio: 'inherit' });
@@ -48,8 +50,18 @@ execFileSync(process.execPath, [googleAnalyticsEnhancement], { cwd: source, stdi
 fs.rmSync(output, { recursive: true, force: true });
 fs.cpSync(nestedOutput, output, { recursive: true });
 
+// Explicitly publish the sitewide UI asset in the final deployment directory.
+// Some deployments have previously served /assets/js/core/ui.js as 404 even though
+// the source and nested build contain the file. This copy is intentionally limited
+// to that affected asset and does not alter any page logic or other assets.
+const uiOutput = path.join(output, 'assets', 'js', 'core', 'ui.js');
+fs.mkdirSync(path.dirname(uiOutput), { recursive: true });
+fs.copyFileSync(uiSource, uiOutput);
+if (!fs.existsSync(uiOutput)) throw new Error(`Required UI asset missing from final output: ${uiOutput}`);
+
 // Publish llms.txt at the site root without modifying or removing any generated page.
 fs.copyFileSync(llmsSource, path.join(output, 'llms.txt'));
 
 console.log(`Static site copied from ${path.relative(root, nestedOutput)} to ${path.relative(root, output)}`);
+console.log('Verified /assets/js/core/ui.js in the final production output.');
 console.log('llms.txt copied to the production site root.');
