@@ -34,6 +34,7 @@
 - [YouTube RPM Calculator](https://randomlytools.in/youtube-rpm-calculator/) — Calculate and estimate YouTube RPM.
 - [YouTube Shorts Earnings Calculator](https://randomlytools.in/youtube-shorts-earnings-calculator/) — Estimate potential YouTube Shorts earnings.
 - [Website Mockup Generator](https://randomlytools.in/website-mockup-generator/) — Create a website mockup for presentations, previews, and creative projects.
+- [Fence Post Depth Calculator](https://randomlytools.in/fence-post-depth-calculator/) — Estimate fence post burial depth, post hole depth, concrete requirements, and total post length.
 
 ## Cricket Tools
 
