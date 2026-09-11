@@ -15,6 +15,10 @@ if (!html.includes('recipe-finder-hero-image')) {
   if (!html.includes(marker)) throw new Error('Recipe Finder image insertion marker not found.');
   html = html.replace(marker, `</div>\n${hero}\n<div class="ad-slot-container">`);
 }
+const mobileImageFix = '<style id="recipe-finder-hero-image-responsive">.recipe-finder-hero-image img{display:block;width:100%;max-width:100%;height:auto}</style>';
+if (!html.includes('recipe-finder-hero-image-responsive')) {
+  html = html.replace('</head>', `${mobileImageFix}\n</head>`);
+}
 fs.copyFileSync(image, outImage);
 fs.writeFileSync(page, html, 'utf8');
 console.log('Recipe Finder image enhancement applied.');
