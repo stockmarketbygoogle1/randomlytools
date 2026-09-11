@@ -7,6 +7,7 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 const source = path.join(root, 'randomlytools');
 const nestedBuild = path.join(source, 'build-static.mjs');
 const homepageEnhancements = path.join(source, 'homepage-enhancements.mjs');
+const footerToolsEnhancement = path.join(source, 'footer-tools-enhancement.mjs');
 const recipeSeoEnhancement = path.join(source, 'recipe-seo-enhancement.mjs');
 const socialLinksEnhancement = path.join(source, 'social-links-enhancement.mjs');
 const socialHeaderEnhancement = path.join(source, 'social-header-enhancement.mjs');
@@ -18,6 +19,7 @@ const llmsSource = path.join(root, 'llms.txt');
 if (!fs.existsSync(source)) throw new Error(`Static site directory not found: ${source}`);
 if (!fs.existsSync(nestedBuild)) throw new Error(`Nested static build script not found: ${nestedBuild}`);
 if (!fs.existsSync(homepageEnhancements)) throw new Error(`Homepage enhancement script not found: ${homepageEnhancements}`);
+if (!fs.existsSync(footerToolsEnhancement)) throw new Error(`Footer tools enhancement script not found: ${footerToolsEnhancement}`);
 if (!fs.existsSync(recipeSeoEnhancement)) throw new Error(`Recipe SEO enhancement script not found: ${recipeSeoEnhancement}`);
 if (!fs.existsSync(socialLinksEnhancement)) throw new Error(`Social links enhancement script not found: ${socialLinksEnhancement}`);
 if (!fs.existsSync(socialHeaderEnhancement)) throw new Error(`Header social enhancement script not found: ${socialHeaderEnhancement}`);
@@ -29,6 +31,9 @@ execFileSync(process.execPath, [nestedBuild], { cwd: source, stdio: 'inherit' })
 
 // Existing homepage enhancement.
 execFileSync(process.execPath, [homepageEnhancements], { cwd: source, stdio: 'inherit' });
+
+// Keep the homepage footer synchronized with every tool available on the homepage.
+execFileSync(process.execPath, [footerToolsEnhancement], { cwd: source, stdio: 'inherit' });
 
 // Strengthen the Recipe Finder page's search relevance without replacing its source code.
 execFileSync(process.execPath, [recipeSeoEnhancement], { cwd: source, stdio: 'inherit' });
