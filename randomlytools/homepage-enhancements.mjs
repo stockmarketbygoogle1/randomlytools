@@ -39,11 +39,11 @@ const homepageCards = `
   <p class="tool-card-desc">Turn a website URL or screenshot into a professional multi-device mockup for presentations, portfolios and product showcases.</p>
   <span class="tool-card-badge">Website & Creator Tools</span>
 </div>
-<div class="tool-card" data-category="calculators" data-keywords="fence post depth calculator fence post depth post hole depth calculator how deep should a fence post be fence installation concrete">
+<div class="tool-card" data-category="home-diy" data-keywords="fence post depth calculator fence post depth post hole depth calculator how deep should a fence post be fence installation concrete home improvement DIY">
   <div class="tool-card-icon">📏</div>
   <h2 class="tool-card-title"><a href="/fence-post-depth-calculator/">Fence Post Depth Calculator</a></h2>
   <p class="tool-card-desc">Estimate fence post burial depth, hole depth, post length, hole diameter and concrete for common fence projects.</p>
-  <span class="tool-card-badge">Calculators</span>
+  <span class="tool-card-badge">Home & DIY</span>
 </div>`;
 
 if (!html.includes('href="/fence-post-depth-calculator/"')) {
@@ -61,6 +61,10 @@ if (!html.includes('data-category="cricket">Cricket Tools</button>')) {
 if (!html.includes('data-category="websites">Website & Creator</button>')) {
   const cricketButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="cricket"[^>]*>Cricket Tools<\/button>)/i;
   if (cricketButton.test(html)) html = html.replace(cricketButton, '$1<button type="button" class="preset-chip category-filter-btn" data-category="websites">Website & Creator</button>');
+}
+if (!html.includes('data-category="home-diy">Home & DIY</button>')) {
+  const websiteButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="websites"[^>]*>Website & Creator<\/button>)/i;
+  if (websiteButton.test(html)) html = html.replace(websiteButton, '$1<button type="button" class="preset-chip category-filter-btn" data-category="home-diy">Home & DIY</button>');
 }
 
 const jsonTools = [
