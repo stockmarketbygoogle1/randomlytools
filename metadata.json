@@ -1,6 +1,6 @@
 {
   "name": "RandomlyTools",
-  "description": "Simple Random Tools for Everyday Use - 10 free client-side random generators and pickers.",
+  "description": "Free random generators, calculators, cricket tools, YouTube earnings tools, salary calculators, and practical online utilities for everyday use.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
