@@ -21,6 +21,7 @@
 - Random Coffee Shop Name Generator: https://randomlytools.in/random-coffee-shop-name-generator/ — Generate coffee shop name ideas.
 - Random Team Generator: https://randomlytools.in/random-team-generator/ — Split a list of names into random teams.
 - Attendance Calculator: https://randomlytools.in/attendance-calculator/ — Calculate attendance percentage, check a 75% attendance target, and determine classes that can be missed or need to be attended.
+- GTA 6 Download Time Calculator: https://randomlytools.in/gta-6-download-time-calculator/ — Estimate Grand Theft Auto VI download time from an editable game-size assumption, internet speed and connection efficiency.
 
 ## Privacy
 
@@ -29,4 +30,5 @@ RandomlyTools is designed around client-side utility generation. Users should re
 ## Important
 
 - Generated names, usernames, and brand suggestions are creative ideas and should be independently checked for availability, trademarks, and platform rules before commercial use.
-- Calculator results are mathematical calculations and do not replace institution-specific academic policies.
+- Calculator results are mathematical calculations and do not replace institution-specific academic policies or official game/platform information.
+- The GTA 6 Download Time Calculator does not claim an official GTA 6 download size. The game-size value is editable because Rockstar Games has not published the final download-size figure.
