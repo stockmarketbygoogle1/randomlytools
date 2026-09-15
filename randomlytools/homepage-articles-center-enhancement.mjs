@@ -10,14 +10,17 @@ let html = fs.readFileSync(homepage, 'utf8');
 
 const css = `
 <style id="randomlytools-homepage-articles-center">
-/* Strongly center the complete Latest Articles intro block. */
-.rt-latest-articles{text-align:center}
-.rt-latest-articles .rt-section-heading{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;width:100%;max-width:920px;margin:0 auto 1.8rem;gap:.65rem}
-.rt-latest-articles .rt-section-heading>div{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;width:100%;margin:0 auto}
-.rt-latest-articles .rt-section-heading .rt-kicker{display:block;text-align:center;margin:0 auto}
-.rt-latest-articles .rt-section-heading h2{text-align:center;margin:.15rem auto .45rem}
-.rt-latest-articles .rt-section-heading p{display:block;text-align:center;margin:0 auto;max-width:760px}
-.rt-latest-articles .rt-section-heading .rt-view-all{display:inline-flex;text-align:center;margin:.35rem auto 0}
+/* Keep the complete Latest Articles intro visually centered, regardless of theme flex rules. */
+.rt-latest-articles{width:100% !important;text-align:center !important}
+.rt-latest-articles .rt-section-heading{display:flex !important;flex-direction:column !important;align-items:center !important;justify-content:center !important;text-align:center !important;width:100% !important;max-width:920px !important;margin:0 auto 2rem !important;padding:0 !important;gap:.7rem !important}
+.rt-latest-articles .rt-section-heading>div{display:flex !important;flex-direction:column !important;align-items:center !important;justify-content:center !important;text-align:center !important;width:100% !important;max-width:100% !important;margin:0 auto !important;padding:0 !important}
+.rt-latest-articles .rt-section-heading .rt-kicker{display:block !important;width:100% !important;text-align:center !important;margin:0 auto !important}
+.rt-latest-articles .rt-section-heading h2{display:block !important;width:100% !important;text-align:center !important;margin:.15rem auto .45rem !important;padding:0 !important}
+.rt-latest-articles .rt-section-heading p{display:block !important;width:100% !important;max-width:760px !important;text-align:center !important;margin:0 auto !important;padding:0 !important}
+.rt-latest-articles .rt-section-heading .rt-view-all{display:inline-flex !important;align-self:center !important;text-align:center !important;margin:.4rem auto 0 !important}
+@media (max-width:700px){
+  .rt-latest-articles .rt-section-heading{max-width:100% !important;margin-bottom:1.5rem !important;padding-inline:1rem !important}
+}
 </style>`;
 
 const marker = 'id="randomlytools-homepage-articles-center"';
@@ -28,4 +31,4 @@ if (html.includes(marker)) {
 }
 
 fs.writeFileSync(homepage, html);
-console.log('Latest Articles intro block strongly centered on homepage.');
+console.log('Latest Articles heading forced to exact center alignment.');
