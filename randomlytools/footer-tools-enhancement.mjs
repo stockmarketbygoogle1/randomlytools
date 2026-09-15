@@ -27,6 +27,7 @@ const footerTools = `
 <li><a href="/attendance-calculator/">Attendance Calculator</a></li>
 <li><a href="/random-country-generator/">Random Country Generator</a></li>
 <li><a href="/recipe-finder-by-ingredients/">Recipe Finder by Ingredients</a></li>
+<li><a href="/gta-6-download-time-calculator/">GTA 6 Download Time Calculator</a></li>
 <li><a href="/adsense-revenue-calculator/">AdSense Revenue Calculator</a></li>
 </ul></div>
 <div class="footer-column"><h4>Creator & DIY</h4><ul>
@@ -66,7 +67,7 @@ const requiredPaths = [
   '/random-country-generator/', '/recipe-finder-by-ingredients/', '/adsense-revenue-calculator/',
   '/iceland-salary-calculator/', '/cyprus-salary-calculator/', '/youtube-money-calculator/',
   '/youtube-money-calculator-india/', '/youtube-money-calculator-iceland/', '/youtube-rpm-calculator/',
-  '/youtube-shorts-earnings-calculator/', '/cricket-qualification-calculator/', '/cricket-nrr-calculator/',
+  '/youtube-shorts-earnings-calculator/', '/gta-6-download-time-calculator/', '/cricket-qualification-calculator/', '/cricket-nrr-calculator/',
   '/cricket-required-run-rate-calculator/', '/cricket-chase-calculator/', '/website-mockup-generator/',
   '/fence-post-depth-calculator/'
 ];
@@ -78,4 +79,4 @@ const missing = requiredPaths.filter((p) => !html.includes(`href="${p}"`));
 if (missing.length) throw new Error(`Footer link validation failed: ${missing.join(', ')}`);
 
 fs.writeFileSync(homepage, html, 'utf8');
-console.log('Homepage footer updated with links for all 28 tools.');
+console.log('Homepage footer updated with links for all 29 tools.');
