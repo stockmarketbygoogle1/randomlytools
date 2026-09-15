@@ -13,6 +13,7 @@ const recipeImageEnhancement = path.join(source, 'recipe-image-enhancement.mjs')
 const socialLinksEnhancement = path.join(source, 'social-links-enhancement.mjs');
 const socialHeaderEnhancement = path.join(source, 'social-header-enhancement.mjs');
 const googleAnalyticsEnhancement = path.join(source, 'google-analytics-enhancement.mjs');
+const structuredDataEnhancement = path.join(source, 'structured-data-enhancement.mjs');
 const nestedOutput = path.join(source, 'dist');
 const output = path.join(root, 'dist');
 const llmsSource = path.join(root, 'llms.txt');
@@ -27,6 +28,7 @@ if (!fs.existsSync(recipeImageEnhancement)) throw new Error(`Recipe image enhanc
 if (!fs.existsSync(socialLinksEnhancement)) throw new Error(`Social links enhancement script not found: ${socialLinksEnhancement}`);
 if (!fs.existsSync(socialHeaderEnhancement)) throw new Error(`Header social enhancement script not found: ${socialHeaderEnhancement}`);
 if (!fs.existsSync(googleAnalyticsEnhancement)) throw new Error(`Google Analytics enhancement script not found: ${googleAnalyticsEnhancement}`);
+if (!fs.existsSync(structuredDataEnhancement)) throw new Error(`Structured data enhancement script not found: ${structuredDataEnhancement}`);
 if (!fs.existsSync(llmsSource)) throw new Error(`llms.txt source file not found: ${llmsSource}`);
 if (!fs.existsSync(uiSource)) throw new Error(`Required UI asset not found: ${uiSource}`);
 
@@ -51,6 +53,10 @@ execFileSync(process.execPath, [socialHeaderEnhancement], { cwd: source, stdio: 
 
 // Add Google Analytics to every generated HTML page, idempotently.
 execFileSync(process.execPath, [googleAnalyticsEnhancement], { cwd: source, stdio: 'inherit' });
+
+// Normalize the GTA 6 page's existing JSON-LD into separate valid schema blocks.
+// This changes only structured-data markup and leaves the calculator/UI untouched.
+execFileSync(process.execPath, [structuredDataEnhancement], { cwd: source, stdio: 'inherit' });
 
 fs.rmSync(output, { recursive: true, force: true });
 fs.cpSync(nestedOutput, output, { recursive: true });
