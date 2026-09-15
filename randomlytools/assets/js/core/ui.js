@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     toolsGrid.appendChild(card);
 
     const allToolsButton = document.querySelector('.category-filter-btn[data-category="all"]');
-    if (allToolsButton) allToolsButton.textContent = 'All Tools (16)';
+    if (allToolsButton) allToolsButton.textContent = 'All Tools (29)';
 
     // Keep homepage ItemList structured data in sync.
     const schemaScript = Array.from(document.querySelectorAll('script[type="application/ld+json"]')).find(script => script.textContent.includes('RandomlyTools Utilities'));
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '/articles/random-name-generator-for-classroom-activities': [['/articles/how-to-pick-a-random-name-from-a-list/', 'How to Pick a Random Name From a List'], ['/articles/how-to-randomly-assign-people-to-groups/', 'How to Randomly Assign People to Groups']],
     '/articles/how-to-randomly-assign-people-to-groups': [['/articles/how-to-randomly-split-people-into-teams/', 'How to Randomly Split People Into Teams'], ['/articles/random-team-generator-for-sports/', 'Random Team Generator for Sports']],
     '/articles/random-number-generator-vs-random-number-picker': [['/articles/how-to-use-a-random-number-picker/', 'How to Use a Random Number Picker'], ['/articles/how-to-generate-random-numbers-without-repeats/', 'How to Generate Random Numbers Without Repeats']],
-    '/articles/how-to-generate-random-numbers-without-repeats': [['/articles/random-number-generator-vs-random-number-picker/', 'Random Number Generator vs Random Number Picker'], ['/articles/how-to-use-a-random-number-picker/', 'How to Use a Random Number Picker']],
+    '/articles/how-to-generate-random-numbers-without-repeats': [['/articles/random-number-generator-vs-random-number-picker/', 'Random Number Generator vs RandomlyTools']],
     '/articles/random-team-generator-for-sports': [['/articles/how-to-randomly-split-people-into-teams/', 'How to Randomly Split People Into Teams'], ['/articles/how-to-randomly-assign-people-to-groups/', 'How to Randomly Assign People to Groups']],
     '/articles/how-to-choose-a-shop-name': [['/articles/how-to-choose-a-business-name/', 'How to Choose a Business Name'], ['/articles/coffee-shop-name-ideas/', 'Coffee Shop Name Ideas']],
     '/articles/coffee-shop-name-ideas': [['/random-coffee-shop-name-generator/', 'Random Coffee Shop Name Generator'], ['/articles/how-to-choose-a-shop-name/', 'How to Choose a Shop Name']],
