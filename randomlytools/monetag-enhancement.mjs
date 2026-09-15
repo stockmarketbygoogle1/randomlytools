@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const dist = path.join(root, 'dist');
-const monetagTag = '<script src="https://quge5.com/88/tag.min.js" data-zone="281082" async data-cfasync="false"></script>';
+const monetagTag = '<script src="https://quge5.com/88/tag.min.js" data-zone="281085" async data-cfasync="false"></script>';
 
 if (!fs.existsSync(dist)) {
   throw new Error('Build output directory not found for Monetag integration.');
@@ -14,7 +14,7 @@ let updated = 0;
 
 function injectIntoFile(filePath) {
   const html = fs.readFileSync(filePath, 'utf8');
-  if (html.includes('https://quge5.com/88/tag.min.js') || html.includes('data-zone="281082"')) {
+  if (html.includes('https://quge5.com/88/tag.min.js') || html.includes('data-zone="281085"')) {
     return;
   }
   const headMatch = html.match(/<head\b[^>]*>/i);
