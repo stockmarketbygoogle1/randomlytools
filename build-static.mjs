@@ -7,6 +7,7 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 const source = path.join(root, 'randomlytools');
 const nestedBuild = path.join(source, 'build-static.mjs');
 const homepageEnhancements = path.join(source, 'homepage-enhancements.mjs');
+const homepageSidebarEnhancement = path.join(source, 'homepage-sidebar-enhancement.mjs');
 const footerToolsEnhancement = path.join(source, 'footer-tools-enhancement.mjs');
 const recipeSeoEnhancement = path.join(source, 'recipe-seo-enhancement.mjs');
 const recipeImageEnhancement = path.join(source, 'recipe-image-enhancement.mjs');
@@ -22,6 +23,7 @@ const uiSource = path.join(source, 'assets', 'js', 'core', 'ui.js');
 if (!fs.existsSync(source)) throw new Error(`Static site directory not found: ${source}`);
 if (!fs.existsSync(nestedBuild)) throw new Error(`Nested static build script not found: ${nestedBuild}`);
 if (!fs.existsSync(homepageEnhancements)) throw new Error(`Homepage enhancement script not found: ${homepageEnhancements}`);
+if (!fs.existsSync(homepageSidebarEnhancement)) throw new Error(`Homepage sidebar enhancement script not found: ${homepageSidebarEnhancement}`);
 if (!fs.existsSync(footerToolsEnhancement)) throw new Error(`Footer tools enhancement script not found: ${footerToolsEnhancement}`);
 if (!fs.existsSync(recipeSeoEnhancement)) throw new Error(`Recipe SEO enhancement script not found: ${recipeSeoEnhancement}`);
 if (!fs.existsSync(recipeImageEnhancement)) throw new Error(`Recipe image enhancement script not found: ${recipeImageEnhancement}`);
@@ -37,6 +39,9 @@ execFileSync(process.execPath, [nestedBuild], { cwd: source, stdio: 'inherit' })
 
 // Existing homepage enhancement.
 execFileSync(process.execPath, [homepageEnhancements], { cwd: source, stdio: 'inherit' });
+
+// Fill the homepage sidebar's remaining empty space with verified discovery links.
+execFileSync(process.execPath, [homepageSidebarEnhancement], { cwd: source, stdio: 'inherit' });
 
 // Keep the homepage footer synchronized with every tool available on the homepage.
 execFileSync(process.execPath, [footerToolsEnhancement], { cwd: source, stdio: 'inherit' });
