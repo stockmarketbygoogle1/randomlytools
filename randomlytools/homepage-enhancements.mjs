@@ -51,8 +51,10 @@ if (!html.includes('href="/fence-post-depth-calculator/"')) {
   if (!gridEndMarker.test(html)) throw new Error('Homepage tools grid end marker not found.');
   html = html.replace(gridEndMarker, `$1${homepageCards}\n$2`);
 }
-html = html.replace(/All Tools \(22\)/, 'All Tools (28)');
-html = html.replace(/All Tools \(27\)/, 'All Tools (28)');
+html = html.replace(/All Tools \(22\)/g, 'All Tools (29)');
+html = html.replace(/All Tools \(23\)/g, 'All Tools (29)');
+html = html.replace(/All Tools \(27\)/g, 'All Tools (29)');
+html = html.replace(/All Tools \(28\)/g, 'All Tools (29)');
 
 if (!html.includes('data-category="cricket">Cricket Tools</button>')) {
   const youtubeButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="youtube"[^>]*>YouTube Tools<\/button>)/i;
@@ -68,12 +70,12 @@ if (!html.includes('data-category="home-diy">Home & DIY</button>')) {
 }
 
 const jsonTools = [
-  ['23', 'Cricket Qualification Calculator', 'https://randomlytools.in/cricket-qualification-calculator/'],
-  ['24', 'Cricket NRR Calculator', 'https://randomlytools.in/cricket-nrr-calculator/'],
-  ['25', 'Cricket Required Run Rate Calculator', 'https://randomlytools.in/cricket-required-run-rate-calculator/'],
-  ['26', 'Cricket Chase Calculator', 'https://randomlytools.in/cricket-chase-calculator/'],
-  ['27', 'Website Mockup Generator', 'https://randomlytools.in/website-mockup-generator/'],
-  ['28', 'Fence Post Depth Calculator', 'https://randomlytools.in/fence-post-depth-calculator/']
+  ['24', 'Cricket Qualification Calculator', 'https://randomlytools.in/cricket-qualification-calculator/'],
+  ['25', 'Cricket NRR Calculator', 'https://randomlytools.in/cricket-nrr-calculator/'],
+  ['26', 'Cricket Required Run Rate Calculator', 'https://randomlytools.in/cricket-required-run-rate-calculator/'],
+  ['27', 'Cricket Chase Calculator', 'https://randomlytools.in/cricket-chase-calculator/'],
+  ['28', 'Website Mockup Generator', 'https://randomlytools.in/website-mockup-generator/'],
+  ['29', 'Fence Post Depth Calculator', 'https://randomlytools.in/fence-post-depth-calculator/']
 ];
 for (const [position, name, url] of jsonTools) {
   if (!html.includes(`"url":"${url}"`)) {
