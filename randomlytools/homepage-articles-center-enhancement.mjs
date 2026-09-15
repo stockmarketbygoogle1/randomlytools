@@ -13,25 +13,27 @@ let html = fs.readFileSync(homepage, 'utf8');
  * layout, which limits it to the left content column. Move the complete strip
  * outside that two-column layout and give it the same centered page container
  * width as the rest of the homepage.
+ *
+ * This is intentionally idempotent so repeated Cloudflare/static builds never
+ * remove the already-relocated article section.
  */
-const articlePattern = /<section class="rt-latest-articles"[\s\S]*?<\/section>/i;
-const articleMatch = html.match(articlePattern);
+const wrapperMarker = 'class="rt-home-fullwidth-articles"';
 
-if (articleMatch) {
+if (!html.includes(wrapperMarker)) {
+  const articlePattern = /<section class="rt-latest-articles"[\s\S]*?<\/section>/i;
+  const articleMatch = html.match(articlePattern);
+
+  if (!articleMatch) throw new Error('Latest Articles section not found on homepage.');
+
   const articleSection = articleMatch[0];
   const outer = `<div class="rt-home-fullwidth-articles">\n${articleSection}\n</div>`;
 
-  /* Remove the existing in-column copy before reinserting it. */
+  /* Remove the existing in-column copy before reinserting it after </main>. */
   html = html.replace(articlePattern, '');
 
-  /* Avoid creating a duplicate if a previous build already moved it. */
-  if (!html.includes('class="rt-home-fullwidth-articles"')) {
-    const mainClose = /<\/main>/i;
-    if (!mainClose.test(html)) throw new Error('Homepage main closing marker not found for full-width article relocation.');
-    html = html.replace(mainClose, `</main>\n${outer}`);
-  }
-} else if (!html.includes('class="rt-home-fullwidth-articles"')) {
-  throw new Error('Latest Articles section not found on homepage.');
+  const mainClose = /<\/main>/i;
+  if (!mainClose.test(html)) throw new Error('Homepage main closing marker not found for full-width article relocation.');
+  html = html.replace(mainClose, `</main>\n${outer}`);
 }
 
 const css = `
