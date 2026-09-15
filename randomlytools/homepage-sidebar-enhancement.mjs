@@ -35,9 +35,9 @@ const extraSidebar = `
     <ul class="rt-link-list rt-compact-tools">
       <li><a href="/random-country-generator/">🌍 Random Country Generator</a></li>
       <li><a href="/random-team-generator/">👥 Random Team Generator</a></li>
-      <li><a href="/random-dice-roller/">🎲 Random Dice Roller</a></li>
-      <li><a href="/random-letter-generator/">🔤 Random Letter Generator</a></li>
       <li><a href="/random-number-picker/">🔢 Random Number Picker</a></li>
+      <li><a href="/random-name-generator/">👤 Random Name Generator</a></li>
+      <li><a href="/attendance-calculator/">🎓 Attendance Calculator</a></li>
     </ul>
   </div>
 
