@@ -10,8 +10,8 @@ let html = fs.readFileSync(homepage, 'utf8');
 
 /*
  * Additive sidebar enhancement.
- * Fills the long empty area below Useful Links with compact, useful discovery
- * sections. Existing sidebar widgets, tools and functionality remain intact.
+ * Uses verified site routes only and fills the remaining long empty area with
+ * useful discovery sections. Existing sidebar widgets, tools and functionality remain intact.
  */
 if (!html.includes('class="rt-home-sidebar"') || html.includes('id="rt-sidebar-quick-tools"')) {
   process.exit(0);
@@ -38,6 +38,32 @@ const extraSidebar = `
       <li><a href="/random-number-picker/">🔢 Random Number Picker</a></li>
       <li><a href="/random-name-generator/">👤 Random Name Generator</a></li>
       <li><a href="/attendance-calculator/">🎓 Attendance Calculator</a></li>
+    </ul>
+  </div>
+
+  <div class="rt-sidebar-widget">
+    <span class="rt-sidebar-kicker">POPULAR CALCULATORS</span>
+    <h2>Useful Calculators</h2>
+    <ul class="rt-link-list rt-compact-tools">
+      <li><a href="/youtube-money-calculator/">▶️ YouTube Money Calculator</a></li>
+      <li><a href="/adsense-revenue-calculator/">💰 AdSense Revenue Calculator</a></li>
+      <li><a href="/cricket-chase-calculator/">🏏 Cricket Chase Calculator</a></li>
+      <li><a href="/cricket-required-run-rate-calculator/">📊 Required Run Rate Calculator</a></li>
+      <li><a href="/cricket-nrr-calculator/">📈 Cricket NRR Calculator</a></li>
+      <li><a href="/cricket-qualification-calculator/">🏆 Cricket Qualification Calculator</a></li>
+    </ul>
+  </div>
+
+  <div class="rt-sidebar-widget">
+    <span class="rt-sidebar-kicker">MORE GENERATORS</span>
+    <h2>Explore More</h2>
+    <ul class="rt-link-list rt-compact-tools">
+      <li><a href="/random-instagram-username-generator/">📱 Instagram Username Generator</a></li>
+      <li><a href="/random-company-brand-name-generator/">🏢 Company &amp; Brand Name Generator</a></li>
+      <li><a href="/random-shop-name-generator/">🏪 Random Shop Name Generator</a></li>
+      <li><a href="/random-number-generator/">🎲 Random Number Generator</a></li>
+      <li><a href="/random-name-generator/">✨ Random Name Generator</a></li>
+      <li><a href="/random-country-generator/">🌎 Random Country Generator</a></li>
     </ul>
   </div>
 
