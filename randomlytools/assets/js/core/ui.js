@@ -54,8 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Search/filter. Re-query cards after the Iceland card is inserted so it is searchable too.
   const filterInput = document.getElementById('tool-search') || document.getElementById('tool-search-input');
+  const categoryButtons = document.querySelectorAll('.category-filter-btn');
+
+  // Search/filter. Re-query cards after the Iceland card is inserted so it is searchable too.
   if (filterInput) {
     const runFilter = () => {
       const toolCards = document.querySelectorAll('.tool-card');
@@ -74,8 +76,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const noResults = document.getElementById('no-tools-found');
       if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
     };
+
+    // Allow sidebar/category links such as /?category=youtube to open the homepage
+    // with the matching category already selected. Invalid values safely fall back to All Tools.
+    const applyCategoryFromUrl = () => {
+      const params = new URLSearchParams(window.location.search);
+      const requestedCategory = params.get('category');
+      if (!requestedCategory || !categoryButtons.length) return;
+      const target = Array.from(categoryButtons).find(btn => btn.getAttribute('data-category') === requestedCategory);
+      if (!target) return;
+      categoryButtons.forEach(btn => btn.classList.remove('active'));
+      target.classList.add('active');
+      runFilter();
+    };
+
     filterInput.addEventListener('input', runFilter);
-    document.querySelectorAll('.category-filter-btn').forEach(btn => btn.addEventListener('click', () => setTimeout(runFilter, 0)));
+    categoryButtons.forEach(btn => btn.addEventListener('click', () => setTimeout(runFilter, 0)));
+    applyCategoryFromUrl();
   }
 
   // Related Guides on article pages.
