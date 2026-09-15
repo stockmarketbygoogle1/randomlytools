@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "node build-static.mjs && node favicon-setup.mjs && node homepage-enhancements.mjs && node homepage-structure-enhancement.mjs && node homepage-sidebar-enhancement.mjs && node structured-data-enhancement.mjs && node social-links-enhancement.mjs && node social-header-enhancement.mjs && node cookie-consent-enhancement.mjs",
+    "build": "node build-static.mjs && node favicon-setup.mjs && node homepage-enhancements.mjs && node homepage-structure-enhancement.mjs && node homepage-sidebar-enhancement.mjs && node homepage-articles-center-enhancement.mjs && node structured-data-enhancement.mjs && node social-links-enhancement.mjs && node social-header-enhancement.mjs && node cookie-consent-enhancement.mjs",
     "preview": "vite preview",
     "clean": "rm -rf dist node_modules/.vite"
   },
