@@ -129,7 +129,7 @@ const cricketContent = {
 <p>A projected score also does not account for wickets, strike rotation, extras, pitch conditions, required boundaries or the quality of the bowling attack. It is best used as a mathematical benchmark.</p>
 <h2>Chase Calculator for IPL, T20 and ODI</h2>
 <p>You can use this calculator for IPL matches, T20 cricket, ODI cricket and other limited-overs formats. The target and remaining-ball calculation is the same mathematical concept, although the number of scheduled overs can differ by format.</p>
-<p>For tournament questions, the chase calculation may be only one part of the answer. If a team needs a win by a certain margin to improve its Net Run Rate, the match score and official NRR rules also need to be considered.</p>
+<p>For tournament questions, the chase calculation may be only one part of the answer. If a team needs to win by a certain margin to improve its Net Run Rate, the match score and official NRR rules also need to be considered.</p>
 <h2>Chasing for Qualification and NRR</h2>
 <p>A team can sometimes have two objectives: win the match and finish with enough NRR to qualify. In that situation, the speed of a successful chase can matter. A faster chase can produce a different scoring-rate outcome than reaching the same target near the end of the innings.</p>
 <p>Use the <a href="/cricket-qualification-calculator/">Cricket Qualification Calculator</a> to explore which results can keep a team in the playoffs, the <a href="/cricket-nrr-calculator/">Cricket NRR Calculator</a> to calculate the basic NRR, and the <a href="/cricket-required-run-rate-calculator/">Required Run Rate Calculator</a> when you only need the required scoring rate.</p>
@@ -151,6 +151,14 @@ for (const entry of fs.readdirSync(root, { withFileTypes: true })) {
   const sourcePath = path.join(root, entry.name);
   const outputPath = path.join(output, entry.name);
   fs.cpSync(sourcePath, outputPath, { recursive: true });
+}
+
+// Monetag requires sw.js at the public site root. The source file lives in
+// /public so copy it explicitly to /dist/sw.js without changing any other assets.
+const monetagSwSource = path.join(root, 'public', 'sw.js');
+const monetagSwTarget = path.join(output, 'sw.js');
+if (fs.existsSync(monetagSwSource)) {
+  fs.copyFileSync(monetagSwSource, monetagSwTarget);
 }
 
 for (const [slug, addition] of Object.entries(cricketContent)) {
