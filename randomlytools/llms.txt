@@ -11,6 +11,7 @@
 
 - Random Name Generator: https://randomlytools.in/random-name-generator/ — Generate random names for people, characters, writing, and other creative uses.
 - Random Number Picker: https://randomlytools.in/random-number-picker/ — Pick random numbers within a chosen range.
+- Percentage Calculator for Marks: https://randomlytools.in/percentage-calculator-for-marks/ — Calculate marks percentage, overall percentage for multiple subjects, and target marks.
 - Random Dog Name Generator: https://randomlytools.in/random-dog-name-generator/ — Generate dog name ideas.
 - Random Discord Name Generator: https://randomlytools.in/random-discord-name-generator/ — Generate random Discord username ideas.
 - Random Instagram Username Generator: https://randomlytools.in/random-instagram-username-generator/ — Generate Instagram username ideas.
