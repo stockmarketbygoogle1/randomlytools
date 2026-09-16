@@ -7,6 +7,7 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 const source = path.join(root, 'randomlytools');
 const nestedBuild = path.join(source, 'build-static.mjs');
 const homepageEnhancements = path.join(source, 'homepage-enhancements.mjs');
+const pipeSizeCalculatorEnhancement = path.join(source, 'pipe-size-calculator-enhancement.mjs');
 const homepageSidebarEnhancement = path.join(source, 'homepage-sidebar-enhancement.mjs');
 const homepageArticlesCenterEnhancement = path.join(source, 'homepage-articles-center-enhancement.mjs');
 const footerToolsEnhancement = path.join(source, 'footer-tools-enhancement.mjs');
@@ -24,6 +25,7 @@ const uiSource = path.join(source, 'assets', 'js', 'core', 'ui.js');
 if (!fs.existsSync(source)) throw new Error(`Static site directory not found: ${source}`);
 if (!fs.existsSync(nestedBuild)) throw new Error(`Nested static build script not found: ${nestedBuild}`);
 if (!fs.existsSync(homepageEnhancements)) throw new Error(`Homepage enhancement script not found: ${homepageEnhancements}`);
+if (!fs.existsSync(pipeSizeCalculatorEnhancement)) throw new Error(`Pipe Size Calculator enhancement script not found: ${pipeSizeCalculatorEnhancement}`);
 if (!fs.existsSync(homepageSidebarEnhancement)) throw new Error(`Homepage sidebar enhancement script not found: ${homepageSidebarEnhancement}`);
 if (!fs.existsSync(homepageArticlesCenterEnhancement)) throw new Error(`Homepage articles center enhancement script not found: ${homepageArticlesCenterEnhancement}`);
 if (!fs.existsSync(footerToolsEnhancement)) throw new Error(`Footer tools enhancement script not found: ${footerToolsEnhancement}`);
@@ -41,6 +43,9 @@ execFileSync(process.execPath, [nestedBuild], { cwd: source, stdio: 'inherit' })
 
 // Existing homepage enhancement.
 execFileSync(process.execPath, [homepageEnhancements], { cwd: source, stdio: 'inherit' });
+
+// Add the Pipe Size Calculator to the generated homepage and its discovery metadata.
+execFileSync(process.execPath, [pipeSizeCalculatorEnhancement], { cwd: source, stdio: 'inherit' });
 
 // Fill the homepage sidebar's remaining empty space with verified discovery links.
 execFileSync(process.execPath, [homepageSidebarEnhancement], { cwd: source, stdio: 'inherit' });
