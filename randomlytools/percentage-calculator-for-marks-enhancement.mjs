@@ -46,6 +46,16 @@ const seoContent = `
 <p>For multiple subjects, add all marks obtained and add all maximum marks. Then divide the combined obtained marks by the combined maximum marks and multiply by 100. This method is useful when subjects do not all have the same maximum marks.</p>
 <h2>How Many Marks Are Needed for a Target Percentage?</h2>
 <p>Enter your current marks, maximum marks and target percentage in the Target Marks mode. The calculator finds the target marks and the additional marks needed to reach that target.</p>
+<h2>Percentage, Percentile and Grade: What Is the Difference?</h2>
+<p><strong>Percentage</strong> expresses marks as a value out of 100. <strong>Percentile</strong> describes a student's position relative to other students, so it is not the same as percentage. A <strong>grade</strong> is a category or letter assigned according to an institution's grading rules. Always use the grading or result rule published by your school, board, college or university when an official result is required.</p>
+<h2>Source-Based Notes and Further Reading</h2>
+<p>The core marks-to-percentage formula used here is the standard arithmetic formula also explained in student-focused guides from major education websites. For additional explanations and examples, see these external resources:</p>
+<ul>
+<li><a href="https://studyabroad.careers360.com/articles/how-to-calculate-the-percentage-of-marks/" target="_blank" rel="noopener noreferrer">Careers360: How to Calculate the Percentage of Marks</a> — explains the marks-to-percentage formula and worked examples.</li>
+<li><a href="https://www.shiksha.com/studyabroad/how-to-calculate-percentage-of-marks-articlepage-147205" target="_blank" rel="noopener noreferrer">Shiksha: How to Calculate Percentage of Marks</a> — covers single-subject and multiple-subject percentage calculations.</li>
+<li><a href="https://calculator.academy/marks-percentage-calculator-2/" target="_blank" rel="noopener noreferrer">Calculator Academy: Marks Percentage Calculator</a> — provides the marks percentage formula and calculator approach.</li>
+</ul>
+<p><small>These links are provided for further reading. RandomlyTools does not copy their calculator results or page content. Rules for official marks, grades, aggregate calculations, best-of-subject selection, or CGPA conversion can vary by institution, so the applicable official rule should be checked separately.</small></p>
 <h2>Frequently Asked Questions</h2>
 ${faqs.map(([q,a]) => `<h3>${q}</h3><p>${a}</p>`).join('\n')}
 </section>`;
@@ -80,4 +90,4 @@ if (!home.includes(`"url":"${url}"`)) {
   if (marker.test(home)) home = home.replace(marker, `$1,{"@type":"ListItem","position":31,"name":"Percentage Calculator for Marks","url":"${url}"}`);
 }
 fs.writeFileSync(homepage, home, 'utf8');
-console.log('Percentage Calculator for Marks SEO and homepage integration applied.');
+console.log('Percentage Calculator for Marks SEO, source links and homepage integration applied.');
