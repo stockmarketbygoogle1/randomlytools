@@ -44,6 +44,7 @@ const footerTools = `
 <li><a href="/cricket-chase-calculator/">Cricket Chase Calculator</a></li>
 <li><a href="/website-mockup-generator/">Website Mockup Generator</a></li>
 <li><a href="/fence-post-depth-calculator/">Fence Post Depth Calculator</a></li>
+<li><a href="/pipe-size-calculator/">Pipe Size Calculator</a></li>
 </ul></div>`;
 
 const marker = /<div class="footer-column"><h4>Popular Tools<\/h4>[\s\S]*?(?=<div class="footer-column"><h4>Website<\/h4>)/i;
@@ -51,8 +52,6 @@ if (!marker.test(html)) throw new Error('Homepage footer tool columns marker not
 
 html = html.replace(marker, footerTools);
 
-// The footer now has four tool columns plus the brand column. Keep all five
-// columns on one row on desktop while preserving the existing one-column mobile layout.
 const footerLayoutStyle = `<style id="homepage-footer-layout">.site-footer .footer-grid{grid-template-columns:2fr repeat(4,minmax(0,1fr));}.site-footer .footer-column{min-width:0;}@media (max-width:1024px) and (min-width:769px){.site-footer .footer-grid{grid-template-columns:2fr repeat(2,minmax(0,1fr));}.site-footer .footer-grid .footer-column:nth-of-type(4),.site-footer .footer-grid .footer-column:nth-of-type(5){grid-column:span 1;}}@media (max-width:768px){.site-footer .footer-grid{grid-template-columns:1fr;}}</style>`;
 const styleMarker = /<style id="homepage-footer-layout">[\s\S]*?<\/style>/i;
 html = styleMarker.test(html)
@@ -69,14 +68,11 @@ const requiredPaths = [
   '/youtube-money-calculator-india/', '/youtube-money-calculator-iceland/', '/youtube-rpm-calculator/',
   '/youtube-shorts-earnings-calculator/', '/gta-6-download-time-calculator/', '/cricket-qualification-calculator/', '/cricket-nrr-calculator/',
   '/cricket-required-run-rate-calculator/', '/cricket-chase-calculator/', '/website-mockup-generator/',
-  '/fence-post-depth-calculator/'
+  '/fence-post-depth-calculator/', '/pipe-size-calculator/'
 ];
 
-// The four cricket tools, Website Mockup Generator and Fence Post Depth Calculator
-// are inserted into the homepage by homepage-enhancements.mjs, so their footer links
-// are validated here even though they are not part of the original nested homepage source.
 const missing = requiredPaths.filter((p) => !html.includes(`href="${p}"`));
 if (missing.length) throw new Error(`Footer link validation failed: ${missing.join(', ')}`);
 
 fs.writeFileSync(homepage, html, 'utf8');
-console.log('Homepage footer updated with links for all 29 tools.');
+console.log('Homepage footer updated with links for all 30 tools.');
