@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pipe Size Calculator – Pipe Diameter, Flow Rate & Velocity | RandomlyTools</title>
+  <meta name="description" content="Free pipe size calculator to calculate required pipe diameter, flow velocity and flow rate using common metric and imperial units.">
+  <link rel="canonical" href="https://randomlytools.in/pipe-size-calculator/">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <meta property="og:title" content="Pipe Size Calculator – Pipe Diameter, Flow Rate & Velocity | RandomlyTools">
+  <meta property="og:description" content="Calculate pipe diameter, flow velocity and flow rate with common metric and imperial units.">
+  <meta property="og:url" content="https://randomlytools.in/pipe-size-calculator/">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"WebApplication","name":"Pipe Size Calculator","url":"https://randomlytools.in/pipe-size-calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online calculator for pipe diameter, flow velocity and flow rate."},
+      {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://randomlytools.in/"},{"@type":"ListItem","position":2,"name":"Pipe Size Calculator","item":"https://randomlytools.in/pipe-size-calculator/"}]},
+      {"@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"How do you calculate pipe size from flow rate?","acceptedAnswer":{"@type":"Answer","text":"For a circular pipe, the required internal diameter can be calculated from flow rate and target velocity using Q = A × V and A = πD²/4. The flow rate must first be expressed in compatible units."}},
+        {"@type":"Question","name":"How do you calculate flow velocity in a pipe?","acceptedAnswer":{"@type":"Answer","text":"Flow velocity is calculated by dividing volumetric flow rate by pipe cross-sectional area. For a circular pipe, v = 4Q/(πD²) when compatible units are used."}},
+        {"@type":"Question","name":"Does pipe diameter affect flow velocity?","acceptedAnswer":{"@type":"Answer","text":"Yes. For a fixed flow rate, a smaller internal diameter produces a higher average velocity, while a larger internal diameter produces a lower average velocity."}},
+        {"@type":"Question","name":"What is the difference between pipe diameter and nominal pipe size?","acceptedAnswer":{"@type":"Answer","text":"Pipe internal diameter is the actual inside opening used in flow calculations. Nominal pipe size is a standardized designation and is not necessarily equal to the measured internal diameter."}},
+        {"@type":"Question","name":"Can this calculator select a final engineering pipe size?","acceptedAnswer":{"@type":"Answer","text":"This calculator provides a flow-and-velocity based diameter estimate. Final pipe selection may also require pressure loss, pipe material, temperature, fittings, applicable codes and project-specific engineering requirements."}}
+      ]}
+    ]
+  }
+  </script>
+  <style>
+    .pipe-calculator-card{max-width:860px;margin:0 auto;background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow-sm)}
+    .pipe-mode-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-bottom:1.25rem}
+    .pipe-mode{border:1px solid var(--border-color);background:var(--bg-surface-subtle);color:var(--text-secondary);border-radius:var(--radius-md);padding:.75rem .6rem;cursor:pointer;font-weight:700}
+    .pipe-mode.active,.pipe-mode:hover{border-color:var(--primary);color:var(--text-primary)}
+    .pipe-input-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .pipe-input-row{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:.5rem}
+    .pipe-result{margin-top:1.25rem;padding:1.25rem;border:1px solid var(--border-color);border-radius:var(--radius-md);background:var(--bg-surface-subtle)}
+    .pipe-result-main{text-align:center;margin-bottom:1rem}.pipe-result-value{font-size:2.35rem;font-weight:800;color:var(--text-primary)}
+    .pipe-result-label{color:var(--text-muted);font-size:.9rem}.pipe-result-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
+    .pipe-stat{padding:.8rem;border:1px solid var(--border-color);border-radius:var(--radius-sm);background:var(--bg-surface)}.pipe-stat-label{display:block;font-size:.78rem;color:var(--text-muted);margin-bottom:.2rem}.pipe-stat-value{font-weight:700;color:var(--text-primary)}
+    .pipe-actions{display:flex;gap:.75rem;margin-top:1rem}.pipe-actions button{flex:1}.pipe-error{display:none;color:var(--accent-red);font-size:.9rem;margin-top:.75rem}.pipe-note{font-size:.85rem;color:var(--text-muted);margin-top:1rem}
+    .pipe-table-wrap{overflow-x:auto}.pipe-table{width:100%;border-collapse:collapse;margin:1rem 0}.pipe-table th,.pipe-table td{border:1px solid var(--border-color);padding:.65rem;text-align:left}.pipe-table th{background:var(--bg-surface-subtle)}
+    @media(max-width:700px){.pipe-mode-grid,.pipe-input-grid,.pipe-result-stats{grid-template-columns:1fr}.pipe-input-row{grid-template-columns:1fr 120px}.pipe-calculator-card{padding:1rem}}
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="container"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><button class="mobile-menu-btn" aria-label="Toggle navigation menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><nav class="nav-links"><a href="/">All Tools</a><a href="/random-name-generator/">Names</a><a href="/random-number-picker/">Numbers</a><a href="/random-discord-name-generator/">Usernames</a><a href="/random-company-brand-name-generator/">Brands</a><a href="/about/">About</a></nav></div></header>
+
+  <main class="container page-intro">
+    <div class="breadcrumbs"><a href="/">Home</a> <span>/</span> <span>Pipe Size Calculator</span></div>
+    <div class="tool-header" style="text-align:center;max-width:850px;margin:0 auto 2rem;"><h1>Pipe Size Calculator</h1><p class="section-subtitle">Calculate pipe diameter, flow velocity or flow rate using the relationship between volumetric flow, pipe area and velocity.</p></div>
+
+    <div class="pipe-calculator-card">
+      <div class="pipe-mode-grid" role="group" aria-label="Calculation mode">
+        <button type="button" class="pipe-mode active" data-mode="size">Pipe Size</button>
+        <button type="button" class="pipe-mode" data-mode="velocity">Flow Velocity</button>
+        <button type="button" class="pipe-mode" data-mode="flow">Flow Rate</button>
+      </div>
+
+      <div id="sizeInputs">
+        <div class="pipe-input-grid">
+          <div class="form-group"><label class="form-label" for="sizeFlow">Flow Rate</label><div class="pipe-input-row"><input class="form-control" id="sizeFlow" type="number" min="0" step="any" value="100" placeholder="e.g. 100"><select class="form-control" id="sizeFlowUnit"><option value="gpm">GPM</option><option value="lpm">L/min</option><option value="m3h">m³/h</option><option value="m3s">m³/s</option><option value="cfm">ft³/min</option></select></div></div>
+          <div class="form-group"><label class="form-label" for="sizeVelocity">Desired Velocity</label><div class="pipe-input-row"><input class="form-control" id="sizeVelocity" type="number" min="0" step="any" value="5" placeholder="e.g. 5"><select class="form-control" id="sizeVelocityUnit"><option value="fts">ft/s</option><option value="ms">m/s</option></select></div></div>
+        </div>
+      </div>
+
+      <div id="velocityInputs" hidden>
+        <div class="pipe-input-grid">
+          <div class="form-group"><label class="form-label" for="velocityFlow">Flow Rate</label><div class="pipe-input-row"><input class="form-control" id="velocityFlow" type="number" min="0" step="any" value="100" placeholder="e.g. 100"><select class="form-control" id="velocityFlowUnit"><option value="gpm">GPM</option><option value="lpm">L/min</option><option value="m3h">m³/h</option><option value="m3s">m³/s</option><option value="cfm">ft³/min</option></select></div></div>
+          <div class="form-group"><label class="form-label" for="velocityDiameter">Internal Diameter</label><div class="pipe-input-row"><input class="form-control" id="velocityDiameter" type="number" min="0" step="any" value="2" placeholder="e.g. 2"><select class="form-control" id="velocityDiameterUnit"><option value="in">in</option><option value="mm">mm</option><option value="cm">cm</option><option value="ft">ft</option></select></div></div>
+        </div>
+      </div>
+
+      <div id="flowInputs" hidden>
+        <div class="pipe-input-grid">
+          <div class="form-group"><label class="form-label" for="flowDiameter">Internal Diameter</label><div class="pipe-input-row"><input class="form-control" id="flowDiameter" type="number" min="0" step="any" value="2" placeholder="e.g. 2"><select class="form-control" id="flowDiameterUnit"><option value="in">in</option><option value="mm">mm</option><option value="cm">cm</option><option value="ft">ft</option></select></div></div>
+          <div class="form-group"><label class="form-label" for="flowVelocity">Flow Velocity</label><div class="pipe-input-row"><input class="form-control" id="flowVelocity" type="number" min="0" step="any" value="5" placeholder="e.g. 5"><select class="form-control" id="flowVelocityUnit"><option value="fts">ft/s</option><option value="ms">m/s</option></select></div></div>
+        </div>
+      </div>
+
+      <div class="pipe-actions"><button type="button" id="calculate" class="btn btn-primary">Calculate</button><button type="button" id="reset" class="btn btn-secondary">Reset</button></div>
+      <div id="error" class="pipe-error" role="alert"></div>
+
+      <div id="result" class="pipe-result" hidden>
+        <div class="pipe-result-main"><div class="pipe-result-label" id="resultLabel">Required Internal Diameter</div><div class="pipe-result-value" id="resultValue">—</div></div>
+        <div class="pipe-result-stats"><div class="pipe-stat"><span class="pipe-stat-label">Flow Rate</span><span class="pipe-stat-value" id="outFlow">—</span></div><div class="pipe-stat"><span class="pipe-stat-label">Velocity</span><span class="pipe-stat-value" id="outVelocity">—</span></div><div class="pipe-stat"><span class="pipe-stat-label">Internal Diameter</span><span class="pipe-stat-value" id="outDiameter">—</span></div></div>
+        <div class="pipe-actions"><button type="button" id="copy" class="btn btn-secondary">Copy Result</button></div>
+        <p class="pipe-note">This is a flow-and-velocity calculation for a circular pipe. Final engineering pipe selection can require pressure-loss analysis, material, temperature, fittings, codes and project-specific requirements.</p>
+      </div>
+    </div>
+
+    <div class="ad-slot-container"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-box">Ad Space Available</div></div>
+
+    <article class="article-content" style="max-width:850px;margin:2rem auto;">
+      <h2>How Pipe Sizing Is Calculated</h2>
+      <p>Pipe sizing by velocity starts with the relationship between volumetric flow rate, pipe cross-sectional area and average flow velocity.</p>
+      <p><strong>Q = A × V</strong></p>
+      <p>For a circular pipe, the cross-sectional area is <strong>A = πD² / 4</strong>. Combining these relationships gives a diameter calculation from flow rate and target velocity. The calculator converts your selected units before applying the formula.</p>
+
+      <h2>Pipe Size Calculator Inputs</h2>
+      <p>The calculator has three modes. <strong>Pipe Size</strong> estimates the internal diameter needed for a selected flow rate and target velocity. <strong>Flow Velocity</strong> calculates average velocity from flow rate and internal diameter. <strong>Flow Rate</strong> calculates volumetric flow from internal diameter and velocity.</p>
+      <p>Supported flow-rate units include GPM, litres per minute, cubic metres per hour, cubic metres per second and cubic feet per minute. Diameter can be entered in inches, millimetres, centimetres or feet, and velocity can be entered in feet per second or metres per second.</p>
+
+      <h2>Pipe Sizing and Nominal Pipe Size</h2>
+      <p>The calculated diameter is an <strong>internal diameter</strong>, not a nominal pipe-size designation. Nominal pipe size is a standardized label and the actual internal diameter varies with pipe standard, material and wall thickness. For that reason, a final nominal size should be selected from the applicable pipe-size table after the required internal diameter has been established.</p>
+
+      <h2>Pipe Size Reference</h2>
+      <div class="pipe-table-wrap"><table class="pipe-table"><thead><tr><th>What you know</th><th>What you can calculate</th></tr></thead><tbody><tr><td>Flow rate + desired velocity</td><td>Required internal diameter</td></tr><tr><td>Flow rate + internal diameter</td><td>Average flow velocity</td></tr><tr><td>Internal diameter + velocity</td><td>Volumetric flow rate</td></tr></tbody></table></div>
+
+      <h2>Why Pipe Diameter Matters</h2>
+      <p>For a fixed flow rate, reducing the internal diameter increases the average velocity because the same volume of fluid passes through a smaller cross-sectional area. Increasing the diameter has the opposite effect. In real piping design, velocity is only one part of the selection process; pressure loss and other project conditions can also matter.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>How do you calculate pipe size from flow rate?</h3><p>Use Q = A × V and A = πD²/4. After converting flow rate and velocity to compatible units, solve for the required internal diameter.</p>
+      <h3>How do you calculate flow velocity in a pipe?</h3><p>Divide volumetric flow rate by the pipe's cross-sectional area. For a circular pipe, the relationship is v = 4Q/(πD²) with compatible units.</p>
+      <h3>Does pipe diameter affect flow velocity?</h3><p>Yes. At a fixed flow rate, a smaller internal diameter produces a higher average velocity and a larger internal diameter produces a lower average velocity.</p>
+      <h3>What is the difference between pipe diameter and nominal pipe size?</h3><p>Internal diameter is the actual inside opening used for flow calculations. Nominal pipe size is a standardized designation and is not necessarily equal to the measured internal diameter.</p>
+      <h3>Can this calculator select a final engineering pipe size?</h3><p>It provides a flow-and-velocity diameter estimate. Final selection can require pressure-loss calculations, pipe material, temperature, fittings, applicable codes and project-specific engineering review.</p>
+
+      <h2>Related Tools</h2>
+      <p>Explore more practical calculators on <a href="/">RandomlyTools</a>.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><p>Simple Random Tools for Everyday Use. Fast, free, and privacy-focused client-side generators.</p></div><div class="footer-column"><h4>Popular Tools</h4><ul><li><a href="/random-name-generator/">Random Name Generator</a></li><li><a href="/random-number-picker/">Random Number Picker</a></li><li><a href="/random-dog-name-generator/">Dog Name Generator</a></li><li><a href="/random-discord-name-generator/">Discord Name Generator</a></li><li><a href="/random-company-brand-name-generator/">Brand Name Generator</a></li></ul></div><div class="footer-column"><h4>More Tools</h4><ul><li><a href="/random-shop-name-generator/">Shop Name Generator</a></li><li><a href="/random-restaurant-name-generator/">Restaurant Name Generator</a></li><li><a href="/random-japanese-name-generator/">Japanese Name Generator</a></li><li><a href="/random-instagram-username-generator/">Instagram Generator</a></li><li><a href="/random-coffee-shop-name-generator/">Coffee Shop Names</a></li><li><a href="/random-team-generator/">Random Team Generator</a></li><li><a href="/attendance-calculator/">Attendance Calculator</a></li><li><a href="/pipe-size-calculator/">Pipe Size Calculator</a></li></ul></div><div class="footer-column"><h4>Trust &amp; Legal</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Service</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 RandomlyTools. All rights reserved. Free utilities for personal and commercial inspiration.</p><p>Built for speed and user privacy.</p></div></div></footer>
+
+  <script src="/assets/js/core/ui.js"></script>
+  <script>
+  (() => {
+    const modes=document.querySelectorAll('.pipe-mode');
+    const panels={size:document.getElementById('sizeInputs'),velocity:document.getElementById('velocityInputs'),flow:document.getElementById('flowInputs')};
+    let mode='size';
+    const result=document.getElementById('result'), error=document.getElementById('error');
+    const fmt=(n,d=4)=>{if(!Number.isFinite(n)) return '—'; const x=Number(n.toFixed(d)); return String(x);};
+    const flowToM3s={gpm:x=>x*0.0000630901964,lpm:x=>x/60000,m3h:x=>x/3600,m3s:x=>x,cfm:x=>x*0.00047194745};
+    const velocityToMs={fts:x=>x*0.3048,ms:x=>x};
+    const diameterToM={in:x=>x*0.0254,mm:x=>x/1000,cm:x=>x/100,ft:x=>x*0.3048};
+    const flowLabel={gpm:'GPM',lpm:'L/min',m3h:'m³/h',m3s:'m³/s',cfm:'ft³/min'};
+    const velocityLabel={fts:'ft/s',ms:'m/s'};
+    const diameterLabel={in:'in',mm:'mm',cm:'cm',ft:'ft'};
+    const clearError=()=>{error.style.display='none';error.textContent='';};
+    const fail=msg=>{error.textContent=msg;error.style.display='block';result.hidden=true;};
+    const valid=(x)=>Number.isFinite(x)&&x>0;
+    function setMode(next){mode=next;modes.forEach(b=>b.classList.toggle('active',b.dataset.mode===next));Object.entries(panels).forEach(([k,p])=>p.hidden=k!==next);clearError();result.hidden=true;}
+    modes.forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
+    function getFlow(valueId,unitId){const value=Number(document.getElementById(valueId).value),unit=document.getElementById(unitId).value;return {value,unit,q:valid(value)?flowToM3s[unit](value):NaN};}
+    function getVelocity(valueId,unitId){const value=Number(document.getElementById(valueId).value),unit=document.getElementById(unitId).value;return {value,unit,v:valid(value)?velocityToMs[unit](value):NaN};}
+    function getDiameter(valueId,unitId){const value=Number(document.getElementById(valueId).value),unit=document.getElementById(unitId).value;return {value,unit,d:valid(value)?diameterToM[unit](value):NaN};}
+    function setOutputs(q,v,d){
+      document.getElementById('outFlow').textContent=fmt(q/0.0000630901964,3)+' GPM';
+      document.getElementById('outVelocity').textContent=fmt(v/0.3048,3)+' ft/s';
+      document.getElementById('outDiameter').textContent=fmt(d/0.0254,3)+' in';
+    }
+    function calculate(){
+      clearError();
+      let q,v,d,label,value;
+      if(mode==='size'){
+        const f=getFlow('sizeFlow','sizeFlowUnit'), vel=getVelocity('sizeVelocity','sizeVelocityUnit');
+        if(!valid(f.q)||!valid(vel.v)) return fail('Please enter positive flow rate and desired velocity values.');
+        q=f.q;v=vel.v;d=Math.sqrt(4*q/(Math.PI*v));label='Required Internal Diameter';value=fmt(d/0.0254,4)+' in';
+      } else if(mode==='velocity'){
+        const f=getFlow('velocityFlow','velocityFlowUnit'), dia=getDiameter('velocityDiameter','velocityDiameterUnit');
+        if(!valid(f.q)||!valid(dia.d)) return fail('Please enter positive flow rate and internal diameter values.');
+        q=f.q;d=dia.d;v=q/(Math.PI*d*d/4);label='Flow Velocity';value=fmt(v/0.3048,4)+' ft/s';
+      } else {
+        const dia=getDiameter('flowDiameter','flowDiameterUnit'), vel=getVelocity('flowVelocity','flowVelocityUnit');
+        if(!valid(dia.d)||!valid(vel.v)) return fail('Please enter positive internal diameter and velocity values.');
+        d=dia.d;v=vel.v;q=Math.PI*d*d/4*v;label='Flow Rate';value=fmt(q/0.0000630901964,4)+' GPM';
+      }
+      document.getElementById('resultLabel').textContent=label;document.getElementById('resultValue').textContent=value;setOutputs(q,v,d);result.hidden=false;
+    }
+    document.getElementById('calculate').addEventListener('click',calculate);
+    document.getElementById('reset').addEventListener('click',()=>{document.querySelectorAll('input').forEach(i=>{if(i.id.includes('Flow'))i.value='100';else if(i.id.includes('Velocity'))i.value='5';else if(i.id.includes('Diameter'))i.value='2';});setMode('size');document.getElementById('sizeFlowUnit').value='gpm';document.getElementById('sizeVelocityUnit').value='fts';});
+    document.getElementById('copy').addEventListener('click',async()=>{const text=`Pipe Size Calculator\n${document.getElementById('resultLabel').textContent}: ${document.getElementById('resultValue').textContent}\nFlow Rate: ${document.getElementById('outFlow').textContent}\nVelocity: ${document.getElementById('outVelocity').textContent}\nInternal Diameter: ${document.getElementById('outDiameter').textContent}`;try{await navigator.clipboard.writeText(text);const b=document.getElementById('copy');const old=b.textContent;b.textContent='Copied!';setTimeout(()=>b.textContent=old,1200);}catch{fail('Copy was not available. Please select the result text manually.');}});
+    calculate();
+  })();
+  </script>
+</body>
+</html>
