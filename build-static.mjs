@@ -56,6 +56,10 @@ execFileSync(process.execPath, [homepageArticlesCenterEnhancement], { cwd: sourc
 // Keep the homepage footer synchronized with every tool available on the homepage.
 execFileSync(process.execPath, [footerToolsEnhancement], { cwd: source, stdio: 'inherit' });
 
+// Re-apply the Pipe Size Calculator integration after footer synchronization so the
+// final generated homepage always contains the card and discovery metadata.
+execFileSync(process.execPath, [pipeSizeCalculatorEnhancement], { cwd: source, stdio: 'inherit' });
+
 // Strengthen the Recipe Finder page's search relevance without replacing its source code.
 execFileSync(process.execPath, [recipeSeoEnhancement], { cwd: source, stdio: 'inherit' });
 
