@@ -21,6 +21,7 @@
 - Random Coffee Shop Name Generator: https://randomlytools.in/random-coffee-shop-name-generator/ — Generate coffee shop name ideas.
 - Random Team Generator: https://randomlytools.in/random-team-generator/ — Split a list of names into random teams.
 - Attendance Calculator: https://randomlytools.in/attendance-calculator/ — Calculate attendance percentage, check a 75% attendance target, and determine classes that can be missed or need to be attended.
+- Pipe Size Calculator: https://randomlytools.in/pipe-size-calculator/ — Calculate required internal pipe diameter from flow rate and velocity, or calculate pipe flow velocity and flow rate from pipe dimensions.
 
 ## Privacy
 
@@ -29,4 +30,5 @@ RandomlyTools is designed around client-side utility generation. Users should re
 ## Important
 
 - Generated names, usernames, and brand suggestions are creative ideas and should be independently checked for availability, trademarks, and platform rules before commercial use.
-- Calculator results are mathematical calculations and do not replace institution-specific academic policies.
+- Calculator results are mathematical calculations and do not replace institution-specific academic policies or project-specific engineering review.
+- Pipe sizing results are flow-and-velocity calculations and do not by themselves replace pressure-loss analysis, applicable codes, pipe-standard selection, or qualified engineering review.
