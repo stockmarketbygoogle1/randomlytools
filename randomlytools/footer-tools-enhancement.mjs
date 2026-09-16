@@ -18,6 +18,7 @@ const footerTools = `
 <li><a href="/random-company-brand-name-generator/">Brand Name Generator</a></li>
 <li><a href="/random-shop-name-generator/">Shop Name Generator</a></li>
 <li><a href="/random-restaurant-name-generator/">Restaurant Name Generator</a></li>
+<li><a href="/percentage-calculator-for-marks/">Percentage Calculator for Marks</a></li>
 </ul></div>
 <div class="footer-column"><h4>More Tools</h4><ul>
 <li><a href="/random-japanese-name-generator/">Japanese Name Generator</a></li>
@@ -68,11 +69,11 @@ const requiredPaths = [
   '/youtube-money-calculator-india/', '/youtube-money-calculator-iceland/', '/youtube-rpm-calculator/',
   '/youtube-shorts-earnings-calculator/', '/gta-6-download-time-calculator/', '/cricket-qualification-calculator/', '/cricket-nrr-calculator/',
   '/cricket-required-run-rate-calculator/', '/cricket-chase-calculator/', '/website-mockup-generator/',
-  '/fence-post-depth-calculator/', '/pipe-size-calculator/'
+  '/fence-post-depth-calculator/', '/pipe-size-calculator/', '/percentage-calculator-for-marks/'
 ];
 
 const missing = requiredPaths.filter((p) => !html.includes(`href="${p}"`));
 if (missing.length) throw new Error(`Footer link validation failed: ${missing.join(', ')}`);
 
 fs.writeFileSync(homepage, html, 'utf8');
-console.log('Homepage footer updated with links for all 30 tools.');
+console.log('Homepage footer updated with links for all 31 tools.');
