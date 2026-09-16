@@ -8,6 +8,7 @@ const source = path.join(root, 'randomlytools');
 const nestedBuild = path.join(source, 'build-static.mjs');
 const homepageEnhancements = path.join(source, 'homepage-enhancements.mjs');
 const pipeSizeCalculatorEnhancement = path.join(source, 'pipe-size-calculator-enhancement.mjs');
+const percentageCalculatorForMarksEnhancement = path.join(source, 'percentage-calculator-for-marks-enhancement.mjs');
 const homepageSidebarEnhancement = path.join(source, 'homepage-sidebar-enhancement.mjs');
 const homepageArticlesCenterEnhancement = path.join(source, 'homepage-articles-center-enhancement.mjs');
 const footerToolsEnhancement = path.join(source, 'footer-tools-enhancement.mjs');
@@ -26,6 +27,7 @@ if (!fs.existsSync(source)) throw new Error(`Static site directory not found: ${
 if (!fs.existsSync(nestedBuild)) throw new Error(`Nested static build script not found: ${nestedBuild}`);
 if (!fs.existsSync(homepageEnhancements)) throw new Error(`Homepage enhancement script not found: ${homepageEnhancements}`);
 if (!fs.existsSync(pipeSizeCalculatorEnhancement)) throw new Error(`Pipe Size Calculator enhancement script not found: ${pipeSizeCalculatorEnhancement}`);
+if (!fs.existsSync(percentageCalculatorForMarksEnhancement)) throw new Error(`Percentage Calculator for Marks enhancement script not found: ${percentageCalculatorForMarksEnhancement}`);
 if (!fs.existsSync(homepageSidebarEnhancement)) throw new Error(`Homepage sidebar enhancement script not found: ${homepageSidebarEnhancement}`);
 if (!fs.existsSync(homepageArticlesCenterEnhancement)) throw new Error(`Homepage articles center enhancement script not found: ${homepageArticlesCenterEnhancement}`);
 if (!fs.existsSync(footerToolsEnhancement)) throw new Error(`Footer tools enhancement script not found: ${footerToolsEnhancement}`);
@@ -47,6 +49,9 @@ execFileSync(process.execPath, [homepageEnhancements], { cwd: source, stdio: 'in
 // Add the Pipe Size Calculator to the generated homepage and its discovery metadata.
 execFileSync(process.execPath, [pipeSizeCalculatorEnhancement], { cwd: source, stdio: 'inherit' });
 
+// Add the Percentage Calculator for Marks to the generated homepage and its SEO/discovery metadata.
+execFileSync(process.execPath, [percentageCalculatorForMarksEnhancement], { cwd: source, stdio: 'inherit' });
+
 // Fill the homepage sidebar's remaining empty space with verified discovery links.
 execFileSync(process.execPath, [homepageSidebarEnhancement], { cwd: source, stdio: 'inherit' });
 
@@ -56,9 +61,10 @@ execFileSync(process.execPath, [homepageArticlesCenterEnhancement], { cwd: sourc
 // Keep the homepage footer synchronized with every tool available on the homepage.
 execFileSync(process.execPath, [footerToolsEnhancement], { cwd: source, stdio: 'inherit' });
 
-// Re-apply the Pipe Size Calculator integration after footer synchronization so the
-// final generated homepage always contains the card and discovery metadata.
+// Re-apply both new calculator integrations after footer synchronization so the final generated homepage
+// always contains their cards and discovery metadata even when footer generation rebuilds homepage markup.
 execFileSync(process.execPath, [pipeSizeCalculatorEnhancement], { cwd: source, stdio: 'inherit' });
+execFileSync(process.execPath, [percentageCalculatorForMarksEnhancement], { cwd: source, stdio: 'inherit' });
 
 // Strengthen the Recipe Finder page's search relevance without replacing its source code.
 execFileSync(process.execPath, [recipeSeoEnhancement], { cwd: source, stdio: 'inherit' });
