@@ -63,7 +63,7 @@ if (fs.existsSync(page)) {
     ['What is the difference between nominal pipe size and internal diameter?', 'Nominal pipe size is a standardized designation. The actual internal diameter depends on the pipe standard, material and wall thickness or schedule, so nominal size should not be substituted directly for bore diameter in calculations.'],
     ['What velocity should I use for pipe sizing?', 'The appropriate design velocity depends on the fluid, service, pipe material, noise limits, erosion concerns and project standards. This calculator lets you enter the target velocity rather than assuming one universal value.'],
     ['Does this pipe size calculator calculate pressure drop?', 'No. This page calculates pipe diameter, velocity or flow rate from the continuity relationship. Pressure-drop analysis requires additional information such as pipe length, roughness, fittings, fluid properties and the selected hydraulic method.'],
-    ['Can I use this calculator for water pipe sizing?', 'Yes, the velocity-based calculation can be used as a first-pass sizing method for water and other incompressible liquids. Final water-pipe selection should also consider pressure loss, pipe material, temperature, fittings, available pressure and applicable codes.'],
+    ['Can I use this calculator for water pipe sizing?', 'Yes, the velocity-based calculation can be used as a first-pass sizing method for water and other incompressible liquids. The appropriate velocity depends on the application, and final selection should consider pressure loss, pipe material, temperature, fittings, available pressure and applicable codes.'],
     ['Can I use this calculator for gas pipe sizing?', 'The basic diameter-and-velocity relationship is not enough for final gas pipe sizing. Gas calculations can depend on pressure, temperature, gas properties, pipe length, fittings, allowable pressure drop and applicable standards. Use a gas-specific engineering method for final design.'],
     ['What units does the pipe size calculator support?', 'Flow rate supports GPM, L/min, m³/h, m³/s and ft³/min. Internal diameter supports inches, millimetres, centimetres and feet. Velocity supports ft/s and m/s.'],
     ['Should I use inside diameter or outside diameter?', 'Use the internal diameter or bore for the flow calculation. Outside diameter does not represent the available flow area and can give a different result, especially when wall thickness is significant.'],
@@ -72,9 +72,20 @@ if (fs.existsSync(page)) {
 
   const faqHtml = faqItems.map(([q, a]) => `<h3>${q}</h3><p>${a}</p>`).join('\n      ');
   const faqSection = `<h2>Frequently Asked Questions About Pipe Sizing</h2>\n      ${faqHtml}`;
-  const faqHeadingPattern = /<h2>Frequently Asked Questions<\/h2>[\s\S]*?(?=\n\s*<\/article>)/i;
-  if (faqHeadingPattern.test(pageHtml)) {
-    pageHtml = pageHtml.replace(faqHeadingPattern, faqSection);
+
+  const oldFaqBlock = `<h2>Frequently Asked Questions</h2>
+      <h3>How do you calculate pipe size from flow rate?</h3><p>Use Q = A × V and A = πD²/4. After converting flow rate and velocity to compatible units, solve for the required internal diameter.</p>
+      <h3>How do you calculate flow velocity in a pipe?</h3><p>Divide volumetric flow rate by the pipe's cross-sectional area. For a circular pipe, the relationship is v = 4Q/(πD²) with compatible units.</p>
+      <h3>Does pipe diameter affect flow velocity?</h3><p>Yes. At a fixed flow rate, a smaller internal diameter produces a higher average velocity and a larger internal diameter produces a lower average velocity.</p>
+      <h3>What is the difference between pipe diameter and nominal pipe size?</h3><p>Internal diameter is the actual inside opening used for flow calculations. Nominal pipe size is a standardized designation and is not necessarily equal to the measured internal diameter.</p>
+      <h3>Can this calculator select a final engineering pipe size?</h3><p>It provides a flow-and-velocity diameter estimate. Final selection can require pressure-loss calculations, pipe material, temperature, fittings, applicable codes and project-specific engineering review.</p>`;
+
+  if (pageHtml.includes(oldFaqBlock)) {
+    pageHtml = pageHtml.replace(oldFaqBlock, faqSection);
+  } else if (!pageHtml.includes('Frequently Asked Questions About Pipe Sizing')) {
+    const articleEnd = /\n\s*<\/article>/i;
+    if (!articleEnd.test(pageHtml)) throw new Error('Pipe Size Calculator article end marker not found.');
+    pageHtml = pageHtml.replace(articleEnd, `\n      ${faqSection}\n    </article>`);
   }
 
   const keywordExpansion = `
