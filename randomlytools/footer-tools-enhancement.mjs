@@ -19,6 +19,7 @@ const footerTools = `
 <li><a href="/random-shop-name-generator/">Shop Name Generator</a></li>
 <li><a href="/random-restaurant-name-generator/">Restaurant Name Generator</a></li>
 <li><a href="/percentage-calculator-for-marks/">Percentage Calculator for Marks</a></li>
+<li><a href="/download-pinterest-video-from-link/">Download Pinterest Video from Link</a></li>
 </ul></div>
 <div class="footer-column"><h4>More Tools</h4><ul>
 <li><a href="/random-japanese-name-generator/">Japanese Name Generator</a></li>
@@ -50,14 +51,11 @@ const footerTools = `
 
 const marker = /<div class="footer-column"><h4>Popular Tools<\/h4>[\s\S]*?(?=<div class="footer-column"><h4>Website<\/h4>)/i;
 if (!marker.test(html)) throw new Error('Homepage footer tool columns marker not found.');
-
 html = html.replace(marker, footerTools);
 
 const footerLayoutStyle = `<style id="homepage-footer-layout">.site-footer .footer-grid{grid-template-columns:2fr repeat(4,minmax(0,1fr));}.site-footer .footer-column{min-width:0;}@media (max-width:1024px) and (min-width:769px){.site-footer .footer-grid{grid-template-columns:2fr repeat(2,minmax(0,1fr));}.site-footer .footer-grid .footer-column:nth-of-type(4),.site-footer .footer-grid .footer-column:nth-of-type(5){grid-column:span 1;}}@media (max-width:768px){.site-footer .footer-grid{grid-template-columns:1fr;}}</style>`;
 const styleMarker = /<style id="homepage-footer-layout">[\s\S]*?<\/style>/i;
-html = styleMarker.test(html)
-  ? html.replace(styleMarker, footerLayoutStyle)
-  : html.replace('</head>', `${footerLayoutStyle}</head>`);
+html = styleMarker.test(html) ? html.replace(styleMarker, footerLayoutStyle) : html.replace('</head>', `${footerLayoutStyle}</head>`);
 
 const requiredPaths = [
   '/random-name-generator/', '/random-number-picker/', '/random-dog-name-generator/',
@@ -69,11 +67,9 @@ const requiredPaths = [
   '/youtube-money-calculator-india/', '/youtube-money-calculator-iceland/', '/youtube-rpm-calculator/',
   '/youtube-shorts-earnings-calculator/', '/gta-6-download-time-calculator/', '/cricket-qualification-calculator/', '/cricket-nrr-calculator/',
   '/cricket-required-run-rate-calculator/', '/cricket-chase-calculator/', '/website-mockup-generator/',
-  '/fence-post-depth-calculator/', '/pipe-size-calculator/', '/percentage-calculator-for-marks/'
+  '/fence-post-depth-calculator/', '/pipe-size-calculator/', '/percentage-calculator-for-marks/', '/download-pinterest-video-from-link/'
 ];
-
 const missing = requiredPaths.filter((p) => !html.includes(`href="${p}"`));
 if (missing.length) throw new Error(`Footer link validation failed: ${missing.join(', ')}`);
-
 fs.writeFileSync(homepage, html, 'utf8');
-console.log('Homepage footer updated with links for all 31 tools.');
+console.log('Homepage footer updated with links for all 32 tools.');
