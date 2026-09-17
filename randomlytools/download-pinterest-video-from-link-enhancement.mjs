@@ -18,12 +18,13 @@ const description = 'Download Pinterest video from link with an online Pinterest
 html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${title}</title>`);
 html = html.replace(/<meta name="description"[^>]*>/i, `<meta name="description" content="${description}">`);
 html = html.replace(/<meta name="robots"[^>]*>/i, '<meta name="robots" content="index, follow, max-image-preview:large">');
-html = html.replace(/<meta property="og:title"[^>]*>/i, `<meta property="og:title" content="${title.replace(' | RandomlyTools', '')}">`);
+html = html.replace(/<meta property="og:title"[^>]*>/i, `<meta property="og:title" content="Download Pinterest Video from Link – Pinterest Video Downloader">`);
 html = html.replace(/<meta property="og:description"[^>]*>/i, `<meta property="og:description" content="${description}">`);
+html = html.replace(/<meta property="og:url"[^>]*>/i, '<meta property="og:url" content="https://randomlytools.in/download-pinterest-video-from-link/">');
+html = html.replace(/<meta property="og:type"[^>]*>/i, '<meta property="og:type" content="website">');
 
-const extraMeta = `<meta property="og:url" content="https://randomlytools.in/download-pinterest-video-from-link/">\n  <meta property="og:type" content="website">\n  <meta name="twitter:card" content="summary">\n  <meta name="twitter:title" content="Download Pinterest Video from Link – Pinterest Video Downloader">\n  <meta name="twitter:description" content="Paste a public Pinterest Pin URL and continue with the supported video download workflow.">`;
-html = html.replace(/\s*<meta property="og:url"[^>]*>[\s\S]*?<meta property="og:type"[^>]*>/i, `\n  ${extraMeta}`);
-if (!html.includes('name="twitter:card"')) html = html.replace('</head>', `\n  ${extraMeta}\n</head>`);
+const twitterMeta = `<meta name="twitter:card" content="summary">\n  <meta name="twitter:title" content="Download Pinterest Video from Link – Pinterest Video Downloader">\n  <meta name="twitter:description" content="Paste a public Pinterest Pin URL and continue with the supported video download workflow.">`;
+if (!html.includes('name="twitter:card"')) html = html.replace('</head>', `\n  ${twitterMeta}\n</head>`);
 
 const faqs = [
   ['How do I download a Pinterest video from a link?', 'Copy the link of a public Pinterest video Pin, paste it into the tool, and follow the available download instructions. Access to media can depend on Pinterest and the Pin permissions.'],
