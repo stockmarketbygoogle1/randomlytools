@@ -37,8 +37,8 @@ if(!hasCard){
 home=home.replace(/All Tools \((29|30|31)\)/g,'All Tools (32)');
 const url='https://randomlytools.in/download-pinterest-video-from-link/';
 if(!home.includes(`"url":"${url}"`)){
- const pipe=/({"@type":"ListItem","position":30,"name":"Pipe Size Calculator","url":"https:\/\/randomlytools\.in\/pipe-size-calculator\/"})/i;
+ const pipe=/(\{"@type":"ListItem","position":30,"name":"Pipe Size Calculator","url":"https:\/\/randomlytools\.in\/pipe-size-calculator\/"\})/i;
  if(pipe.test(home)) home=home.replace(pipe,`$1,{"@type":"ListItem","position":32,"name":"Download Pinterest Video from Link","url":"${url}"}`);
 }
-fs.writeFileSync(home,'utf8'===typeof home?home:home,'utf8');
+fs.writeFileSync(home, home, 'utf8');
 console.log('Pinterest video link tool SEO and homepage integration applied.');
