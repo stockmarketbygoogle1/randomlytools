@@ -1,6 +1,6 @@
 # RandomlyTools
 
-> RandomlyTools is a fast, free, privacy-focused collection of browser-based utility tools. Tools are designed to run client-side and provide simple results without requiring an account.
+> RandomlyTools is a fast, free collection of browser-based utility tools and calculators.
 
 ## Website
 
@@ -20,15 +20,16 @@
 - Random Japanese Name Generator: https://randomlytools.in/random-japanese-name-generator/ — Generate Japanese name ideas.
 - Random Coffee Shop Name Generator: https://randomlytools.in/random-coffee-shop-name-generator/ — Generate coffee shop name ideas.
 - Random Team Generator: https://randomlytools.in/random-team-generator/ — Split a list of names into random teams.
-- Attendance Calculator: https://randomlytools.in/attendance-calculator/ — Calculate attendance percentage, check a 75% attendance target, and determine classes that can be missed or need to be attended.
-- Pipe Size Calculator: https://randomlytools.in/pipe-size-calculator/ — Calculate required internal pipe diameter from flow rate and velocity, or calculate pipe flow velocity and flow rate from pipe dimensions.
+- Attendance Calculator: https://randomlytools.in/attendance-calculator/ — Calculate attendance percentage and attendance targets.
+- Pipe Size Calculator: https://randomlytools.in/pipe-size-calculator/ — Calculate pipe diameter, velocity and flow from entered dimensions and units.
+- Percentage Calculator for Marks: https://randomlytools.in/percentage-calculator-for-marks/ — Calculate marks percentage, overall percentage and target marks.
+- Download Pinterest Video from Link: https://randomlytools.in/download-pinterest-video-from-link/ — Check a public Pinterest Pin link and prepare the supported video download workflow.
 
-## Privacy
+## Pinterest Video Tool
 
-RandomlyTools is designed around client-side utility generation. Users should review the individual tool page for any tool-specific information about data handling.
+The Pinterest page is designed for public Pinterest Pin URLs. It does not request Pinterest passwords and does not bypass private, restricted, login-gated or other access controls. Users should download or reuse content only when they have the necessary rights or permission.
 
 ## Important
 
-- Generated names, usernames, and brand suggestions are creative ideas and should be independently checked for availability, trademarks, and platform rules before commercial use.
-- Calculator results are mathematical calculations and do not replace institution-specific academic policies or project-specific engineering review.
-- Pipe sizing results are flow-and-velocity calculations and do not by themselves replace pressure-loss analysis, applicable codes, pipe-standard selection, or qualified engineering review.
+- Calculator results are mathematical calculations and do not replace institution-specific policies or project-specific engineering review.
+- Public availability of online media does not automatically grant copyright or reuse permission.
