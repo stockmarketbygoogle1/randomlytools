@@ -24,21 +24,21 @@ if (!html.includes('pinterest-source-notes')) {
  const notes = `<section id="pinterest-source-notes" class="article-content"><h2>Pinterest Help and Usage Notes</h2><p>Pinterest's own help and policy pages should be checked for current download availability, creator settings and copyright requirements. This RandomlyTools page does not bypass Pinterest access controls or ask for account credentials.</p><ul><li><a href="https://help.pinterest.com/en/article/download-an-image-or-video" target="_blank" rel="noopener noreferrer">Pinterest Help: Download an image or video</a></li><li><a href="https://policy.pinterest.com/en/terms-of-service" target="_blank" rel="noopener noreferrer">Pinterest Terms of Service</a></li><li><a href="https://policy.pinterest.com/en/community-guidelines" target="_blank" rel="noopener noreferrer">Pinterest Community Guidelines</a></li></ul></section>`;
  html = html.replace(/<\/main>/i, `${notes}\n</main>`);
 }
-fs.writeFileSync(page,html,'utf8');
+fs.writeFileSync(page, html, 'utf8');
 
-let home = fs.readFileSync(homepage,'utf8');
+let home = fs.readFileSync(homepage, 'utf8');
 const card = `<div class="tool-card" data-category="creator" data-keywords="download pinterest video from link download video from pinterest link download pinterest video by link pinterest video downloader pinterest video download pinterest video downloader online"><div class="tool-card-icon">📌</div><h2 class="tool-card-title"><a href="/download-pinterest-video-from-link/">Download Pinterest Video from Link</a></h2><p class="tool-card-desc">Check a public Pinterest Pin link and prepare the supported video download workflow.</p><span class="tool-card-badge">Creator Tools</span></div>`;
 const hasCard = /<div class="tool-card"[^>]*>[\s\S]*?<a href="\/download-pinterest-video-from-link\/">Download Pinterest Video from Link<\/a>[\s\S]*?<\/div>/i.test(home);
-if(!hasCard){
- const marker=/(<div id="tools-grid-wrapper" class="tools-grid">[\s\S]*?)(<\/div>\s*<div id="no-tools-found")/i;
- if(!marker.test(home)) throw new Error('Homepage tools grid marker not found.');
- home=home.replace(marker,`$1${card}\n$2`);
+if (!hasCard) {
+ const marker = /(<div id="tools-grid-wrapper" class="tools-grid">[\s\S]*?)(<\/div>\s*<div id="no-tools-found")/i;
+ if (!marker.test(home)) throw new Error('Homepage tools grid marker not found.');
+ home = home.replace(marker, `$1${card}\n$2`);
 }
-home=home.replace(/All Tools \((29|30|31)\)/g,'All Tools (32)');
-const url='https://randomlytools.in/download-pinterest-video-from-link/';
-if(!home.includes(`"url":"${url}"`)){
- const pipe=/(\{"@type":"ListItem","position":30,"name":"Pipe Size Calculator","url":"https:\/\/randomlytools\.in\/pipe-size-calculator\/"\})/i;
- if(pipe.test(home)) home=home.replace(pipe,`$1,{"@type":"ListItem","position":32,"name":"Download Pinterest Video from Link","url":"${url}"}`);
+home = home.replace(/All Tools \((29|30|31)\)/g, 'All Tools (32)');
+const url = 'https://randomlytools.in/download-pinterest-video-from-link/';
+if (!home.includes(`"url":"${url}"`)) {
+ const pipe = /(\{"@type":"ListItem","position":30,"name":"Pipe Size Calculator","url":"https:\/\/randomlytools\.in\/pipe-size-calculator\/"\})/i;
+ if (pipe.test(home)) home = home.replace(pipe, `$1,{"@type":"ListItem","position":32,"name":"Download Pinterest Video from Link","url":"${url}"}`);
 }
-fs.writeFileSync(home, home, 'utf8');
+fs.writeFileSync(homepage, home, 'utf8');
 console.log('Pinterest video link tool SEO and homepage integration applied.');
