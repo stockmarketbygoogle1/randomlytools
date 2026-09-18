@@ -13,6 +13,7 @@ const cleanUrl = (value) => {
     .replace(/\\u002F/gi, "/")
     .replace(/\\u003A/gi, ":")
     .replace(/\\u003D/gi, "=")
+    .replace(/\\u003F/gi, "?")
     .replace(/\\u0026/gi, "&")
     .replace(/\\\//g, "/")
     .replace(/&amp;/gi, "&")
@@ -25,6 +26,15 @@ const cleanUrl = (value) => {
   } catch { return null; }
 };
 
+const normalizeHtml = (html) => String(html)
+  .replace(/\\u002F/gi, "/")
+  .replace(/\\u003A/gi, ":")
+  .replace(/\\u003D/gi, "=")
+  .replace(/\\u003F/gi, "?")
+  .replace(/\\u0026/gi, "&")
+  .replace(/\\\//g, "/")
+  .replace(/&amp;/gi, "&");
+
 const extractCandidates = (html) => {
   const found = new Set();
   const add = (value) => {
@@ -35,23 +45,21 @@ const extractCandidates = (html) => {
     if (/\.mp4(?:[?#]|$)/i.test(u)) found.add(u);
   };
 
-  // Pinterest can serialize media URLs in several different escaped JSON forms.
-  // First collect every pinimg MP4 URL, then also check URL-valued JSON fields.
+  const normalized = normalizeHtml(html);
   const patterns = [
-    /https?:\\?\/\\?(?:v\d+\.)?pinimg\.com\/[^"'\\s<>\\]+?\.mp4(?:\?[^"'\\s<>\\]+)?/gi,
-    /https?:\/\/(?:v\d+\.)?pinimg\.com\/[^"'\s<>]+?\.mp4(?:\?[^"'\s<>]*)?/gi,
-    /["']url["']\s*:\s*["']([^"']+?\.mp4(?:\?[^"']*)?)["']/gi,
-    /["']src["']\s*:\s*["']([^"']+?\.mp4(?:\?[^"']*)?)["']/gi
+    /https?:\/\/(?:[a-z0-9-]+\.)?pinimg\.com\/[^"'\s<>\\]+?\.mp4(?:\?[^"'\s<>\\]*)?/gi,
+    /["'](?:url|src|contentUrl|videoUrl)["']\s*:\s*["']([^"']+?\.mp4(?:\?[^"']*)?)["']/gi,
+    /https?:\\?\/\\?(?:[a-z0-9-]+\.)?pinimg\.com\\?\/[^"'\s<>]+?\.mp4(?:\\?[^"'\s<>]*)?/gi
   ];
 
   for (const pattern of patterns) {
-    for (const match of html.matchAll(pattern)) add(match[1] || match[0]);
+    for (const match of normalized.matchAll(pattern)) add(match[1] || match[0]);
   }
 
   return [...found]
     .sort((a, b) => {
       const score = (u) => {
-        if (/1080|2160|4k/i.test(u)) return 5;
+        if (/2160|4k|1080/i.test(u)) return 5;
         if (/720p|_720w|720/i.test(u)) return 4;
         if (/540|576/i.test(u)) return 3;
         if (/480/i.test(u)) return 2;
@@ -88,7 +96,7 @@ async function pinterestApi(request) {
       success: true,
       sources: videos.map((url, index) => ({
         url,
-        quality: /1080/i.test(url) ? "1080p" : /720/i.test(url) ? "720p" : `Video ${index + 1}`
+        quality: /2160|4k/i.test(url) ? "4K" : /1080/i.test(url) ? "1080p" : /720/i.test(url) ? "720p" : `Video ${index + 1}`
       }))
     });
   } catch {
