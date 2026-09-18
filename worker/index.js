@@ -35,21 +35,16 @@ const extractCandidates = (html) => {
     if (/\.mp4(?:[?#]|$)/i.test(u)) found.add(u);
   };
 
-  // Pinterest currently exposes progressive MP4s in embedded `videos.video_list`
-  // data, including formats such as V_720P, V_EXP4 and V_EXP5.
+  // Match Pinterest embedded video URLs without fragile nested escaping.
   const patterns = [
-    /(?:"|')url(?:"|')\s*:\s*(?:"|')((?:https?:)?(?:\\\\\/|\\/)\\/[^"']+?\.mp4(?:\?[^"']*)?)(?:"|')/gi,
-    /https?:\\?\\?\/\\?\/v\d+\.pinimg\.com\/videos\/[^"'\\\s<>]+?\.mp4(?:\?[^"'\\\s<>]*)?/gi,
-    /https?:\\?\/\\?\/v\d+\.pinimg\.com\/videos\/[^"'\\\s<>]+/gi
+    /["']url["']\s*:\s*["']([^"']+\.mp4(?:\?[^"']*)?)["']/gi,
+    /https?:\\?\/\\?\/v\d+\.pinimg\.com\/videos\/[^"'\s<>]+?\.mp4(?:\?[^"'\s<>]*)?/gi,
+    /https?:\/\/v\d+\.pinimg\.com\/videos\/[^"'\s<>]+?\.mp4(?:\?[^"'\s<>]*)?/gi
   ];
 
   for (const pattern of patterns) {
     for (const match of html.matchAll(pattern)) add(match[1] || match[0]);
   }
-
-  // Handle JSON/HTML where the URL is escaped as https:\/\/...
-  const escapedMp4 = html.matchAll(/https?:\\?\\?\\?\/\\?\\?\/v\d+\.pinimg\.com\/videos\/[^"'\\\s<>]+?\.mp4(?:\?[^"'\\\s<>]*)?/gi);
-  for (const match of escapedMp4) add(match[0]);
 
   return [...found]
     .sort((a, b) => {
