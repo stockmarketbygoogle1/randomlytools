@@ -9,7 +9,6 @@ const nestedBuild = path.join(source, 'build-static.mjs');
 const homepageEnhancements = path.join(source, 'homepage-enhancements.mjs');
 const pipeSizeCalculatorEnhancement = path.join(source, 'pipe-size-calculator-enhancement.mjs');
 const percentageCalculatorForMarksEnhancement = path.join(source, 'percentage-calculator-for-marks-enhancement.mjs');
-const pinterestVideoLinkEnhancement = path.join(source, 'download-pinterest-video-from-link-enhancement.mjs');
 const percentageSeoFinalEnhancement = path.join(source, 'percentage-seo-final-enhancement.mjs');
 const homepageSidebarEnhancement = path.join(source, 'homepage-sidebar-enhancement.mjs');
 const homepageArticlesCenterEnhancement = path.join(source, 'homepage-articles-center-enhancement.mjs');
@@ -30,7 +29,6 @@ if (!fs.existsSync(nestedBuild)) throw new Error(`Nested static build script not
 if (!fs.existsSync(homepageEnhancements)) throw new Error(`Homepage enhancement script not found: ${homepageEnhancements}`);
 if (!fs.existsSync(pipeSizeCalculatorEnhancement)) throw new Error(`Pipe Size Calculator enhancement script not found: ${pipeSizeCalculatorEnhancement}`);
 if (!fs.existsSync(percentageCalculatorForMarksEnhancement)) throw new Error(`Percentage Calculator for Marks enhancement script not found: ${percentageCalculatorForMarksEnhancement}`);
-if (!fs.existsSync(pinterestVideoLinkEnhancement)) throw new Error(`Pinterest video link enhancement script not found: ${pinterestVideoLinkEnhancement}`);
 if (!fs.existsSync(percentageSeoFinalEnhancement)) throw new Error(`Percentage SEO final enhancement script not found: ${percentageSeoFinalEnhancement}`);
 if (!fs.existsSync(homepageSidebarEnhancement)) throw new Error(`Homepage sidebar enhancement script not found: ${homepageSidebarEnhancement}`);
 if (!fs.existsSync(homepageArticlesCenterEnhancement)) throw new Error(`Homepage articles center enhancement script not found: ${homepageArticlesCenterEnhancement}`);
@@ -56,9 +54,6 @@ execFileSync(process.execPath, [pipeSizeCalculatorEnhancement], { cwd: source, s
 // Add the Percentage Calculator for Marks to the generated homepage and its SEO/discovery metadata.
 execFileSync(process.execPath, [percentageCalculatorForMarksEnhancement], { cwd: source, stdio: 'inherit' });
 
-// Add the long-tail Pinterest video from link tool to the generated homepage and discovery metadata.
-execFileSync(process.execPath, [pinterestVideoLinkEnhancement], { cwd: source, stdio: 'inherit' });
-
 // Apply final on-page SEO, internal links and authoritative further-reading references.
 execFileSync(process.execPath, [percentageSeoFinalEnhancement], { cwd: source, stdio: 'inherit' });
 
@@ -75,7 +70,6 @@ execFileSync(process.execPath, [footerToolsEnhancement], { cwd: source, stdio: '
 // always contains their cards and discovery metadata.
 execFileSync(process.execPath, [pipeSizeCalculatorEnhancement], { cwd: source, stdio: 'inherit' });
 execFileSync(process.execPath, [percentageCalculatorForMarksEnhancement], { cwd: source, stdio: 'inherit' });
-execFileSync(process.execPath, [pinterestVideoLinkEnhancement], { cwd: source, stdio: 'inherit' });
 
 // Re-apply final page-only SEO after the homepage/footer passes.
 execFileSync(process.execPath, [percentageSeoFinalEnhancement], { cwd: source, stdio: 'inherit' });
