@@ -35,11 +35,13 @@ const extractCandidates = (html) => {
     if (/\.mp4(?:[?#]|$)/i.test(u)) found.add(u);
   };
 
-  // Match Pinterest embedded video URLs without fragile nested escaping.
+  // Pinterest can serialize media URLs in several different escaped JSON forms.
+  // First collect every pinimg MP4 URL, then also check URL-valued JSON fields.
   const patterns = [
-    /["']url["']\s*:\s*["']([^"']+\.mp4(?:\?[^"']*)?)["']/gi,
-    /https?:\\?\/\\?\/v\d+\.pinimg\.com\/videos\/[^"'\s<>]+?\.mp4(?:\?[^"'\s<>]*)?/gi,
-    /https?:\/\/v\d+\.pinimg\.com\/videos\/[^"'\s<>]+?\.mp4(?:\?[^"'\s<>]*)?/gi
+    /https?:\\?\/\\?(?:v\d+\.)?pinimg\.com\/[^"'\\s<>\\]+?\.mp4(?:\?[^"'\\s<>\\]+)?/gi,
+    /https?:\/\/(?:v\d+\.)?pinimg\.com\/[^"'\s<>]+?\.mp4(?:\?[^"'\s<>]*)?/gi,
+    /["']url["']\s*:\s*["']([^"']+?\.mp4(?:\?[^"']*)?)["']/gi,
+    /["']src["']\s*:\s*["']([^"']+?\.mp4(?:\?[^"']*)?)["']/gi
   ];
 
   for (const pattern of patterns) {
@@ -77,8 +79,8 @@ async function pinterestApi(request) {
 
     if (!response.ok) return json({ error: `Pinterest returned HTTP ${response.status}.` }, 502);
 
-    const html = (await response.text()).slice(0, 12 * 1024 * 1024);
-    const videos = extractCandidates(html);
+    const html = await response.text();
+    const videos = extractCandidates(html.slice(0, 20 * 1024 * 1024));
 
     if (!videos.length) return json({ error: "No downloadable public video source was found for this Pin." }, 404);
 
