@@ -37,7 +37,6 @@
 - [Fence Post Depth Calculator](https://randomlytools.in/fence-post-depth-calculator/) — Estimate fence post burial depth, post hole depth, concrete requirements, and total post length.
 - [Pipe Size Calculator](https://randomlytools.in/pipe-size-calculator/) — Calculate pipe diameter, velocity, and flow from entered dimensions and units.
 - [Percentage Calculator for Marks](https://randomlytools.in/percentage-calculator-for-marks/) — Calculate marks percentage, overall percentage, and target marks.
-- [Download Pinterest Video from Link](https://randomlytools.in/download-pinterest-video-from-link/) — Check a public Pinterest Pin link and prepare the supported video download workflow.
 
 ## Cricket Tools
 
@@ -80,7 +79,3 @@
 - Generated names, usernames, and brand suggestions are creative ideas and should be independently checked for availability, trademarks, and platform rules before commercial use.
 - Calculator results are estimates unless an individual tool states otherwise; users should verify important financial, salary, tax, or institution-specific information against official sources.
 - Users should review individual tool pages for any tool-specific information about data handling.
-
-## Pinterest Video Tool
-
-- [Download Pinterest Video from Link](https://randomlytools.in/download-pinterest-video-from-link/) — Check a public Pinterest Pin link and prepare the supported video download workflow. The tool does not bypass private, restricted, login-gated, or other access controls. Download or reuse media only when you have the necessary rights or permission.
