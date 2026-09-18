@@ -1,12 +1,22 @@
 const json = (body, status = 200) => new Response(JSON.stringify(body), { status, headers: { "content-type": "application/json; charset=UTF-8", "cache-control": "no-store", "access-control-allow-origin": "*" } });
 
 const isPinterestUrl = (value) => {
-  try { return ["pinterest.com", "www.pinterest.com", "pin.it"].includes(new URL(value).hostname.toLowerCase()); } catch { return false; }
+  try {
+    const host = new URL(value).hostname.toLowerCase();
+    return host === "pin.it" || host === "pinterest.com" || host.endsWith(".pinterest.com") || host.endsWith(".pinterest.ca") || host.endsWith(".pinterest.co.uk") || host.endsWith(".pinterest.jp") || host.endsWith(".pinterest.de") || host.endsWith(".pinterest.fr") || host.endsWith(".pinterest.es") || host.endsWith(".pinterest.it") || host.endsWith(".pinterest.com.au");
+  } catch { return false; }
 };
 
 const cleanUrl = (value) => {
   if (!value) return null;
-  const cleaned = value.replace(/\\u002F/gi, "/").replace(/\\u003A/gi, ":").replace(/\\u003D/gi, "=").replace(/\\u0026/gi, "&").replace(/\\\//g, "/").replace(/&amp;/gi, "&").replace(/[\"'<>\s]+$/g, "");
+  let cleaned = String(value)
+    .replace(/\\u002F/gi, "/")
+    .replace(/\\u003A/gi, ":")
+    .replace(/\\u003D/gi, "=")
+    .replace(/\\u0026/gi, "&")
+    .replace(/\\\//g, "/")
+    .replace(/&amp;/gi, "&")
+    .replace(/[\\"'<>\s]+$/g, "");
   try {
     const u = new URL(cleaned);
     if (!/^https?:$/.test(u.protocol)) return null;
@@ -17,27 +27,76 @@ const cleanUrl = (value) => {
 
 const extractCandidates = (html) => {
   const found = new Set();
-  const add = (value) => { const u = cleanUrl(value); if (u && /\.(mp4|m3u8)(?:[?#]|$)/i.test(u)) found.add(u); };
+  const add = (value) => {
+    const u = cleanUrl(value);
+    if (!u) return;
+    const host = new URL(u).hostname.toLowerCase();
+    if (!host.endsWith("pinimg.com")) return;
+    if (/\.mp4(?:[?#]|$)/i.test(u)) found.add(u);
+  };
+
+  // Pinterest currently exposes progressive MP4s in embedded `videos.video_list`
+  // data, including formats such as V_720P, V_EXP4 and V_EXP5.
   const patterns = [
-    /<meta[^>]+(?:property|name)=["'](?:og:video(?::url|:secure_url)?|twitter:player:stream)["'][^>]+content=["']([^"']+)["']/gi,
-    /(?:video_url|videoUrl|progressive_url|progressiveUrl|playable_url|playableUrl|contentUrl|content_url|sourceUrl|source_url)["']?\s*[:=]\s*["']([^"']+)["']/gi,
-    /["'](?:url|src)["']\s*:\s*["']([^"']+\.(?:mp4|m3u8)(?:[^"']*)?)["']/gi,
-    /https?:\\?\/\\?\/[^"'\\\s<>]+\.(?:mp4|m3u8)(?:\?[^"'\\\s<>]*)?/gi
+    /(?:"|')url(?:"|')\s*:\s*(?:"|')((?:https?:)?(?:\\\\\/|\\/)\\/[^"']+?\.mp4(?:\?[^"']*)?)(?:"|')/gi,
+    /https?:\\?\\?\/\\?\/v\d+\.pinimg\.com\/videos\/[^"'\\\s<>]+?\.mp4(?:\?[^"'\\\s<>]*)?/gi,
+    /https?:\\?\/\\?\/v\d+\.pinimg\.com\/videos\/[^"'\\\s<>]+/gi
   ];
-  for (const pattern of patterns) for (const match of html.matchAll(pattern)) add(match[1] || match[0]);
-  return [...found].sort((a, b) => ((/720|1080|2160|4k/i.test(b) ? 3 : /480|540/i.test(b) ? 2 : 1) - (/720|1080|2160|4k/i.test(a) ? 3 : /480|540/i.test(a) ? 2 : 1))).slice(0, 8);
+
+  for (const pattern of patterns) {
+    for (const match of html.matchAll(pattern)) add(match[1] || match[0]);
+  }
+
+  // Handle JSON/HTML where the URL is escaped as https:\/\/...
+  const escapedMp4 = html.matchAll(/https?:\\?\\?\\?\/\\?\\?\/v\d+\.pinimg\.com\/videos\/[^"'\\\s<>]+?\.mp4(?:\?[^"'\\\s<>]*)?/gi);
+  for (const match of escapedMp4) add(match[0]);
+
+  return [...found]
+    .sort((a, b) => {
+      const score = (u) => {
+        if (/1080|2160|4k/i.test(u)) return 5;
+        if (/720p|_720w|720/i.test(u)) return 4;
+        if (/540|576/i.test(u)) return 3;
+        if (/480/i.test(u)) return 2;
+        return 1;
+      };
+      return score(b) - score(a);
+    })
+    .slice(0, 8);
 };
 
 async function pinterestApi(request) {
   const input = new URL(request.url).searchParams.get("url");
   if (!input || !isPinterestUrl(input)) return json({ error: "Please enter a valid Pinterest URL." }, 400);
+
   try {
-    const response = await fetch(input, { redirect: "follow", headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.9" } });
+    const response = await fetch(input, {
+      redirect: "follow",
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Referer": "https://www.pinterest.com/"
+      }
+    });
+
     if (!response.ok) return json({ error: `Pinterest returned HTTP ${response.status}.` }, 502);
-    const videos = extractCandidates((await response.text()).slice(0, 8 * 1024 * 1024));
+
+    const html = (await response.text()).slice(0, 12 * 1024 * 1024);
+    const videos = extractCandidates(html);
+
     if (!videos.length) return json({ error: "No downloadable public video source was found for this Pin." }, 404);
-    return json({ success: true, sources: videos.map((url, index) => ({ url, quality: /1080/i.test(url) ? "1080p" : /720/i.test(url) ? "720p" : `Video ${index + 1}` })) });
-  } catch { return json({ error: "Unable to fetch the Pinterest page right now." }, 502); }
+
+    return json({
+      success: true,
+      sources: videos.map((url, index) => ({
+        url,
+        quality: /1080/i.test(url) ? "1080p" : /720/i.test(url) ? "720p" : `Video ${index + 1}`
+      }))
+    });
+  } catch {
+    return json({ error: "Unable to fetch the Pinterest page right now." }, 502);
+  }
 }
 
 export default {
