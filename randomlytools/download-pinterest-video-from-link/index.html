@@ -3,26 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download Pinterest Video from Link – Pinterest Video Downloader | RandomlyTools</title>
-  <meta name="description" content="Download Pinterest video from link with a simple online Pinterest video downloader. Paste a public Pinterest Pin link to check and prepare the video download.">
+  <title>Pinterest Video Downloader – Download Pinterest Video from Link | RandomlyTools</title>
+  <meta name="description" content="Download a public Pinterest video from a Pin link. Paste a Pinterest URL to detect an available video source and save the supported MP4. No Pinterest password required.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://randomlytools.in/download-pinterest-video-from-link/">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <meta property="og:title" content="Download Pinterest Video from Link – Pinterest Video Downloader">
-  <meta property="og:description" content="Paste a public Pinterest video Pin link and use RandomlyTools to prepare a video download. Free online Pinterest video downloader.">
+  <meta property="og:title" content="Pinterest Video Downloader – Download Pinterest Video from Link">
+  <meta property="og:description" content="Paste a public Pinterest video Pin link to detect an available video source and continue with the supported download workflow.">
   <meta property="og:url" content="https://randomlytools.in/download-pinterest-video-from-link/">
   <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pinterest Video Downloader">
+  <meta name="twitter:description" content="Download a publicly accessible Pinterest video from a Pin link when a supported video source is available.">
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@graph":[
-      {"@type":"WebApplication","name":"Download Pinterest Video from Link","url":"https://randomlytools.in/download-pinterest-video-from-link/","applicationCategory":"MultimediaApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Online tool for working with public Pinterest video Pin links."},
-      {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://randomlytools.in/"},{"@type":"ListItem","position":2,"name":"Download Pinterest Video from Link","item":"https://randomlytools.in/download-pinterest-video-from-link/"}]},
+      {"@type":"WebApplication","name":"Pinterest Video Downloader","url":"https://randomlytools.in/download-pinterest-video-from-link/","applicationCategory":"MultimediaApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Online tool for detecting and downloading supported video sources from public Pinterest Pin links."},
+      {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://randomlytools.in/"},{"@type":"ListItem","position":2,"name":"Pinterest Video Downloader","item":"https://randomlytools.in/download-pinterest-video-from-link/"}]},
       {"@type":"FAQPage","mainEntity":[
-        {"@type":"Question","name":"How do I download a Pinterest video from a link?","acceptedAnswer":{"@type":"Answer","text":"Copy the link of a public Pinterest video Pin, paste it into the tool, and follow the available download instructions. Access to media can depend on Pinterest and the Pin's permissions."}},
+        {"@type":"Question","name":"How do I download a Pinterest video from a link?","acceptedAnswer":{"@type":"Answer","text":"Copy the link of a public Pinterest video Pin, paste it into the tool, select an available video source when detected, and use the MP4 download or save option."}},
         {"@type":"Question","name":"Can I download a Pinterest video without logging in?","acceptedAnswer":{"@type":"Answer","text":"The tool is designed around public Pinterest links and does not require you to provide a Pinterest password or private account credentials."}},
+        {"@type":"Question","name":"Does the Pinterest downloader support pin.it links?","acceptedAnswer":{"@type":"Answer","text":"Yes. Public Pinterest short links from pin.it are accepted and resolved before the supported video source is checked."}},
         {"@type":"Question","name":"Can I download private Pinterest videos?","acceptedAnswer":{"@type":"Answer","text":"No. This tool is intended for public Pins and does not bypass private, restricted, login-gated or other access controls."}},
-        {"@type":"Question","name":"Can I download any Pinterest video?","acceptedAnswer":{"@type":"Answer","text":"Only publicly accessible Pins that can be processed by the supported method are suitable. Copyright and creator permissions should also be respected."}}
+        {"@type":"Question","name":"Can I download any Pinterest video?","acceptedAnswer":{"@type":"Answer","text":"Only publicly accessible Pins that expose a video source supported by the current processing method can be downloaded. Availability can change by Pin and Pinterest delivery method."}},
+        {"@type":"Question","name":"Is HD or 4K available for every Pinterest video?","acceptedAnswer":{"@type":"Answer","text":"No. The tool only reports a quality when that information is available from the detected source. It does not create HD or 4K quality that the source does not provide."}},
+        {"@type":"Question","name":"Why does a Pinterest video sometimes fail to download?","acceptedAnswer":{"@type":"Answer","text":"A Pin may be an image, restricted, temporarily unavailable, protected, or delivered in a format that the current public-link method cannot extract. Try another public video Pin later."}}
       ]}
     ]
   }
@@ -31,116 +37,77 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <a href="/" class="brand">
-        <span class="brand-icon">R</span>
-        <span class="brand-text">Randomly<span>Tools</span></span>
-      </a>
-      <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
-      <nav class="nav-links">
-        <a href="/">All Tools</a>
-        <a href="/random-name-generator/">Names</a>
-        <a href="/random-number-picker/">Numbers</a>
-        <a href="/random-discord-name-generator/">Usernames</a>
-        <a href="/random-company-brand-name-generator/">Brands</a>
-        <a href="/about/">About</a>
-      </nav>
+      <a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a>
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <nav class="nav-links"><a href="/">All Tools</a><a href="/random-name-generator/">Names</a><a href="/random-number-picker/">Numbers</a><a href="/random-discord-name-generator/">Usernames</a><a href="/random-company-brand-name-generator/">Brands</a><a href="/about/">About</a></nav>
     </div>
   </header>
 
   <main class="container page-intro">
-    <div class="breadcrumbs">
-      <a href="/">Home</a> <span>/</span> <span>Download Pinterest Video from Link</span>
-    </div>
+    <div class="breadcrumbs"><a href="/">Home</a> <span>/</span> <span>Pinterest Video Downloader</span></div>
 
     <div class="tool-header" style="text-align:center;max-width:850px;margin:0 auto 2rem;">
-      <h1>Download Pinterest Video from Link</h1>
-      <p class="section-subtitle">Check a public Pinterest Pin link and continue with the supported video download workflow.</p>
-    </div>
-
-    <div class="ad-slot-container">
-      <div class="ad-slot-label">Advertisement</div>
-      <div class="ad-slot-box">Ad Space Available</div>
+      <h1>Pinterest Video Downloader</h1>
+      <p class="section-subtitle">Paste a public Pinterest Pin link to detect an available video source and download the supported video.</p>
     </div>
 
     <section class="tool-workspace" aria-labelledby="tool-heading">
-      <h2 id="tool-heading" class="sr-only" style="display:none;">Pinterest Video Downloader</h2>
-
+      <h2 id="tool-heading" class="sr-only" style="display:none;">Download Pinterest Video from Link</h2>
       <div class="form-group">
-        <label class="form-label" for="pinterest-url">Pinterest video link</label>
+        <label class="form-label" for="pinterest-url">Paste Pinterest URL</label>
         <input id="pinterest-url" class="form-control" type="url" inputmode="url" autocomplete="url" placeholder="https://www.pinterest.com/pin/..." aria-describedby="url-help">
-        <p id="url-help" class="muted">Use a public Pinterest Pin URL. Do not enter passwords, cookies or private links.</p>
+        <p id="url-help" class="muted">Use a public Pinterest Pin URL or pin.it short link. Do not enter passwords, cookies or private links.</p>
       </div>
-
-      <div class="actions-row">
-        <button id="check-pinterest" type="button" class="btn btn-primary">Check Pinterest Link</button>
-      </div>
-
-      <div id="pinterest-result" class="result-box" hidden></div>
+      <div class="actions-row"><button id="check-pinterest" type="button" class="btn btn-primary">Download Video</button></div>
+      <div id="pinterest-result" class="result-box" hidden aria-live="polite"></div>
     </section>
 
     <section class="content-section">
       <article class="article-content">
-        <div class="callout" style="margin-bottom:1.5rem;">
-          <strong>Important:</strong> This tool is designed for publicly accessible Pinterest Pins. It does not bypass private Pins, login requirements, access controls or technical protections. Only download or reuse content when you have the necessary rights or permission.
-        </div>
+        <div class="callout" style="margin-bottom:1.5rem;"><strong>Important:</strong> This tool is designed for publicly accessible Pinterest Pins. It does not bypass private Pins, login requirements, access controls or technical protections. Only download or reuse content when you have the necessary rights or permission.</div>
 
         <h2>Download Pinterest Video from Link</h2>
-        <p>If you are looking for a way to <strong>download Pinterest video from link</strong>, this page is built around a simple public-Pin workflow. Copy the Pinterest Pin URL, paste it into the checker, and continue only when the link is publicly accessible and supported.</p>
+        <p>If you want to <strong>download a Pinterest video from a link</strong>, paste the public Pin URL above. RandomlyTools checks the public Pinterest page for a supported video source and shows a download option when one is available.</p>
 
-        <h2>How to Download Video from Pinterest</h2>
-        <ol>
-          <li>Open the public Pinterest video Pin.</li>
-          <li>Copy the Pin link from Pinterest.</li>
-          <li>Paste the link into the Pinterest video downloader above.</li>
-          <li>Check the URL and follow the available download step.</li>
-        </ol>
+        <h2>How to Download a Pinterest Video</h2>
+        <ol><li>Open the public Pinterest video Pin.</li><li>Copy the Pin link using Pinterest's share option.</li><li>Paste the link into the Pinterest video downloader above.</li><li>Select an available source and use the download or save option.</li></ol>
 
-        <h2>Download Video from Pinterest Link</h2>
-        <p>A Pinterest link can point to different Pin types. A public video Pin may expose media differently from an image Pin or a restricted resource. This tool therefore checks the URL format first rather than claiming that every Pinterest link contains a downloadable video.</p>
+        <h2>Download Pinterest Videos on Android</h2>
+        <p>Open the downloader in Chrome, paste the Pinterest Pin link, and tap <strong>Download Video</strong>. If a supported source is found, use the displayed MP4 option. Public access is required.</p>
 
-        <h2>Pinterest Video Downloader Online</h2>
-        <p>The tool is designed for use in a desktop or mobile browser without requiring a Pinterest password. Public access is required. The service does not provide a way to bypass private Pins, login requirements, access controls or technical protections.</p>
+        <h2>Download Pinterest Videos on iPhone</h2>
+        <p>In Safari, copy a public Pinterest Pin URL and paste it into the downloader. When a supported MP4 source is detected, use the download link and follow Safari's normal save or share controls.</p>
 
-        <h2>Pinterest Video Download, HD and High Quality</h2>
-        <p>Available media quality depends on the source Pin and the supported delivery method. Do not assume that every Pin is available in HD, 1080p or 4K. The tool should only present a quality option when the underlying media actually provides it.</p>
+        <h2>Pinterest Video Downloader in HD</h2>
+        <p>Video quality depends on the source provided by Pinterest. The downloader does not upscale a video or invent a 1080p or 4K version. If quality information is detected, it is shown next to the available source.</p>
+
+        <h2>Download Pinterest Reels and Video Pins</h2>
+        <p>Public video Pins may contain short-form vertical videos, tutorials, clips and other video formats. The tool can process them when a compatible public video source is exposed by the Pin page.</p>
+
+        <h2>Why Can't I Download a Pinterest Video?</h2>
+        <p>A Pin can fail because it is an image rather than a video, is restricted or login-gated, is temporarily unavailable, or uses a delivery format that the current public-link method cannot extract. The downloader reports this instead of pretending that a video is available.</p>
 
         <h2>Copyright and Permission</h2>
         <p>Only download or reuse content when you have the necessary rights or permission. Pinterest content may belong to its creator or another rights holder. A public URL does not by itself grant permission to republish or commercially reuse a video.</p>
 
         <h2>Frequently Asked Questions</h2>
         <div class="faq-list">
-          <details class="faq-item">
-            <summary>How do I download a Pinterest video from a link?</summary>
-            <div class="faq-answer"><p>Copy a public Pinterest video Pin link, paste it into the tool, validate it, and use the available download step.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>Can I download a Pinterest video without logging in?</summary>
-            <div class="faq-answer"><p>This workflow is intended for public Pinterest links and does not ask for your Pinterest password or private credentials.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>Can I download private Pinterest videos?</summary>
-            <div class="faq-answer"><p>No. Private, restricted, login-gated or protected content is outside the supported workflow.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>Can I download any Pinterest video?</summary>
-            <div class="faq-answer"><p>No. The Pin must be publicly accessible and compatible with the supported processing method, and you should have permission to use the content.</p></div>
-          </details>
+          <details class="faq-item"><summary>How do I download a Pinterest video from a link?</summary><div class="faq-answer"><p>Copy a public Pinterest video Pin link, paste it into the tool, wait for source detection, and use the available MP4 download or save option.</p></div></details>
+          <details class="faq-item"><summary>Can I download a Pinterest video without logging in?</summary><div class="faq-answer"><p>This workflow is intended for public Pinterest links and does not ask for your Pinterest password or private credentials.</p></div></details>
+          <details class="faq-item"><summary>Does the Pinterest downloader support pin.it links?</summary><div class="faq-answer"><p>Yes. Public pin.it short links are accepted and resolved before the video source is checked.</p></div></details>
+          <details class="faq-item"><summary>Can I download private Pinterest videos?</summary><div class="faq-answer"><p>No. Private, restricted, login-gated or protected content is outside the supported workflow.</p></div></details>
+          <details class="faq-item"><summary>Can I download any Pinterest video?</summary><div class="faq-answer"><p>No. The Pin must be publicly accessible and expose a video source supported by the current processing method.</p></div></details>
+          <details class="faq-item"><summary>Is HD or 4K available for every Pinterest video?</summary><div class="faq-answer"><p>No. Only quality information available from the detected source is shown. The tool does not create higher-quality video.</p></div></details>
+          <details class="faq-item"><summary>Why does a Pinterest video sometimes fail to download?</summary><div class="faq-answer"><p>The Pin may be an image, restricted, temporarily unavailable, protected, or delivered in a format the current public-link method cannot extract.</p></div></details>
         </div>
 
         <h2>Related Searches</h2>
-        <p>People may describe the same task as <strong>download Pinterest video</strong>, <strong>Pinterest video download</strong>, <strong>download video from Pinterest</strong>, <strong>download Pinterest video by link</strong>, or <strong>Pinterest video downloader online</strong>. These phrases refer to the same general public-link use case covered on this page.</p>
+        <p>This page covers common public-link tasks such as <strong>download Pinterest video</strong>, <strong>Pinterest video download</strong>, <strong>download video from Pinterest</strong>, <strong>download Pinterest video by link</strong>, <strong>Pinterest video downloader online</strong>, and <strong>download Pinterest reels</strong>.</p>
       </article>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>RandomlyTools provides free online tools and calculators.</p>
-      <p><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/contact/">Contact</a></p>
-    </div>
-  </footer>
+  <footer class="site-footer"><div class="container"><p>RandomlyTools provides free online tools and calculators.</p><p><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/contact/">Contact</a></p></div></footer>
 
   <script>
   (function(){
@@ -155,19 +122,43 @@
       }catch(e){return false;}
     }
 
-    button.addEventListener('click',function(){
+    function escapeHtml(value){
+      return String(value).replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];});
+    }
+
+    button.addEventListener('click',async function(){
       const value=input.value.trim();
       result.hidden=false;
-      if(!value){
-        result.textContent='Please paste a Pinterest Pin link.';
-        return;
+      result.innerHTML='';
+      if(!value){result.textContent='Please paste a Pinterest Pin link.';return;}
+      if(!valid(value)){result.textContent='Please enter a valid public Pinterest URL, such as https://www.pinterest.com/pin/... or https://pin.it/...';return;}
+
+      button.disabled=true;
+      button.textContent='Processing…';
+      result.innerHTML='<p><strong>Checking Pinterest…</strong></p><p>Looking for a supported public video source.</p>';
+
+      try{
+        const response=await fetch('/api/pinterest-video?url='+encodeURIComponent(value),{headers:{'Accept':'application/json'}});
+        const data=await response.json().catch(function(){return {ok:false,error:'Unexpected server response.'};});
+        if(!response.ok||!data.ok){
+          result.innerHTML='<strong>Video not available</strong><p>'+escapeHtml(data.error||'No supported public video source was found.')+'</p>';
+          return;
+        }
+
+        const videos=Array.isArray(data.videos)?data.videos:[];
+        let html='<strong>Video source found</strong><p>Choose an available source below. Quality labels are shown only when detected.</p><div class="actions-row" style="flex-wrap:wrap;gap:.6rem;">';
+        videos.forEach(function(video,index){
+          const label=escapeHtml(video.quality||video.label||'Download MP4');
+          html+='<a class="btn btn-primary" href="'+escapeHtml(video.url)+'" target="_blank" rel="noopener noreferrer" download>Download MP4'+(label!=='Available'?' · '+label:'')+'</a>';
+        });
+        html+='</div><p class="muted" style="margin-top:1rem;">If your browser opens the video instead of downloading it, use the browser’s Save/Download option.</p>';
+        result.innerHTML=html;
+      }catch(e){
+        result.innerHTML='<strong>Could not process the link</strong><p>Please try again in a moment. Pinterest availability can change and some public Pins may not expose a supported video source.</p>';
+      }finally{
+        button.disabled=false;
+        button.textContent='Download Video';
       }
-      if(!valid(value)){
-        result.textContent='Please enter a valid public Pinterest URL, such as https://www.pinterest.com/pin/...';
-        return;
-      }
-      const safeUrl=value.replace(/"/g,'&quot;');
-      result.innerHTML='<strong>Link checked.</strong><p>This is a Pinterest-domain URL. Media availability depends on whether the Pin is publicly accessible and supported.</p><a href="'+safeUrl+'" target="_blank" rel="noopener noreferrer">Open Pinterest Pin</a>';
     });
   })();
   </script>
