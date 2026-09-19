@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internet Speed Test – Free Download & Upload Speed Test | RandomlyTools</title>
+  <meta name="description" content="Free internet speed test to check download speed, upload speed, ping, latency and connection quality. Test your internet speed online from your browser.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://randomlytools.in/internet-speed-test/">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <meta property="og:title" content="Internet Speed Test – Free Download & Upload Speed Test | RandomlyTools">
+  <meta property="og:description" content="Check your internet download speed, upload speed and latency with a free browser-based internet speed test.">
+  <meta property="og:url" content="https://randomlytools.in/internet-speed-test/">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebApplication",
+        "name":"Internet Speed Test",
+        "url":"https://randomlytools.in/internet-speed-test/",
+        "applicationCategory":"UtilitiesApplication",
+        "operatingSystem":"All",
+        "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+        "description":"Free browser-based internet speed test for download speed, upload speed and latency."
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://randomlytools.in/"},
+          {"@type":"ListItem","position":2,"name":"Internet Speed Test","item":"https://randomlytools.in/internet-speed-test/"}
+        ]
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {"@type":"Question","name":"How do I check my internet speed?","acceptedAnswer":{"@type":"Answer","text":"Open the Internet Speed Test, start the test, and wait for the download, upload and latency measurements to finish."}},
+          {"@type":"Question","name":"What is a good internet speed?","acceptedAnswer":{"@type":"Answer","text":"A suitable speed depends on how many people and devices use the connection and what they do online. Streaming, video calls, gaming and large downloads can require different levels of bandwidth."}},
+          {"@type":"Question","name":"What is download speed?","acceptedAnswer":{"@type":"Answer","text":"Download speed measures how quickly data can be transferred from the test server to your device and is normally shown in Mbps."}},
+          {"@type":"Question","name":"What is upload speed?","acceptedAnswer":{"@type":"Answer","text":"Upload speed measures how quickly data can be transferred from your device to the test server and is normally shown in Mbps."}},
+          {"@type":"Question","name":"Why can my speed test result change?","acceptedAnswer":{"@type":"Answer","text":"Results can change because of Wi-Fi conditions, network congestion, device activity, router performance, server distance and other network conditions."}}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    .speedtest-card{max-width:820px;margin:0 auto;background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow-sm)}
+    .speedtest-hero{text-align:center;padding:1rem 0 1.5rem}
+    .speedtest-status{font-size:.9rem;color:var(--text-muted);min-height:1.4rem}
+    .speedtest-start{min-width:210px;margin-top:1rem}
+    .speedtest-results{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1.25rem}
+    .speedtest-stat{padding:1rem;border:1px solid var(--border-color);border-radius:var(--radius-md);background:var(--bg-surface-subtle);text-align:center}
+    .speedtest-stat-label{display:block;font-size:.78rem;color:var(--text-muted);margin-bottom:.3rem}
+    .speedtest-stat-value{display:block;font-size:1.65rem;font-weight:800;color:var(--text-primary)}
+    .speedtest-stat-unit{font-size:.72rem;color:var(--text-muted)}
+    .speedtest-progress{height:8px;background:var(--bg-surface-subtle);border-radius:999px;overflow:hidden;margin:1rem auto 0;max-width:560px;border:1px solid var(--border-color)}
+    .speedtest-progress-bar{height:100%;width:0%;background:var(--primary);transition:width .2s ease}
+    .speedtest-note{font-size:.82rem;color:var(--text-muted);margin:1rem 0 0;text-align:center}
+    .speedtest-error{color:var(--accent-red);font-size:.9rem;margin-top:.9rem;text-align:center}
+    @media(max-width:650px){.speedtest-results{grid-template-columns:1fr}.speedtest-card{padding:1rem}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a>
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <nav class="nav-links">
+        <a href="/">All Tools</a><a href="/random-name-generator/">Names</a><a href="/random-number-picker/">Numbers</a><a href="/random-discord-name-generator/">Usernames</a><a href="/random-company-brand-name-generator/">Brands</a><a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-intro">
+    <div class="breadcrumbs"><a href="/">Home</a> <span>/</span> <span>Internet Speed Test</span></div>
+    <div class="tool-header" style="text-align:center;max-width:820px;margin:0 auto 1.5rem;">
+      <h1>Internet Speed Test</h1>
+      <p class="section-subtitle">Check your download speed, upload speed and connection latency with a free online internet speed test.</p>
+    </div>
+
+    <section class="speedtest-card" aria-labelledby="speedtest-heading">
+      <div class="speedtest-hero">
+        <h2 id="speedtest-heading" style="margin-top:0;">Test My Internet Speed</h2>
+        <p id="speedtest-status" class="speedtest-status">Ready to test your connection.</p>
+        <button type="button" id="speedtest-start" class="btn btn-primary speedtest-start">Start Speed Test</button>
+        <div class="speedtest-progress" aria-hidden="true"><div id="speedtest-progress-bar" class="speedtest-progress-bar"></div></div>
+      </div>
+      <div class="speedtest-results" aria-live="polite">
+        <div class="speedtest-stat"><span class="speedtest-stat-label">Download</span><span id="download-value" class="speedtest-stat-value">—</span><span class="speedtest-stat-unit">Mbps</span></div>
+        <div class="speedtest-stat"><span class="speedtest-stat-label">Upload</span><span id="upload-value" class="speedtest-stat-value">—</span><span class="speedtest-stat-unit">Mbps</span></div>
+        <div class="speedtest-stat"><span class="speedtest-stat-label">Latency</span><span id="latency-value" class="speedtest-stat-value">—</span><span class="speedtest-stat-unit">ms</span></div>
+      </div>
+      <p id="speedtest-error" class="speedtest-error" role="alert" hidden></p>
+      <p class="speedtest-note">For a more consistent result, pause large downloads, uploads and streaming on other devices while testing.</p>
+    </section>
+
+    <div class="ad-slot-container"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-box">Ad Space Available</div></div>
+
+    <article class="article-content" style="max-width:820px;margin:2rem auto;">
+      <h2>What Is an Internet Speed Test?</h2>
+      <p>An internet speed test measures how quickly data can move between your device and a test server. The main measurements are download speed, upload speed and latency. Download and upload bandwidth are normally shown in megabits per second (Mbps), while latency is shown in milliseconds (ms).</p>
+
+      <h2>How to Check Internet Speed</h2>
+      <ol>
+        <li>Connect your device to the internet you want to test.</li>
+        <li>Close large downloads, uploads and bandwidth-heavy apps where practical.</li>
+        <li>Click <strong>Start Speed Test</strong>.</li>
+        <li>Wait for the measurements to complete.</li>
+        <li>Review your download speed, upload speed and latency.</li>
+      </ol>
+
+      <h2>Download Speed vs Upload Speed</h2>
+      <p><strong>Download speed</strong> describes data transferred from the test server to your device. It matters for activities such as loading websites, streaming video and downloading files.</p>
+      <p><strong>Upload speed</strong> describes data transferred from your device to the test server. It matters for activities such as sending large files, video calls, live streaming and cloud backups.</p>
+
+      <h2>What Is Ping or Latency?</h2>
+      <p>Latency is the time taken for a network request to travel and receive a response. A lower latency usually means a quicker response from the network. Latency can be especially noticeable in interactive activities such as online gaming and video calls.</p>
+
+      <h2>Why Is My Internet Speed Different From My Plan?</h2>
+      <p>A speed-test result can differ from the advertised or subscribed speed because of Wi-Fi signal quality, router performance, network congestion, device limitations, background traffic, server distance and other conditions. A single test is a measurement at one point in time, not a permanent specification of your connection.</p>
+
+      <h2>Wi-Fi Speed Test Tips</h2>
+      <ul>
+        <li>Test from the same location where you normally use the connection.</li>
+        <li>For comparison, repeat the test at different times of day.</li>
+        <li>Compare Wi-Fi with a wired Ethernet connection when available.</li>
+        <li>Keep other high-bandwidth devices as idle as practical during the test.</li>
+        <li>Restarting network equipment can change conditions, but it should not be necessary before every measurement.</li>
+      </ul>
+
+      <h2>Internet Speed Test vs Broadband Speed Test</h2>
+      <p>These terms generally describe the same basic type of measurement: checking the performance of an internet connection. The connection may be fiber, cable, DSL, fixed wireless, mobile broadband or another access technology.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item"><summary>How do I check my internet speed?</summary><div class="faq-answer"><p>Click Start Speed Test above and wait for the download, upload and latency measurements to finish.</p></div></details>
+        <details class="faq-item"><summary>What is a good internet speed?</summary><div class="faq-answer"><p>There is no single speed that is ideal for everyone. The amount of bandwidth you need depends on the number of users, devices and activities on the connection.</p></div></details>
+        <details class="faq-item"><summary>What does Mbps mean?</summary><div class="faq-answer"><p>Mbps means megabits per second. It is a common unit used to describe internet download and upload bandwidth.</p></div></details>
+        <details class="faq-item"><summary>Why does my Wi-Fi speed change?</summary><div class="faq-answer"><p>Wi-Fi performance can change because of signal strength, interference, distance from the router, network congestion and other devices using the connection.</p></div></details>
+        <details class="faq-item"><summary>Why are speed-test results different each time?</summary><div class="faq-answer"><p>Internet conditions change over time. Background traffic, congestion, Wi-Fi conditions, device load and test-server conditions can all affect a measurement.</p></div></details>
+      </div>
+
+      <h2>Related Internet Tools</h2>
+      <p>Need another network utility? Explore more free practical tools on <a href="/">RandomlyTools</a>.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><p>Simple online tools for everyday use. Fast, free and privacy-focused.</p></div>
+        <div class="footer-column"><h4>Popular Tools</h4><ul><li><a href="/random-name-generator/">Random Name Generator</a></li><li><a href="/random-number-picker/">Random Number Picker</a></li><li><a href="/random-dog-name-generator/">Dog Name Generator</a></li><li><a href="/random-discord-name-generator/">Discord Name Generator</a></li><li><a href="/random-company-brand-name-generator/">Brand Name Generator</a></li></ul></div>
+        <div class="footer-column"><h4>More Tools</h4><ul><li><a href="/internet-speed-test/">Internet Speed Test</a></li><li><a href="/attendance-calculator/">Attendance Calculator</a></li><li><a href="/random-team-generator/">Random Team Generator</a></li><li><a href="/recipe-finder-by-ingredients/">Recipe Finder</a></li></ul></div>
+        <div class="footer-column"><h4>Trust & Legal</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Service</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 RandomlyTools. All rights reserved.</p><p>Built for speed and user privacy.</p></div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core/ui.js"></script>
+  <script type="module">
+    import SpeedTest from 'https://cdn.skypack.dev/@cloudflare/speedtest';
+
+    const startButton = document.getElementById('speedtest-start');
+    const statusEl = document.getElementById('speedtest-status');
+    const progressBar = document.getElementById('speedtest-progress-bar');
+    const errorEl = document.getElementById('speedtest-error');
+    const downloadEl = document.getElementById('download-value');
+    const uploadEl = document.getElementById('upload-value');
+    const latencyEl = document.getElementById('latency-value');
+
+    let engine = null;
+
+    const formatMbps = bps => {
+      if (!Number.isFinite(bps) || bps <= 0) return '—';
+      return (bps / 1000000).toFixed(bps >= 100000000 ? 0 : 1);
+    };
+
+    const formatMs = value => {
+      if (!Number.isFinite(value) || value < 0) return '—';
+      return Math.round(value);
+    };
+
+    function resetResults() {
+      downloadEl.textContent = '—';
+      uploadEl.textContent = '—';
+      latencyEl.textContent = '—';
+      progressBar.style.width = '0%';
+      errorEl.hidden = true;
+      errorEl.textContent = '';
+    }
+
+    async function startTest() {
+      if (engine?.isRunning) return;
+      resetResults();
+      startButton.disabled = true;
+      startButton.textContent = 'Testing…';
+      statusEl.textContent = 'Preparing your connection test…';
+
+      try {
+        engine = new SpeedTest({
+          autoStart: false,
+          measurements: [
+            { type: 'latency', numPackets: 10 },
+            { type: 'download', bytes: 100000, count: 4, bypassMinDuration: true },
+            { type: 'download', bytes: 1000000, count: 6 },
+            { type: 'upload', bytes: 100000, count: 4 },
+            { type: 'upload', bytes: 1000000, count: 4 },
+            { type: 'download', bytes: 10000000, count: 4 },
+            { type: 'upload', bytes: 10000000, count: 3 },
+            { type: 'download', bytes: 25000000, count: 2 },
+            { type: 'upload', bytes: 25000000, count: 2 }
+          ]
+        });
+
+        engine.onRunningChange = running => {
+          if (running) statusEl.textContent = 'Measuring your connection…';
+        };
+
+        engine.onResultsChange = event => {
+          const type = event?.type || '';
+          if (type === 'latency') statusEl.textContent = 'Measuring latency…';
+          else if (type === 'download') statusEl.textContent = 'Measuring download speed…';
+          else if (type === 'upload') statusEl.textContent = 'Measuring upload speed…';
+          progressBar.style.width = Math.min(95, parseFloat(progressBar.style.width || '0') + 5) + '%';
+        };
+
+        engine.onFinish = results => {
+          const download = results.getDownloadBandwidth();
+          const upload = results.getUploadBandwidth();
+          const latency = results.getUnloadedLatency();
+          downloadEl.textContent = formatMbps(download);
+          uploadEl.textContent = formatMbps(upload);
+          latencyEl.textContent = formatMs(latency);
+          progressBar.style.width = '100%';
+          statusEl.textContent = 'Speed test complete.';
+          startButton.disabled = false;
+          startButton.textContent = 'Test Again';
+        };
+
+        engine.onError = error => {
+          throw new Error(error?.message || String(error || 'The speed test could not be completed.'));
+        };
+
+        engine.play();
+      } catch (error) {
+        startButton.disabled = false;
+        startButton.textContent = 'Try Again';
+        statusEl.textContent = 'The test could not be completed.';
+        errorEl.textContent = error?.message || 'Please try again after checking your internet connection.';
+        errorEl.hidden = false;
+        progressBar.style.width = '0%';
+      }
+    }
+
+    startButton.addEventListener('click', startTest);
+  </script>
+</body>
+</html>
