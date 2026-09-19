@@ -50,7 +50,7 @@ const homepageCards = `
   <h2 class="tool-card-title"><a href="/internet-speed-test/">Internet Speed Test</a></h2>
   <p class="tool-card-desc">Check download speed, upload speed and latency with a free browser-based internet speed test.</p>
   <span class="tool-card-badge">Internet &amp; Network</span>
-</div>;
+</div>`;
 
 if (!html.includes('href="/fence-post-depth-calculator/"')) {
   const gridEndMarker = /(<div id="tools-grid-wrapper" class="tools-grid">[\s\S]*?)(<\/div>\s*<div id="no-tools-found")/i;
