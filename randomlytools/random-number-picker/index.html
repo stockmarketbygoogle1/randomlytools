@@ -51,6 +51,34 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How do I pick a random number between two numbers?","acceptedAnswer":{"@type":"Answer","text":"Enter the minimum and maximum values, choose the quantity, and click Pick Number. Both endpoints are included in the range."}},
+      {"@type":"Question","name":"How do I generate a random number from 1 to 100?","acceptedAnswer":{"@type":"Answer","text":"Click the 1 – 100 Quick Preset. You can also enter 1 as the minimum and 100 as the maximum."}},
+      {"@type":"Question","name":"Can I generate a random number from 1 to 10?","acceptedAnswer":{"@type":"Answer","text":"Yes. Click the 1 – 10 Quick Preset to select a number from 1 through 10."}},
+      {"@type":"Question","name":"Can I generate multiple random numbers at once?","acceptedAnswer":{"@type":"Answer","text":"Yes. Set Count to the number of results you need, up to 500, then choose whether repeats are allowed."}},
+      {"@type":"Question","name":"How do I generate random numbers without repeats?","acceptedAnswer":{"@type":"Answer","text":"Keep No Repeats selected. Each result in that batch will be unique, subject to the size of the selected range."}},
+      {"@type":"Question","name":"Can random numbers repeat?","acceptedAnswer":{"@type":"Answer","text":"Yes. Select Allow Repeats when the same number can appear more than once in the generated results."}},
+      {"@type":"Question","name":"What is the difference between a random number picker and a random number generator?","acceptedAnswer":{"@type":"Answer","text":"The terms are often used interchangeably. A picker emphasizes selecting a value from a range, while a generator can refer more broadly to producing random values."}},
+      {"@type":"Question","name":"Can I generate negative random numbers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter a negative minimum or maximum, such as -50 to 50, to generate integers across that range."}},
+      {"@type":"Question","name":"Can I generate a random number between 0 and 100?","acceptedAnswer":{"@type":"Answer","text":"Yes. Set the minimum to 0 and the maximum to 100. Both 0 and 100 can be selected."}},
+      {"@type":"Question","name":"How many random numbers can I generate at once?","acceptedAnswer":{"@type":"Answer","text":"The Count control supports up to 500 results. No Repeats can produce no more unique values than the number of integers in the selected range."}},
+      {"@type":"Question","name":"Is this random number picker free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tool is free to use in your browser and does not require an account."}},
+      {"@type":"Question","name":"Can I use a random number picker for classroom activities?","acceptedAnswer":{"@type":"Answer","text":"Yes. It can be useful for randomly selecting question numbers, student numbers, practice items, groups, or other numbered choices."}},
+      {"@type":"Question","name":"Can I use a random number picker for games?","acceptedAnswer":{"@type":"Answer","text":"Yes, for ordinary game and decision-making uses where a general-purpose browser randomizer is appropriate."}},
+      {"@type":"Question","name":"Is the random number picker suitable for a lottery or gambling?","acceptedAnswer":{"@type":"Answer","text":"It should not be treated as a certified or regulated lottery, gambling, sweepstakes, or high-stakes randomization system. Use a purpose-built service when formal requirements apply."}},
+      {"@type":"Question","name":"Are the generated numbers truly random?","acceptedAnswer":{"@type":"Answer","text":"When supported by the browser, the tool uses window.crypto.getRandomValues() for random integer generation. If that API is unavailable, the code falls back to Math.random(). This is suitable for general-purpose selection, but it is not presented as a certified regulated random-drawing service."}},
+      {"@type":"Question","name":"Does the random number picker work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes. The page is designed to work in modern mobile and desktop browsers."}},
+      {"@type":"Question","name":"Can I copy the generated numbers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use Copy Results to copy the generated list to your clipboard."}},
+      {"@type":"Question","name":"What happens if I request more unique numbers than the range contains?","acceptedAnswer":{"@type":"Answer","text":"The tool cannot return more unique integers than the range contains. In No Repeats mode, the generated count is limited by the available range."}},
+      {"@type":"Question","name":"Are the minimum and maximum numbers included?","acceptedAnswer":{"@type":"Answer","text":"Yes. The selected range is inclusive, so the minimum and maximum values can both be returned."}},
+      {"@type":"Question","name":"Does the tool store the numbers I generate?","acceptedAnswer":{"@type":"Answer","text":"The picker performs the number generation in your browser. It does not require you to submit the generated values to a server to produce the result."}}
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -159,133 +187,108 @@
     <section class="content-section">
       <article class="article-content">
         <div class="callout" style="margin-bottom: 1.5rem;">
-          <strong>Important:</strong> This tool generates random integers for general-purpose selection, games, brainstorming, testing, and similar uses. Random results should not be treated as a guarantee of security, cryptographic randomness, or fairness for regulated drawings, gambling, or other high-stakes decisions.
+          <strong>Important:</strong> This tool is designed for general-purpose random number selection, games, classroom activities, brainstorming, testing, and similar uses. It is not a certified source for regulated lotteries, gambling, cryptographic applications, or other high-stakes decisions.
         </div>
 
+        <h2>Random Number Picker – Free Online Random Number Generator</h2>
+        <p>Use this free random number picker to choose one or more integers from any range. You can quickly generate a random number from 1 to 10, 1 to 20, 1 to 50, or 1 to 100, or enter a custom minimum and maximum. The tool also supports multiple results, unique numbers without repeats, repeated numbers, negative values, and one-click copying.</p>
+        <p>Because the tool runs in your browser, you can generate results instantly without creating an account. For formal or regulated random drawings, use a service designed and certified for that specific purpose.</p>
+
         <h2>How to Pick a Random Number</h2>
-        <p>
-          Our random number picker allows you to generate integers across a custom range. You can quickly choose a common range such as 1 to 10 or 1 to 100, or enter your own minimum and maximum values.
-        </p>
         <ol>
-          <li><strong>Set the Lower &amp; Upper Bounds:</strong> Enter your minimum and maximum values, such as 1 and 100 or a custom range that includes negative numbers.</li>
-          <li><strong>Select Quantity:</strong> Pick 1 number for a simple selection, or choose multiple numbers for samples, lists, games, classroom activities, or testing.</li>
-          <li><strong>Choose Duplicate Behavior:</strong> Select <em>No Repeats</em> when every result should be unique, or <em>Allow Repeats</em> when the same number may appear more than once.</li>
-          <li><strong>Generate and Copy:</strong> Click <strong>Pick Number</strong> and use <strong>Copy Results</strong> when you need the generated values elsewhere.</li>
+          <li><strong>Set the range:</strong> Enter your minimum and maximum values.</li>
+          <li><strong>Choose the quantity:</strong> Leave Count at 1 for a single number or increase it for multiple results.</li>
+          <li><strong>Choose repeats:</strong> Select No Repeats for unique results or Allow Repeats when duplicates are acceptable.</li>
+          <li><strong>Generate:</strong> Click Pick Number to create the result.</li>
+          <li><strong>Copy:</strong> Use Copy Results when you need the generated values elsewhere.</li>
         </ol>
 
-        <h2>What Is a Random Number Picker?</h2>
-        <p>
-          A random number picker is a simple utility that selects one or more numbers from a defined range. Instead of choosing a number manually, you specify the minimum and maximum values and let the browser generate the selection. This is useful for quick decisions, games, classroom activities, test data, simulations, and creative projects.
-        </p>
-        <p>
-          RandomlyTools supports both single-number and multi-number selections. You can also decide whether duplicates are allowed, making the tool suitable for situations where repeated values are acceptable as well as situations where each selected number needs to be different.
-        </p>
+        <h2>Random Number Generator 1–10</h2>
+        <p>Need a quick number from 1 to 10? Click the <strong>1 – 10</strong> preset. This range is useful for simple games, classroom choices, quick decisions, ratings, and numbered selections.</p>
 
-        <h2>Popular Random Number Ranges</h2>
-        <ul>
-          <li><strong>Random Number 1 to 10:</strong> Useful for quick decisions, selecting an item from a short list, classroom activities, and simple games.</li>
-          <li><strong>Random Number 1 to 20:</strong> Helpful for small-number selections, games, practice activities, and randomized lists.</li>
-          <li><strong>Random Number 1 to 50:</strong> Useful when you need a larger selection range without entering custom values.</li>
-          <li><strong>Random Number 1 to 100:</strong> Common for percentage-style selections, classroom drawings, random choices, and simple simulations.</li>
-          <li><strong>2-Digit Numbers (00–99):</strong> Useful for examples, test values, game mechanics, and other situations needing a two-digit range.</li>
-          <li><strong>3-Digit Numbers (100–999):</strong> Helpful for sample IDs, test order numbers, simulations, and randomized reference values.</li>
-        </ul>
+        <h2>Random Number Generator 1–20</h2>
+        <p>The <strong>1 – 20</strong> preset is useful for practice questions, games, small numbered lists, and activities where a slightly larger range is needed.</p>
 
-        <h2>Random Number Generator With No Repeats</h2>
-        <p>
-          Use <strong>No Repeats</strong> when you need unique numbers in the same generated batch. For example, if you select 10 numbers from 1 to 100, the tool can return 10 different values. The number of unique results cannot be greater than the number of integers available in the selected range.
-        </p>
-        <p>
-          Choose <strong>Allow Repeats</strong> when each selection can independently produce the same value. This is useful for simulations and games where repeated outcomes are part of the intended process.
-        </p>
+        <h2>Random Number Generator 1–50</h2>
+        <p>Use the <strong>1 – 50</strong> preset when you need a wider selection without manually entering a range. You can also increase Count if you need several values.</p>
 
-        <h2>Can I Generate Negative Random Numbers?</h2>
-        <p>
-          Yes. You can enter negative minimum or maximum values, such as -50 to 50. The picker works with integer ranges, so values can cross zero as long as the entered range is valid.
-        </p>
+        <h2>Random Number Generator 1–100</h2>
+        <p>The <strong>1 – 100</strong> range is one of the most common random number selections. It can be used for classroom activities, simple simulations, numbered lists, games, and random choices.</p>
+
+        <h2>Custom Random Number Generator</h2>
+        <p>You are not limited to the presets. Enter any valid integer range, such as 25 to 75, 100 to 999, -50 to 50, or 0 to 100. The picker treats both the minimum and maximum as part of the available range.</p>
+
+        <h2>Generate Multiple Random Numbers</h2>
+        <p>Set Count to generate several numbers in one operation. The tool supports up to 500 results. Multiple results are useful for samples, games, test data, classroom exercises, randomized lists, and demonstrations.</p>
+
+        <h2>Random Numbers Without Repeats</h2>
+        <p>Select <strong>No Repeats</strong> when every number in the generated batch should be different. For example, requesting 10 numbers from 1 to 100 can return 10 unique integers.</p>
+        <p>A unique selection cannot contain more values than the range itself. A range from 1 to 10 contains only 10 possible integers, so you cannot obtain 11 unique numbers from it.</p>
+
+        <h2>Random Numbers With Repeats</h2>
+        <p>Select <strong>Allow Repeats</strong> when each draw can independently return any number in the selected range. For example, a result such as 4, 9, 4, 2 is valid when repeats are allowed.</p>
+
+        <h2>Random Negative Numbers</h2>
+        <p>The picker supports negative integers. You can use ranges such as -10 to 10 or -100 to -1. Ranges can also cross zero when you want both negative and positive results.</p>
+
+        <h2>Two-Digit and Three-Digit Random Numbers</h2>
+        <p>The tool includes quick presets for <strong>00–99</strong> and <strong>100–999</strong>. These can be useful for sample values, test data, games, fictional references, and other non-sensitive purposes.</p>
+
+        <h2>Random Number Picker vs Random Number Generator</h2>
+        <p>People often use these terms for the same type of tool. A <strong>random number picker</strong> emphasizes selecting a number from a specified range, while a <strong>random number generator</strong> can describe any tool that produces random numerical values. This page supports both single-value picking and multi-number generation.</p>
+
+        <h2>How the Random Number Generator Works</h2>
+        <p>The tool selects integers from the inclusive range you enter. When the browser supports the Web Crypto API, the underlying utility uses <code>window.crypto.getRandomValues()</code> to obtain random values and uses rejection sampling before mapping them to the requested integer range. If that API is unavailable, the code falls back to JavaScript's <code>Math.random()</code>.</p>
+        <p>This makes the tool appropriate for ordinary random selection, games, examples, testing, and similar uses. It should not be described as a certified lottery or regulated random-drawing system.</p>
 
         <h2>Common Uses for a Random Number Picker</h2>
         <ul>
-          <li><strong>Games and Random Decisions:</strong> Choose a player, item, position, or option from a numbered list.</li>
-          <li><strong>Classroom Activities:</strong> Randomize question numbers, student numbers, groups, or practice selections.</li>
-          <li><strong>Software Testing:</strong> Create sample integer values for prototypes, test interfaces, and non-production data.</li>
-          <li><strong>Statistics and Simulations:</strong> Generate simple integer samples for demonstrations and experiments.</li>
-          <li><strong>Creative Projects:</strong> Use random values for prompts, tables, fictional data, or brainstorming.</li>
+          <li><strong>Games:</strong> Choose a player, item, position, or numbered option.</li>
+          <li><strong>Classroom activities:</strong> Randomly select questions, student numbers, groups, or exercises.</li>
+          <li><strong>Testing:</strong> Generate sample integers for prototypes and non-production test data.</li>
+          <li><strong>Statistics and simulations:</strong> Create simple random integer samples for demonstrations.</li>
+          <li><strong>Brainstorming:</strong> Use numbered options to make a quick randomized choice.</li>
+          <li><strong>Creative projects:</strong> Generate random values for prompts, tables, fictional data, or game mechanics.</li>
         </ul>
 
-        <h2>How Random Number Selection Works</h2>
-        <p>
-          The tool selects integer values between the minimum and maximum limits you provide. The selected range is inclusive, meaning both the minimum and maximum values can be returned. When multiple unique numbers are requested, the no-repeat option prevents the same value from being returned twice in that batch.
-        </p>
-        <p>
-          The generator runs in your browser and does not require a naming account or manual submission to a server. For security-sensitive applications, lotteries, regulated games, or cryptographic purposes, use a purpose-built random source that is appropriate for that specific requirement.
-        </p>
+        <h2>Is a Random Number Picker Fair?</h2>
+        <p>For ordinary browser-based selection, the tool is designed to select values from the requested range without manually favoring a particular number. However, “fair” can have a formal meaning in regulated drawings and games. This tool is not certified for those settings, so use an appropriate regulated or independently audited system when formal fairness requirements apply.</p>
+
+        <h2>Privacy and Browser-Based Generation</h2>
+        <p>The number generation happens in the browser. The tool does not need an account or a form submission to create the numbers. As with any website, normal browser requests can still involve technical data required to deliver the page, but the generated number itself does not need to be sent to a server for the picker to produce a result.</p>
 
         <h2>Tips for Getting the Right Random Numbers</h2>
         <ul>
-          <li>Use <strong>1 to 10</strong> or <strong>1 to 100</strong> presets when you need a common range quickly.</li>
-          <li>Check that the minimum and maximum values match the exact range you intend to use.</li>
-          <li>Use <strong>No Repeats</strong> for unique selections and <strong>Allow Repeats</strong> when repeated results are acceptable.</li>
-          <li>For multiple unique results, make sure the range contains enough integers for the requested quantity.</li>
-          <li>For important real-world decisions, independently verify whether a random selection is appropriate for the situation.</li>
+          <li>Check your minimum and maximum before generating a result.</li>
+          <li>Use No Repeats when every result must be unique.</li>
+          <li>Use Allow Repeats when repeated outcomes are acceptable.</li>
+          <li>Make sure the range contains enough integers for your requested unique count.</li>
+          <li>Use the presets for common ranges such as 1–10 and 1–100.</li>
+          <li>For regulated, financial, security-sensitive, or high-stakes uses, choose a purpose-built randomization system instead.</li>
         </ul>
 
         <h2>Frequently Asked Questions</h2>
         <div class="faq-list">
-          <details class="faq-item">
-            <summary>How does the random number generator ensure fairness?</summary>
-            <div class="faq-answer">
-              <p>The tool uses the project's random-number utility, which uses browser randomness where supported. This is suitable for general-purpose random selections, but it should not be treated as a certified or regulated lottery system.</p>
-            </div>
-          </details>
-          <details class="faq-item">
-            <summary>Can I generate a random number from 1 to 10?</summary>
-            <div class="faq-answer">
-              <p>Yes. Click the <strong>1 – 10</strong> Quick Preset and the tool will set the range automatically and generate a number.</p>
-            </div>
-          </details>
-          <details class="faq-item">
-            <summary>Can I generate a random number from 1 to 100?</summary>
-            <div class="faq-answer">
-              <p>Yes. Use the <strong>1 – 100</strong> preset, or enter 1 as the minimum and 100 as the maximum manually.</p>
-            </div>
-          </details>
-          <details class="faq-item">
-            <summary>What happens if the requested count exceeds the available range?</summary>
-            <div class="faq-answer">
-              <p>When operating in <strong>No Repeats</strong> mode, the maximum number of unique results cannot exceed the size of the range (Max - Min + 1). The picker limits the generated quantity to the maximum possible unique items.</p>
-            </div>
-          </details>
-          <details class="faq-item">
-            <summary>Can I pick negative random numbers?</summary>
-            <div class="faq-answer">
-              <p>Yes. Enter negative values such as -50 and 50 and the tool will generate integers across that range.</p>
-            </div>
-          </details>
-          <details class="faq-item">
-            <summary>Can random numbers repeat?</summary>
-            <div class="faq-answer">
-              <p>Yes. Select <strong>Allow Repeats</strong> if duplicate values are acceptable. Select <strong>No Repeats</strong> when every number in the batch should be unique.</p>
-            </div>
-          </details>
-          <details class="faq-item">
-            <summary>How many random numbers can I generate at once?</summary>
-            <div class="faq-answer">
-              <p>The quantity control supports up to 500 generated numbers. In No Repeats mode, the usable quantity is also limited by the number of integers available in the selected range.</p>
-            </div>
-          </details>
-          <details class="faq-item">
-            <summary>Is this random number picker free?</summary>
-            <div class="faq-answer">
-              <p>Yes. The random number picker is available as a free browser-based utility. You can use the presets or enter your own range without creating a special account.</p>
-            </div>
-          </details>
-          <details class="faq-item">
-            <summary>Can I copy the generated random numbers?</summary>
-            <div class="faq-answer">
-              <p>Yes. After generating multiple results, use <strong>Copy Results</strong> to copy the complete list to your clipboard.</p>
-            </div>
-          </details>
+          <details class="faq-item"><summary>How do I pick a random number between two numbers?</summary><div class="faq-answer"><p>Enter the minimum and maximum values, choose the quantity, and click Pick Number. Both endpoints are included in the range.</p></div></details>
+          <details class="faq-item"><summary>How do I generate a random number from 1 to 100?</summary><div class="faq-answer"><p>Click the 1 – 100 Quick Preset. You can also enter 1 as the minimum and 100 as the maximum.</p></div></details>
+          <details class="faq-item"><summary>Can I generate a random number from 1 to 10?</summary><div class="faq-answer"><p>Yes. Click the 1 – 10 Quick Preset to select a number from 1 through 10.</p></div></details>
+          <details class="faq-item"><summary>Can I generate multiple random numbers at once?</summary><div class="faq-answer"><p>Yes. Set Count to the number of results you need, up to 500, then choose whether repeats are allowed.</p></div></details>
+          <details class="faq-item"><summary>How do I generate random numbers without repeats?</summary><div class="faq-answer"><p>Keep No Repeats selected. Each result in that batch will be unique, subject to the size of the selected range.</p></div></details>
+          <details class="faq-item"><summary>Can random numbers repeat?</summary><div class="faq-answer"><p>Yes. Select Allow Repeats when the same number can appear more than once in the generated results.</p></div></details>
+          <details class="faq-item"><summary>What is the difference between a random number picker and a random number generator?</summary><div class="faq-answer"><p>The terms are often used interchangeably. A picker emphasizes selecting a value from a range, while a generator can refer more broadly to producing random values.</p></div></details>
+          <details class="faq-item"><summary>Can I generate negative random numbers?</summary><div class="faq-answer"><p>Yes. Enter a negative minimum or maximum, such as -50 to 50, to generate integers across that range.</p></div></details>
+          <details class="faq-item"><summary>Can I generate a random number between 0 and 100?</summary><div class="faq-answer"><p>Yes. Set the minimum to 0 and the maximum to 100. Both 0 and 100 can be selected.</p></div></details>
+          <details class="faq-item"><summary>How many random numbers can I generate at once?</summary><div class="faq-answer"><p>The Count control supports up to 500 results. No Repeats can produce no more unique values than the number of integers in the selected range.</p></div></details>
+          <details class="faq-item"><summary>Is this random number picker free?</summary><div class="faq-answer"><p>Yes. The tool is free to use in your browser and does not require an account.</p></div></details>
+          <details class="faq-item"><summary>Can I use a random number picker for classroom activities?</summary><div class="faq-answer"><p>Yes. It can be useful for randomly selecting question numbers, student numbers, practice items, groups, or other numbered choices.</p></div></details>
+          <details class="faq-item"><summary>Can I use a random number picker for games?</summary><div class="faq-answer"><p>Yes, for ordinary game and decision-making uses where a general-purpose browser randomizer is appropriate.</p></div></details>
+          <details class="faq-item"><summary>Is the random number picker suitable for a lottery or gambling?</summary><div class="faq-answer"><p>It should not be treated as a certified or regulated lottery, gambling, sweepstakes, or high-stakes randomization system. Use a purpose-built service when formal requirements apply.</p></div></details>
+          <details class="faq-item"><summary>Are the generated numbers truly random?</summary><div class="faq-answer"><p>When supported by the browser, the tool uses window.crypto.getRandomValues() for random integer generation. If that API is unavailable, the code falls back to Math.random(). This is suitable for general-purpose selection, but it is not presented as a certified regulated random-drawing service.</p></div></details>
+          <details class="faq-item"><summary>Does the random number picker work on mobile?</summary><div class="faq-answer"><p>Yes. The page is designed to work in modern mobile and desktop browsers.</p></div></details>
+          <details class="faq-item"><summary>Can I copy the generated numbers?</summary><div class="faq-answer"><p>Yes. Use Copy Results to copy the generated list to your clipboard.</p></div></details>
+          <details class="faq-item"><summary>What happens if I request more unique numbers than the range contains?</summary><div class="faq-answer"><p>The tool cannot return more unique integers than the range contains. In No Repeats mode, the generated count is limited by the available range.</p></div></details>
+          <details class="faq-item"><summary>Are the minimum and maximum numbers included?</summary><div class="faq-answer"><p>Yes. The selected range is inclusive, so the minimum and maximum values can both be returned.</p></div></details>
+          <details class="faq-item"><summary>Does the tool store the numbers I generate?</summary><div class="faq-answer"><p>The picker performs the number generation in your browser. It does not require you to submit the generated values to a server to produce the result.</p></div></details>
         </div>
       </article>
     </section>
