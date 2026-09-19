@@ -161,7 +161,7 @@
 
   <script src="/assets/js/core/ui.js"></script>
   <script type="module">
-    import SpeedTest from 'https://cdn.skypack.dev/@cloudflare/speedtest';
+    import SpeedTest from 'https://cdn.jsdelivr.net/npm/@cloudflare/speedtest@1.12.1/+esm';
 
     const startButton = document.getElementById('speedtest-start');
     const statusEl = document.getElementById('speedtest-status');
@@ -241,7 +241,12 @@
         };
 
         engine.onError = error => {
-          throw new Error(error?.message || String(error || 'The speed test could not be completed.'));
+          startButton.disabled = false;
+          startButton.textContent = 'Try Again';
+          statusEl.textContent = 'The test could not be completed.';
+          errorEl.textContent = error?.message || String(error || 'Please try again after checking your internet connection.');
+          errorEl.hidden = false;
+          progressBar.style.width = '0%';
         };
 
         engine.play();
