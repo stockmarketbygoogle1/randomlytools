@@ -25,6 +25,7 @@
 
 - [Recipe Finder by Ingredients](https://randomlytools.in/recipe-finder-by-ingredients/) — Find recipe ideas based on available ingredients.
 - [Attendance Calculator](https://randomlytools.in/attendance-calculator/) — Calculate attendance percentage and estimate attendance requirements.
+- [Internet Speed Test](https://randomlytools.in/internet-speed-test/) — Check download speed, upload speed, and connection latency.
 - [AdSense Revenue Calculator](https://randomlytools.in/adsense-revenue-calculator/) — Estimate advertising revenue using traffic and RPM inputs.
 - [Iceland Salary Calculator](https://randomlytools.in/iceland-salary-calculator/) — Estimate gross-to-net salary and take-home pay in Iceland.
 - [Cyprus Salary Calculator](https://randomlytools.in/cyprus-salary-calculator/) — Estimate gross-to-net salary and take-home pay in Cyprus.
