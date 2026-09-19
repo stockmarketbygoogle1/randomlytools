@@ -203,16 +203,16 @@
         engine = new SpeedTest({
           autoStart: false,
           measurements: [
-            { type: 'latency', numPackets: 10 },
-            { type: 'download', bytes: 100000, count: 4, bypassMinDuration: true },
-            { type: 'download', bytes: 1000000, count: 6 },
-            { type: 'upload', bytes: 100000, count: 4 },
+            { type: 'latency', numPackets: 6 },
+            { type: 'download', bytes: 100000, count: 2, bypassMinDuration: true },
+            { type: 'download', bytes: 1000000, count: 4 },
+            { type: 'upload', bytes: 100000, count: 2, bypassMinDuration: true },
             { type: 'upload', bytes: 1000000, count: 4 },
-            { type: 'download', bytes: 10000000, count: 4 },
-            { type: 'upload', bytes: 10000000, count: 3 },
-            { type: 'download', bytes: 25000000, count: 2 },
-            { type: 'upload', bytes: 25000000, count: 2 }
-          ]
+            { type: 'download', bytes: 10000000, count: 2 },
+            { type: 'upload', bytes: 10000000, count: 2 }
+          ],
+          bandwidthFinishRequestDuration: 700,
+          bandwidthAbortRequestDuration: 5000
         });
 
         engine.onRunningChange = running => {
