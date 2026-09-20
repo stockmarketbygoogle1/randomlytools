@@ -45,6 +45,12 @@ const homepageCards = `
   <p class="tool-card-desc">Estimate fence post burial depth, hole depth, post length, hole diameter and concrete for common fence projects.</p>
   <span class="tool-card-badge">Home &amp; DIY</span>
 </div>
+<div class="tool-card" data-category="business" data-keywords="taxable income calculator taxable income calculator 2026 taxable income from salary calculate taxable income AGI gross income standard deduction itemized deduction federal taxable income tax calculator">
+  <div class="tool-card-icon">🧾</div>
+  <h2 class="tool-card-title"><a href="/taxable-income-calculator/">Taxable Income Calculator</a></h2>
+  <p class="tool-card-desc">Estimate U.S. taxable income from gross income, AGI, filing status and standard or itemized deductions.</p>
+  <span class="tool-card-badge">Finance &amp; Tax</span>
+</div>
 <div class="tool-card" data-category="internet" data-keywords="internet speed test speed test internet services broadband speed test wifi speed test broadband checker fibre broadband checker check internet speed test my internet speed internet test check my internet speed wifi speed broadband speed in my area wifi test check broadband speed network speed test wifi checker internet speed test free internet connection test download speed test upload speed test mbps test bandwidth test check wifi signal strength internet speed test online test my broadband speed check internet speed in my area 5g speed test fiber speed test">
   <div class="tool-card-icon">🌐</div>
   <h2 class="tool-card-title"><a href="/internet-speed-test/">Internet Speed Test</a></h2>
@@ -57,10 +63,10 @@ if (!html.includes('href="/fence-post-depth-calculator/"')) {
   if (!gridEndMarker.test(html)) throw new Error('Homepage tools grid end marker not found.');
   html = html.replace(gridEndMarker, `$1${homepageCards}\n$2`);
 }
-html = html.replace(/All Tools \(22\)/g, 'All Tools (30)');
-html = html.replace(/All Tools \(23\)/g, 'All Tools (30)');
-html = html.replace(/All Tools \(27\)/g, 'All Tools (30)');
-html = html.replace(/All Tools \(28\)/g, 'All Tools (30)');
+html = html.replace(/All Tools \(22\)/g, 'All Tools (31)');
+html = html.replace(/All Tools \(23\)/g, 'All Tools (31)');
+html = html.replace(/All Tools \(27\)/g, 'All Tools (31)');
+html = html.replace(/All Tools \(28\)/g, 'All Tools (31)');
 
 if (!html.includes('data-category="cricket">Cricket Tools</button>')) {
   const youtubeButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="youtube"[^>]*>YouTube Tools<\/button>)/i;
@@ -82,7 +88,8 @@ const jsonTools = [
   ['27', 'Cricket Chase Calculator', 'https://randomlytools.in/cricket-chase-calculator/'],
   ['28', 'Website Mockup Generator', 'https://randomlytools.in/website-mockup-generator/'],
   ['29', 'Fence Post Depth Calculator', 'https://randomlytools.in/fence-post-depth-calculator/'],
-  ['30', 'Internet Speed Test', 'https://randomlytools.in/internet-speed-test/']
+  ['30', 'Internet Speed Test', 'https://randomlytools.in/internet-speed-test/'],
+  ['31', 'Taxable Income Calculator', 'https://randomlytools.in/taxable-income-calculator/']
 ];
 for (const [position, name, url] of jsonTools) {
   if (!html.includes(`"url":"${url}"`)) {
