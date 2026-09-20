@@ -63,10 +63,9 @@ if (!html.includes('href="/fence-post-depth-calculator/"')) {
   if (!gridEndMarker.test(html)) throw new Error('Homepage tools grid end marker not found.');
   html = html.replace(gridEndMarker, `$1${homepageCards}\n$2`);
 }
-html = html.replace(/All Tools \(22\)/g, 'All Tools (31)');
-html = html.replace(/All Tools \(23\)/g, 'All Tools (31)');
-html = html.replace(/All Tools \(27\)/g, 'All Tools (31)');
-html = html.replace(/All Tools \(28\)/g, 'All Tools (31)');
+// Keep the homepage tool count synchronized with the actual generated tool cards.
+const toolCardCount = (html.match(/class="tool-card"/g) || []).length;
+html = html.replace(/All Tools \(\d+\)/g, `All Tools (${toolCardCount})`);
 
 if (!html.includes('data-category="cricket">Cricket Tools</button>')) {
   const youtubeButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="youtube"[^>]*>YouTube Tools<\/button>)/i;
