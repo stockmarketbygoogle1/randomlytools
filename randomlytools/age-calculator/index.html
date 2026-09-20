@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Age Calculator 2026: Calculate Age from Date of Birth</title>
+<meta name="description" content="Use this free Age Calculator to calculate your exact age in years, months and days from your date of birth. Find age on a specific date, total days lived and your next birthday.">
+<link rel="canonical" href="https://randomlytools.in/age-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<meta property="og:title" content="Age Calculator 2026: Calculate Age from Date of Birth">
+<meta property="og:description" content="Calculate your exact age in years, months and days from your date of birth, including age on a specific date and next birthday.">
+<meta property="og:url" content="https://randomlytools.in/age-calculator/">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Age Calculator","url":"https://randomlytools.in/age-calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online age calculator to calculate exact age from date of birth."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://randomlytools.in/"},{"@type":"ListItem","position":2,"name":"Age Calculator","item":"https://randomlytools.in/age-calculator/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate my age from my date of birth?","acceptedAnswer":{"@type":"Answer","text":"Enter your date of birth and the date you want to calculate your age on. The calculator returns your age in completed years, months and days."}},{"@type":"Question","name":"How is age calculated?","acceptedAnswer":{"@type":"Answer","text":"Age is calculated by comparing the birth date with the selected calculation date and accounting for calendar months and days."}},{"@type":"Question","name":"Can I calculate my age on a specific date?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter any date in the Calculate age on field to find your age on that date."}},{"@type":"Question","name":"How many days old am I?","acceptedAnswer":{"@type":"Answer","text":"This calculator also estimates the total number of elapsed days between your date of birth and the selected calculation date."}},{"@type":"Question","name":"When is my next birthday?","acceptedAnswer":{"@type":"Answer","text":"After entering your date of birth, the calculator shows the date of your next birthday and the number of days until it."}}]}
+</script>
+<style>
+.age-card{max-width:760px;margin:0 auto;background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow-sm)}
+.age-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.age-actions{display:flex;gap:.75rem;margin-top:1rem}.age-actions button{flex:1}.age-result{margin-top:1.25rem;padding:1.25rem;border:1px solid var(--border-color);border-radius:var(--radius-md);background:var(--bg-surface-subtle)}.age-main{font-size:2.35rem;font-weight:800;text-align:center}.age-details{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-top:1rem}.age-stat{padding:.85rem;border:1px solid var(--border-color);border-radius:var(--radius-md)}.age-stat strong{display:block;font-size:1.1rem}.age-error{display:none;color:var(--accent-red);font-size:.9rem;margin-top:.75rem}.age-note{font-size:.85rem;color:var(--text-muted);margin-top:1rem}
+@media(max-width:650px){.age-grid,.age-details{grid-template-columns:1fr}.age-card{padding:1rem}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><button class="mobile-menu-btn" aria-label="Toggle navigation menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><nav class="nav-links"><a href="/">All Tools</a><a href="/random-name-generator/">Names</a><a href="/random-number-picker/">Numbers</a><a href="/random-discord-name-generator/">Usernames</a><a href="/random-company-brand-name-generator/">Brands</a><a href="/about/">About</a></nav></div></header>
+<main class="container page-intro">
+<div class="breadcrumbs"><a href="/">Home</a> <span>/</span> <span>Age Calculator</span></div>
+<div class="tool-header" style="text-align:center;max-width:850px;margin:0 auto 2rem"><h1>Age Calculator 2026</h1><p class="section-subtitle">Calculate your exact age in years, months and days from your date of birth. You can also calculate age on a specific date, total days lived and your next birthday.</p></div>
+<div class="age-card">
+<div class="age-grid">
+<div class="form-group"><label class="form-label" for="dob">Date of Birth</label><input class="form-control" id="dob" type="date"></div>
+<div class="form-group"><label class="form-label" for="asof">Calculate Age On</label><input class="form-control" id="asof" type="date"></div>
+</div>
+<div class="age-actions"><button type="button" id="calculate" class="btn btn-primary">Calculate Age</button><button type="button" id="reset" class="btn btn-secondary">Reset</button></div>
+<div id="error" class="age-error" role="alert"></div>
+<div id="result" class="age-result" hidden><div class="age-main" id="ageMain">—</div><div class="age-details"><div class="age-stat"><span>Birth Date</span><strong id="birthOut">—</strong></div><div class="age-stat"><span>Age on Selected Date</span><strong id="dateOut">—</strong></div><div class="age-stat"><span>Total Days</span><strong id="daysOut">—</strong></div><div class="age-stat"><span>Next Birthday</span><strong id="birthdayOut">—</strong></div><div class="age-stat"><span>Days Until Birthday</span><strong id="birthdayDaysOut">—</strong></div><div class="age-stat"><span>Day of Birth</span><strong id="weekdayOut">—</strong></div></div><p class="age-note">The age calculation uses calendar dates. Total days are calculated from the selected dates and do not assume every year has 365 days.</p></div>
+</div>
+<div class="ad-slot-container"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-box">Ad Space Available</div></div>
+<article class="article-content" style="max-width:850px;margin:2rem auto">
+<h2>What Is an Age Calculator?</h2><p>An age calculator finds the time between a date of birth and another date. Enter your birth date above to calculate your exact completed age in years, months and days.</p>
+<h2>How to Calculate Age From Date of Birth</h2><p>To calculate age, compare the birth date with the date on which you want to know the age. The calculator accounts for the number of days in each calendar month and leap years.</p>
+<h2>Age Calculator Formula</h2><p>Age is not simply the number of days divided by 365 because calendar years can contain 365 or 366 days and months have different lengths. For an exact calendar age, the calculator subtracts the birth year, month and day from the selected date while borrowing across months when necessary.</p>
+<h2>Calculate Age on a Specific Date</h2><p>You can change the calculation date to any date in the future or past. This is useful when you need to know how old someone was on a particular date rather than today.</p>
+<h2>Age in Years, Months and Days</h2><p>The result shows completed years plus the remaining months and days. For example, someone born on 15 January 2000 is 26 years old on 15 January 2026.</p>
+<h2>Total Days Since Birth</h2><p>The calculator also gives the elapsed number of calendar days between the birth date and selected date. This can differ from simply multiplying completed years by 365 because leap years add extra days.</p>
+<h2>How Many Days Until My Next Birthday?</h2><p>After entering a date of birth, the calculator identifies the next occurrence of the same month and day and counts the days remaining until that birthday.</p>
+<h2>Age Calculator Examples</h2><ul><li>1 January 2000 to 1 January 2026 = 26 years.</li><li>15 June 1995 to 15 June 2026 = 31 years.</li><li>10 March 2010 to 20 September 2026 = 16 years, 6 months and 10 days.</li></ul>
+<h2>Frequently Asked Questions</h2>
+<h3>How do I calculate my age from my date of birth?</h3><p>Enter your date of birth and the date you want to calculate your age on. The calculator returns completed years, months and days.</p>
+<h3>How is age calculated?</h3><p>Age is calculated by comparing the birth date with the selected date while accounting for calendar months, days and leap years.</p>
+<h3>Can I calculate my age on a specific date?</h3><p>Yes. Change the calculation date to any date you want.</p>
+<h3>How many days old am I?</h3><p>The calculator shows the elapsed number of days between your birth date and the selected date.</p>
+<h3>When is my next birthday?</h3><p>The result includes your next birthday and the number of days until it.</p>
+<h2>Related Date & Time Tools</h2><p>Use the <a href="/attendance-calculator/">Attendance Calculator</a> for attendance calculations, or explore more free tools on <a href="/">RandomlyTools</a>. Date-specific tools can be added to this calculator cluster as they become available.</p>
+</article>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><p>Simple Random Tools for Everyday Use. Fast, free, and privacy-focused client-side generators.</p></div><div class="footer-column"><h4>Popular Tools</h4><ul><li><a href="/random-name-generator/">Random Name Generator</a></li><li><a href="/random-number-picker/">Random Number Picker</a></li><li><a href="/random-dog-name-generator/">Dog Name Generator</a></li><li><a href="/random-discord-name-generator/">Discord Name Generator</a></li><li><a href="/random-company-brand-name-generator/">Brand Name Generator</a></li></ul></div><div class="footer-column"><h4>More Tools</h4><ul><li><a href="/random-shop-name-generator/">Shop Name Generator</a></li><li><a href="/random-restaurant-name-generator/">Restaurant Name Generator</a></li><li><a href="/random-japanese-name-generator/">Japanese Name Generator</a></li><li><a href="/random-instagram-username-generator/">Instagram Generator</a></li><li><a href="/random-coffee-shop-name-generator/">Coffee Shop Names</a></li><li><a href="/random-team-generator/">Random Team Generator</a></li></ul></div><div class="footer-column"><h4>Trust & Legal</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Service</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 RandomlyTools. All rights reserved. Free utilities for personal and commercial inspiration.</p><p>Built for speed and user privacy.</p></div></div></footer>
+<script src="/assets/js/core/ui.js"></script>
+<script>
+(()=>{const $=id=>document.getElementById(id);const pad=n=>String(n).padStart(2,'0');const localDate=d=>new Date(d.getFullYear(),d.getMonth(),d.getDate());const fmt=d=>d.toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});
+const today=new Date();const todayLocal=localDate(today);$('asof').value=todayLocal.getFullYear()+'-'+pad(todayLocal.getMonth()+1)+'-'+pad(todayLocal.getDate());$('asof').max='9999-12-31';
+function showError(m){$('error').textContent=m;$('error').style.display='block';$('result').hidden=true}
+function ageParts(b,a){let y=a.getFullYear()-b.getFullYear(),m=a.getMonth()-b.getMonth(),d=a.getDate()-b.getDate();if(d<0){m--;const daysPrev=new Date(a.getFullYear(),a.getMonth(),0).getDate();d+=daysPrev}if(m<0){y--;m+=12}return{y,m,d}}
+function calculate(){const bVal=$('dob').value,aVal=$('asof').value;if(!bVal||!aVal)return showError('Please enter both dates.');const b=new Date(bVal+'T00:00:00'),a=new Date(aVal+'T00:00:00');if(b>a)return showError('Date of birth cannot be after the calculation date.');const p=ageParts(b,a),ms=a.getTime()-b.getTime(),days=Math.floor(ms/86400000);const next=new Date(a.getFullYear(),b.getMonth(),b.getDate());if(next< a)next.setFullYear(a.getFullYear()+1);const birthdayDays=Math.round((next-a)/86400000);$('error').style.display='none';$('ageMain').textContent=p.y+' years, '+p.m+' months, '+p.d+' days';$('birthOut').textContent=fmt(b);$('dateOut').textContent=fmt(a);$('daysOut').textContent=days.toLocaleString();$('birthdayOut').textContent=fmt(next);$('birthdayDaysOut').textContent=birthdayDays===0?'Today!':birthdayDays.toLocaleString();$('weekdayOut').textContent=b.toLocaleDateString(undefined,{weekday:'long'});$('result').hidden=false}
+$('calculate').addEventListener('click',calculate);$('reset').addEventListener('click',()=>location.reload());})();
+</script>
+</body>
+</html>
