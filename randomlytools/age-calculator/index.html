@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Age Calculator 2026: Calculate Age from Date of Birth</title>
+<title>Age Calculator: Calculate Age from Date of Birth</title>
 <meta name="description" content="Use this free age calculator by date of birth to calculate your exact age in years, months and days. Check your age on any date, total days lived and next birthday.">
 <link rel="canonical" href="https://randomlytools.in/age-calculator/">
 <link rel="stylesheet" href="/assets/css/style.css">
-<meta property="og:title" content="Age Calculator 2026: Calculate Age from Date of Birth">
+<meta property="og:title" content="Age Calculator: Calculate Age from Date of Birth">
 <meta property="og:description" content="Calculate your exact age from date of birth in years, months and days. Check age on any date, total days lived and your next birthday.">
 <meta property="og:url" content="https://randomlytools.in/age-calculator/">
 <meta property="og:type" content="website">
@@ -28,7 +28,7 @@
 <header class="site-header"><div class="container"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><button class="mobile-menu-btn" aria-label="Toggle navigation menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><nav class="nav-links"><a href="/">All Tools</a><a href="/random-name-generator/">Names</a><a href="/random-number-picker/">Numbers</a><a href="/random-discord-name-generator/">Usernames</a><a href="/random-company-brand-name-generator/">Brands</a><a href="/about/">About</a></nav></div></header>
 <main class="container page-intro">
 <div class="breadcrumbs"><a href="/">Home</a> <span>/</span> <span>Age Calculator</span></div>
-<div class="tool-header" style="text-align:center;max-width:850px;margin:0 auto 2rem"><h1>Age Calculator 2026: Calculate Age from Date of Birth</h1><p class="section-subtitle">Calculate your exact age in years, months and days from your date of birth. You can also calculate age on a specific date, total days lived and your next birthday.</p></div>
+<div class="tool-header" style="text-align:center;max-width:850px;margin:0 auto 2rem"><h1>Age Calculator: Calculate Age from Date of Birth</h1><p class="section-subtitle">Calculate your exact age in years, months and days from your date of birth. You can also calculate age on a specific date, total days lived and your next birthday.</p></div>
 <div class="age-card">
 <div class="age-grid">
 <div class="form-group"><label class="form-label" for="dob">Date of Birth</label><input class="form-control" id="dob" type="date"></div>
@@ -118,7 +118,7 @@
 <h2>Age Calculator for Exams, Forms and Applications</h2>
 <p>An age calculation is often needed while filling out forms, applications and eligibility information. The important point is that an organization's age requirement may be based on a specific <strong>cut-off date</strong>, not necessarily the date on which you fill out the form.</p>
 <p>For example, if an application says that an applicant must have reached a particular age on a specified date, select that cut-off date in the calculator. Do not assume that your age today is the age that should be entered for every application.</p>
-<p>For government exams, jobs, education admissions, insurance, visas and other official processes, use the exact eligibility rule published by the organization. This calculator provides a date calculation; it does not determine legal eligibility.</p>
+<p>For government exams, jobs, education admissions, insurance, visas and other official processes, use the exact eligibility rule published by the organization. This calculator provides a date calculation; it does not determine legal eligibility. If you are also tracking attendance requirements for an exam or course, you can use our <a href="/attendance-calculator/">attendance calculator</a> separately.</p>
 
 <h2>How to Calculate Age in Excel</h2>
 <p>You can also calculate age from a date of birth in Microsoft Excel. A commonly used approach is the <code>DATEDIF</code> function. If the date of birth is in cell A2 and you want completed years as of today, a typical formula is:</p>
@@ -199,7 +199,10 @@
 const today=new Date();const todayLocal=localDate(today);$('asof').value=todayLocal.getFullYear()+'-'+pad(todayLocal.getMonth()+1)+'-'+pad(todayLocal.getDate());$('asof').max='9999-12-31';
 function showError(m){$('error').textContent=m;$('error').style.display='block';$('result').hidden=true}
 function ageParts(b,a){let y=a.getFullYear()-b.getFullYear(),m=a.getMonth()-b.getMonth(),d=a.getDate()-b.getDate();if(d<0){m--;const daysPrev=new Date(a.getFullYear(),a.getMonth(),0).getDate();d+=daysPrev}if(m<0){y--;m+=12}return{y,m,d}}
-function calculate(){const bVal=$('dob').value,aVal=$('asof').value;if(!bVal||!aVal)return showError('Please enter both dates.');const b=new Date(bVal+'T00:00:00'),a=new Date(aVal+'T00:00:00');if(b>a)return showError('Date of birth cannot be after the calculation date.');const p=ageParts(b,a),ms=a.getTime()-b.getTime(),days=Math.floor(ms/86400000);const next=new Date(a.getFullYear(),b.getMonth(),b.getDate());if(next< a)next.setFullYear(a.getFullYear()+1);const birthdayDays=Math.round((next-a)/86400000);$('error').style.display='none';$('ageMain').textContent=p.y+' years, '+p.m+' months, '+p.d+' days';$('birthOut').textContent=fmt(b);$('dateOut').textContent=fmt(a);$('daysOut').textContent=days.toLocaleString();$('birthdayOut').textContent=fmt(next);$('birthdayDaysOut').textContent=birthdayDays===0?'Today!':birthdayDays.toLocaleString();$('weekdayOut').textContent=b.toLocaleDateString(undefined,{weekday:'long'});$('result').hidden=false}
+function parseDateInput(value){const [y,m,d]=value.split('-').map(Number);return new Date(y,m-1,d)}
+function utcDayNumber(d){return Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/86400000}
+function birthdayForYear(month,day,year){if(month===1&&day===29&&!((year%4===0&&year%100!==0)||(year%400===0)))return new Date(year,2,1);return new Date(year,month,day)}
+function calculate(){const bVal=$('dob').value,aVal=$('asof').value;if(!bVal||!aVal)return showError('Please enter both dates.');const b=parseDateInput(bVal),a=parseDateInput(aVal);if(b>a)return showError('Date of birth cannot be after the calculation date.');const p=ageParts(b,a),days=utcDayNumber(a)-utcDayNumber(b);let next=birthdayForYear(b.getMonth(),b.getDate(),a.getFullYear());if(next<a)next=birthdayForYear(b.getMonth(),b.getDate(),a.getFullYear()+1);const birthdayDays=utcDayNumber(next)-utcDayNumber(a);$('error').style.display='none';$('ageMain').textContent=p.y+' years, '+p.m+' months, '+p.d+' days';$('birthOut').textContent=fmt(b);$('dateOut').textContent=fmt(a);$('daysOut').textContent=days.toLocaleString();$('birthdayOut').textContent=fmt(next);$('birthdayDaysOut').textContent=birthdayDays===0?'Today!':birthdayDays.toLocaleString();$('weekdayOut').textContent=b.toLocaleDateString(undefined,{weekday:'long'});$('result').hidden=false}
 $('calculate').addEventListener('click',calculate);$('reset').addEventListener('click',()=>location.reload());})();
 </script>
 </body>
