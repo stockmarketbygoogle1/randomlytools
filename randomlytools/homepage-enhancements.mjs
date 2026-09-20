@@ -51,6 +51,13 @@ const homepageCards = `
   <p class="tool-card-desc">Estimate U.S. taxable income from gross income, AGI, filing status and standard or itemized deductions.</p>
   <span class="tool-card-badge">Finance &amp; Tax</span>
 </div>
+
+<div class="tool-card" data-category="date-time" data-keywords="age calculator age calculator 2026 calculate age date of birth DOB calculator age from date of birth calculate my age online age calculator years months days next birthday date of birth calculator">
+  <div class="tool-card-icon">🎂</div>
+  <h2 class="tool-card-title"><a href="/age-calculator/">Age Calculator</a></h2>
+  <p class="tool-card-desc">Calculate exact age in years, months and days from a date of birth, plus age on a specific date, total days and next birthday.</p>
+  <span class="tool-card-badge">Date &amp; Time</span>
+</div>
 <div class="tool-card" data-category="internet" data-keywords="internet speed test speed test internet services broadband speed test wifi speed test broadband checker fibre broadband checker check internet speed test my internet speed internet test check my internet speed wifi speed broadband speed in my area wifi test check broadband speed network speed test wifi checker internet speed test free internet connection test download speed test upload speed test mbps test bandwidth test check wifi signal strength internet speed test online test my broadband speed check internet speed in my area 5g speed test fiber speed test">
   <div class="tool-card-icon">🌐</div>
   <h2 class="tool-card-title"><a href="/internet-speed-test/">Internet Speed Test</a></h2>
@@ -88,7 +95,8 @@ const jsonTools = [
   ['28', 'Website Mockup Generator', 'https://randomlytools.in/website-mockup-generator/'],
   ['29', 'Fence Post Depth Calculator', 'https://randomlytools.in/fence-post-depth-calculator/'],
   ['30', 'Internet Speed Test', 'https://randomlytools.in/internet-speed-test/'],
-  ['31', 'Taxable Income Calculator', 'https://randomlytools.in/taxable-income-calculator/']
+  ['31', 'Taxable Income Calculator', 'https://randomlytools.in/taxable-income-calculator/'],
+  ['32', 'Age Calculator', 'https://randomlytools.in/age-calculator/']
 ];
 for (const [position, name, url] of jsonTools) {
   if (!html.includes(`"url":"${url}"`)) {
