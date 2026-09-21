@@ -41,7 +41,7 @@
 </div></div>
 <div class="concrete-grid" id="inputs"></div>
 <div class="concrete-grid" style="margin-top:1rem">
-<div class="form-group"><label class="form-label" for="unit">Measurement Unit</label><select class="form-control" id="unit"><option value="ft">Feet / Inches</option><option value="m">Meters</option><option value="cm">Centimeters</option></select></div>
+<div class="form-group"><label class="form-label" for="unit">Measurement Unit</label><select class="form-control" id="unit"><option value="ft">Feet</option><option value="m">Meters</option><option value="cm">Centimeters</option></select></div>
 <div class="form-group"><label class="form-label" for="waste">Waste Allowance</label><select class="form-control" id="waste"><option value="0">0%</option><option value="5">5%</option><option value="10" selected>10%</option><option value="15">15%</option></select></div>
 </div>
 <div class="concrete-actions"><button type="button" id="calculate" class="btn btn-primary">Calculate Concrete</button><button type="button" id="reset" class="btn btn-secondary">Reset</button></div>
@@ -185,7 +185,7 @@ function calculate(){
  if(current==='column'||current==='post'){const diameter=toBase(vals[0]),height=toBase(vals[1]);ft3=Math.PI*Math.pow(diameter/2,2)*height}
  else {const length=toBase(vals[0]),width=toBase(vals[1]),thickness=toBase(vals[2]);ft3=length*width*thickness}
  const waste=Number($('waste').value)/100,adjusted=ft3*(1+waste),yd3=adjusted/27,m3=adjusted*0.028316846592;
- const bag40=adjusted/0.30,bag60=adjusted/0.45,bag80=adjusted/0.60,bag25=adjusted/0.0127;
+ const bag40=adjusted/0.30,bag60=adjusted/0.45,bag80=adjusted/0.60,bag25=adjusted/0.441;
  $('error').style.display='none';$('result').hidden=false;$('mainResult').textContent=yd3.toFixed(2)+' cubic yards';$('ftOut').textContent=adjusted.toFixed(2);$('ydOut').textContent=yd3.toFixed(2);$('mOut').textContent=m3.toFixed(2);$('wasteOut').textContent=(waste*100).toFixed(0)+'% → '+adjusted.toFixed(2)+' ft³';$('bag40').textContent=Math.ceil(bag40).toLocaleString();$('bag60').textContent=Math.ceil(bag60).toLocaleString();$('bag80').textContent=Math.ceil(bag80).toLocaleString();$('bag25').textContent=Math.ceil(bag25).toLocaleString();
 }
 document.querySelectorAll('.concrete-tab').forEach(b=>b.addEventListener('click',()=>{current=b.dataset.type;render()}));
