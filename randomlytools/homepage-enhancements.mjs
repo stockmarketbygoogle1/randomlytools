@@ -64,6 +64,12 @@ const homepageCards = `
   <p class="tool-card-desc">Calculate concrete for slabs, footings, walls, columns and post holes in cubic feet, cubic yards and cubic meters.</p>
   <span class="tool-card-badge">Home &amp; DIY</span>
 </div>
+<div class="tool-card" data-category="developer" data-keywords="json formatter json formatter online json beautifier json validator json viewer json minifier json pretty print format json online json parser json editor developer tools api json">
+  <div class="tool-card-icon">{}</div>
+  <h2 class="tool-card-title"><a href="/json-formatter/">JSON Formatter</a></h2>
+  <p class="tool-card-desc">Format, validate, beautify and minify JSON with a browser-based tree viewer, copy and download tools.</p>
+  <span class="tool-card-badge">Developer Tools</span>
+</div>
 <div class="tool-card" data-category="internet" data-keywords="internet speed test speed test internet services broadband speed test wifi speed test broadband checker fibre broadband checker check internet speed test my internet speed internet test check my internet speed wifi speed broadband speed in my area wifi test check broadband speed network speed test wifi checker internet speed test free internet connection test download speed test upload speed test mbps test bandwidth test check wifi signal strength internet speed test online test my broadband speed check internet speed in my area 5g speed test fiber speed test">
   <div class="tool-card-icon">🌐</div>
   <h2 class="tool-card-title"><a href="/internet-speed-test/">Internet Speed Test</a></h2>
@@ -103,7 +109,8 @@ const jsonTools = [
   ['30', 'Internet Speed Test', 'https://randomlytools.in/internet-speed-test/'],
   ['31', 'Taxable Income Calculator', 'https://randomlytools.in/taxable-income-calculator/'],
   ['32', 'Age Calculator', 'https://randomlytools.in/age-calculator/'],
-  ['33', 'Concrete Calculator', 'https://randomlytools.in/concrete-calculator/']
+  ['33', 'Concrete Calculator', 'https://randomlytools.in/concrete-calculator/'],
+  ['34', 'JSON Formatter', 'https://randomlytools.in/json-formatter/']
 ];
 for (const [position, name, url] of jsonTools) {
   if (!html.includes(`"url":"${url}"`)) {
