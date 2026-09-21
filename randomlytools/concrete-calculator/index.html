@@ -72,8 +72,8 @@
 <h2>How to Use the Concrete Calculator</h2>
 <ol>
 <li><strong>Choose the project type:</strong> Select slab/patio, footing, wall, column or post hole.</li>
-<li><strong>Enter the dimensions:</strong> Use the fields shown for the selected shape.</li>
-<li><strong>Choose units:</strong> Use feet/inches, meters or centimeters.</li>
+<li><strong>Enter the dimensions:</strong> Use the fields shown for the selected shape. For feet, enter thickness in feet (4 inches is about 0.3333 feet).</li>
+<li><strong>Choose units:</strong> Use feet, meters or centimeters.</li>
 <li><strong>Select waste:</strong> Add 5%, 10% or another available allowance when planning an order.</li>
 <li><strong>Calculate:</strong> Review cubic feet, cubic yards, cubic meters and approximate bag quantities.</li>
 </ol>
@@ -86,7 +86,7 @@
 <p>To convert cubic feet to cubic meters, multiply by approximately 0.0283168. Keeping units consistent is important: if thickness is entered in inches while length and width are in feet, convert the thickness to feet first.</p>
 
 <h2>Concrete Calculator for Slabs and Patios</h2>
-<p>For a rectangular slab, patio, walkway or pad, enter length, width and thickness. For example, a 10 ft × 10 ft slab that is 4 inches thick has a base volume of about 33.33 cubic feet, or 1.23 cubic yards, before adding waste.</p>
+<p>For a rectangular slab, patio, walkway or pad, enter length, width and thickness. For example, a 10 ft × 10 ft slab that is 4 inches thick (0.3333 ft) has a base volume of about 33.33 cubic feet, or 1.23 cubic yards, before adding waste.</p>
 <p>Slab thickness depends on the project and site requirements. This calculator only estimates volume; it does not determine the structural thickness, reinforcement or base preparation required for a particular construction project.</p>
 
 <h2>Concrete Calculator for Footings</h2>
@@ -167,7 +167,7 @@
 (()=> {
 const $=id=>document.getElementById(id);
 const configs={
-slab:{labels:['Length','Width','Thickness'],defaults:[10,10,4],types:['length','width','thickness']},
+slab:{labels:['Length','Width','Thickness'],defaults:[10,10,0.333333],types:['length','width','thickness']},
 footing:{labels:['Length','Width','Depth'],defaults:[10,2,1],types:['length','width','thickness']},
 wall:{labels:['Length','Height','Thickness'],defaults:[20,8,0.5],types:['length','width','thickness']},
 column:{labels:['Diameter','Depth / Height'],defaults:[1,8],types:['diameter','depth']},
