@@ -33,8 +33,7 @@
           {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://randomlytools.in/"},
           {"@type": "ListItem", "position": 2, "name": "Random Name Generator", "item": "https://randomlytools.in/random-name-generator/"}
         ]
-      },
-
+      }
     ]
   }
   </script>
@@ -68,8 +67,8 @@
           <div class="form-group"><label for="country-select">Country / Region</label><select id="country-select" class="form-select">
             <option value="all" selected>International / Mixed</option><option value="in">India</option><option value="us">United States</option><option value="uk">United Kingdom</option><option value="ca">Canada</option><option value="au">Australia</option><option value="jp">Japan</option><option value="de">Germany</option><option value="fr">France</option><option value="it">Italy</option><option value="es">Spain</option><option value="br">Brazil</option><option value="mx">Mexico</option><option value="kr">South Korea</option>
           </select></div>
-          <div class="form-group"><label>Gender</label><div class="radio-pill-group"><label class="radio-pill"><input type="radio" name="gender" value="any" checked><span>Any</span></label><label class="radio-pill"><input type="radio" name="gender" value="male"><span>Male</span></label><label class="radio-pill"><input type="radio" name="gender" value="female"><span>Female</span></label></div></div>
-          <div class="form-group"><label>Name Format</label><div class="radio-pill-group"><label class="radio-pill"><input type="radio" name="format" value="full" checked><span>Full Name</span></label><label class="radio-pill"><input type="radio" name="format" value="first"><span>First Name Only</span></label></div></div>
+          <div id="gender-group" class="form-group"><label>Gender</label><div class="radio-pill-group"><label class="radio-pill"><input type="radio" name="gender" value="any" checked><span>Any</span></label><label class="radio-pill"><input type="radio" name="gender" value="male"><span>Male</span></label><label class="radio-pill"><input type="radio" name="gender" value="female"><span>Female</span></label></div></div>
+          <div id="format-group" class="form-group"><label>Name Format</label><div class="radio-pill-group"><label class="radio-pill"><input type="radio" name="format" value="full" checked><span>Full Name</span></label><label class="radio-pill"><input type="radio" name="format" value="first"><span>First Name Only</span></label></div></div>
           <div class="form-group"><label for="count-select">Number of Names</label><select id="count-select" class="form-select"><option value="1">1 Name</option><option value="5" selected>5 Names</option><option value="10">10 Names</option><option value="20">20 Names</option><option value="50">50 Names</option></select></div>
         </div>
         <div id="list-panel" style="display:none;margin-top:1rem;"><label for="custom-list"><strong>Paste your list</strong></label><textarea id="custom-list" class="form-input" rows="7" placeholder="Enter one name per line"></textarea><p class="form-help" style="margin-top:.5rem;">The picker chooses without repeating an item in the same draw.</p></div>
