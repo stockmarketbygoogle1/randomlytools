@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON Formatter: Format, Validate & Beautify JSON Online</title>
+<meta name="description" content="Free JSON formatter and beautifier to format, validate and minify JSON online. Get readable syntax highlighting, error details, tree view and copy or download options.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://randomlytools.in/json-formatter/">
+<meta property="og:title" content="JSON Formatter: Format, Validate & Beautify JSON Online">
+<meta property="og:description" content="Format, validate, beautify and minify JSON in your browser. Fast, free and designed for developers.">
+<meta property="og:url" content="https://randomlytools.in/json-formatter/">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","name":"JSON Formatter","url":"https://randomlytools.in/json-formatter/","applicationCategory":"DeveloperApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free browser-based JSON formatter, validator, beautifier and minifier."},
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"RandomlyTools","item":"https://randomlytools.in/"},
+{"@type":"ListItem","position":2,"name":"JSON Formatter","item":"https://randomlytools.in/json-formatter/"}
+]}
+]}
+</script>
+<style>
+.jf-shell{max-width:1100px;margin:0 auto}.jf-editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.jf-panel{border:1px solid var(--border-color,#ddd);border-radius:14px;overflow:hidden;background:var(--card-bg,#fff);box-shadow:var(--shadow-sm)}.jf-toolbar{display:flex;gap:.5rem;flex-wrap:wrap;padding:.75rem;border-bottom:1px solid var(--border-color,#ddd)}.jf-toolbar button,.jf-toolbar select{border:1px solid var(--border-color,#ddd);background:var(--card-bg,#fff);border-radius:8px;padding:.55rem .8rem;font:inherit;cursor:pointer}.jf-toolbar button.primary{background:#111827;color:#fff;border-color:#111827}.jf-input{width:100%;min-height:430px;resize:vertical;border:0;padding:1rem;font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#0f172a;color:#e5e7eb;outline:0}.jf-output{min-height:430px;margin:0;padding:1rem;overflow:auto;white-space:pre-wrap;word-break:break-word;font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#0b1220;color:#dbeafe}.jf-status{padding:.7rem .9rem;border-top:1px solid var(--border-color,#ddd);font-size:.9rem;color:var(--text-muted)}.jf-status.error{color:#b91c1c}.jf-options{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;padding:.75rem;border-bottom:1px solid var(--border-color,#ddd);font-size:.9rem}.jf-tree{margin-top:1rem;border:1px solid var(--border-color,#ddd);border-radius:14px;padding:1rem}.jf-tree pre{overflow:auto;font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.jf-content{max-width:900px;margin:3rem auto}.jf-content h2{margin-top:2rem}.jf-content h3{margin-top:1.4rem}.jf-note{padding:1rem;border-left:4px solid currentColor;background:rgba(127,127,127,.08);border-radius:6px}.jf-faq details{border-bottom:1px solid var(--border-color,#ddd);padding:.9rem 0}.jf-faq summary{font-weight:700;cursor:pointer}.jf-code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.jf-actions{display:flex;gap:.5rem;flex-wrap:wrap}.jf-actions button{border:1px solid var(--border-color,#ddd);background:var(--card-bg,#fff);border-radius:8px;padding:.55rem .8rem;cursor:pointer}@media(max-width:800px){.jf-editor-grid{grid-template-columns:1fr}.jf-input,.jf-output{min-height:300px}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><button class="mobile-menu-btn" aria-label="Toggle navigation menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><nav class="nav-links"><a href="/" class="active">All Tools</a><a href="/random-name-generator/">Names</a><a href="/random-number-picker/">Numbers</a><a href="/random-discord-name-generator/">Usernames</a><a href="/random-company-brand-name-generator/">Brands</a><a href="/articles/">Articles</a><a href="/about/">About</a></nav></div></header>
+
+<main class="container page-intro">
+<div class="tool-header" style="text-align:center;max-width:850px;margin:0 auto 1.75rem">
+<h1>JSON Formatter: Format, Validate &amp; Beautify JSON Online</h1>
+<p style="font-size:1.08rem;color:var(--text-muted)">Format messy or minified JSON, validate syntax, beautify output and minify JSON instantly in your browser. No signup and no server upload for the JSON you process.</p>
+</div>
+
+<div class="jf-shell">
+<section class="jf-panel" aria-label="JSON formatter">
+<div class="jf-toolbar">
+<button class="primary" id="formatBtn" type="button">Format JSON</button>
+<button id="validateBtn" type="button">Validate</button>
+<button id="minifyBtn" type="button">Minify</button>
+<button id="sampleBtn" type="button">Sample</button>
+<button id="clearBtn" type="button">Clear</button>
+</div>
+<div class="jf-options">
+<label>Indent
+<select id="indent"><option value="2">2 spaces</option><option value="4">4 spaces</option><option value="tab">Tabs</option></select>
+</label>
+<label><input type="checkbox" id="sortKeys"> Sort keys</label>
+</div>
+<div class="jf-editor-grid" style="padding:0">
+<div>
+<textarea id="jsonInput" class="jf-input" spellcheck="false" aria-label="JSON input" placeholder='Paste JSON here, for example: {"name":"RandomlyTools","free":true}'></textarea>
+<div class="jf-status" id="inputStatus">Ready</div>
+</div>
+<div>
+<pre id="jsonOutput" class="jf-output" aria-live="polite">Formatted JSON will appear here.</pre>
+<div class="jf-status" id="outputStatus">Output</div>
+</div>
+</div>
+<div class="jf-toolbar" style="border-top:1px solid var(--border-color,#ddd);border-bottom:0">
+<button id="copyBtn" type="button">Copy Output</button>
+<button id="downloadBtn" type="button">Download JSON</button>
+</div>
+</section>
+
+<div class="jf-tree">
+<h2 style="margin-top:0">JSON Tree Viewer</h2>
+<p style="color:var(--text-muted)">After valid JSON is formatted, expand and collapse nested objects and arrays here.</p>
+<div id="treeOutput"><p style="color:var(--text-muted)">Format valid JSON to view its structure.</p></div>
+</div>
+</div>
+
+<article class="jf-content">
+<h2>JSON Formatter and Beautifier</h2>
+<p>A JSON formatter turns compact, difficult-to-read or inconsistently spaced JSON into clean, structured text. This tool is useful when working with API responses, configuration files, test data, logs and other JSON documents on a desktop or laptop.</p>
+
+<h2>How to Format JSON Online</h2>
+<ol>
+<li>Paste your JSON into the input box.</li>
+<li>Choose 2 spaces, 4 spaces or tabs for indentation.</li>
+<li>Click <strong>Format JSON</strong> to beautify and validate it.</li>
+<li>Copy the formatted result or download it as a JSON file.</li>
+</ol>
+
+<h2>JSON Validator</h2>
+<p>The formatter uses the browser's JSON parser to check whether the input is valid JSON. If parsing fails, the error message includes the browser's reported position when available. This helps you find missing commas, brackets, quotes or other syntax problems.</p>
+
+<h2>JSON Minifier</h2>
+<p>Use <strong>Minify</strong> when you want compact JSON without unnecessary whitespace. Minified JSON can be useful for APIs, storage and payloads where readability is less important than compact output.</p>
+
+<h2>JSON Tree Viewer</h2>
+<p>Valid JSON can also be explored as a collapsible tree. Objects and arrays are shown as nested nodes so large responses are easier to inspect than a single block of raw text.</p>
+
+<h2>Sort JSON Keys</h2>
+<p>Turn on <strong>Sort keys</strong> before formatting if you want object keys sorted alphabetically at every level. This can make configuration files and JSON comparisons easier to inspect.</p>
+
+<h2>Is This JSON Formatter Private?</h2>
+<p class="jf-note">The formatting and validation in this page are performed in your browser. The tool does not need to upload the JSON content to a server to format it.</p>
+<p>Even with client-side tools, avoid pasting sensitive production credentials or secrets into any online page unless your own security requirements allow it.</p>
+
+<h2>JSON Formatter vs JSON Validator vs JSON Beautifier</h2>
+<ul>
+<li><strong>JSON formatter:</strong> makes JSON easier to read by applying consistent indentation.</li>
+<li><strong>JSON beautifier:</strong> another common name for pretty-printing or formatting JSON.</li>
+<li><strong>JSON validator:</strong> checks whether JSON follows the required syntax.</li>
+<li><strong>JSON minifier:</strong> removes unnecessary whitespace to create compact JSON.</li>
+<li><strong>JSON viewer:</strong> presents valid JSON in a more navigable structure, such as a tree.</li>
+</ul>
+
+<h2>Common JSON Formatting Problems</h2>
+<ul>
+<li>Missing or extra commas</li>
+<li>Unclosed braces or brackets</li>
+<li>Property names without double quotes</li>
+<li>Unescaped quotation marks inside strings</li>
+<li>Trailing commas</li>
+<li>Extra text before or after the JSON document</li>
+</ul>
+
+<h2>JSON Formatter Examples</h2>
+<p>For a small object such as <span class="jf-code">{"name":"Aayush","active":true}</span>, formatting simply adds readable indentation. For a large API response, the same process can turn a compact one-line payload into a structured document that is much easier to inspect.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="jf-faq">
+<details><summary>How do I format JSON?</summary><p>Paste your JSON into the input box and click Format JSON. The result is pretty-printed with your selected indentation.</p></details>
+<details><summary>How do I beautify JSON online?</summary><p>Paste minified or messy JSON into the formatter and choose Format JSON. Beautify and format are commonly used to describe the same pretty-printing process.</p></details>
+<details><summary>How do I validate JSON?</summary><p>Paste the JSON and click Validate or Format JSON. The browser parser checks the syntax and reports an error when the input is invalid.</p></details>
+<details><summary>How do I minify JSON?</summary><p>Paste valid JSON and click Minify. The output removes unnecessary whitespace while keeping the JSON data intact.</p></details>
+<details><summary>Can I view JSON as a tree?</summary><p>Yes. After valid JSON is formatted, the tool shows a collapsible tree representation of objects and arrays.</p></details>
+<details><summary>Can I sort JSON keys?</summary><p>Yes. Enable Sort keys and format valid JSON. Object keys are sorted recursively before the result is displayed.</p></details>
+<details><summary>Is my JSON uploaded?</summary><p>The formatter processes the JSON in your browser and does not need to upload the JSON content to a server.</p></details>
+<details><summary>Can I download formatted JSON?</summary><p>Yes. After formatting, use Download JSON to save the output as a .json file.</p></details>
+</div>
+
+<h2>Related Developer Tools</h2>
+<p>More developer-focused tools can be added to the RandomlyTools toolkit as the developer-tools cluster grows.</p>
+<p><a href="/">Explore all RandomlyTools</a></p>
+</article>
+</main>
+
+<footer class="site-footer"><div class="container"><p>© RandomlyTools. Free online tools and calculators.</p><p><a href="/privacy-policy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/disclaimer/">Disclaimer</a> · <a href="/contact/">Contact</a></p></div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const sample={"name":"RandomlyTools","type":"developer-tool","features":["format","validate","minify"],"free":true,"nested":{"version":1,"status":"ready"}};
+function sortDeep(value){if(Array.isArray(value))return value.map(sortDeep);if(value&&typeof value==="object"){return Object.keys(value).sort((a,b)=>a.localeCompare(b)).reduce((o,k)=>(o[k]=sortDeep(value[k]),o),{});}return value;}
+function spaces(){return $('indent').value==='tab'?'\t':Number($('indent').value);}
+function parse(){const raw=$('jsonInput').value.trim();if(!raw)throw new Error('Please paste JSON first.');return JSON.parse(raw);}
+function setStatus(msg,error=false){$('inputStatus').textContent=msg;$('inputStatus').classList.toggle('error',error);}
+function renderTree(value,parent,depth=0){const wrap=document.createElement('div');wrap.style.marginLeft=depth?'.9rem':'0';if(value&&typeof value==='object'){const keys=Array.isArray(value)?value.map((_,i)=>i):Object.keys(value);keys.forEach(key=>{const details=document.createElement('details');if(depth<1)details.open=true;const summary=document.createElement('summary');summary.textContent=Array.isArray(value)?'['+key+']':key;details.appendChild(summary);renderTree(value[key],details,depth+1);wrap.appendChild(details);});}else{const pre=document.createElement('pre');pre.textContent=JSON.stringify(value);pre.style.margin='.35rem 0';wrap.appendChild(pre);}parent.appendChild(wrap);}
+function formatJSON(){try{let data=parse();if($('sortKeys').checked)data=sortDeep(data);const out=JSON.stringify(data,null,spaces());$('jsonOutput').textContent=out;$('outputStatus').textContent='Valid JSON · '+out.length.toLocaleString()+' characters';$('treeOutput').innerHTML='';renderTree(data,$('treeOutput'));setStatus('Valid JSON');return out;}catch(e){$('outputStatus').textContent='Invalid JSON';setStatus(e.message,true);$('jsonOutput').textContent='';$('treeOutput').innerHTML='<p style="color:#b91c1c">The JSON could not be parsed.</p>';return null;}}
+$('formatBtn').onclick=formatJSON;
+$('validateBtn').onclick=()=>{try{parse();setStatus('Valid JSON');$('outputStatus').textContent='Validation passed';}catch(e){setStatus(e.message,true);$('outputStatus').textContent='Validation failed';}};
+$('minifyBtn').onclick=()=>{try{let data=parse();if($('sortKeys').checked)data=sortDeep(data);const out=JSON.stringify(data);$('jsonOutput').textContent=out;$('outputStatus').textContent='Minified JSON · '+out.length.toLocaleString()+' characters';setStatus('Valid JSON');}catch(e){setStatus(e.message,true);}};
+$('sampleBtn').onclick=()=>{$('jsonInput').value=JSON.stringify(sample);formatJSON();};
+$('clearBtn').onclick=()=>{$('jsonInput').value='';$('jsonOutput').textContent='Formatted JSON will appear here.';$('outputStatus').textContent='Output';$('treeOutput').innerHTML='<p style="color:var(--text-muted)">Format valid JSON to view its structure.</p>';setStatus('Ready');};
+$('copyBtn').onclick=async()=>{const text=$('jsonOutput').textContent;if(!text||text==='Formatted JSON will appear here.')return;await navigator.clipboard.writeText(text);$('outputStatus').textContent='Copied to clipboard';};
+$('downloadBtn').onclick=()=>{const text=$('jsonOutput').textContent;if(!text||text==='Formatted JSON will appear here.')return;const blob=new Blob([text],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='formatted.json';a.click();URL.revokeObjectURL(url);};
+$('jsonInput').addEventListener('input',()=>{const n=$('jsonInput').value.length;$('inputStatus').textContent=n.toLocaleString()+' characters';});
+</script>
+</body>
+</html>
