@@ -21,7 +21,7 @@
 - Random Japanese Name Generator: https://randomlytools.in/random-japanese-name-generator/ — Generate Japanese name ideas.
 - Random Coffee Shop Name Generator: https://randomlytools.in/random-coffee-shop-name-generator/ — Generate coffee shop name ideas.
 - Random Team Generator: https://randomlytools.in/random-team-generator/ — Split a list of names into random teams.
-- Age Calculator: https://randomlytools.in/age-calculator/ — Calculate exact age in years, months and days from a date of birth, age on a specific date, total days and next birthday.\n- Attendance Calculator: https://randomlytools.in/attendance-calculator/ — Calculate attendance percentage, check a 75% attendance target, and determine classes that can be missed or need to be attended.
+- Age Calculator: https://randomlytools.in/age-calculator/ — Calculate exact age in years, months and days from a date of birth, age on a specific date, total days and next birthday.\n- Concrete Calculator: https://randomlytools.in/concrete-calculator/ — Calculate concrete volume for slabs, footings, walls, columns and post holes in cubic feet, cubic yards and cubic meters, with waste-adjusted and approximate bag estimates.\n- Attendance Calculator: https://randomlytools.in/attendance-calculator/ — Calculate attendance percentage, check a 75% attendance target, and determine classes that can be missed or need to be attended.
 - GTA 6 Download Time Calculator: https://randomlytools.in/gta-6-download-time-calculator/ — Estimate Grand Theft Auto VI download time from an editable game-size assumption, internet speed and connection efficiency.
 
 ## Privacy
