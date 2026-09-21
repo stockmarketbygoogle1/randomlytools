@@ -11,6 +11,7 @@
 <meta property="og:description" content="Format, validate, beautify and minify JSON in your browser. Fast, free and designed for developers.">
 <meta property="og:url" content="https://randomlytools.in/json-formatter/">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#111827">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebApplication","name":"JSON Formatter","url":"https://randomlytools.in/json-formatter/","applicationCategory":"DeveloperApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free browser-based JSON formatter, validator, beautifier and minifier."},
@@ -20,19 +21,33 @@
 ]}
 ]}
 </script>
+<link rel="stylesheet" href="/assets/css/style.css">
 <style>
 .jf-shell{max-width:1100px;margin:0 auto}.jf-editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.jf-panel{border:1px solid var(--border-color,#ddd);border-radius:14px;overflow:hidden;background:var(--card-bg,#fff);box-shadow:var(--shadow-sm)}.jf-toolbar{display:flex;gap:.5rem;flex-wrap:wrap;padding:.75rem;border-bottom:1px solid var(--border-color,#ddd)}.jf-toolbar button,.jf-toolbar select{border:1px solid var(--border-color,#ddd);background:var(--card-bg,#fff);border-radius:8px;padding:.55rem .8rem;font:inherit;cursor:pointer}.jf-toolbar button.primary{background:#111827;color:#fff;border-color:#111827}.jf-input{width:100%;min-height:430px;resize:vertical;border:0;padding:1rem;font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#0f172a;color:#e5e7eb;outline:0}.jf-output{min-height:430px;margin:0;padding:1rem;overflow:auto;white-space:pre-wrap;word-break:break-word;font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#0b1220;color:#dbeafe}.jf-status{padding:.7rem .9rem;border-top:1px solid var(--border-color,#ddd);font-size:.9rem;color:var(--text-muted)}.jf-status.error{color:#b91c1c}.jf-options{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;padding:.75rem;border-bottom:1px solid var(--border-color,#ddd);font-size:.9rem}.jf-tree{margin-top:1rem;border:1px solid var(--border-color,#ddd);border-radius:14px;padding:1rem}.jf-tree pre{overflow:auto;font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.jf-content{max-width:900px;margin:3rem auto}.jf-content h2{margin-top:2rem}.jf-content h3{margin-top:1.4rem}.jf-note{padding:1rem;border-left:4px solid currentColor;background:rgba(127,127,127,.08);border-radius:6px}.jf-faq details{border-bottom:1px solid var(--border-color,#ddd);padding:.9rem 0}.jf-faq summary{font-weight:700;cursor:pointer}.jf-code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.jf-actions{display:flex;gap:.5rem;flex-wrap:wrap}.jf-actions button{border:1px solid var(--border-color,#ddd);background:var(--card-bg,#fff);border-radius:8px;padding:.55rem .8rem;cursor:pointer}@media(max-width:800px){.jf-editor-grid{grid-template-columns:1fr}.jf-input,.jf-output{min-height:300px}}
 </style>
 </head>
 <body>
-<header class="site-header"><div class="container"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><button class="mobile-menu-btn" aria-label="Toggle navigation menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><nav class="nav-links"><a href="/" class="active">All Tools</a><a href="/random-name-generator/">Names</a><a href="/random-number-picker/">Numbers</a><a href="/random-discord-name-generator/">Usernames</a><a href="/random-company-brand-name-generator/">Brands</a><a href="/articles/">Articles</a><a href="/about/">About</a></nav></div></header>
+<header class="site-header">
+<div class="container">
+<a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a>
+<button class="mobile-menu-btn" aria-label="Toggle navigation menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+<nav class="nav-links">
+<a href="/">All Tools</a><a href="/random-name-generator/">Names</a><a href="/random-number-picker/">Numbers</a><a href="/random-discord-name-generator/">Usernames</a><a href="/random-company-brand-name-generator/">Brands</a><a href="/articles/">Articles</a><a href="/about/">About</a>
+</nav>
+</div>
+</header>
 
 <main class="container page-intro">
+<div class="breadcrumbs"><a href="/">Home</a> <span>/</span> <span>JSON Formatter</span></div>
 <div class="tool-header" style="text-align:center;max-width:850px;margin:0 auto 1.75rem">
 <h1>JSON Formatter: Format, Validate &amp; Beautify JSON Online</h1>
 <p style="font-size:1.08rem;color:var(--text-muted)">Format messy or minified JSON, validate syntax, beautify output and minify JSON instantly in your browser. No signup and no server upload for the JSON you process.</p>
 </div>
 
+<div class="ad-slot-container"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-box">Ad Space Available</div></div>
+
+<section class="tool-workspace" aria-labelledby="tool-heading">
+<h2 id="tool-heading" class="sr-only" style="display:none">JSON Formatter Controls</h2>
 <div class="jf-shell">
 <section class="jf-panel" aria-label="JSON formatter">
 <div class="jf-toolbar">
@@ -70,8 +85,11 @@
 <div id="treeOutput"><p style="color:var(--text-muted)">Format valid JSON to view its structure.</p></div>
 </div>
 </div>
+</section>
 
-<article class="jf-content">
+<div class="ad-slot-container"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-box">Ad Space Available</div></div>
+
+<section class="content-section"><article class="article-content jf-content">
 <h2>JSON Formatter and Beautifier</h2>
 <p>A JSON formatter turns compact, difficult-to-read or inconsistently spaced JSON into clean, structured text. This tool is useful when working with API responses, configuration files, test data, logs and other JSON documents on a desktop or laptop.</p>
 
@@ -136,11 +154,23 @@
 <h2>Related Developer Tools</h2>
 <p>More developer-focused tools can be added to the RandomlyTools toolkit as the developer-tools cluster grows.</p>
 <p><a href="/">Explore all RandomlyTools</a></p>
-</article>
+</article></section>
 </main>
 
-<footer class="site-footer"><div class="container"><p>© RandomlyTools. Free online tools and calculators.</p><p><a href="/privacy-policy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/disclaimer/">Disclaimer</a> · <a href="/contact/">Contact</a></p></div></footer>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><p>Simple Random Tools for Everyday Use. Fast, free, and privacy-focused client-side generators.</p></div>
+<div class="footer-column"><h4>Popular Tools</h4><ul><li><a href="/random-name-generator/">Random Name Generator</a></li><li><a href="/random-number-picker/">Random Number Picker</a></li><li><a href="/random-dog-name-generator/">Dog Name Generator</a></li><li><a href="/random-discord-name-generator/">Discord Name Generator</a></li><li><a href="/random-company-brand-name-generator/">Brand Name Generator</a></li></ul></div>
+<div class="footer-column"><h4>More Tools</h4><ul><li><a href="/random-shop-name-generator/">Shop Name Generator</a></li><li><a href="/random-restaurant-name-generator/">Restaurant Name Generator</a></li><li><a href="/random-japanese-name-generator/">Japanese Name Generator</a></li><li><a href="/random-instagram-username-generator/">Instagram Generator</a></li><li><a href="/random-coffee-shop-name-generator/">Coffee Shop Names</a></li></ul></div>
+<div class="footer-column"><h4>Trust &amp; Legal</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Service</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div>
+</div>
+<div class="footer-bottom"><p>&copy; 2026 RandomlyTools. All rights reserved. Free utilities for personal and commercial inspiration.</p><p>Built for speed and user privacy.</p></div>
+</div>
+</footer>
 
+<script src="/assets/js/core/clipboard.js"></script>
+<script src="/assets/js/core/ui.js"></script>
 <script>
 const $=id=>document.getElementById(id);
 const sample={"name":"RandomlyTools","type":"developer-tool","features":["format","validate","minify"],"free":true,"nested":{"version":1,"status":"ready"}};
@@ -155,7 +185,7 @@ $('validateBtn').onclick=()=>{try{parse();setStatus('Valid JSON');$('outputStatu
 $('minifyBtn').onclick=()=>{try{let data=parse();if($('sortKeys').checked)data=sortDeep(data);const out=JSON.stringify(data);$('jsonOutput').textContent=out;$('outputStatus').textContent='Minified JSON · '+out.length.toLocaleString()+' characters';setStatus('Valid JSON');}catch(e){setStatus(e.message,true);}};
 $('sampleBtn').onclick=()=>{$('jsonInput').value=JSON.stringify(sample);formatJSON();};
 $('clearBtn').onclick=()=>{$('jsonInput').value='';$('jsonOutput').textContent='Formatted JSON will appear here.';$('outputStatus').textContent='Output';$('treeOutput').innerHTML='<p style="color:var(--text-muted)">Format valid JSON to view its structure.</p>';setStatus('Ready');};
-$('copyBtn').onclick=async()=>{const text=$('jsonOutput').textContent;if(!text||text==='Formatted JSON will appear here.')return;await navigator.clipboard.writeText(text);$('outputStatus').textContent='Copied to clipboard';};
+$('copyBtn').onclick=async()=>{const text=$('jsonOutput').textContent;if(!text||text==='Formatted JSON will appear here.')return;if(window.Clipboard&&typeof Clipboard.copyText==='function'){Clipboard.copyText(text,'Copied formatted JSON!');}else{await navigator.clipboard.writeText(text);$('outputStatus').textContent='Copied to clipboard';}};
 $('downloadBtn').onclick=()=>{const text=$('jsonOutput').textContent;if(!text||text==='Formatted JSON will appear here.')return;const blob=new Blob([text],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='formatted.json';a.click();URL.revokeObjectURL(url);};
 $('jsonInput').addEventListener('input',()=>{const n=$('jsonInput').value.length;$('inputStatus').textContent=n.toLocaleString()+' characters';});
 </script>
