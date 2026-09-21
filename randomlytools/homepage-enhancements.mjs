@@ -94,7 +94,7 @@ if (!html.includes('data-category="websites">Website &amp; Creator</button>')) {
   const cricketButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="cricket"[^>]*>Cricket Tools<\/button>)/i;
   if (cricketButton.test(html)) html = html.replace(cricketButton, '$1<button type="button" class="preset-chip category-filter-btn" data-category="websites">Website &amp; Creator</button>');
 }
-if (!html.includes('data-category="home-diy">Home &amp; DIY</button>')) {
+if (!html.includes('data-category="home-diy">Home &amp; DIY</button><button type="button" class="preset-chip category-filter-btn" data-category="developer">Developer Tools</button>')) {
   const websiteButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="websites"[^>]*>Website &amp; Creator<\/button>)/i;
   if (websiteButton.test(html)) html = html.replace(websiteButton, '$1<button type="button" class="preset-chip category-filter-btn" data-category="home-diy">Home &amp; DIY</button>');
 }
