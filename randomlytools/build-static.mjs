@@ -176,5 +176,32 @@ for (const [slug, addition] of Object.entries(cricketContent)) {
   fs.writeFileSync(pagePath, updated, 'utf8');
 }
 
+
+// Add Monetag Multitag to every generated HTML page so the ad format is available site-wide.
+const monetagTag = '<script src="https://quge5.com/88/tag.min.js" data-zone="284179" async data-cfasync="false"></script>';
+for (const file of fs.readdirSync(output, { withFileTypes: true })) {
+  const walk = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const filePath = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(filePath);
+      else if (entry.isFile() && entry.name.endsWith('.html')) {
+        const html = fs.readFileSync(filePath, 'utf8');
+        if (html.includes('https://quge5.com/88/tag.min.js')) continue;
+        if (!html.includes('</head>')) throw new Error(`Could not find </head> in ${filePath}`);
+        fs.writeFileSync(filePath, html.replace('</head>', monetagTag + '\\n</head>'), 'utf8');
+      }
+    }
+  };
+  const rootPath = path.join(output, file.name);
+  if (file.isDirectory()) walk(rootPath);
+  else if (file.isFile() && file.name.endsWith('.html')) {
+    const html = fs.readFileSync(rootPath, 'utf8');
+    if (!html.includes('https://quge5.com/88/tag.min.js')) {
+      if (!html.includes('</head>')) throw new Error(`Could not find </head> in ${rootPath}`);
+      fs.writeFileSync(rootPath, html.replace('</head>', monetagTag + '\\n</head>'), 'utf8');
+    }
+  }
+}
+
 console.log(`Static site copied from ${root} to ${output}`);
 console.log('Expanded SEO content added to the four cricket calculator pages.');
