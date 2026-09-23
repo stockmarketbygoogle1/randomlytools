@@ -19,7 +19,20 @@
 ]}
 ]}
 </script>
-</head>
+<style>
+.cgle-card{max-width:800px;margin:0 auto;background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow-sm)}
+.cgle-step{padding:1rem;border:1px solid var(--border-color);border-radius:var(--radius-md);background:var(--bg-surface-subtle);margin-bottom:1rem}
+.cgle-step h3{margin-top:0}.cgle-step label{display:block;margin-bottom:.35rem}.cgle-step select,.cgle-step input{width:100%;padding:.7rem;border:1px solid var(--border-color);border-radius:var(--radius-sm);background:var(--bg-surface)}
+.cgle-result{margin-top:1rem;padding:1.1rem;border:1px solid var(--border-color);border-radius:var(--radius-md);background:var(--bg-surface-subtle)}
+.cgle-quick,.cgle-check-grid,.cgle-related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin:1.25rem 0 2rem}
+.cgle-quick-item,.cgle-info-card{padding:1rem;border:1px solid var(--border-color);border-radius:var(--radius-md);background:var(--bg-surface)}
+.cgle-quick-label{display:block;font-size:.78rem;color:var(--text-muted);margin-bottom:.3rem}.cgle-quick-value{font-weight:800}
+.cgle-callout{padding:1rem 1.1rem;border:1px solid var(--border-color);border-left:4px solid var(--primary);border-radius:var(--radius-md);background:var(--bg-surface-subtle);margin:1.25rem 0}
+.cgle-check-grid,.cgle-related-grid{grid-template-columns:repeat(2,1fr)}
+.cgle-info-card h3{margin-top:0}.cgle-info-card p{margin-bottom:.8rem}
+@media(max-width:900px){.cgle-quick{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.cgle-card{padding:1rem}.cgle-quick,.cgle-check-grid,.cgle-related-grid{grid-template-columns:1fr}}
+</style></head>
 <body>
 <header class="site-header"><div class="container"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><button class="mobile-menu-btn" aria-label="Toggle navigation menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><nav class="nav-links"><a href="/">All Tools</a><a href="/student-tools/" class="active">Student Tools</a><a href="/random-name-generator/">Names</a><a href="/random-number-picker/">Numbers</a><a href="/random-discord-name-generator/">Usernames</a><a href="/random-company-brand-name-generator/">Brands</a><a href="/articles/">Articles</a><a href="/about/">About</a></nav></div></header>
 <main class="container page-intro">
@@ -39,18 +52,93 @@
 </div>
 </section>
 <article class="article-content" style="max-width:900px;margin:2rem auto">
-<h2>SSC CGL Eligibility 2026</h2><p>SSC CGL eligibility combines age, graduation and certain post-specific qualifications. This calculator provides a basic screening result and separates the special conditions for Junior Statistical Officer (JSO) and Statistical Investigator Grade-II.</p>
-<h2>SSC CGL age limit 2026</h2><table><thead><tr><th>Standard age band</th><th>DOB range</th></tr></thead><tbody><tr><td>18–27</td><td>2 Aug 1999 – 1 Aug 2008</td></tr><tr><td>20–30</td><td>2 Aug 1996 – 1 Aug 2006</td></tr><tr><td>18–30</td><td>2 Aug 1996 – 1 Aug 2008</td></tr><tr><td>18–32</td><td>2 Aug 1994 – 1 Aug 2008</td></tr></tbody></table>
-<h2>Educational qualification</h2><p>For all other posts, the SSC CGL 2026 notice requires a Bachelor's Degree from a recognized University or equivalent.</p>
-<h3>Junior Statistical Officer (JSO)</h3><p>JSO requires a Bachelor's Degree in any subject with at least 60% marks in Mathematics at 12th standard level, <strong>or</strong> a Bachelor's Degree in any subject with Statistics as one of the subjects at degree level.</p>
-<h3>Statistical Investigator Grade-II</h3><p>The 2026 notice specifies bachelor's degree fields including Statistics, Mathematics, Economics, Demography, Population Studies, Operation Research, Information Technology, Computer Science, Computer Engineering, Computer Technology, Computer Application, Data Science and Artificial Intelligence.</p>
-<h2>Final-year graduation candidates</h2><p>Candidates who have appeared in their final year can apply, but the essential qualification must be possessed by <strong>1 August 2026</strong>.</p>
-<h2>How to use this calculator</h2><ol><li>Enter your DOB.</li><li>Select the standard age band for the post.</li><li>Choose the qualification category.</li><li>Confirm graduation and any special subject condition.</li><li>Read the result and verify the full official notification.</li></ol>
-<h2>Important limitations</h2><p>The tool does not automatically apply category-specific age relaxation, nationality conditions, post-specific physical/medical requirements or every condition in the recruitment notice.</p>
-<h2>Related SSC tools</h2><p><a href="/student-tools/ssc/ssc-cgl-age-calculator-2026/">SSC CGL Age Calculator</a> · <a href="/student-tools/ssc/ssc-chsl-eligibility-calculator-2026/">SSC CHSL Eligibility Calculator</a> · <a href="/student-tools/ssc/">All SSC Tools</a></p>
+<h2>SSC CGL Eligibility 2026</h2>
+<p>The <strong>SSC CGL Eligibility Calculator 2026</strong> combines the main age and educational checks covered by this tool. It is a screening aid; the final requirement depends on the exact post and the latest SSC notification.</p>
+
+<div class="cgle-quick">
+<div class="cgle-quick-item"><span class="cgle-quick-label">Basic qualification</span><span class="cgle-quick-value">Bachelor's Degree</span></div>
+<div class="cgle-quick-item"><span class="cgle-quick-label">Age reckoning</span><span class="cgle-quick-value">1 August 2026</span></div>
+<div class="cgle-quick-item"><span class="cgle-quick-label">Special checks</span><span class="cgle-quick-value">JSO + Statistical Investigator</span></div>
+<div class="cgle-quick-item"><span class="cgle-quick-label">Final-year</span><span class="cgle-quick-value">Qualification by 1 Aug 2026</span></div>
+</div>
+
+<h2>SSC CGL Eligibility at a Glance</h2>
+<table><thead><tr><th>Eligibility factor</th><th>Requirement</th></tr></thead><tbody>
+<tr><td>Most CGL posts</td><td>Bachelor's Degree from a recognized University or equivalent</td></tr>
+<tr><td>Junior Statistical Officer</td><td>Bachelor's Degree + specified Mathematics/Statistics condition</td></tr>
+<tr><td>Statistical Investigator Grade-II</td><td>Bachelor's degree in a specified field</td></tr>
+<tr><td>Age</td><td>Post-wise age band</td></tr>
+<tr><td>Final-year graduation</td><td>Essential qualification must be possessed by 1 August 2026</td></tr>
+</tbody></table>
+
+<h2>SSC CGL Age Limit 2026</h2>
+<table><thead><tr><th>Age band</th><th>Minimum</th><th>Maximum</th><th>DOB range</th></tr></thead><tbody>
+<tr><td>18–27</td><td>18</td><td>27</td><td>02 Aug 1999 – 01 Aug 2008</td></tr>
+<tr><td>20–30</td><td>20</td><td>30</td><td>02 Aug 1996 – 01 Aug 2006</td></tr>
+<tr><td>18–30</td><td>18</td><td>30</td><td>02 Aug 1996 – 01 Aug 2008</td></tr>
+<tr><td>18–32</td><td>18</td><td>32</td><td>02 Aug 1994 – 01 Aug 2008</td></tr>
+</tbody></table>
+<p>The correct age band depends on the post. This calculator checks the standard band selected by the user and does not automatically apply category-specific relaxation.</p>
+
+<h2>Educational Qualification</h2>
+<table><thead><tr><th>Post / group</th><th>Required qualification</th></tr></thead><tbody>
+<tr><td>All other CGL posts</td><td>Bachelor's Degree from a recognized University or equivalent</td></tr>
+<tr><td>Junior Statistical Officer</td><td>Bachelor's Degree with either 60% marks in Mathematics at 12th level or Statistics as a subject at degree level</td></tr>
+<tr><td>Statistical Investigator Grade-II</td><td>Bachelor's degree in Statistics, Mathematics, Economics, Demography, Population Studies, Operation Research, Information Technology, Computer Science, Computer Engineering, Computer Technology, Computer Application, Data Science or Artificial Intelligence</td></tr>
+</tbody></table>
+
+<h2>JSO Qualification: What You Need</h2>
+<table><thead><tr><th>Route</th><th>Condition</th></tr></thead><tbody>
+<tr><td>Mathematics route</td><td>Bachelor's Degree in any subject + at least 60% marks in Mathematics at 12th standard level</td></tr>
+<tr><td>Statistics route</td><td>Bachelor's Degree in any subject + Statistics as one of the subjects at degree level</td></tr>
+</tbody></table>
+
+<h2>Statistical Investigator Grade-II</h2>
+<p>The 2026 SSC notice specifies a bachelor's degree in one of the listed fields. Because this is a post-specific qualification, select the Statistical Investigator option in the calculator and confirm your degree against the official notice before applying.</p>
+<div class="cgle-callout"><strong>Important:</strong> A general Bachelor's Degree is not automatically sufficient for every special CGL post. Always match your degree and subjects with the exact post requirement.</div>
+
+<h2>Final-Year Graduation Candidates</h2>
+<p>Candidates who have appeared in their final year can apply, but they must possess the essential qualification by <strong>1 August 2026</strong>.</p>
+
+<h2>How to Use This Calculator</h2>
+<ol><li>Enter your DOB.</li><li>Select the qualification type.</li><li>If required, answer the JSO or Statistical Investigator condition.</li><li>Select the applicable age band and confirm graduation.</li><li>Click <strong>Check Eligibility</strong> and review the result.</li></ol>
+
+<h2>What This Calculator Checks</h2>
+<div class="cgle-check-grid">
+<div class="cgle-info-card"><h3>Age</h3><p>Compares your DOB with the selected standard age band using 1 August 2026.</p></div>
+<div class="cgle-info-card"><h3>Graduation</h3><p>Checks whether you marked the required Bachelor's Degree as completed.</p></div>
+<div class="cgle-info-card"><h3>JSO</h3><p>Checks the selected Mathematics/Statistics condition for JSO.</p></div>
+<div class="cgle-info-card"><h3>Statistical Investigator</h3><p>Checks whether you confirmed a qualifying degree/field for this post.</p></div>
+</div>
+
+<h2>What This Calculator Does Not Check</h2>
+<ul><li>Nationality and citizenship conditions</li><li>Every post-specific requirement</li><li>Category-specific age relaxation</li><li>Physical or medical standards where applicable</li><li>Changes introduced by a later or revised notification</li></ul>
+
+<h2>Frequently Asked Questions</h2>
+<h3>What is the basic educational qualification for SSC CGL 2026?</h3><p>For all other posts, a Bachelor's Degree from a recognized University or equivalent is required. Some posts have additional subject-specific qualifications. citeturn0search3</p>
+<h3>What qualification is required for JSO?</h3><p>JSO requires a Bachelor's Degree in any subject with at least 60% marks in Mathematics at 12th standard level, or a Bachelor's Degree in any subject with Statistics as one of the subjects at degree level. citeturn0search3</p>
+<h3>What qualification is required for Statistical Investigator Grade-II?</h3><p>The 2026 notice lists specified bachelor's degree fields including Statistics, Mathematics, Economics, Demography, Population Studies, Operation Research, Information Technology, Computer Science, Computer Engineering, Computer Technology, Computer Application, Data Science and Artificial Intelligence. citeturn0search3</p>
+<h3>Can final-year graduation students apply?</h3><p>Yes, candidates who have appeared in their final year can apply, but they must possess the essential qualification by 1 August 2026. citeturn0search3</p>
+
+<h2>Related SSC Tools</h2>
+<div class="cgle-related-grid">
+<div class="cgle-info-card"><h3>SSC CGL Age Calculator</h3><p>Check your exact age and standard DOB range.</p><a href="/student-tools/ssc/ssc-cgl-age-calculator-2026/" class="btn btn-secondary">Open Tool</a></div>
+<div class="cgle-info-card"><h3>SSC CHSL Eligibility</h3><p>Check basic CHSL age and qualification conditions.</p><a href="/student-tools/ssc/ssc-chsl-eligibility-calculator-2026/" class="btn btn-secondary">Open Tool</a></div>
+<div class="cgle-info-card"><h3>SSC CHSL Age Calculator</h3><p>Check CHSL age eligibility from your DOB.</p><a href="/student-tools/ssc/ssc-chsl-age-calculator-2026/" class="btn btn-secondary">Open Tool</a></div>
+<div class="cgle-info-card"><h3>All SSC Tools</h3><p>Explore all SSC calculators on RandomlyTools.</p><a href="/student-tools/ssc/" class="btn btn-secondary">View SSC Tools</a></div>
+</div>
+
+<h2>Important: Verify the Official SSC Notification</h2>
+<p>RandomlyTools is an independent website and is not affiliated with the Staff Selection Commission. Use this calculator as a quick screening aid, then confirm the exact post, qualification, age rule and applicable conditions in the latest official SSC notification. urlSSC official websitehttps://ssc.gov.in/</p>
 </article>
 </main>
-<footer class="site-footer"><div class="container"><p>© RandomlyTools. Free online tools and calculators.</p></div></footer>
+<footer class="site-footer">
+<div class="container"><div class="footer-grid">
+<div class="footer-brand"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><p>Free student calculators and practical online tools for exams, education and everyday use. Fast, simple and privacy-focused.</p></div>
+<div class="footer-column"><h4>SSC Tools</h4><ul><li><a href="/student-tools/ssc/">All SSC Tools</a></li><li><a href="/student-tools/ssc/ssc-chsl-age-calculator-2026/">SSC CHSL Age Calculator</a></li><li><a href="/student-tools/ssc/ssc-chsl-eligibility-calculator-2026/">SSC CHSL Eligibility Calculator</a></li><li><a href="/student-tools/ssc/ssc-cgl-age-calculator-2026/">SSC CGL Age Calculator</a></li><li><a href="/student-tools/ssc/ssc-cgl-eligibility-calculator-2026/">SSC CGL Eligibility Calculator</a></li><li><a href="/student-tools/ssc/ssc-gd-age-calculator-2026/">SSC GD Age Calculator</a></li></ul></div>
+<div class="footer-column"><h4>Student Tools</h4><ul><li><a href="/student-tools/">All Student Tools</a></li><li><a href="/percentage-calculator-for-marks/">Percentage Calculator for Marks</a></li><li><a href="/attendance-calculator/">Attendance Calculator</a></li><li><a href="/age-calculator/">Age Calculator</a></li><li><a href="/articles/">Student & Exam Articles</a></li></ul></div>
+<div class="footer-column"><h4>Website</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Service</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div>
+</div><div class="footer-bottom"><p>&copy; 2026 RandomlyTools. All rights reserved.</p><p>Built for speed and user privacy.</p></div></div></footer>
 <script>
 const post=document.getElementById('post'), jsoBox=document.getElementById('jsoBox'), siBox=document.getElementById('siBox');
 function toggle(){jsoBox.style.display=post.value==='jso'?'block':'none';siBox.style.display=post.value==='si'?'block':'none';}
