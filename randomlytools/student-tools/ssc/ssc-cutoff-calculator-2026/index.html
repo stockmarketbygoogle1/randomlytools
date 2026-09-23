@@ -428,14 +428,42 @@ const configs={
 };
 const exam=document.getElementById("exam"),year=document.getElementById("year"),stage=document.getElementById("stage"),category=document.getElementById("category"),scoreMode=document.getElementById("scoreMode"),answersFields=document.getElementById("answersFields"),scoreField=document.getElementById("scoreField"),cutoffMode=document.getElementById("cutoffMode"),manualField=document.getElementById("manualCutoffField"),referenceExtra=document.getElementById("referenceExtra"),stageHelp=document.getElementById("stageHelp"),result=document.getElementById("result");
 const historicalRefs={
- cgl:{2025:{list3:{label:"2025 Tier-I — Other Posts / List-3",data:{UR:136.40215,OBC:130.36617,EWS:127.41630,SC:115.02843,ST:106.38576,ESM:92.82040,OH:100.87394,HH:68.79973,VH:72.05369,PwD:40.17527}},jso:{label:"2025 Tier-I — JSO / List-1",data:{UR:153.46108,OBC:153.46108,EWS:151.58638,SC:137.29518,ST:136.40211,OH:125.16130,HH:104.04315,VH:134.15850,PwD:91.01367}}},
-     2024:{list3:{label:"2024 Tier-I — Other Posts / List-3",data:{UR:153.18981,OBC:146.26291,EWS:142.01963,SC:126.45554,ST:111.88930,ESM:69.92674,OH:113.10008,HH:64.79156,VH:102.97465,PwD:45.74000}},jso:{label:"2024 Tier-I — JSO / List-1",data:{UR:167.02061,OBC:160.65216,EWS:161.73406,SC:143.53855,ST:135.23007,OH:133.35717,HH:95.45162,VH:122.51903}}},
- chsl:{2025:{ldc:{label:"2025 Tier-I — LDC/JSA/Clerk-Cum-Typist",data:{UR:144.25858,OBC:143.83055,EWS:141.42492,SC:125.40250,ST:115.25399,ESM:68.26439,OH:112.15049,HH:75.38893,VH:82.72930,PwD:55.33338}}},
-      2024:{ldc:{label:"2024 Tier-I — LDC/JSA",data:{UR:157.36168,OBC:156.61665,EWS:150.51731,SC:139.68408,ST:129.44568,ESM:78.23008,OH:124.70219,HH:81.06810,VH:123.78593,PwD:72.53530}}},
- gd:{2025:{ssf:{label:"2025 CBT — SSF male list",data:{UR:144.93140,OBC:143.64504,EWS:142.13309,SC:137.51772,ST:133.12441,ESM:78.94782}},ncb:{label:"2025 CBT — NCB male list",data:{UR:147.42882,OBC:145.99092,ST:136.77575,ESM:102.74048}}},
-     2024:{ssfMale:{label:"2024 CBT — SSF male list",data:{UR:153.56851,OBC:152.28771,EWS:151.15627,SC:148.21914,ST:143.65896,ESM:94.65261}},ssfFemale:{label:"2024 CBT — SSF female list",data:{UR:146.53420,OBC:144.43563,EWS:143.07090,SC:138.20538,ST:130.27926,ESM:62.65710}}}},
- cpo:{2025:{male:{label:"2025 Paper-I — Male list",data:{UR:119.47517,OBC:115.02519,EWS:114.60115,SC:88.95164,ST:89.06234,ESM:40}},female:{label:"2025 Paper-I — Female list",data:{UR:128.01610,OBC:124.22057,EWS:126.55856,SC:100.91972,ST:95.19641,ESM:40}}}},
- steno:{2025:{c:{label:"2025 CBT — Group C",data:{UR:142.42577,OBC:141.77465,EWS:137.83071,SC:135.44087,ST:120.37748,OH:119.93641,HH:73.62062,VH:95.27935}},d:{label:"2025 CBT — Group D",data:{UR:132.30789,OBC:129.22305,EWS:125.13310,SC:117.77426,ST:105.75225,OH:107.44537,HH:40.20009,VH:80.23427,PwD:51.94828,ESM:40.27012}}}}
+ cgl:{
+  2025:{
+   list3:{label:"2025 Tier-I — Other Posts / List-3",data:{UR:136.40215,OBC:130.36617,EWS:127.41630,SC:115.02843,ST:106.38576,ESM:92.82040,OH:100.87394,HH:68.79973,VH:72.05369,PwD:40.17527}},
+   jso:{label:"2025 Tier-I — JSO / List-1",data:{UR:153.46108,OBC:153.46108,EWS:151.58638,SC:137.29518,ST:136.40211,OH:125.16130,HH:104.04315,VH:134.15850,PwD:91.01367}}
+  },
+  2024:{
+   list3:{label:"2024 Tier-I — Other Posts / List-3",data:{UR:153.18981,OBC:146.26291,EWS:142.01963,SC:126.45554,ST:111.88930,ESM:69.92674,OH:113.10008,HH:64.79156,VH:102.97465,PwD:45.74000}},
+   jso:{label:"2024 Tier-I — JSO / List-1",data:{UR:167.02061,OBC:160.65216,EWS:161.73406,SC:143.53855,ST:135.23007,OH:133.35717,HH:95.45162,VH:122.51903}}
+  }
+ },
+ chsl:{
+  2025:{ldc:{label:"2025 Tier-I — LDC/JSA/Clerk-Cum-Typist",data:{UR:144.25858,OBC:143.83055,EWS:141.42492,SC:125.40250,ST:115.25399,ESM:68.26439,OH:112.15049,HH:75.38893,VH:82.72930,PwD:55.33338}}},
+  2024:{ldc:{label:"2024 Tier-I — LDC/JSA",data:{UR:157.36168,OBC:156.61665,EWS:150.51731,SC:139.68408,ST:129.44568,ESM:78.23008,OH:124.70219,HH:81.06810,VH:123.78593,PwD:72.53530}}}
+ },
+ gd:{
+  2025:{
+   ssf:{label:"2025 CBT — SSF male list",data:{UR:144.93140,OBC:143.64504,EWS:142.13309,SC:137.51772,ST:133.12441,ESM:78.94782}},
+   ncb:{label:"2025 CBT — NCB male list",data:{UR:147.42882,OBC:145.99092,ST:136.77575,ESM:102.74048}}
+  },
+  2024:{
+   ssfMale:{label:"2024 CBT — SSF male list",data:{UR:153.56851,OBC:152.28771,EWS:151.15627,SC:148.21914,ST:143.65896,ESM:94.65261}},
+   ssfFemale:{label:"2024 CBT — SSF female list",data:{UR:146.53420,OBC:144.43563,EWS:143.07090,SC:138.20538,ST:130.27926,ESM:62.65710}}
+  }
+ },
+ cpo:{
+  2025:{
+   male:{label:"2025 Paper-I — Male list",data:{UR:119.47517,OBC:115.02519,EWS:114.60115,SC:88.95164,ST:89.06234,ESM:40}},
+   female:{label:"2025 Paper-I — Female list",data:{UR:128.01610,OBC:124.22057,EWS:126.55856,SC:100.91972,ST:95.19641,ESM:40}}
+  }
+ },
+ steno:{
+  2025:{
+   c:{label:"2025 CBT — Group C",data:{UR:142.42577,OBC:141.77465,EWS:137.83071,SC:135.44087,ST:120.37748,OH:119.93641,HH:73.62062,VH:95.27935}},
+   d:{label:"2025 CBT — Group D",data:{UR:132.30789,OBC:129.22305,EWS:125.13310,SC:117.77426,ST:105.75225,OH:107.44537,HH:40.20009,PwD:51.94828,ESM:40.27012}}
+  }
+ }
 };
 function availableYears(){return Object.keys(historicalRefs[exam.value]||{}).sort((a,b)=>Number(b)-Number(a));}
 function loadYears(){year.innerHTML="";const ys=availableYears();["2026",...ys.filter(y=>y!=="2026")].forEach(y=>{const o=document.createElement("option");o.value=y;o.textContent=y==="2026"?"2026 preparation cycle — official data when available":y+" exam cycle — historical reference";year.appendChild(o);});year.value=ys.includes("2025")?"2025":"2026";}
