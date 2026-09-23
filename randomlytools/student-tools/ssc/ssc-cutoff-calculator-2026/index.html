@@ -99,6 +99,12 @@
 </div>
 
 <div class="cutoff-field">
+<label for="year">Cutoff Year</label>
+<select id="year"></select>
+<div class="cutoff-help">Select the result year for the built-in cutoff reference. 2026 remains available for the preparation cycle, but an official 2026 cutoff is shown only after SSC releases it.</div>
+</div>
+
+<div class="cutoff-field">
 <label for="stage">Exam Stage</label>
 <select id="stage"></select>
 <div id="stageHelp" class="cutoff-help"></div>
@@ -212,13 +218,22 @@
 <table class="data-table">
 <thead><tr><th>Exam</th><th>Stage / List</th><th>Year</th><th>Example categories covered</th><th>Use</th></tr></thead>
 <tbody>
-<tr><td>SSC CGL</td><td>Tier-I, other posts / List-3</td><td>2025</td><td>UR, OBC, EWS, SC, ST and others</td><td>Reference</td></tr>
+<tr><td>SSC CGL</td><td>Tier-I, other posts / List-3</td><td>2025 + 2024</td><td>UR, OBC, EWS, SC, ST and others</td><td>Historical reference</td></tr>
 <tr><td>SSC CGL</td><td>Tier-I, JSO / List-1</td><td>2025</td><td>UR, OBC, EWS, SC, ST and PwD groups</td><td>Reference</td></tr>
 <tr><td>SSC CHSL</td><td>Tier-I, LDC/JSA/Clerk-Cum-Typist</td><td>2025</td><td>UR, OBC, EWS, SC, ST and other categories</td><td>Reference</td></tr>
 <tr><td>SSC CPO</td><td>Paper-I, male list</td><td>2025</td><td>UR, OBC, EWS, SC, ST and ESM</td><td>Reference</td></tr>
 <tr><td>SSC Stenographer</td><td>CBT, Group C / Group D</td><td>2025</td><td>UR, OBC, EWS, SC, ST and other categories</td><td>Reference</td></tr>
 </tbody>
 </table>
+
+<h2>SSC Cutoff History Database</h2>
+<p>Use this historical database to compare category-wise SSC cutoff references by exam and result year. The rows below are sourced from SSC result write-ups and are kept separate by exam, year, stage and list/group. They are historical references, not predictions for the unreleased 2026 cutoff.</p>
+<div class="cutoff-field" style="max-width:360px">
+<label for="historyExam">History Exam</label>
+<select id="historyExam"><option value="cgl">SSC CGL</option><option value="chsl">SSC CHSL</option><option value="gd">SSC GD Constable</option><option value="cpo">SSC CPO</option><option value="steno">SSC Stenographer</option></select>
+</div>
+<div id="historyTableWrap"></div>
+<p class="cutoff-help">Source note: SSC can publish separate lists/groups and normalized cutoffs. Always match the exact result write-up before using a historical number for comparison.</p>
 
 <h2>Why There Is No Single SSC Cutoff</h2>
 <p>SSC cutoff is not one universal number. The Commission can publish separate cutoffs by exam stage, list, post group, category, gender, state/UT, force, area or other recruitment condition. For example, SSC CGL 2025 had separate Tier-I lists for JSO, Statistical Investigator Grade-II and other posts, while SSC CHSL 2025 published separate Tier-I cutoffs for LDC/JSA and different DEO groups.</p>
@@ -227,7 +242,7 @@
 <p>For CGL, first calculate your Tier-I raw marks if you have correct and wrong attempts. When comparing with a published Tier-I cutoff, remember that SSC publishes normalized marks for a multi-shift exam. The 2025 revised CGL Tier-I cutoff for the other-post list was reported as 136.40215 for UR, 130.36617 for OBC, 127.41630 for EWS, 115.02843 for SC and 106.38576 for ST. JSO and Statistical Investigator had separate lists and higher category-specific cutoffs.</p>
 
 <h2>SSC CHSL Cutoff Calculator</h2>
-<p>CHSL Tier-I can be compared using the relevant post group. For the 2025 Tier-I result, the LDC/JSA/Clerk-Cum-Typist cutoff was 144.25858 for UR, 143.83055 for OBC, 141.42492 for EWS, 125.40250 for SC and 115.25399 for ST. DEO groups had separate cutoffs, so the calculator should not treat all CHSL posts as one cutoff.</p>
+<p>CHSL Tier-I can be compared using the relevant post group. The historical database includes the 2024 LDC/JSA cutoffs as well as the 2025 LDC/JSA/Clerk-Cum-Typist reference. DEO groups have separate cutoffs, so the calculator should not treat all CHSL posts as one cutoff.</p>
 
 <h2>SSC GD Cutoff Calculator</h2>
 <p>GD needs extra care because cutoff comparisons can depend on force, candidate group, state/UT, area and category. A single all-India GD cutoff is therefore not suitable for every candidate. Use the manual cutoff field when the exact state/force/area cutoff from the result is required. Recent published 2025 data shows separate NCB and SSF category cutoffs.</p>
@@ -332,7 +347,20 @@ const configs={
  jht:{name:"SSC JHT",stages:{p1:{label:"Paper-I",correct:1,wrong:.25,max:200,help:"200-question Paper-I score mode. Verify the current notification before relying on the marking scheme."}},refs:{}},
  selection:{name:"SSC Selection Post",stages:{cbt:{label:"Computer Based Examination",correct:2,wrong:.5,max:200,help:"100-question CBT reference pattern. Cutoffs can vary by post, qualification level, region and category."}},refs:{}}
 };
-const exam=document.getElementById("exam"),stage=document.getElementById("stage"),category=document.getElementById("category"),scoreMode=document.getElementById("scoreMode"),answersFields=document.getElementById("answersFields"),scoreField=document.getElementById("scoreField"),cutoffMode=document.getElementById("cutoffMode"),manualField=document.getElementById("manualCutoffField"),referenceExtra=document.getElementById("referenceExtra"),stageHelp=document.getElementById("stageHelp"),result=document.getElementById("result");
+const exam=document.getElementById("exam"),year=document.getElementById("year"),stage=document.getElementById("stage"),category=document.getElementById("category"),scoreMode=document.getElementById("scoreMode"),answersFields=document.getElementById("answersFields"),scoreField=document.getElementById("scoreField"),cutoffMode=document.getElementById("cutoffMode"),manualField=document.getElementById("manualCutoffField"),referenceExtra=document.getElementById("referenceExtra"),stageHelp=document.getElementById("stageHelp"),result=document.getElementById("result");
+const historicalRefs={
+ cgl:{2025:{list3:{label:"2025 Tier-I — Other Posts / List-3",data:{UR:136.40215,OBC:130.36617,EWS:127.41630,SC:115.02843,ST:106.38576,ESM:92.82040,OH:100.87394,HH:68.79973,VH:72.05369,PwD:40.17527}},jso:{label:"2025 Tier-I — JSO / List-1",data:{UR:153.46108,OBC:153.46108,EWS:151.58638,SC:137.29518,ST:136.40211,OH:125.16130,HH:104.04315,VH:134.15850,PwD:91.01367}}},
+     2024:{list3:{label:"2024 Tier-I — Other Posts / List-3",data:{UR:153.18981,OBC:146.26291,EWS:142.01963,SC:126.45554,ST:111.88930,ESM:69.92674,OH:113.10008,HH:64.79156,VH:102.97465,PwD:45.74000}},jso:{label:"2024 Tier-I — JSO / List-1",data:{UR:167.02061,OBC:160.65216,EWS:161.73406,SC:143.53855,ST:135.23007,OH:133.35717,HH:95.45162,VH:122.51903}}},
+ chsl:{2025:{ldc:{label:"2025 Tier-I — LDC/JSA/Clerk-Cum-Typist",data:{UR:144.25858,OBC:143.83055,EWS:141.42492,SC:125.40250,ST:115.25399,ESM:68.26439,OH:112.15049,HH:75.38893,VH:82.72930,PwD:55.33338}}},
+      2024:{ldc:{label:"2024 Tier-I — LDC/JSA",data:{UR:157.36168,OBC:156.61665,EWS:150.51731,SC:139.68408,ST:129.44568,ESM:78.23008,OH:124.70219,HH:81.06810,VH:123.78593,PwD:72.53530}}},
+ gd:{2025:{ssf:{label:"2025 CBT — SSF male list",data:{UR:144.93140,OBC:143.64504,EWS:142.13309,SC:137.51772,ST:133.12441,ESM:78.94782}},ncb:{label:"2025 CBT — NCB male list",data:{UR:147.42882,OBC:145.99092,ST:136.77575,ESM:102.74048}}},
+     2024:{ssfMale:{label:"2024 CBT — SSF male list",data:{UR:153.56851,OBC:152.28771,EWS:151.15627,SC:148.21914,ST:143.65896,ESM:94.65261}},ssfFemale:{label:"2024 CBT — SSF female list",data:{UR:146.53420,OBC:144.43563,EWS:143.07090,SC:138.20538,ST:130.27926,ESM:62.65710}}}},
+ cpo:{2025:{male:{label:"2025 Paper-I — Male list",data:{UR:119.47517,OBC:115.02519,EWS:114.60115,SC:88.95164,ST:89.06234,ESM:40}},female:{label:"2025 Paper-I — Female list",data:{UR:128.01610,OBC:124.22057,EWS:126.55856,SC:100.91972,ST:95.19641,ESM:40}}}},
+ steno:{2025:{c:{label:"2025 CBT — Group C",data:{UR:142.42577,OBC:141.77465,EWS:137.83071,SC:135.44087,ST:120.37748,OH:119.93641,HH:73.62062,VH:95.27935}},d:{label:"2025 CBT — Group D",data:{UR:132.30789,OBC:129.22305,EWS:125.13310,SC:117.77426,ST:105.75225,OH:107.44537,HH:40.20009,VH:80.23427,PwD:51.94828,ESM:40.27012}}}}
+};
+function availableYears(){return Object.keys(historicalRefs[exam.value]||{}).sort((a,b)=>Number(b)-Number(a));}
+function loadYears(){year.innerHTML="";const ys=availableYears();["2026",...ys.filter(y=>y!=="2026")].forEach(y=>{const o=document.createElement("option");o.value=y;o.textContent=y+" cutoff reference";year.appendChild(o);});year.value=ys.includes("2025")?"2025":"2026";}
+function getRefs(){const y=year.value;return historicalRefs[exam.value]?.[y]||{};}
 function loadStages(){
  const c=configs[exam.value]; stage.innerHTML="";
  Object.entries(c.stages).forEach(([k,v])=>{const o=document.createElement("option");o.value=k;o.textContent=v.label;stage.appendChild(o);});
@@ -343,8 +371,8 @@ function updateStage(){
  updateReferences();
 }
 function updateReferences(){
- const c=configs[exam.value]; referenceExtra.innerHTML="";
- const refs=c.refs||{};
+ referenceExtra.innerHTML="";
+ const refs=getRefs();
  if(!Object.keys(refs).length){referenceExtra.innerHTML='<div class="cutoff-help">No built-in reference is loaded for this exam/stage. Manual cutoff mode is available for the exact SSC result you want to compare.</div>';return;}
  const label=document.createElement("label");label.setAttribute("for","referenceSelect");label.textContent="Reference cutoff list / group";
  const sel=document.createElement("select");sel.id="referenceSelect";
@@ -367,7 +395,7 @@ function getScore(){
 function getCutoff(){
  if(cutoffMode.value==="none")return null;
  if(cutoffMode.value==="manual"){const n=Number(document.getElementById("manualCutoff").value);return Number.isFinite(n)?n:null;}
- const c=configs[exam.value],refs=c.refs||{},sel=document.getElementById("referenceSelect");if(!sel)return null;
+ const refs=getRefs(),sel=document.getElementById("referenceSelect");if(!sel)return null;
  const ref=refs[sel.value];return ref&&ref.data?ref.data[category.value]:null;
 }
 function calculate(){
@@ -385,14 +413,23 @@ function calculate(){
  html+='<p class="cutoff-help" style="margin-bottom:0">This is a calculator result, not an SSC result. If your score and the published cutoff use different normalization or lists, do not compare them directly.</p>';
  result.className="cutoff-result show";result.innerHTML=html;
 }
-function reset(){document.getElementById("correct").value="";document.getElementById("wrong").value="";document.getElementById("knownScore").value="";document.getElementById("manualCutoff").value="";result.className="cutoff-result";result.innerHTML="";exam.value="cgl";category.value="UR";scoreMode.value="answers";cutoffMode.value="reference";loadStages();toggleInputs();}
-exam.addEventListener("change",()=>{loadStages();toggleInputs();});
+function reset(){document.getElementById("correct").value="";document.getElementById("wrong").value="";document.getElementById("knownScore").value="";document.getElementById("manualCutoff").value="";result.className="cutoff-result";result.innerHTML="";exam.value="cgl";category.value="UR";scoreMode.value="answers";cutoffMode.value="reference";loadYears();loadStages();toggleInputs();renderHistory();}
+exam.addEventListener("change",()=>{loadYears();loadStages();toggleInputs();renderHistory();});
+year.addEventListener("change",()=>{updateReferences();renderHistory();});
 stage.addEventListener("change",updateStage);
 scoreMode.addEventListener("change",toggleInputs);
 cutoffMode.addEventListener("change",toggleInputs);
 document.getElementById("calculateBtn").addEventListener("click",calculate);
 document.getElementById("resetBtn").addEventListener("click",reset);
-loadStages();toggleInputs();
+function renderHistory(){
+ const key=document.getElementById("historyExam").value, rows=historicalRefs[key]||{}, wrap=document.getElementById("historyTableWrap");
+ if(!Object.keys(rows).length){wrap.innerHTML='<p class="cutoff-help">No verified historical reference is loaded here yet. Use the manual cutoff field for that exam.</p>';return;}
+ let html='<table class="data-table"><thead><tr><th>Year</th><th>Stage</th><th>List / Group</th><th>UR</th><th>OBC</th><th>EWS</th><th>SC</th><th>ST</th></tr></thead><tbody>';
+ Object.entries(rows).sort((a,b)=>Number(b[0])-Number(a[0])).forEach(([yr,refs])=>Object.values(refs).forEach(ref=>{const d=ref.data||{};html+='<tr><td>'+yr+'</td><td>Tier-I / CBT / Paper-I</td><td>'+ref.label.replace(/^\d{4} /,"")+'</td><td>'+(d.UR??"—")+'</td><td>'+(d.OBC??"—")+'</td><td>'+(d.EWS??"—")+'</td><td>'+(d.SC??"—")+'</td><td>'+(d.ST??"—")+'</td></tr>';}));
+ wrap.innerHTML=html+'</tbody></table>';
+}
+document.getElementById("historyExam").addEventListener("change",renderHistory);
+loadYears();loadStages();toggleInputs();renderHistory();
 })();
 </script>
 <script src="/assets/js/core/ui.js"></script>
