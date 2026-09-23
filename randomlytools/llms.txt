@@ -7,6 +7,19 @@
 - Homepage: https://randomlytools.in/
 - All Tools: https://randomlytools.in/
 
+## Student Tools
+
+- Student Tools Hub: https://randomlytools.in/student-tools/ — Free student calculators and practical exam-related tools.
+- SSC Tools & Calculators: https://randomlytools.in/student-tools/ssc/ — SSC age and eligibility calculators for CHSL, CGL and GD.
+
+## SSC Exam Tools 2026
+
+- SSC CHSL Age Calculator 2026: https://randomlytools.in/student-tools/ssc/ssc-chsl-age-calculator-2026/ — Calculate exact age on 1 August 2026 and check the standard SSC CHSL 18–27 age limit and DOB range.
+- SSC CHSL Eligibility Calculator 2026: https://randomlytools.in/student-tools/ssc/ssc-chsl-eligibility-calculator-2026/ — Check basic SSC CHSL age, qualification and post-specific eligibility conditions for 2026.
+- SSC CGL Age Calculator 2026: https://randomlytools.in/student-tools/ssc/ssc-cgl-age-calculator-2026/ — Check SSC CGL age eligibility for common post-wise age bands using date of birth and the crucial date.
+- SSC CGL Eligibility Calculator 2026: https://randomlytools.in/student-tools/ssc/ssc-cgl-eligibility-calculator-2026/ — Check basic SSC CGL age and educational qualification conditions, including special qualification checks for JSO and Statistical Investigator posts.
+- SSC GD Age Calculator 2026: https://randomlytools.in/student-tools/ssc/ssc-gd-age-calculator-2026/ — Calculate age on 1 January 2026 and check the standard SSC GD 18–23 age limit and DOB range.
+
 ## Popular Tools
 
 - Random Name Generator: https://randomlytools.in/random-name-generator/ — Generate random names for people, characters, writing, and other creative uses.
@@ -21,7 +34,10 @@
 - Random Japanese Name Generator: https://randomlytools.in/random-japanese-name-generator/ — Generate Japanese name ideas.
 - Random Coffee Shop Name Generator: https://randomlytools.in/random-coffee-shop-name-generator/ — Generate coffee shop name ideas.
 - Random Team Generator: https://randomlytools.in/random-team-generator/ — Split a list of names into random teams.
-- Age Calculator: https://randomlytools.in/age-calculator/ — Calculate exact age in years, months and days from a date of birth, age on a specific date, total days and next birthday.\n- JSON Formatter: https://randomlytools.in/json-formatter/ — Format, validate, beautify and minify JSON in the browser with a collapsible tree viewer, copy and download options.\n- Concrete Calculator: https://randomlytools.in/concrete-calculator/ — Calculate concrete volume for slabs, footings, walls, columns and post holes in cubic feet, cubic yards and cubic meters, with waste-adjusted and approximate bag estimates.\n- Attendance Calculator: https://randomlytools.in/attendance-calculator/ — Calculate attendance percentage, check a 75% attendance target, and determine classes that can be missed or need to be attended.
+- Age Calculator: https://randomlytools.in/age-calculator/ — Calculate exact age in years, months and days from a date of birth, age on a specific date, total days and next birthday.
+- JSON Formatter: https://randomlytools.in/json-formatter/ — Format, validate, beautify and minify JSON in the browser with a collapsible tree viewer, copy and download options.
+- Concrete Calculator: https://randomlytools.in/concrete-calculator/ — Calculate concrete volume for slabs, footings, walls, columns and post holes in cubic feet, cubic yards and cubic meters, with waste-adjusted and approximate bag estimates.
+- Attendance Calculator: https://randomlytools.in/attendance-calculator/ — Calculate attendance percentage, check a 75% attendance target, and determine classes that can be missed or need to be attended.
 - GTA 6 Download Time Calculator: https://randomlytools.in/gta-6-download-time-calculator/ — Estimate Grand Theft Auto VI download time from an editable game-size assumption, internet speed and connection efficiency.
 
 ## Privacy
@@ -32,4 +48,5 @@ RandomlyTools is designed around client-side utility generation. Users should re
 
 - Generated names, usernames, and brand suggestions are creative ideas and should be independently checked for availability, trademarks, and platform rules before commercial use.
 - Calculator results are mathematical calculations and do not replace institution-specific academic policies or official game/platform information.
+- SSC exam eligibility information is provided as a screening aid. Users should verify the latest official SSC notification before applying because dates, age rules, qualifications, and post-specific conditions can change.
 - The GTA 6 Download Time Calculator does not claim an official GTA 6 download size. The game-size value is editable because Rockstar Games has not published the final download-size figure.
