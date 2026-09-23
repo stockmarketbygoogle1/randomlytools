@@ -39,6 +39,13 @@
 .database-panel h3{margin:.1rem 0 .35rem}
 @media(max-width:800px){.cutoff-grid{grid-template-columns:1fr}.score-entry{grid-template-columns:1fr}.result-dashboard{grid-template-columns:1fr}.result-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.calc-topbar{align-items:flex-start;flex-direction:column}.result-grid{grid-template-columns:1fr 1fr}.cutoff-hero{padding:1rem}}
+
+.data-table-wrap{overflow-x:auto;border:1px solid #e2e8f0;border-radius:14px;margin:1rem 0}
+.data-table-wrap .data-table{margin:0;border:0;min-width:680px}
+.data-table td,.data-table th{vertical-align:top}
+.compact-table td,.compact-table th{padding:.68rem .72rem}
+.info-callout{background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #6366f1;border-radius:12px;padding:1rem;margin:1rem 0}
+@media(max-width:700px){.article-content{overflow:hidden}.data-table-wrap{margin-left:0;margin-right:0}}
 </style>
 <script type="application/ld+json">
 {
@@ -181,9 +188,19 @@
 <h2>SSC Cut Off Calculator 2026 for All Major Exams</h2>
 <p>This page is designed as a single calculator instead of separate mini calculators for every SSC examination. Select the exam, stage and category, then calculate your score or compare an existing score with a cutoff reference. SSC publishes cutoffs in different formats, so the tool does not assume that one number applies to every post or stage.</p>
 
-<div class="pill-row">
-<span class="pill">SSC CGL</span><span class="pill">SSC CHSL</span><span class="pill">SSC GD</span><span class="pill">SSC CPO</span><span class="pill">SSC MTS</span><span class="pill">SSC JE</span><span class="pill">SSC Stenographer</span><span class="pill">SSC JHT</span><span class="pill">SSC Selection Post</span>
-</div>
+<div class="data-table-wrap"><table class="data-table compact-table">
+<thead><tr><th>SSC Exam</th><th>Calculator Stage</th><th>Built-in Cutoff Reference</th><th>Exact comparison may need</th></tr></thead>
+<tbody>
+<tr><td>SSC CGL</td><td>Tier-I</td><td>2024–2025 selected lists</td><td>List / post group</td></tr>
+<tr><td>SSC CHSL</td><td>Tier-I</td><td>2024–2025 LDC/JSA references</td><td>Post / DEO group</td></tr>
+<tr><td>SSC GD Constable</td><td>CBT</td><td>2024–2025 selected SSF/NCB references</td><td>State/UT, force, area, gender</td></tr>
+<tr><td>SSC CPO</td><td>Paper-I</td><td>2025 male/female references</td><td>Candidate group</td></tr>
+<tr><td>SSC MTS</td><td>Session-I / II</td><td>Manual comparison</td><td>Session, age group, state/UT and category</td></tr>
+<tr><td>SSC JE</td><td>Paper-I</td><td>Manual comparison</td><td>Branch/post and applicable cutoff</td></tr>
+<tr><td>SSC Stenographer</td><td>CBT</td><td>2025 Group C/D references</td><td>Grade / group</td></tr>
+<tr><td>SSC JHT</td><td>Paper-I</td><td>Manual comparison</td><td>Current exam notice/result</td></tr>
+<tr><td>SSC Selection Post</td><td>CBT</td><td>Manual comparison</td><td>Post, qualification level, region and category</td></tr>
+</tbody></table></div>
 
 <h2>How the SSC Cutoff Calculator Works</h2>
 <ol>
@@ -212,19 +229,28 @@
 </table>
 <p class="exam-note"><strong>Important:</strong> Marking schemes and cutoff rules can be changed by SSC. The calculator displays the scheme currently encoded in the tool. Always verify the latest examination notice before using the result for an application or selection decision.</p>
 
-<h2>Latest Reference Cutoffs Available in This Tool</h2>
-<p>The calculator uses only selected reference rows where a clearly identified cutoff is available. A reference is never presented as a prediction. If a suitable row is not available, use manual cutoff mode and enter the exact number from the relevant SSC result.</p>
-
-<table class="data-table">
-<thead><tr><th>Exam</th><th>Stage / List</th><th>Year</th><th>Example categories covered</th><th>Use</th></tr></thead>
+<h2>Built-in SSC Cutoff Reference Snapshot</h2>
+<p>The calculator contains selected historical cutoff rows. These are <strong>reference values, not 2026 predictions</strong>. The exact list/group matters because SSC can publish separate cutoffs for different posts or candidate groups. For example, SSC CGL 2025 Tier-I had separate List-1, List-2 and List-3 cutoffs, and SSC uses normalized marks for multi-shift examinations. citeturn0search25</p>
+<div class="data-table-wrap"><table class="data-table compact-table">
+<thead><tr><th>Exam</th><th>Year</th><th>Stage / List</th><th>Category</th><th>Cutoff</th></tr></thead>
 <tbody>
-<tr><td>SSC CGL</td><td>Tier-I, other posts / List-3</td><td>2025 + 2024</td><td>UR, OBC, EWS, SC, ST and others</td><td>Historical reference</td></tr>
-<tr><td>SSC CGL</td><td>Tier-I, JSO / List-1</td><td>2025</td><td>UR, OBC, EWS, SC, ST and PwD groups</td><td>Reference</td></tr>
-<tr><td>SSC CHSL</td><td>Tier-I, LDC/JSA/Clerk-Cum-Typist</td><td>2025</td><td>UR, OBC, EWS, SC, ST and other categories</td><td>Reference</td></tr>
-<tr><td>SSC CPO</td><td>Paper-I, male list</td><td>2025</td><td>UR, OBC, EWS, SC, ST and ESM</td><td>Reference</td></tr>
-<tr><td>SSC Stenographer</td><td>CBT, Group C / Group D</td><td>2025</td><td>UR, OBC, EWS, SC, ST and other categories</td><td>Reference</td></tr>
-</tbody>
-</table>
+<tr><td>SSC CGL</td><td>2025</td><td>Tier-I / List-3 Other Posts</td><td>UR</td><td>136.40215</td></tr>
+<tr><td>SSC CGL</td><td>2025</td><td>Tier-I / List-3 Other Posts</td><td>OBC</td><td>130.36617</td></tr>
+<tr><td>SSC CGL</td><td>2025</td><td>Tier-I / List-3 Other Posts</td><td>EWS</td><td>127.41630</td></tr>
+<tr><td>SSC CGL</td><td>2025</td><td>Tier-I / List-3 Other Posts</td><td>SC</td><td>115.02843</td></tr>
+<tr><td>SSC CGL</td><td>2025</td><td>Tier-I / List-3 Other Posts</td><td>ST</td><td>106.38576</td></tr>
+<tr><td>SSC CGL</td><td>2025</td><td>Tier-I / List-1 JSO</td><td>UR</td><td>153.46108</td></tr>
+<tr><td>SSC CGL</td><td>2025</td><td>Tier-I / List-1 JSO</td><td>OBC</td><td>153.46108</td></tr>
+<tr><td>SSC CHSL</td><td>2025</td><td>Tier-I LDC/JSA/Clerk-Cum-Typist</td><td>UR</td><td>144.25858</td></tr>
+<tr><td>SSC CHSL</td><td>2025</td><td>Tier-I LDC/JSA/Clerk-Cum-Typist</td><td>OBC</td><td>143.83055</td></tr>
+<tr><td>SSC GD</td><td>2025</td><td>CBT / SSF Male</td><td>UR</td><td>144.93140</td></tr>
+<tr><td>SSC GD</td><td>2025</td><td>CBT / NCB Male</td><td>UR</td><td>147.42882</td></tr>
+<tr><td>SSC CPO</td><td>2025</td><td>Paper-I / Male</td><td>UR</td><td>119.47517</td></tr>
+<tr><td>SSC CPO</td><td>2025</td><td>Paper-I / Female</td><td>UR</td><td>128.01610</td></tr>
+<tr><td>SSC Stenographer</td><td>2025</td><td>CBT / Group C</td><td>UR</td><td>142.42577</td></tr>
+<tr><td>SSC Stenographer</td><td>2025</td><td>CBT / Group D</td><td>UR</td><td>132.30789</td></tr>
+</tbody></table></div>
+<div class="info-callout"><strong>Important:</strong> The displayed cutoff is valid only for the exact exam, year, stage, list/group and category shown. SSC's official Stenographer 2025 result, for example, separately reported Group C and Group D cutoffs and used normalized marks for the multi-shift CBT. citeturn1search12turn1search13</div>
 
 <h2>SSC Cutoff History Database</h2>
 <p>Use this historical database to compare category-wise SSC cutoff references by exam and result year. The rows below are sourced from SSC result write-ups and are kept separate by exam, year, stage and list/group. They are historical references, not predictions for the unreleased 2026 cutoff.</p>
@@ -236,7 +262,17 @@
 <p class="cutoff-help">Source note: SSC can publish separate lists/groups and normalized cutoffs. Always match the exact result write-up before using a historical number for comparison.</p>
 
 <h2>Why There Is No Single SSC Cutoff</h2>
-<p>SSC cutoff is not one universal number. The Commission can publish separate cutoffs by exam stage, list, post group, category, gender, state/UT, force, area or other recruitment condition. For example, SSC CGL 2025 had separate Tier-I lists for JSO, Statistical Investigator Grade-II and other posts, while SSC CHSL 2025 published separate Tier-I cutoffs for LDC/JSA and different DEO groups.</p>
+<p>SSC cutoff data must be matched to the exact recruitment condition. The official CGL 2025 result explicitly separated JSO, Statistical Investigator Grade-II and other posts into different Tier-I lists. citeturn0search25</p>
+<div class="data-table-wrap"><table class="data-table compact-table">
+<thead><tr><th>Factor</th><th>What can change</th><th>How to use this calculator</th></tr></thead>
+<tbody>
+<tr><td>Exam stage</td><td>Tier-I, Tier-II, Paper-I, Session-I/II or CBT can have different qualifying/cutoff rules.</td><td>Select the exact stage first.</td></tr>
+<tr><td>Post / list / group</td><td>Different posts or lists can have separate cutoffs.</td><td>Select the matching reference list/group.</td></tr>
+<tr><td>Category</td><td>UR, OBC, EWS, SC, ST and other categories can have different cutoffs.</td><td>Select the candidate category.</td></tr>
+<tr><td>Gender / candidate group</td><td>Some recruitment results publish separate male/female or other candidate-group cutoffs.</td><td>Use the matching built-in reference or manual cutoff.</td></tr>
+<tr><td>State / UT / force / area</td><td>Some exams can have location, force or area-specific cutoff lists.</td><td>Use manual cutoff mode when the exact row is not built in.</td></tr>
+<tr><td>Normalization</td><td>Multi-shift exams may use normalized marks for result processing.</td><td>Do not directly treat raw marks as an official normalized cutoff.</td></tr>
+</tbody></table></div>
 
 <h2>SSC CGL Cutoff Calculator</h2>
 <p>For CGL, first calculate your Tier-I raw marks if you have correct and wrong attempts. When comparing with a published Tier-I cutoff, remember that SSC publishes normalized marks for a multi-shift exam. The 2025 revised CGL Tier-I cutoff for the other-post list was reported as 136.40215 for UR, 130.36617 for OBC, 127.41630 for EWS, 115.02843 for SC and 106.38576 for ST. JSO and Statistical Investigator had separate lists and higher category-specific cutoffs.</p>
@@ -275,14 +311,16 @@
 </ul>
 
 <h2>How to Use the SSC Cut Off Calculator</h2>
-<ol>
-<li>Select the exact SSC exam.</li>
-<li>Select the paper, tier or session you are calculating.</li>
-<li>Choose your category.</li>
-<li>Enter correct and wrong answers, or switch to known-score mode.</li>
-<li>Choose a built-in reference, enter a manual cutoff, or calculate marks only.</li>
-<li>Read the score, cutoff and difference shown in the result card.</li>
-</ol>
+<div class="data-table-wrap"><table class="data-table compact-table">
+<thead><tr><th>Step</th><th>What to select / enter</th><th>What happens</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>SSC exam</td><td>The calculator loads that exam's available stages.</td></tr>
+<tr><td>2</td><td>Year and exam stage</td><td>The relevant cutoff reference options are loaded.</td></tr>
+<tr><td>3</td><td>Category</td><td>The matching category row is used for comparison.</td></tr>
+<tr><td>4</td><td>Correct + wrong answers or known score</td><td>Your net score is calculated or accepted as entered.</td></tr>
+<tr><td>5</td><td>Reference, manual cutoff or marks-only mode</td><td>The calculator chooses the comparison method.</td></tr>
+<tr><td>6</td><td>Calculate</td><td>Your score, cutoff and difference are displayed.</td></tr>
+</tbody></table></div>
 
 <h2>Official SSC Verification</h2>
 <p>RandomlyTools is an independent website and is not affiliated with the Staff Selection Commission. SSC publishes examination notices, results and cutoff information on its official website. Before relying on a cutoff for an application or selection decision, verify the exact exam year, stage, list/post, category and candidate group in the latest SSC notice/result.</p>
@@ -424,9 +462,16 @@ document.getElementById("resetBtn").addEventListener("click",reset);
 function renderHistory(){
  const key=document.getElementById("historyExam").value, rows=historicalRefs[key]||{}, wrap=document.getElementById("historyTableWrap");
  if(!Object.keys(rows).length){wrap.innerHTML='<p class="cutoff-help">No verified historical reference is loaded here yet. Use the manual cutoff field for that exam.</p>';return;}
- let html='<table class="data-table"><thead><tr><th>Year</th><th>Stage</th><th>List / Group</th><th>UR</th><th>OBC</th><th>EWS</th><th>SC</th><th>ST</th></tr></thead><tbody>';
- Object.entries(rows).sort((a,b)=>Number(b[0])-Number(a[0])).forEach(([yr,refs])=>Object.values(refs).forEach(ref=>{const d=ref.data||{};html+='<tr><td>'+yr+'</td><td>Tier-I / CBT / Paper-I</td><td>'+ref.label.replace(/^\d{4} /,"")+'</td><td>'+(d.UR??"—")+'</td><td>'+(d.OBC??"—")+'</td><td>'+(d.EWS??"—")+'</td><td>'+(d.SC??"—")+'</td><td>'+(d.ST??"—")+'</td></tr>';}));
- wrap.innerHTML=html+'</tbody></table>';
+ let html='<div class="data-table-wrap"><table class="data-table compact-table"><thead><tr><th>Year</th><th>Stage</th><th>List / Group</th><th>Category</th><th>Cutoff Marks</th></tr></thead><tbody>';
+ Object.entries(rows).sort((a,b)=>Number(b[0])-Number(a[0])).forEach(([yr,refs])=>{
+   Object.values(refs).forEach(ref=>{
+     const d=ref.data||{};
+     Object.entries(d).forEach(([cat,val])=>{
+       html+='<tr><td>'+yr+'</td><td>'+((ref.label.match(/Tier-I|Paper-I|CBT/)||[""])[0]||"See list")+'</td><td>'+ref.label.replace(/^\d{4} /,"")+'</td><td>'+cat+'</td><td>'+Number(val).toFixed(5)+'</td></tr>';
+     });
+   });
+ });
+ wrap.innerHTML=html+'</tbody></table></div>';
 }
 document.getElementById("historyExam").addEventListener("change",renderHistory);
 loadYears();loadStages();toggleInputs();renderHistory();
