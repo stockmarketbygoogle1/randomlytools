@@ -34,7 +34,15 @@
 .result-box{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:.8rem}
 .result-box small{display:block;color:#64748b;margin-bottom:.2rem;font-weight:650}
 .result-box strong{font-size:1.05rem}
-.result-status{padding:.8rem 1rem;border-radius:12px;font-weight:800;margin-top:.8rem}
+.result-status{padding:.8rem 1rem;border-radius:12px;font-weight:800;margin-top:.8rem;border:1px solid #e2e8f0}
+.result-status.pass{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}
+.result-status.below{background:#fff7ed;border-color:#fed7aa;color:#9a3412}
+.result-status.borderline{background:#f8fafc;color:#334155}
+.result-progress{margin-top:1rem}
+.result-progress-head{display:flex;justify-content:space-between;gap:.75rem;font-size:.8rem;font-weight:800;color:#64748b;margin-bottom:.4rem}
+.result-progress-track{height:10px;background:#e2e8f0;border-radius:999px;overflow:hidden}
+.result-progress-fill{height:100%;background:#4f46e5;border-radius:999px;min-width:2px;transition:width .25s ease}
+.result-error{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:12px;padding:.85rem 1rem;font-weight:700}
 .database-panel{background:#fff;border:1px solid #e1e7f0;border-radius:16px;padding:1rem;margin-top:1rem}
 .database-panel h3{margin:.1rem 0 .35rem}
 @media(max-width:800px){.cutoff-grid{grid-template-columns:1fr}.score-entry{grid-template-columns:1fr}.result-dashboard{grid-template-columns:1fr}.result-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -87,6 +95,7 @@
 <div class="cutoff-hero">
 <div class="calc-topbar"><div><span class="calc-badge">⚡ SSC Cutoff Tool</span></div><span class="calc-mini-note">Marks + cutoff comparison in one place</span></div>
 <h2 style="margin-top:0;margin-bottom:.35rem">Calculate SSC Marks & Compare Cutoff</h2>
+<div class="info-callout" style="margin-top:.75rem"><strong>Quick flow:</strong> Exam → Year → Stage → Category → Score → Cutoff reference. The calculator never treats an unreleased 2026 cutoff as an official value.</div>
 <p>Choose the exam and stage first. The calculator then loads the relevant marking pattern. You can either calculate net marks from correct/wrong answers or enter your already calculated score. For cutoff comparison, choose a built-in reference where available or enter the cutoff from the latest official SSC result.</p>
 
 <div class="cutoff-grid">
@@ -452,15 +461,21 @@ function updateReferences(){
 }
 function toggleInputs(){
  const a=scoreMode.value==="answers";answersFields.style.display=a?"grid":"none";scoreField.style.display=a?"none":"block";
- manualField.style.display=cutoffMode.value==="manual"?"block":"none";
- referenceExtra.style.display=cutoffMode.value==="reference"?"block":"none";
+ const refs=getRefs();
+ if(cutoffMode.value==="reference"&&!Object.keys(refs).length){
+   referenceExtra.style.display="block";
+   referenceExtra.innerHTML='<div class="cutoff-help"><strong>No built-in cutoff for this exam/year.</strong> Use Manual Cutoff or Calculate Marks Only. This prevents a missing reference from being mistaken for a 0 cutoff.</div>';
+ }else{
+   manualField.style.display=cutoffMode.value==="manual"?"block":"none";
+   referenceExtra.style.display=cutoffMode.value==="reference"?"block":"none";
+ }
 }
 function getScore(){
  const c=configs[exam.value],s=c.stages[stage.value];
  if(scoreMode.value==="score"){
    const raw=document.getElementById("knownScore").value.trim();
    if(raw==="") return null;
-   const n=Number(raw); return Number.isFinite(n)&&n>=0?n:null;
+   const n=Number(raw); return Number.isFinite(n)&&n>=0&&n<=s.max?n:null;
  }
  const correctRaw=document.getElementById("correct").value.trim(),wrongRaw=document.getElementById("wrong").value.trim();
  if(correctRaw===""||wrongRaw==="") return null;
@@ -476,26 +491,41 @@ function getCutoff(){
    const n=Number(raw); return Number.isFinite(n)&&n>=0?n:null;
  }
  const refs=getRefs(),sel=document.getElementById("referenceSelect");if(!sel)return null;
- const ref=refs[sel.value];return ref&&ref.data?ref.data[category.value]:null;
+ const ref=refs[sel.value];return ref&&ref.data&&Number.isFinite(Number(ref.data[category.value]))?Number(ref.data[category.value]):null;
 }
 function calculate(){
- const score=getScore(); if(score===null){result.className="cutoff-result show";result.innerHTML="<strong>Please enter valid score details.</strong>";return;}
+ const score=getScore();
+ if(score===null){
+   result.className="cutoff-result show";
+   result.innerHTML='<div class="result-error">Please enter valid score details. Correct + wrong answers cannot exceed the supported question count, and a known score must be between 0 and the stage maximum.</div>';
+   return;
+ }
  const c=configs[exam.value],s=c.stages[stage.value],cut=getCutoff();
+ const selectedRef=document.getElementById("referenceSelect");
+ const refLabel=selectedRef&&selectedRef.options[selectedRef.selectedIndex]?selectedRef.options[selectedRef.selectedIndex].textContent:"Manual cutoff";
  let html='<h3 style="margin-top:0">'+c.name+" — "+s.label+"</h3>";
- html+='<div class="result-dashboard"><div class="result-score-card"><small style="color:#64748b;font-weight:800">YOUR SCORE</small><div class="big-score">'+score.toFixed(2)+'</div><span style="color:#64748b;font-size:.86rem">'+c.name+' · '+s.label+'</span></div><div class="result-grid"><div class="result-box"><small>Maximum</small><strong>'+s.max+'</strong></div><div class="result-box"><small>Category</small><strong>'+category.options[category.selectedIndex].textContent.split(" / ")[0]+'</strong></div><div class="result-box"><small>Cutoff</small><strong>'+(cut===null?"—":cut.toFixed(5))+'</strong></div></div></div>';
+ html+='<div class="result-dashboard"><div class="result-score-card"><small style="color:#64748b;font-weight:800">YOUR SCORE</small><div class="big-score">'+score.toFixed(2)+'</div><span style="color:#64748b;font-size:.86rem">'+c.name+' · '+s.label+'</span>';
+ if(cut!==null){
+   const pct=Math.max(0,Math.min(100,(score/s.max)*100));
+   html+='<div class="result-progress"><div class="result-progress-head"><span>Score utilisation</span><span>'+pct.toFixed(1)+'% of max</span></div><div class="result-progress-track"><div class="result-progress-fill" style="width:'+pct+'%"></div></div></div>';
+ }
+ html+='</div><div class="result-grid"><div class="result-box"><small>Maximum</small><strong>'+s.max+'</strong></div><div class="result-box"><small>Category</small><strong>'+category.options[category.selectedIndex].textContent.split(" / ")[0]+'</strong></div><div class="result-box"><small>Cutoff</small><strong>'+(cut===null?"—":cut.toFixed(5))+'</strong></div></div></div>';
  if(cut!==null){
    const diff=score-cut;
    const cls=diff>=0?"pass":"below";
    html+='<div class="result-status '+cls+'" style="grid-column:1/-1">'+(diff>=0?"Score is at or above the selected cutoff reference.":"Score is below the selected cutoff reference.")+" Difference: "+(diff>=0?"+":"")+diff.toFixed(2)+" marks.</div>";
+   html+='<div class="info-callout" style="margin-top:.75rem"><strong>Reference used:</strong> '+refLabel+' · '+year.value+' · '+category.options[category.selectedIndex].textContent+'</div>';
  } else {
-   html+='<div class="result-status borderline">Marks calculated. No cutoff comparison was applied.</div>';
+   const refs=getRefs();
+   const reason=(cutoffMode.value==="reference"&&Object.keys(refs).length)?"No stored value exists for the selected category in this reference.":"No cutoff comparison was applied.";
+   html+='<div class="result-status borderline">'+reason+'</div>';
  }
- html+='<p class="cutoff-help" style="margin-bottom:0">This is a calculator result, not an SSC result. If your score and the published cutoff use different normalization or lists, do not compare them directly.</p>';
+ html+='<p class="cutoff-help" style="margin-bottom:0">This is a calculator result, not an SSC result. SSC can use normalized marks and separate lists/groups; match the exact official result before treating a cutoff comparison as relevant.</p>';
  result.className="cutoff-result show";result.innerHTML=html;
 }
 function reset(){document.getElementById("correct").value="";document.getElementById("wrong").value="";document.getElementById("knownScore").value="";document.getElementById("manualCutoff").value="";result.className="cutoff-result";result.innerHTML="";exam.value="cgl";category.value="UR";scoreMode.value="answers";cutoffMode.value="reference";loadYears();loadStages();toggleInputs();renderHistory();}
 exam.addEventListener("change",()=>{loadYears();loadStages();toggleInputs();renderHistory();});
-year.addEventListener("change",()=>{updateReferences();renderHistory();});
+year.addEventListener("change",()=>{updateReferences();toggleInputs();renderHistory();});
 stage.addEventListener("change",updateStage);
 scoreMode.addEventListener("change",toggleInputs);
 cutoffMode.addEventListener("change",toggleInputs);
