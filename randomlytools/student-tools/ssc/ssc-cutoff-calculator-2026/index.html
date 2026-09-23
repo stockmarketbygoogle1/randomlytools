@@ -13,33 +13,32 @@
 <meta property="og:url" content="https://randomlytools.in/student-tools/ssc/ssc-cutoff-calculator-2026/">
 <meta property="og:type" content="website">
 <style>
-.cutoff-wrap{max-width:980px;margin:0 auto}
-.cutoff-hero{background:linear-gradient(135deg,#eef2ff,#fff);border:1px solid var(--border-color);border-radius:16px;padding:1.25rem;margin:1.25rem 0 1.5rem}
-.cutoff-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
-.cutoff-field label{display:block;font-weight:700;margin-bottom:.4rem}
-.cutoff-field select,.cutoff-field input{width:100%;box-sizing:border-box}
-.cutoff-help{font-size:.86rem;color:var(--text-muted);margin-top:.35rem}
-.cutoff-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem}
-.cutoff-btn{border:0;border-radius:10px;padding:.75rem 1rem;font-weight:800;cursor:pointer}
-.cutoff-btn-primary{background:var(--primary);color:#fff}
-.cutoff-btn-secondary{background:var(--bg-surface-subtle);color:var(--text-primary);border:1px solid var(--border-color)}
-.cutoff-result{margin-top:1.25rem;border:1px solid var(--border-color);border-radius:14px;padding:1rem;background:#fff;display:none}
-.cutoff-result.show{display:block}
-.result-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin:.9rem 0}
-.result-box{background:var(--bg-surface-subtle);border-radius:10px;padding:.8rem}
-.result-box small{display:block;color:var(--text-muted);margin-bottom:.2rem}
-.result-box strong{font-size:1.15rem}
-.result-status{padding:.85rem 1rem;border-radius:10px;font-weight:800;margin-top:.75rem}
-.result-status.pass{background:#ecfdf5;color:#065f46}
-.result-status.borderline{background:#fffbeb;color:#92400e}
-.result-status.below{background:#fef2f2;color:#991b1b}
-.exam-note{background:#f8fafc;border-left:4px solid var(--primary);padding:.85rem 1rem;margin-top:1rem}
-.data-table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem}
-.data-table th,.data-table td{border:1px solid var(--border-color);padding:.65rem;text-align:left}
-.data-table th{background:var(--bg-surface-subtle)}
-.pill-row{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
-.pill{background:var(--primary-light);color:var(--primary-text);border-radius:999px;padding:.35rem .65rem;font-size:.9rem}
-@media(max-width:700px){.cutoff-grid{grid-template-columns:1fr}.result-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cutoff-hero{padding:1rem}}
+.cutoff-hero{background:linear-gradient(145deg,#f7f9ff 0%,#fff 58%);border:1px solid #dfe5f2;border-radius:22px;padding:1.35rem;box-shadow:0 10px 30px rgba(15,23,42,.06)}
+.calc-topbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1rem}
+.calc-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .65rem;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:.78rem;font-weight:800}
+.calc-mini-note{font-size:.82rem;color:#64748b}
+.cutoff-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem}
+.cutoff-field label{display:block;font-weight:800;margin-bottom:.45rem;font-size:.88rem;color:#1e293b}
+.cutoff-field select,.cutoff-field input{width:100%;box-sizing:border-box;border:1px solid #d9e0ec;border-radius:12px;padding:.78rem .85rem;background:#fff;color:#0f172a;min-height:46px;outline:none;transition:.15s}
+.cutoff-field select:focus,.cutoff-field input:focus{border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,.12)}
+.input-card{background:#fff;border:1px solid #e1e7f0;border-radius:16px;padding:1rem;box-shadow:0 5px 18px rgba(15,23,42,.04)}
+.score-entry{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:.9rem;background:#fff;border:1px solid #e1e7f0;border-radius:16px;padding:1rem}
+.cutoff-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1rem}
+.cutoff-btn{border:0;border-radius:12px;padding:.8rem 1.15rem;font-weight:850;cursor:pointer;min-height:46px}
+.cutoff-btn-primary{background:linear-gradient(135deg,#4f46e5,#6366f1);color:#fff;box-shadow:0 7px 18px rgba(79,70,229,.2)}
+.cutoff-btn-secondary{background:#fff;color:#334155;border:1px solid #d9e0ec}
+.result-dashboard{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem}
+.result-score-card{border-radius:16px;padding:1.1rem;background:#f8fafc;border:1px solid #e2e8f0}
+.result-score-card .big-score{font-size:2.25rem;font-weight:900;line-height:1;margin:.25rem 0}
+.result-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin:0}
+.result-box{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:.8rem}
+.result-box small{display:block;color:#64748b;margin-bottom:.2rem;font-weight:650}
+.result-box strong{font-size:1.05rem}
+.result-status{padding:.8rem 1rem;border-radius:12px;font-weight:800;margin-top:.8rem}
+.database-panel{background:#fff;border:1px solid #e1e7f0;border-radius:16px;padding:1rem;margin-top:1rem}
+.database-panel h3{margin:.1rem 0 .35rem}
+@media(max-width:800px){.cutoff-grid{grid-template-columns:1fr}.score-entry{grid-template-columns:1fr}.result-dashboard{grid-template-columns:1fr}.result-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.calc-topbar{align-items:flex-start;flex-direction:column}.result-grid{grid-template-columns:1fr 1fr}.cutoff-hero{padding:1rem}}
 </style>
 <script type="application/ld+json">
 {
@@ -79,7 +78,8 @@
 
 <section class="cutoff-wrap" aria-label="SSC Cut Off Calculator">
 <div class="cutoff-hero">
-<h2 style="margin-top:0">Calculate SSC Marks & Compare Cutoff</h2>
+<div class="calc-topbar"><div><span class="calc-badge">⚡ SSC Cutoff Tool</span></div><span class="calc-mini-note">Marks + cutoff comparison in one place</span></div>
+<h2 style="margin-top:0;margin-bottom:.35rem">Calculate SSC Marks & Compare Cutoff</h2>
 <p>Choose the exam and stage first. The calculator then loads the relevant marking pattern. You can either calculate net marks from correct/wrong answers or enter your already calculated score. For cutoff comparison, choose a built-in reference where available or enter the cutoff from the latest official SSC result.</p>
 
 <div class="cutoff-grid">
@@ -134,12 +134,12 @@
 </select>
 </div>
 
-<div id="answersFields" class="cutoff-grid" style="grid-column:1/-1">
-<div class="cutoff-field">
+<div id="answersFields" class="score-entry" style="grid-column:1/-1">
+<div class="cutoff-field input-card">
 <label for="correct">Correct Answers</label>
 <input id="correct" type="number" min="0" step="1" placeholder="e.g. 75">
 </div>
-<div class="cutoff-field">
+<div class="cutoff-field input-card">
 <label for="wrong">Wrong Answers</label>
 <input id="wrong" type="number" min="0" step="1" placeholder="e.g. 15">
 </div>
@@ -402,11 +402,11 @@ function calculate(){
  const score=getScore(); if(score===null){result.className="cutoff-result show";result.innerHTML="<strong>Please enter valid score details.</strong>";return;}
  const c=configs[exam.value],s=c.stages[stage.value],cut=getCutoff();
  let html='<h3 style="margin-top:0">'+c.name+" — "+s.label+"</h3>";
- html+='<div class="result-grid"><div class="result-box"><small>Your Score</small><strong>'+score.toFixed(2)+'</strong></div><div class="result-box"><small>Maximum</small><strong>'+s.max+'</strong></div><div class="result-box"><small>Category</small><strong>'+category.options[category.selectedIndex].textContent.split(" / ")[0]+'</strong></div><div class="result-box"><small>Cutoff</small><strong>'+(cut===null?"—":cut.toFixed(5))+'</strong></div></div>';
+ html+='<div class="result-dashboard"><div class="result-score-card"><small style="color:#64748b;font-weight:800">YOUR SCORE</small><div class="big-score">'+score.toFixed(2)+'</div><span style="color:#64748b;font-size:.86rem">'+c.name+' · '+s.label+'</span></div><div class="result-grid"><div class="result-box"><small>Maximum</small><strong>'+s.max+'</strong></div><div class="result-box"><small>Category</small><strong>'+category.options[category.selectedIndex].textContent.split(" / ")[0]+'</strong></div><div class="result-box"><small>Cutoff</small><strong>'+(cut===null?"—":cut.toFixed(5))+'</strong></div></div></div>';
  if(cut!==null){
    const diff=score-cut;
    const cls=diff>=0?"pass":"below";
-   html+='<div class="result-status '+cls+'">'+(diff>=0?"Score is at or above the selected cutoff reference.":"Score is below the selected cutoff reference.")+" Difference: "+(diff>=0?"+":"")+diff.toFixed(2)+" marks.</div>";
+   html+='<div class="result-status '+cls+'" style="grid-column:1/-1">'+(diff>=0?"Score is at or above the selected cutoff reference.":"Score is below the selected cutoff reference.")+" Difference: "+(diff>=0?"+":"")+diff.toFixed(2)+" marks.</div>";
  } else {
    html+='<div class="result-status borderline">Marks calculated. No cutoff comparison was applied.</div>';
  }
