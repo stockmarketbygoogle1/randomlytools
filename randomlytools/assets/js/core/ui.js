@@ -3,6 +3,28 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Remove accidental literal escape/separator text injected into the page.
+  // Only exact standalone tokens are removed; normal content is untouched.
+  const removeStrayTokens = (root = document.body) => {
+    if (!root) return;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    let node;
+    while ((node = walker.nextNode())) {
+      const parent = node.parentElement;
+      if (!parent || /^(SCRIPT|STYLE|TEXTAREA|INPUT|PRE|CODE)$/i.test(parent.tagName)) continue;
+      const value = node.nodeValue.trim();
+      if (value === '\\n' || value === '***' || value === '***\\n') nodes.push(node);
+    }
+    nodes.forEach(node => node.remove());
+  };
+
+  removeStrayTokens();
+
+  const strayTokenObserver = new MutationObserver(() => removeStrayTokens());
+  strayTokenObserver.observe(document.body, { childList: true, subtree: true });
+
+  
   const menuBtn = document.querySelector('.mobile-menu-btn');
   const navLinks = document.querySelector('.nav-links');
 
