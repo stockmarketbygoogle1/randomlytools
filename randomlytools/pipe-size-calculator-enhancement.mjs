@@ -139,19 +139,37 @@ if (fs.existsSync(page)) {
     acceptedAnswer: { '@type': 'Answer', text: a }
   }));
 
-  const scripts = [...pageHtml.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi)];
+  const scripts = [...pageHtml.matchAll(/<script type="application\\/ld\\+json">([\\s\\S]*?)<\\/script>/gi)];
   if (scripts.length) {
-    try {
-      const data = JSON.parse(scripts[0][1]);
-      if (Array.isArray(data['@graph'])) {
-        const faqNode = data['@graph'].find(node => node && node['@type'] === 'FAQPage');
-        if (faqNode) faqNode.mainEntity = faqSchema;
-      }
-      const replacement = `<script type="application/ld+json">\n${JSON.stringify(data, null, 2)}\n  </script>`;
-      pageHtml = pageHtml.slice(0, scripts[0].index) + replacement + pageHtml.slice(scripts[0].index + scripts[0][0].length);
-    } catch (error) {
-      throw new Error(`Pipe Size Calculator JSON-LD could not be parsed: ${error.message}`);
-    }
+    // Rebuild this page's first JSON-LD block from known-valid data instead of
+    // parsing whatever a previous build/enhancement pass may have left in it.
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "Pipe Size Calculator",
+          "url": "https://randomlytools.in/pipe-size-calculator/",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "All",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Free online calculator for pipe diameter, flow velocity and flow rate."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://randomlytools.in/" },
+            { "@type": "ListItem", "position": 2, "name": "Pipe Size Calculator", "item": "https://randomlytools.in/pipe-size-calculator/" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": faqSchema
+        }
+      ]
+    };
+    const replacement = `<script type="application/ld+json">\\n${JSON.stringify(schemaData, null, 2)}\\n  </script>`;
+    pageHtml = pageHtml.slice(0, scripts[0].index) + replacement + pageHtml.slice(scripts[0].index + scripts[0][0].length);
   }
 
   fs.writeFileSync(page, pageHtml);
