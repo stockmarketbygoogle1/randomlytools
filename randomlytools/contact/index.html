@@ -64,15 +64,68 @@
       </p>
 
       <div class="tool-workspace" style="padding: 2rem; margin-bottom: 2rem;">
-        <h2>Get in Touch</h2>
+        <h2>Send Us a Message</h2>
         <p>
-          If you have discovered an issue with any generator, have suggestions for new curated vocabulary datasets, or wish to propose a new random tool, feel free to reach out directly via email:
+          Use the form below for bug reports, tool suggestions, content corrections, feedback, privacy questions, or business inquiries. Your email app will open with the message ready to send.
         </p>
-        <p style="font-size: 1.15rem; font-weight: 600; color: var(--primary);">
-          <a href="mailto:aayushahake985@gmail.com">aayushahake985@gmail.com</a>
-        </p>
-        <p style="font-size: 0.9rem; color: var(--text-muted);">
-          We typically review queries within 48 to 72 business hours.
+
+        <form id="contact-form" style="margin-top: 1.5rem;">
+          <div style="display: grid; gap: 1rem;">
+            <div>
+              <label for="contact-name"><strong>Name</strong></label>
+              <input id="contact-name" name="name" type="text" autocomplete="name" required
+                placeholder="Your name"
+                style="width: 100%; box-sizing: border-box; padding: 0.75rem; margin-top: 0.4rem; border: 1px solid var(--border-color); border-radius: 8px; font: inherit;">
+            </div>
+
+            <div>
+              <label for="contact-email"><strong>Email</strong></label>
+              <input id="contact-email" name="email" type="email" autocomplete="email" required
+                placeholder="you@example.com"
+                style="width: 100%; box-sizing: border-box; padding: 0.75rem; margin-top: 0.4rem; border: 1px solid var(--border-color); border-radius: 8px; font: inherit;">
+            </div>
+
+            <div>
+              <label for="contact-topic"><strong>What can we help with?</strong></label>
+              <select id="contact-topic" name="topic" required
+                style="width: 100%; box-sizing: border-box; padding: 0.75rem; margin-top: 0.4rem; border: 1px solid var(--border-color); border-radius: 8px; font: inherit; background: var(--surface);">
+                <option value="">Select a topic</option>
+                <option value="Bug report">Bug report</option>
+                <option value="Tool suggestion">Tool suggestion</option>
+                <option value="Content correction">Content correction</option>
+                <option value="Usability feedback">Usability feedback</option>
+                <option value="Privacy question">Privacy question</option>
+                <option value="Business or partnership inquiry">Business or partnership inquiry</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="contact-tool"><strong>Tool or page URL <span style="font-weight: 400; color: var(--text-muted);">(optional)</span></strong></label>
+              <input id="contact-tool" name="tool" type="text" autocomplete="url"
+                placeholder="https://randomlytools.in/..."
+                style="width: 100%; box-sizing: border-box; padding: 0.75rem; margin-top: 0.4rem; border: 1px solid var(--border-color); border-radius: 8px; font: inherit;">
+            </div>
+
+            <div>
+              <label for="contact-message"><strong>Message</strong></label>
+              <textarea id="contact-message" name="message" rows="7" required
+                placeholder="Tell us what happened, what you expected, or what you would like to suggest."
+                style="width: 100%; box-sizing: border-box; padding: 0.75rem; margin-top: 0.4rem; border: 1px solid var(--border-color); border-radius: 8px; font: inherit; resize: vertical;"></textarea>
+            </div>
+
+            <div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </div>
+          </div>
+
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem;">
+            The form does not store your message on RandomlyTools. It prepares an email in your device's default mail app. Please do not include passwords, payment-card details, government ID numbers, or other sensitive information.
+          </p>
+        </form>
+
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1.25rem;">
+          Prefer email? <a href="mailto:aayushahake985@gmail.com">aayushahake985@gmail.com</a> · We aim to review requests within 48 to 72 business hours.
         </p>
       </div>
 
@@ -226,6 +279,33 @@
     </div>
   </footer>
 
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById('contact-name').value.trim();
+      const email = document.getElementById('contact-email').value.trim();
+      const topic = document.getElementById('contact-topic').value;
+      const tool = document.getElementById('contact-tool').value.trim();
+      const message = document.getElementById('contact-message').value.trim();
+
+      const subject = 'RandomlyTools Contact: ' + topic;
+      const body = [
+        'Name: ' + name,
+        'Email: ' + email,
+        'Topic: ' + topic,
+        'Tool/Page: ' + (tool || 'Not provided'),
+        '',
+        'Message:',
+        message
+      ].join('\n');
+
+      window.location.href = 'mailto:aayushahake985@gmail.com?subject='
+        + encodeURIComponent(subject)
+        + '&body='
+        + encodeURIComponent(body);
+    });
+  </script>
   <script src="/assets/js/core/ui.js"></script>
 </body>
 </html>
