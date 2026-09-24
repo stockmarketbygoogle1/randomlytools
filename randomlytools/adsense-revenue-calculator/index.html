@@ -25,7 +25,7 @@
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "All",
         "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
-        "description": "Free online calculator for estimating Google AdSense website revenue using pageviews, RPM, CTR and CPC."
+        "description": "Free online calculator for estimating website ad revenue using pageviews, Page RPM, CTR and CPC."
       },
       {
         "@type": "BreadcrumbList",
@@ -37,9 +37,13 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type":"Question","name":"How does the AdSense Revenue Calculator work?","acceptedAnswer":{"@type":"Answer","text":"The calculator estimates website ad revenue from monthly pageviews and an estimated page RPM. Advanced mode can estimate revenue from ad impressions, CTR and CPC."}},
-          {"@type":"Question","name":"How much can 1,000 pageviews earn with AdSense?","acceptedAnswer":{"@type":"Answer","text":"There is no fixed amount. Earnings depend on factors such as visitor location, niche, ad demand, device mix, ad placement, seasonality and actual RPM."}},
-          {"@type":"Question","name":"Can I calculate the traffic needed to make $1,000 per month?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter a monthly revenue goal and the calculator estimates the pageviews required using the selected RPM."}}
+          {"@type":"Question","name":"How does the AdSense Revenue Calculator work?","acceptedAnswer":{"@type":"Answer","text":"The calculator estimates website ad revenue from monthly pageviews and Page RPM. A simplified CTR and CPC mode converts those inputs into an effective RPM for planning."}},
+          {"@type":"Question","name":"How much can 1,000 pageviews earn with AdSense?","acceptedAnswer":{"@type":"Answer","text":"There is no fixed amount. Earnings vary with audience, content, advertiser demand, ad setup, seasonality and your actual Page RPM."}},
+          {"@type":"Question","name":"Can I calculate the traffic needed to make $1,000 per month?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter a monthly revenue goal and the calculator estimates the pageviews required from the RPM used in the calculation."}},
+          {"@type":"Question","name":"Are the country and niche selections official AdSense RPM rates?","acceptedAnswer":{"@type":"Answer","text":"No. They are contextual selections and do not represent official Google RPM rates. Use your own historical Page RPM whenever possible."}},
+          {"@type":"Question","name":"Is the CTR and CPC calculation the same as actual AdSense revenue?","acceptedAnswer":{"@type":"Answer","text":"No. It is a simplified planning formula. Actual AdSense reporting can involve different impression, click and revenue metrics, so use your account data for historical results."}},
+          {"@type":"Question","name":"Can this calculator predict future AdSense earnings?","acceptedAnswer":{"@type":"Answer","text":"No. It provides mathematical scenarios from your inputs. Future revenue can change with traffic, audience, advertiser demand, seasonality, ad setup and other factors."}},
+          {"@type":"Question","name":"What is Page RPM?","acceptedAnswer":{"@type":"Answer","text":"Page RPM is a revenue-per-1,000-pageviews metric used to compare website monetization performance. It can be calculated as estimated earnings divided by pageviews, multiplied by 1,000."}}
         ]
       }
     ]
@@ -100,7 +104,7 @@
 
     <div class="tool-header" style="text-align:center;max-width:800px;margin:0 auto 2rem;">
       <h1>AdSense Revenue Calculator – Estimate Google AdSense Earnings</h1>
-      <p class="section-subtitle">Estimate your website's Google AdSense earnings from pageviews, RPM, CTR and CPC. Compare conservative, typical and higher-revenue scenarios, and see how much traffic you may need to reach your income goal.</p>
+      <p class="section-subtitle">Estimate website ad revenue from pageviews and Page RPM, or explore a simplified CTR + CPC scenario. Use the country and niche fields as context—not as official Google RPM rates—and replace planning assumptions with your own historical data whenever possible.</p>
     </div>
 
     <div class="ad-slot-container">
@@ -160,13 +164,13 @@
               <option value="news">News</option>
               <option value="other">Other</option>
             </select>
-            <div class="help-text">Used only to suggest a planning RPM range.</div>
+            <div class="help-text">Context only. This selection does not represent an official Google RPM rate.</div>
           </div>
 
           <div class="form-group" id="rpm-group">
             <label for="rpm">Page RPM</label>
             <input id="rpm" class="form-control" type="number" min="0" step="0.01" value="10" inputmode="decimal">
-            <div class="help-text">Revenue per 1,000 pageviews. You can edit this estimate.</div>
+            <div class="help-text">Revenue per 1,000 pageviews. Your own historical Page RPM is the most useful input.</div>
           </div>
 
           <div class="form-group hidden" id="ctr-group">
@@ -215,7 +219,7 @@
           <tbody id="scenario-body"></tbody>
         </table>
       </div>
-      <p class="article-note">These are planning scenarios, not guaranteed Google AdSense rates. Actual earnings can vary by audience, niche, traffic quality, ad demand, seasonality and ad setup.</p>
+      <p class="article-note">These scenarios are mathematical planning ranges based on the RPM currently used in the calculator. They are not Google-provided benchmarks or guaranteed AdSense rates.</p>
     </section>
 
     <section class="content-section">
@@ -243,6 +247,10 @@
         <p>The CTR + CPC mode provides a simplified click-based estimate. It is useful for experimentation, but it should not be treated as a direct replacement for your AdSense reported revenue because real pages can generate multiple ad impressions and different reporting metrics.</p>
         <div class="formula">Simplified click estimate ≈ pageviews × CTR × CPC</div>
 
+        <h2>Worked AdSense Revenue Examples</h2>
+        <p>Suppose a site gets 50,000 monthly pageviews and its measured Page RPM is $8. The basic calculation is 50,000 ÷ 1,000 × $8 = <strong>$400 per month</strong>. At 100,000 pageviews with the same RPM, the mathematical estimate becomes <strong>$800 per month</strong>.</p>
+        <p>If your Page RPM changes to $12 while traffic stays at 100,000 pageviews, the estimate becomes $1,200. This shows why using your own historical RPM is more useful than assuming one universal rate.</p>
+
         <h2>How Much Can You Make With AdSense?</h2>
         <p>There is no universal AdSense payout per visitor or per 1,000 pageviews. Earnings can change with visitor location, content category, advertiser demand, device mix, ad placement, seasonality, traffic quality and other factors.</p>
         <p>Instead of assuming one fixed rate, compare several RPM scenarios and update the calculator with your own historical data as your site grows.</p>
@@ -251,12 +259,9 @@
         <p><strong>Page RPM</strong> is a useful metric for comparing monetization performance. The basic calculation is estimated earnings divided by pageviews, multiplied by 1,000.</p>
         <p>If your Page RPM is $8, then 10,000 pageviews would correspond to an illustrative $80 estimate. At $15 RPM, the same traffic would correspond to $150. These are examples, not fixed AdSense rates.</p>
 
-        <h2>AdSense Revenue by Country</h2>
-        <p>Audience geography can have a major effect on advertising revenue. Websites with similar traffic volumes can earn different amounts because advertiser demand and the value of impressions can differ across markets.</p>
-        <p>For <strong>US traffic</strong>, use your own US-heavy Page RPM when available. If you do not have historical data, use conservative scenarios rather than treating an online RPM benchmark as guaranteed income.</p>
-
-        <h2>AdSense Revenue by Niche</h2>
-        <p>Content category can also affect monetization. Finance, insurance, legal, business and software-related topics may attract different advertiser demand than entertainment, general lifestyle or broad-interest content. The actual result still depends on the specific audience and site.</p>
+        <h2>Why Country and Niche Can Change Ad Revenue</h2>
+        <p>Audience geography, content category, advertiser demand and other site factors can influence monetization. Two websites with the same pageviews can therefore produce different revenue.</p>
+        <p>This calculator deliberately does not present country or niche multipliers as official Google rates. They are useful for describing your audience, but a real Page RPM from your own account is a stronger planning input than a generic benchmark.</p>
 
         <h2>How Many Pageviews Do You Need to Make $100, $500 or $1,000 With AdSense?</h2>
         <p>The answer depends on your Page RPM. For example, at an illustrative $10 RPM:</p>
@@ -280,6 +285,15 @@
           <li>Seasonality and advertiser demand</li>
           <li>Content quality and user engagement</li>
           <li>Changes in your monetization setup</li>
+        </ul>
+
+        <h2>What This Calculator Cannot Know</h2>
+        <ul>
+          <li>Your future advertiser demand or auction outcomes</li>
+          <li>Which individual page impressions will be monetized</li>
+          <li>Future changes in traffic, audience mix or seasonality</li>
+          <li>Changes to your ad layout, consent setup or monetization configuration</li>
+          <li>Any account-specific adjustments that are visible only in your own AdSense reporting</li>
         </ul>
 
         <h2>Important Note About AdSense Estimates</h2>
@@ -306,6 +320,22 @@
           <details class="faq-item">
             <summary>Does more traffic always mean more AdSense income?</summary>
             <div class="faq-answer"><p>More monetized traffic can increase total revenue, but traffic quality, audience geography, ad demand and user behavior also matter. Revenue does not increase at a fixed rate for every website.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Are the country and niche selections official AdSense RPM rates?</summary>
+            <div class="faq-answer"><p>No. They are contextual selections and do not represent official Google RPM rates. Use your own historical Page RPM whenever possible.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Is the CTR and CPC calculation the same as actual AdSense revenue?</summary>
+            <div class="faq-answer"><p>No. It is a simplified planning formula. Actual AdSense reporting can involve different impression, click and revenue metrics.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Can this calculator predict future AdSense earnings?</summary>
+            <div class="faq-answer"><p>No. It provides mathematical scenarios from your inputs; future revenue can change with traffic, audience, advertiser demand, seasonality and ad setup.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>What is Page RPM?</summary>
+            <div class="faq-answer"><p>Page RPM is a revenue-per-1,000-pageviews metric used to compare website monetization performance. It can be calculated as estimated earnings divided by pageviews, multiplied by 1,000.</p></div>
           </details>
         </div>
       </article>
@@ -368,9 +398,7 @@
   </footer>
 
   <script>
-    const countryMultipliers = {us:1.00,uk:0.82,ca:0.78,au:0.88,de:0.70,fr:0.62,nl:0.68,sg:0.66,in:0.16,br:0.24,mx:0.22,other:0.45};
-    const nicheMultipliers = {finance:1.70,insurance:1.85,legal:1.75,technology:1.20,business:1.25,education:0.85,health:1.10,travel:0.85,food:0.65,lifestyle:0.65,entertainment:0.55,sports:0.60,news:0.55,other:0.75};
-    const baseRpm = 8;
+    const defaultRpm = 8;
 
     const pageviewsEl=document.getElementById('pageviews');
     const countryEl=document.getElementById('country');
@@ -387,8 +415,7 @@
     let mode='rpm';
 
     function money(value){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(Number.isFinite(value)?value:0)}
-    function suggestedRpm(){return baseRpm*countryMultipliers[countryEl.value]*nicheMultipliers[nicheEl.value]}
-    function updateSuggestedRpm(){if(mode==='rpm')rpmEl.value=suggestedRpm().toFixed(2)}
+    function updateSuggestedRpm(){if(mode==='rpm' && !rpmEl.dataset.userEdited)rpmEl.value=defaultRpm.toFixed(2)}
 
     function setMode(nextMode){
       mode=nextMode;
@@ -429,13 +456,14 @@
       document.getElementById('estimate-note').textContent=mode==='rpm'?`Current planning RPM: ${money(effectiveRpm)}. This is an editable estimate, not a guaranteed AdSense rate.`:`CTR + CPC implies an effective RPM of ${money(effectiveRpm)}. Actual AdSense results can differ.`;
     }
 
+    rpmEl.addEventListener('input',()=>{rpmEl.dataset.userEdited='true'});
     rpmModeBtn.addEventListener('click',()=>setMode('rpm'));
     cpcModeBtn.addEventListener('click',()=>setMode('cpc'));
-    countryEl.addEventListener('change',()=>{updateSuggestedRpm();calculate()});
-    nicheEl.addEventListener('change',()=>{updateSuggestedRpm();calculate()});
+    countryEl.addEventListener('change',calculate);
+    nicheEl.addEventListener('change',calculate);
     document.getElementById('calculate-btn').addEventListener('click',calculate);
     document.getElementById('reset-btn').addEventListener('click',()=>{
-      pageviewsEl.value=100000;countryEl.value='us';nicheEl.value='technology';rpmEl.value=suggestedRpm().toFixed(2);ctrEl.value='1.5';cpcEl.value='0.50';goalEl.value='1000';setMode('rpm');
+      pageviewsEl.value=100000;countryEl.value='us';nicheEl.value='technology';rpmEl.value=defaultRpm.toFixed(2);delete rpmEl.dataset.userEdited;ctrEl.value='1.5';cpcEl.value='0.50';goalEl.value='1000';setMode('rpm');
     });
     [pageviewsEl,rpmEl,ctrEl,cpcEl,goalEl].forEach(el=>el.addEventListener('input',calculate));
     updateSuggestedRpm();calculate();
