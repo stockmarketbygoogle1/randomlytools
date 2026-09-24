@@ -139,8 +139,9 @@ if (fs.existsSync(page)) {
     acceptedAnswer: { '@type': 'Answer', text: a }
   }));
 
-  const scripts = [...pageHtml.matchAll(/<script type="application\\/ld\\+json">([\\s\\S]*?)<\\/script>/gi)];
-  if (scripts.length) {
+  const ldStart = pageHtml.indexOf('<script type="application/ld+json">');
+  const ldEnd = ldStart === -1 ? -1 : pageHtml.indexOf('</script>', ldStart);
+  if (ldStart !== -1 && ldEnd !== -1) {
     // Rebuild this page's first JSON-LD block from known-valid data instead of
     // parsing whatever a previous build/enhancement pass may have left in it.
     const schemaData = {
@@ -169,7 +170,7 @@ if (fs.existsSync(page)) {
       ]
     };
     const replacement = `<script type="application/ld+json">\\n${JSON.stringify(schemaData, null, 2)}\\n  </script>`;
-    pageHtml = pageHtml.slice(0, scripts[0].index) + replacement + pageHtml.slice(scripts[0].index + scripts[0][0].length);
+    pageHtml = pageHtml.slice(0, ldStart) + replacement + pageHtml.slice(ldEnd + '</script>'.length);
   }
 
   fs.writeFileSync(page, pageHtml);
