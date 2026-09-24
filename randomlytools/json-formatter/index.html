@@ -12,15 +12,7 @@
 <meta property="og:url" content="https://randomlytools.in/json-formatter/">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#111827">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[
-{"@type":"WebApplication","name":"JSON Formatter","url":"https://randomlytools.in/json-formatter/","applicationCategory":"DeveloperApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free browser-based JSON formatter, validator, beautifier and minifier."},
-{"@type":"BreadcrumbList","itemListElement":[
-{"@type":"ListItem","position":1,"name":"RandomlyTools","item":"https://randomlytools.in/"},
-{"@type":"ListItem","position":2,"name":"JSON Formatter","item":"https://randomlytools.in/json-formatter/"}
-]}
-]}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"JSON Formatter","url":"https://randomlytools.in/json-formatter/","applicationCategory":"DeveloperApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free browser-based JSON formatter, validator, beautifier and minifier."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"RandomlyTools","item":"https://randomlytools.in/"},{"@type":"ListItem","position":2,"name":"JSON Formatter","item":"https://randomlytools.in/json-formatter/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a JSON formatter?","acceptedAnswer":{"@type":"Answer","text":"A JSON formatter adds indentation and line breaks to valid JSON so its structure is easier to read."}},{"@type":"Question","name":"What is the difference between a JSON formatter and beautifier?","acceptedAnswer":{"@type":"Answer","text":"JSON formatter and JSON beautifier usually describe the same task of turning valid JSON into readable, consistently indented text."}},{"@type":"Question","name":"What is a JSON validator?","acceptedAnswer":{"@type":"Answer","text":"A JSON validator checks whether text can be parsed as valid JSON. This tool uses the browser's JSON parser."}},{"@type":"Question","name":"Can JSON contain comments?","acceptedAnswer":{"@type":"Answer","text":"Standard JSON does not include comment syntax."}},{"@type":"Question","name":"Can JSON use single quotes?","acceptedAnswer":{"@type":"Answer","text":"No. JSON strings and object property names use double quotes."}},{"@type":"Question","name":"Can JSON have a trailing comma?","acceptedAnswer":{"@type":"Answer","text":"No. Standard JSON does not allow a trailing comma after the final array element or object property."}},{"@type":"Question","name":"Does this JSON formatter upload my data?","acceptedAnswer":{"@type":"Answer","text":"The formatting and validation operations run in the browser and do not require the JSON text to be uploaded to a server. Avoid entering sensitive credentials or secrets."}},{"@type":"Question","name":"How do I fix invalid JSON?","acceptedAnswer":{"@type":"Answer","text":"Use Validate and inspect the reported error area. Common problems include missing commas or brackets, single quotes, unquoted property names and trailing commas."}}]}]}</script>
 <link rel="stylesheet" href="/assets/css/style.css">
 <style>
 .jf-shell{max-width:1100px;margin:0 auto}.jf-editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.jf-panel{border:1px solid var(--border-color,#ddd);border-radius:14px;overflow:hidden;background:var(--card-bg,#fff);box-shadow:var(--shadow-sm)}.jf-toolbar{display:flex;gap:.5rem;flex-wrap:wrap;padding:.75rem;border-bottom:1px solid var(--border-color,#ddd)}.jf-toolbar button,.jf-toolbar select{border:1px solid var(--border-color,#ddd);background:var(--card-bg,#fff);border-radius:8px;padding:.55rem .8rem;font:inherit;cursor:pointer}.jf-toolbar button.primary{background:#111827;color:#fff;border-color:#111827}.jf-input{width:100%;min-height:430px;resize:vertical;border:0;padding:1rem;font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#0f172a;color:#e5e7eb;outline:0}.jf-output{min-height:430px;margin:0;padding:1rem;overflow:auto;white-space:pre-wrap;word-break:break-word;font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#0b1220;color:#dbeafe}.jf-status{padding:.7rem .9rem;border-top:1px solid var(--border-color,#ddd);font-size:.9rem;color:var(--text-muted)}.jf-status.error{color:#b91c1c}.jf-options{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;padding:.75rem;border-bottom:1px solid var(--border-color,#ddd);font-size:.9rem}.jf-tree{margin-top:1rem;border:1px solid var(--border-color,#ddd);border-radius:14px;padding:1rem}.jf-tree pre{overflow:auto;font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.jf-content{max-width:900px;margin:3rem auto}.jf-content h2{margin-top:2rem}.jf-content h3{margin-top:1.4rem}.jf-note{padding:1rem;border-left:4px solid currentColor;background:rgba(127,127,127,.08);border-radius:6px}.jf-faq details{border-bottom:1px solid var(--border-color,#ddd);padding:.9rem 0}.jf-faq summary{font-weight:700;cursor:pointer}.jf-code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.jf-actions{display:flex;gap:.5rem;flex-wrap:wrap}.jf-actions button{border:1px solid var(--border-color,#ddd);background:var(--card-bg,#fff);border-radius:8px;padding:.55rem .8rem;cursor:pointer}@media(max-width:800px){.jf-editor-grid{grid-template-columns:1fr}.jf-input,.jf-output{min-height:300px}}
@@ -128,31 +120,56 @@
 
 <h2>Common JSON Formatting Problems</h2>
 <ul>
-<li>Missing or extra commas</li>
+<li>Missing or extra commas between values</li>
 <li>Unclosed braces or brackets</li>
 <li>Property names without double quotes</li>
+<li>Single quotes used instead of JSON double quotes</li>
+<li>Trailing commas after the last array item or object property</li>
 <li>Unescaped quotation marks inside strings</li>
-<li>Trailing commas</li>
 <li>Extra text before or after the JSON document</li>
 </ul>
 
-<h2>JSON Formatter Examples</h2>
-<p>For a small object such as <span class="jf-code">{"name":"Aayush","active":true}</span>, formatting simply adds readable indentation. For a large API response, the same process can turn a compact one-line payload into a structured document that is much easier to inspect.</p>
+<h2>JSON Syntax: What This Tool Accepts</h2>
+<p>JSON is stricter than a JavaScript object literal. Property names and strings use double quotes, comments are not part of standard JSON, and objects and arrays cannot contain trailing commas. Values can include strings, numbers, booleans, <span class="jf-code">null</span>, objects and arrays.</p>
+<p>For example, <span class="jf-code">{"name":"RandomlyTools","free":true}</span> is valid JSON. By contrast, <span class="jf-code">{name:'RandomlyTools',}</span> is not valid JSON because the property name is not double-quoted, the string uses single quotes and the object has a trailing comma.</p>
+
+<h2>How to Read a JSON Parse Error</h2>
+<p>Click <strong>Validate</strong> when you want to check syntax without changing the output. This page uses the browser's JSON parser, so the reported error can point you toward the area where parsing stopped. A parser position is a useful starting point, but the actual mistake may be immediately before that position, such as a missing comma or closing bracket.</p>
+
+<h2>Formatting vs Minifying JSON</h2>
+<p><strong>Formatting</strong> adds indentation and line breaks to make structure easier to read. <strong>Minifying</strong> removes unnecessary whitespace while preserving the parsed JSON data. Use formatted JSON while debugging or reviewing data, and minified JSON when compact text is more convenient.</p>
+
+<h2>When to Use the JSON Tree Viewer</h2>
+<p>The tree viewer is useful when a response contains deeply nested objects or arrays. After valid JSON is formatted, expand the nodes you need instead of scanning one large block of text. Sorting keys can also make repeated configuration structures easier to compare, but remember that sorting changes the presentation order of object properties.</p>
+
+<h2>Privacy and Sensitive Data</h2>
+<p>The formatter, validator, minifier and tree viewer run in your browser using the page's JavaScript. The tool does not need to send the JSON text to a server for these operations. As a general security practice, avoid pasting passwords, API keys, access tokens or other sensitive production data into any online tool unless your organization's policy permits it.</p>
 
 <h2>Frequently Asked Questions</h2>
 <h3>What is a JSON formatter?</h3>
-<p>A JSON formatter takes compact or difficult-to-read JSON and adds indentation and line breaks so the structure is easier to inspect. It is useful when working with API responses, configuration files, logs, web applications and developer tools.</p>
+<p>A JSON formatter takes compact or difficult-to-read JSON and adds indentation and line breaks so its structure is easier to inspect.</p>
 <h3>What is the difference between a JSON formatter and beautifier?</h3>
-<p>JSON formatter and JSON beautifier usually describe the same basic task: converting valid JSON into a readable, consistently indented form. This tool can also validate and minify JSON.</p>
+<p>JSON formatter and JSON beautifier usually describe the same basic task: converting valid JSON into readable, consistently indented text.</p>
+<h3>What is a JSON validator?</h3>
+<p>A JSON validator checks whether text can be parsed as valid JSON. This tool uses the browser's JSON parser and reports the parser error when validation fails.</p>
 <h3>What is a JSON viewer?</h3>
-<p>A JSON viewer helps you inspect the structure of JSON. After formatting valid JSON here, the tree view lets you expand nested objects and arrays.</p>
+<p>A JSON viewer helps you inspect nested JSON structures. This tool provides a collapsible tree after valid JSON has been parsed.</p>
 <h3>What is JSON pretty print?</h3>
-<p>JSON pretty print means displaying JSON with indentation, line breaks and readable structure instead of one compressed line. Choose your preferred indentation and use Format JSON.</p>
+<p>JSON pretty print means displaying JSON with indentation and line breaks instead of compressed one-line text. Use Format JSON and choose your preferred indentation.</p>
 <h3>How do I fix invalid JSON?</h3>
-<p>Run Validate first and read the parser error. Common problems include missing commas or brackets, single quotes instead of double quotes, trailing commas, and unescaped characters inside strings.</p>
-<div class="jf-faq">
-<details><summary>How do I format JSON?</summary><p>Paste your JSON into the input box and click Format JSON. The result is pretty-printed with your selected indentation.</p></details>
-<details><summary>How do I beautify JSON online?</summary><p>Paste minified or messy JSON into the forma<h2>Related Developer Tools</h2>
+<p>Run Validate and inspect the reported error area. Check for missing commas or brackets, single quotes, unquoted property names, trailing commas and unescaped characters inside strings.</p>
+<h3>Can JSON contain comments?</h3>
+<p>Standard JSON does not include comment syntax. If you need comments in a configuration format, use a format designed to support them rather than assuming standard JSON will accept them.</p>
+<h3>Can JSON use single quotes?</h3>
+<p>No. JSON strings and object property names use double quotes. Single quotes are common in JavaScript code but are not valid JSON string delimiters.</p>
+<h3>Can JSON have a trailing comma?</h3>
+<p>No. Standard JSON does not allow a trailing comma after the final array element or object property.</p>
+<h3>Does this JSON formatter upload my data?</h3>
+<p>The formatting and validation operations on this page run in your browser and do not require the JSON text to be uploaded to a server. You should still avoid entering sensitive credentials or secrets into online tools.</p>
+
+<h2>Related Developer Tools</h2>
+<p>This JSON Formatter is part of the RandomlyTools developer-tools collection. Use it when you need to inspect, validate, format or compact structured JSON in the browser.</p>
+<p><a href="/">Explore all RandomlyTools</a></p>
 <p>This tool is part of the RandomlyTools developer-tools collection. Direct links to related JSON tools will be added here as those tools are published, so this section only links to tools that actually exist on the site.</p>
 <p><a href="/">Explore all RandomlyTools</a></p>
 </article></section>
