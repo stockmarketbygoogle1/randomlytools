@@ -22,13 +22,27 @@
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "All",
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-        "description": "A free online random dog name generator providing cute, funny, strong, unique, short, and culture-inspired name ideas for puppies."
+        "description": "A free browser-based dog name generator with gender, style, and cultural-inspiration filters."
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://randomlytools.in/"},
-          {"@type": "ListItem", "position": 2, "name": "Dog Name Generator", "item": "https://randomlytools.in/random-dog-name-generator/"}
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://randomlytools.in/"},
+          {"@type":"ListItem","position":2,"name":"Dog Name Generator","item":"https://randomlytools.in/random-dog-name-generator/"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"What is a good dog name?","acceptedAnswer":{"@type":"Answer","text":"A good dog name is easy to pronounce, clearly different from common commands, and comfortable for your household to use every day."}},
+          {"@type":"Question","name":"Should a dog name be short?","acceptedAnswer":{"@type":"Answer","text":"Short or clearly pronounced names are often convenient, but there is no required length. Choose a name your household can use consistently."}},
+          {"@type":"Question","name":"Can I use the generator for a puppy?","acceptedAnswer":{"@type":"Answer","text":"Yes. The generator can provide name ideas for puppies, adult dogs, adopted dogs, and rescue dogs."}},
+          {"@type":"Question","name":"Can I rename an adult rescue dog?","acceptedAnswer":{"@type":"Answer","text":"Yes. An adopted dog can learn a new name through repetition and positive associations when the household uses it consistently."}},
+          {"@type":"Question","name":"Can I generate male and female dog names?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Gender control includes Male, Female, and Any options. Gender filtering applies to the general male/female datasets; style and cultural datasets are inspiration categories and are not gender-tagged."}},
+          {"@type":"Question","name":"Can I generate cute or funny dog names?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose the Cute or Funny style filter to explore those naming directions."}},
+          {"@type":"Question","name":"Are unique dog names guaranteed to be unused?","acceptedAnswer":{"@type":"Answer","text":"No. The generator provides ideas and does not check whether a name is already used by another dog, business, character, or online account."}},
+          {"@type":"Question","name":"Are these dog names suitable for other pets?","acceptedAnswer":{"@type":"Answer","text":"Many names can also work for cats, rabbits, birds, or other companion animals. Choose based on the pet and your preferences."}},
+          {"@type":"Question","name":"Can I copy the generated dog names?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each result has an individual copy control, and Copy All Names copies the complete generated list."}}
         ]
       }
     ]
@@ -121,6 +135,24 @@
           <li>Click <strong>Generate Dog Names</strong> to create a fresh list.</li>
           <li>Use the copy button on an individual result or <strong>Copy All Names</strong> to save your shortlist.</li>
         </ol>
+
+        <h2>How the Generator Selects Dog Names</h2>
+        <p>
+          The generator uses curated browser-side lists for general male and female names, style categories such as cute, funny, strong, unique and short, and cultural-inspiration categories. When you choose a category, the tool samples names from that category without repeating a name within the generated result. The result is a set of ideas, not a database lookup or a recommendation based on your dog's breed or personality.
+        </p>
+        <p>
+          One important detail: the general <strong>Male</strong> and <strong>Female</strong> filters use the gender-labelled datasets. The style and cultural-inspiration lists are not individually gender-tagged, so selecting a style does not claim that every result is male or female. Use <strong>Any</strong> when you want the broadest set of options.
+        </p>
+
+        <h2>Dataset and Cultural-Inspiration Notes</h2>
+        <p>
+          Names are curated as inspiration rather than presented as a complete list of culturally traditional dog names. A label such as Indian-inspired, Japanese-inspired, British-inspired, or American-inspired describes the intended naming direction of that dataset; it does not guarantee a name is exclusively from that culture, traditionally used for dogs, or appropriate in every cultural context.
+        </p>
+
+        <h2>Privacy and Limitations</h2>
+        <p>
+          Name selection runs in your browser using the site's client-side JavaScript and local dataset. The page does not need to submit your chosen filters or generated names to a RandomlyTools application server. As with any public web tool, avoid entering sensitive personal information.
+        </p>
 
         <h2>Dog Name Ideas by Style</h2>
         <p>The generator includes several naming styles so you can explore different directions instead of repeatedly searching the same type of list.</p>
