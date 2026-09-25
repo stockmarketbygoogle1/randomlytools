@@ -50,6 +50,25 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Is this Discord name generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can generate Discord username ideas without creating an account or paying to use the generator."}},
+      {"@type":"Question","name":"How many Discord names can I generate at once?","acceptedAnswer":{"@type":"Answer","text":"You can choose 5, 10, or 20 usernames per generation. You can generate another batch whenever you want."}},
+      {"@type":"Question","name":"Can I generate gaming, anime, dark, and funny Discord names?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tool includes Cool, Gaming, Anime, Dark, Funny, and Short themes so you can generate names for different online personalities."}},
+      {"@type":"Question","name":"Are the generated Discord usernames guaranteed to be available?","acceptedAnswer":{"@type":"Answer","text":"No. The generator creates username ideas but does not perform a real-time Discord availability check. A name may already be claimed when you try to use it."}},
+      {"@type":"Question","name":"Can I use these names on Steam, Twitch, Xbox, or PlayStation?","acceptedAnswer":{"@type":"Answer","text":"Yes, the ideas can also be used as inspiration for gaming and social profiles on other platforms. However, every platform has its own naming rules and availability, so check the final name on the platform where you want to use it."}},
+      {"@type":"Question","name":"Should I add numbers to my Discord username?","acceptedAnswer":{"@type":"Answer","text":"Add a short number when it helps create a variation of a name you like. If the clean version is available and you prefer it, there is usually no reason to make the name longer."}},
+      {"@type":"Question","name":"Can I copy all generated usernames?","acceptedAnswer":{"@type":"Answer","text":"Yes. After generating a batch, use the Copy All Usernames button to copy the complete list to your clipboard."}},
+      {"@type":"Question","name":"Does this tool store the usernames I generate?","acceptedAnswer":{"@type":"Answer","text":"The generator runs in your browser and does not need your Discord account or login details. Generated names are not submitted to Discord by this tool."}},
+      {"@type":"Question","name":"Are all generated names valid Discord usernames?","acceptedAnswer":{"@type":"Answer","text":"The generator formats suggestions in lowercase and uses username-style characters, but it does not check whether a specific name is available or accepted for your account. Always verify the final name directly in Discord."}},
+      {"@type":"Question","name":"Does Discord still use 4-digit discriminators like #0000?","acceptedAnswer":{"@type":"Answer","text":"Discord has moved to unique usernames without the old four-digit discriminator system. Follow Discord's current username and display-name options when changing your account."}}
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -209,6 +228,18 @@
           <li><strong>Check the result before using it:</strong> Make sure the spelling has the meaning and tone you intended, especially for slang, abbreviations, or fandom-related words.</li>
         </ul>
 
+
+        <h2>How the Generator Builds a Name</h2>
+        <p>
+          The generator uses a curated, theme-specific word list stored in the site's local JavaScript data. After you choose a theme, it randomly selects a base name and may add a prefix or suffix. Optional underscores and a two-digit number can create additional variations.
+        </p>
+        <p>
+          For example, a Cool theme might start with <strong>Vortex</strong>. Depending on the random choices, a result could be formatted like <strong>neovortex</strong>, <strong>vortexgg</strong>, or <strong>vortex77</strong>. These are illustrative formats, not fixed outputs.
+        </p>
+        <p>
+          The dataset is a curated collection for brainstorming, not a complete list of Discord names or a database of registered users. Because the generator works from local data, it does not need your Discord login or send generated names to Discord.
+        </p>
+
         <h2>Discord Name Ideas by Style</h2>
         <h3>Cool Discord Names</h3>
         <p>
@@ -249,6 +280,22 @@
         </p>
         <p>
           If your first choice is taken, generate another batch or make one small change. It is usually better to keep the recognizable core of a name and adjust one part than to add a large collection of random characters.
+        </p>
+
+
+        <h2>Discord Username Compatibility</h2>
+        <p>
+          Discord's current username system uses unique usernames rather than the old four-digit discriminator format. Discord says new usernames are lowercase, 2–32 characters long, and can use Latin letters, numbers, underscores, and periods, subject to its current rules and Community Guidelines.
+        </p>
+        <ul>
+          <li><strong>Username vs. display name:</strong> A username is the unique account identifier; a display name is the name people primarily see across Discord.</li>
+          <li><strong>Lowercase formatting:</strong> This generator formats its suggestions in lowercase so they are closer to the current username format.</li>
+          <li><strong>Availability:</strong> The tool does not connect to Discord or check whether a generated username is already claimed.</li>
+          <li><strong>Final check:</strong> Always verify the generated idea in Discord before using it, especially if you add your own characters or modify the suggestion.</li>
+        </ul>
+        <p>
+          For the current character and username rules, check Discord's official guidance:
+          <a href="https://support.discord.com/hc/en-us/articles/12620128861463-New-Usernames-Display-Names" target="_blank" rel="noopener noreferrer">Discord: New Usernames &amp; Display Names</a>.
         </p>
 
         <h2>Creating a Memorable Discord Username</h2>
@@ -311,6 +358,13 @@
             <summary>Does this tool store the usernames I generate?</summary>
             <div class="faq-answer">
               <p>The generator runs in your browser and does not need your Discord account or login details. Generated names are not submitted to Discord by this tool.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Are all generated names valid Discord usernames?</summary>
+            <div class="faq-answer">
+              <p>The generator formats suggestions in lowercase and uses username-style characters, but it does not check whether a specific name is available or accepted for your account. Always verify the final name directly in Discord.</p>
             </div>
           </details>
           <details class="faq-item">
@@ -434,6 +488,9 @@
           const num = PRNG.randomInt(10, 99);
           base = `${base}${num}`;
         }
+
+        // Format generated ideas for Discord's current lowercase username style.
+        base = base.toLowerCase();
 
         currentDiscordNames.push(base);
       }
