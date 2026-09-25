@@ -50,6 +50,20 @@
 ]}
 ]}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I calculate SSC GD marks?","acceptedAnswer":{"@type":"Answer","text":"For the 2026 official CBT reference pattern, multiply correct answers by 2 and subtract 0.25 for every wrong answer. Confirm the final 2027 notification when published."}},
+{"@type":"Question","name":"How many questions and marks are there in SSC GD CBT?","acceptedAnswer":{"@type":"Answer","text":"The 2026 official reference pattern uses 80 questions for 160 marks. The final 2027 pattern should be confirmed from the official SSC notification."}},
+{"@type":"Question","name":"What is the SSC GD negative marking?","acceptedAnswer":{"@type":"Answer","text":"The 2026 official notification specifies a 0.25-mark deduction for each wrong answer. Confirm the applicable 2027 rule in the final notification."}},
+{"@type":"Question","name":"How much is 70 correct and 10 wrong in SSC GD?","acceptedAnswer":{"@type":"Answer","text":"Under the 2026 reference marking pattern, 70 correct and 10 wrong gives 137.50 raw marks: (70 × 2) − (10 × 0.25)."}},
+{"@type":"Question","name":"Does this SSC GD calculator show the official normalized score?","acceptedAnswer":{"@type":"Answer","text":"No. It calculates an estimated raw score from correct and wrong answers. SSC normalization is not reproduced by this calculator; use the official SSC result for normalized marks."}},
+{"@type":"Question","name":"Does NCC certificate bonus count in SSC GD marks?","acceptedAnswer":{"@type":"Answer","text":"The 2026 official notification provides NCC incentive marks based on certificate level and states that the bonus is added to normalized scores. This calculator shows the corresponding mathematical bonus only and does not calculate an official normalized score."}},
+{"@type":"Question","name":"Can SSC GD cutoff be different for different states?","acceptedAnswer":{"@type":"Answer","text":"Yes. Official GD selection and cutoff data can be separated by State or UT, Area, Category, Force and candidate group, depending on the result document."}},
+{"@type":"Question","name":"Is there a fixed safe score for SSC GD 2027?","acceptedAnswer":{"@type":"Answer","text":"There is no official fixed safe score before the 2027 result. Historical cutoffs are references, not guarantees of selection."}},
+{"@type":"Question","name":"Can I calculate SSC GD marks from my answer key?","acceptedAnswer":{"@type":"Answer","text":"Yes. After the response sheet or answer key is available, count correct and wrong answers and enter them in the calculator to estimate the raw score under the selected marking pattern."}},
+{"@type":"Question","name":"What should I do after calculating my SSC GD raw score?","acceptedAnswer":{"@type":"Answer","text":"Treat the result as an estimate, then check the official SSC result for normalized marks and the exact cutoff applicable to your recruitment cycle and selection conditions."}}
+]}
+</script>
 </head>
 <body>
 <header class="site-header"><div class="container">
@@ -63,12 +77,12 @@
 <section class="gd-hero">
 <span class="gd-badge">FREE • NO LOGIN • INSTANT RESULT</span>
 <h1 style="margin:.65rem 0 .45rem">SSC GD Marks Calculator 2027</h1>
-<p>Calculate your SSC GD CBT raw score from correct and wrong answers, understand negative marking, add an illustrative NCC bonus, and compare your score with selected historical cutoff references.</p>
+<p>Calculate an estimated SSC GD CBT raw score from correct and wrong answers, understand negative marking, and compare your score with selected historical cutoff references. NCC bonus is shown separately as a mathematical reference.</p>
 </section>
 
 <section class="calc-card" aria-labelledby="calculator-title">
 <h2 id="calculator-title">SSC GD Score Calculator</h2>
-<p style="color:var(--text-muted);margin:.35rem 0 1rem">Enter your answer count or a score you already know. The calculator validates the supported 80-question, 160-mark CBT structure.</p>
+<p style="color:var(--text-muted);margin:.35rem 0 1rem">Enter your answer count or a score you already know. The calculator uses the 2026 official 80-question, 160-mark CBT pattern as a reference for 2027 planning. Confirm the final 2027 notification when published.</p>
 <div class="mode-tabs">
 <label><input type="radio" name="mode" value="answers" checked> Correct / Wrong Answers</label>
 <label><input type="radio" name="mode" value="score"> I Already Know My Score</label>
@@ -81,7 +95,7 @@
 
 <div class="calc-grid" style="margin-top:1rem">
 <div class="calc-field"><label for="category">Category</label><select id="category"><option value="UR">UR / General</option><option value="OBC">OBC</option><option value="EWS">EWS</option><option value="SC">SC</option><option value="ST">ST</option><option value="ESM">ESM</option></select></div>
-<div class="calc-field"><label for="ncc">NCC Certificate</label><select id="ncc"><option value="none">No NCC bonus</option><option value="a">NCC A — illustrative 3.2 marks</option><option value="b">NCC B — illustrative 4.8 marks</option><option value="c">NCC C — illustrative 8 marks</option></select></div>
+<div class="calc-field"><label for="ncc">NCC Certificate</label><select id="ncc"><option value="none">No NCC bonus</option><option value="a">NCC A — 2% of 160 = 3.2</option><option value="b">NCC B — 3% of 160 = 4.8</option><option value="c">NCC C — 5% of 160 = 8</option></select></div>
 </div>
 
 <div class="calc-actions"><button id="calculateBtn" class="calc-btn primary" type="button">Calculate SSC GD Score</button><button id="resetBtn" class="calc-btn secondary" type="button">Reset</button></div>
@@ -89,7 +103,7 @@
 </section>
 
 <section class="calc-card">
-<h2>SSC GD Marking Scheme</h2>
+<h2>SSC GD Marking Scheme — 2026 Official Reference</h2>
 <div class="data-table-wrap"><table class="data-table"><thead><tr><th>Item</th><th>Current CBT pattern</th><th>Effect on score</th></tr></thead><tbody>
 <tr><td>Total Questions</td><td>80</td><td>20 questions in each of 4 sections</td></tr>
 <tr><td>Maximum Marks</td><td>160</td><td>2 marks per correct answer</td></tr>
@@ -134,14 +148,14 @@
 </section>
 
 <section class="calc-card">
-<h2>SSC GD 2027 Exam Facts</h2>
+<h2>SSC GD 2027 Exam Facts — Tentative Calendar</h2>
 <div class="data-table-wrap"><table class="data-table"><thead><tr><th>Item</th><th>Current planning information</th></tr></thead><tbody>
 <tr><td>Examination</td><td>Constable (GD) in CAPFs, NIA, SSF and Rifleman (GD) in Assam Rifles Examination, 2027</td></tr>
 <tr><td>Advertisement</td><td>September 2026 — tentative SSC calendar</td></tr>
 <tr><td>Application closing</td><td>October 2026 — tentative SSC calendar</td></tr>
 <tr><td>CBE window</td><td>January–March 2027 — tentative SSC calendar</td></tr>
 </tbody></table></div>
-<p style="margin-top:.8rem">The SSC calendar is tentative. Final dates, vacancies, marking details and selection rules should be verified against the official 2027 notification when published.</p>
+<p style="margin-top:.8rem">The SSC calendar is tentative. As of this page's current reference, the 2027 notification has not supplied final exam rules here. Final dates, vacancies, marking details and selection rules must be verified against the official 2027 notification when published. The 2026 notification is used on this page only as the current official reference pattern.</p>
 </section>
 
 <section class="calc-card">
@@ -150,7 +164,7 @@
 <tr><td>Correct/wrong answer score</td><td>Calculates raw marks</td></tr>
 <tr><td>Negative marking</td><td>Applies 0.25 deduction per wrong answer</td></tr>
 <tr><td>Maximum score validation</td><td>Prevents scores above 160</td></tr>
-<tr><td>NCC bonus</td><td>Shows an illustrative bonus calculation based on selected certificate</td></tr>
+<tr><td>NCC bonus</td><td>Shows the mathematical bonus amount from the 2026 reference percentage; not an official normalized-score calculation</td></tr>
 <tr><td>Historical cutoff comparison</td><td>Can be added from the verified references on this page</td></tr>
 </tbody></table></div>
 </section>
@@ -257,7 +271,7 @@ rawScore=Number(v);if(!Number.isFinite(rawScore)||rawScore<0||rawScore>160){resu
 }
 const ncc=document.getElementById('ncc').value,bonus={none:0,a:3.2,b:4.8,c:8}[ncc],illustrative=rawScore+bonus;
 const category=document.getElementById('category').selectedOptions[0].textContent;
-let extra=bonus>0?'<div class="result-box"><small>NCC Bonus</small><strong>+'+bonus.toFixed(1)+'</strong></div><div class="result-box"><small>Raw + Bonus</small><strong>'+illustrative.toFixed(2)+'</strong></div>':'';
+let extra=bonus>0?'<div class="result-box"><small>NCC Bonus Reference</small><strong>+'+bonus.toFixed(1)+'</strong></div><div class="result-box"><small>Raw + Bonus (Reference Only)</small><strong>'+illustrative.toFixed(2)+'</strong></div>':'';
 result.className='score-result show';
 result.innerHTML='<h3 style="margin:0 0 .2rem">Your SSC GD Raw Score</h3><div class="score-number">'+rawScore.toFixed(2)+' / 160</div><div class="result-grid"><div class="result-box"><small>Correct</small><strong>'+correct+'</strong></div><div class="result-box"><small>Wrong</small><strong>'+wrong+'</strong></div><div class="result-box"><small>Category</small><strong>'+category+'</strong></div>'+extra+'</div><div class="status good">Calculated raw score: '+rawScore.toFixed(2)+'. This is not the official normalized score.</div>';
 });
