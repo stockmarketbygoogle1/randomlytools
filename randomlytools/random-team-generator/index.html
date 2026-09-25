@@ -25,28 +25,28 @@
         "url": "https://randomlytools.in/random-team-generator/",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "All",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "A free online random team generator that splits a list of names into fair, randomly shuffled teams or groups with no signup required."
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "description": "A free online random team generator that shuffles participant names and distributes them across 2 to 10 teams."
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://randomlytools.in/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Random Team Generator",
-            "item": "https://randomlytools.in/random-team-generator/"
-          }
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://randomlytools.in/"},
+          {"@type": "ListItem", "position": 2, "name": "Random Team Generator", "item": "https://randomlytools.in/random-team-generator/"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"What is a random team generator?","acceptedAnswer":{"@type":"Answer","text":"A random team generator takes a participant list and randomly distributes the names into a chosen number of teams or groups."}},
+          {"@type":"Question","name":"How does the random team generator divide people?","acceptedAnswer":{"@type":"Answer","text":"The tool samples the participant list without replacement, then distributes the shuffled names across the selected teams. Team sizes differ by no more than one participant."}},
+          {"@type":"Question","name":"Can I create teams from a list of names?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter one participant per line, choose 2 to 10 teams, and select Generate Teams."}},
+          {"@type":"Question","name":"What happens if the participants cannot be divided evenly?","acceptedAnswer":{"@type":"Answer","text":"The extra participants are distributed across different teams, so the team-size difference is at most one."}},
+          {"@type":"Question","name":"Does random team selection balance skill levels?","acceptedAnswer":{"@type":"Answer","text":"No. Random assignment does not guarantee equal skill, experience, age, position, or ability. Use additional constraints when those factors matter."}},
+          {"@type":"Question","name":"Are duplicate names allowed?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each non-empty line is treated as one participant, so two identical names are treated as two separate entries."}},
+          {"@type":"Question","name":"Can I reshuffle the teams?","acceptedAnswer":{"@type":"Answer","text":"Yes. Reshuffle Teams creates another random arrangement from the same participant list."}},
+          {"@type":"Question","name":"Is the team generator free and private?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tool is free and the team-generation logic runs in the browser; names are not submitted to a RandomlyTools server by this page."}},
+          {"@type":"Question","name":"Can I copy the generated teams?","acceptedAnswer":{"@type":"Answer","text":"Yes. After generating teams, use Copy Results to copy a plain-text list of the teams and members."}}
         ]
       }
     ]
@@ -202,6 +202,24 @@
           This random team maker uses a proper Fisher-Yates shuffle (powered by your browser's cryptographic random number generator where available) to randomize your participant list, then distributes names evenly across the number of teams you choose. If the group doesn't divide evenly — say, 10 people into 3 teams — the extra participants are spread out fairly, so no team ever has more than one extra member than another. Every name is guaranteed a spot; nobody is left out.
         </p>
 
+        <h2>Worked Examples: How Teams Are Balanced</h2>
+        <p>
+          If 12 participants are divided into 3 teams, the result is 4 members per team. If 10 participants are divided into 3 teams, the result is 4, 3 and 3 members. If 17 participants are divided into 4 teams, the result can be 5, 4, 4 and 4. The generator keeps the size difference to at most one participant; the random order determines which people receive the larger groups.
+        </p>
+
+        <h2>What Random Team Selection Does and Does Not Guarantee</h2>
+        <p>
+          Random assignment is useful when you want a repeatable process without manually choosing who goes together, but random does not mean skill-balanced. The generator does not evaluate skill, age, position, experience, friendship groups, accessibility needs or other real-world constraints. For competitive sports, safety-sensitive activities or structured classroom requirements, review the generated teams and apply any necessary rules before using them.
+        </p>
+        <p>
+          Each non-empty line is treated as one participant. If two people have the same name, they are still treated as two separate entries. The tool also requires at least as many participants as the number of teams selected, so it will not create empty teams.
+        </p>
+
+        <h2>Privacy and Browser-Based Processing</h2>
+        <p>
+          Team generation happens in the browser using the site's client-side JavaScript. The page does not send the participant list to a RandomlyTools application server to generate the teams. Even so, avoid entering passwords, financial information or other sensitive personal data into any public web tool.
+        </p>
+
         <h2>Random Team Generator Features</h2>
         <ul>
           <li><strong>Fair, Even Distribution:</strong> Team sizes never differ by more than one member.</li>
@@ -233,6 +251,10 @@
         </p>
 
         <h2>Frequently Asked Questions</h2>
+        <p>
+          For a step-by-step explanation of team splitting, including balanced team-size examples and situations where randomization is not enough, see our <a href="/articles/how-to-randomly-split-people-into-teams/">guide to randomly splitting people into teams</a>.
+        </p>
+
         <div class="faq-list">
           <details class="faq-item">
             <summary>What is a random team generator?</summary>
