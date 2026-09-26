@@ -1236,6 +1236,23 @@ input, select, textarea {
     -webkit-overflow-scrolling: touch;
   }
 
+
+  /* Standalone tables (pages without a dedicated wrapper) stay scrollable. */
+  .article-content > table,
+  .article-content table {
+    display: block;
+    width: max-content;
+    min-width: 100%;
+    max-width: none;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .article-content table th,
+  .article-content table td {
+    white-space: normal;
+  }
+
   .article-content table,
   .table-wrapper table,
   .table-scroll table {
