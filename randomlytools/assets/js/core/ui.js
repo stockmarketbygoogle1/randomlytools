@@ -3,26 +3,10 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Remove accidental literal escape/separator text injected into the page.
-  // Only exact standalone tokens are removed; normal content is untouched.
-  const removeStrayTokens = (root = document.body) => {
-    if (!root) return;
-    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-    const nodes = [];
-    let node;
-    while ((node = walker.nextNode())) {
-      const parent = node.parentElement;
-      if (!parent || /^(SCRIPT|STYLE|TEXTAREA|INPUT|PRE|CODE)$/i.test(parent.tagName)) continue;
-      const value = node.nodeValue.trim();
-      if (value === '\\n' || value === '***' || value === '***\\n') nodes.push(node);
-    }
-    nodes.forEach(node => node.remove());
-  };
-
-  removeStrayTokens();
-
-  // Clean once after the initial DOM is ready. A permanent body-wide observer
-  // caused unnecessary work on every DOM mutation and could hurt responsiveness.
+  // Keep the shared UI script focused on interactive behavior only.
+  // The old full-DOM stray-token cleanup was removed because the generated
+  // pages no longer contain those tokens and scanning every text node added
+  // unnecessary main-thread work.
   
   const menuBtn = document.querySelector('.mobile-menu-btn');
   const navLinks = document.querySelector('.nav-links');
