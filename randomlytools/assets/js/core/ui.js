@@ -21,9 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   removeStrayTokens();
 
-  const strayTokenObserver = new MutationObserver(() => removeStrayTokens());
-  strayTokenObserver.observe(document.body, { childList: true, subtree: true });
-
+  // Clean once after the initial DOM is ready. A permanent body-wide observer
+  // caused unnecessary work on every DOM mutation and could hurt responsiveness.
   
   const menuBtn = document.querySelector('.mobile-menu-btn');
   const navLinks = document.querySelector('.nav-links');
