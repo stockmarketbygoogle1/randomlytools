@@ -28,28 +28,24 @@ const banner = `
   <div class="rt-cookie-inner">
     <div class="rt-cookie-copy">
       <p class="rt-cookie-title">🍪 Cookie & Privacy Notice</p>
-      <p class="rt-cookie-text">RandomlyTools uses essential browser storage for site functionality. Advertising and analytics services may use cookies or similar technologies. Choose whether to allow non-essential technologies. See our <a href="/privacy-policy/">Privacy Policy</a> for more information.</p>
+      <p class="rt-cookie-text">RandomlyTools may use cookies or similar browser storage to remember preferences and support site functionality. Third-party services, such as advertising or analytics providers, may use their own technologies according to their policies. See our <a href="/privacy-policy/">Privacy Policy</a> for more information.</p>
     </div>
     <div class="rt-cookie-actions">
-      <button type="button" id="rt-cookie-decline" aria-label="Allow essential technologies only">Essential only</button>
+      <button type="button" id="rt-cookie-decline" aria-label="Decline cookies">Decline</button>
       <button type="button" id="rt-cookie-accept" aria-label="Accept cookies">Accept</button>
     </div>
   </div>
 </div>
 <script id="rt-cookie-consent-script">
 (function(){
-  var key='randomlytools_cookie_consent_v2';
+  var key='randomlytools_cookie_consent_v1';
   var banner=document.getElementById('rt-cookie-consent');
   if(!banner)return;
   var choice=null;
   try{choice=window.localStorage.getItem(key)}catch(e){}
   if(choice!=='accepted'&&choice!=='declined') banner.classList.add('rt-cookie-visible');
-  window.RandomlyToolsConsent={get:function(){return choice},hasConsent:function(){return choice==='accepted'}};
   function save(value){
-    choice=value;
     try{window.localStorage.setItem(key,value)}catch(e){}
-    window.RandomlyToolsConsent={get:function(){return choice},hasConsent:function(){return choice==='accepted'}};
-    window.dispatchEvent(new CustomEvent('randomlytools:consent',{detail:{status:value}}));
     banner.classList.remove('rt-cookie-visible');
   }
   var accept=document.getElementById('rt-cookie-accept');
