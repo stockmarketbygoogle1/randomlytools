@@ -224,11 +224,24 @@ function calc(){
  document.getElementById('transfer-total-seconds').textContent=fmt(seconds,0);
  button.textContent=mode==='download'?'Calculate Download Time':'Calculate Upload Time';
 }
-document.querySelectorAll('.transfer-preset[data-size]').forEach(b=>b.addEventListener('click',()=>{sizeInput.value=b.dataset.size;sizeUnit.value=b.dataset.unit;calc()}));
-document.querySelectorAll('.transfer-preset[data-speed]').forEach(b=>b.addEventListener('click',()=>{speedInput.value=b.dataset.speed;speedUnit.value=b.dataset.unit;calc()}));
-modes.forEach(r=>r.addEventListener('change',calc));
-[sizeInput,sizeUnit,speedInput,speedUnit,efficiency].forEach(e=>e.addEventListener('input',calc));
-calc();
+document.querySelectorAll('.transfer-preset[data-size]').forEach(b=>b.addEventListener('click',()=>{
+ sizeInput.value=b.dataset.size;
+ sizeUnit.value=b.dataset.unit;
+ resultBox.style.display='none';
+ errorBox.style.display='none';
+}));
+document.querySelectorAll('.transfer-preset[data-speed]').forEach(b=>b.addEventListener('click',()=>{
+ speedInput.value=b.dataset.speed;
+ speedUnit.value=b.dataset.unit;
+ resultBox.style.display='none';
+ errorBox.style.display='none';
+}));
+modes.forEach(r=>r.addEventListener('change',()=>{
+ button.textContent=r.checked&&r.value==='upload'?'Calculate Upload Time':'Calculate Download Time';
+ resultBox.style.display='none';
+ errorBox.style.display='none';
+}));
+button.addEventListener('click',calc);
 })();
 </script>
 </body>
