@@ -178,7 +178,7 @@ for (const [slug, addition] of Object.entries(cricketContent)) {
 
 
 // Add Monetag Multitag to every generated HTML page so the ad format is available site-wide.
-const monetagTag = `<script id="rt-monetag-loader">(function(){function load(){if(document.getElementById('rt-monetag-tag'))return;var s=document.createElement('script');s.id='rt-monetag-tag';s.src='https://quge5.com/88/tag.min.js';s.dataset.zone='284179';s.async=true;s.dataset.cfasync='false';document.head.appendChild(s)}function allowed(){try{return window.localStorage.getItem('randomlytools_cookie_consent_v2')==='accepted'}catch(e){return false}}if(allowed())load();window.addEventListener('randomlytools:consent',function(e){if(e&&e.detail&&e.detail.status==='accepted')load()})})();</script>`;
+const monetagTag = '<script src="https://quge5.com/88/tag.min.js" data-zone="284179" async data-cfasync="false"></script>';
 for (const file of fs.readdirSync(output, { withFileTypes: true })) {
   const walk = (dir) => {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -186,7 +186,7 @@ for (const file of fs.readdirSync(output, { withFileTypes: true })) {
       if (entry.isDirectory()) walk(filePath);
       else if (entry.isFile() && entry.name.endsWith('.html')) {
         const html = fs.readFileSync(filePath, 'utf8');
-        if (html.includes('id="rt-monetag-loader"')) continue;
+        if (html.includes('https://quge5.com/88/tag.min.js')) continue;
         if (!html.includes('</head>')) throw new Error(`Could not find </head> in ${filePath}`);
         fs.writeFileSync(filePath, html.replace('</head>', monetagTag + '\\n</head>'), 'utf8');
       }
