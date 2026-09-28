@@ -188,7 +188,7 @@ for (const file of fs.readdirSync(output, { withFileTypes: true })) {
         const html = fs.readFileSync(filePath, 'utf8');
         if (html.includes('https://quge5.com/88/tag.min.js')) continue;
         if (!html.includes('</head>')) throw new Error(`Could not find </head> in ${filePath}`);
-        fs.writeFileSync(filePath, html.replace('</head>', monetagTag + '\\n</head>'), 'utf8');
+        fs.writeFileSync(filePath, html.replace('</head>', monetagTag + '\n</head>'), 'utf8');
       }
     }
   };
@@ -198,7 +198,7 @@ for (const file of fs.readdirSync(output, { withFileTypes: true })) {
     const html = fs.readFileSync(rootPath, 'utf8');
     if (!html.includes('https://quge5.com/88/tag.min.js')) {
       if (!html.includes('</head>')) throw new Error(`Could not find </head> in ${rootPath}`);
-      fs.writeFileSync(rootPath, html.replace('</head>', monetagTag + '\\n</head>'), 'utf8');
+      fs.writeFileSync(rootPath, html.replace('</head>', monetagTag + '\n</head>'), 'utf8');
     }
   }
 }
