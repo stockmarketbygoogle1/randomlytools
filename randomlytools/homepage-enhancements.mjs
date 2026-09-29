@@ -75,6 +75,12 @@ const homepageCards = `
   <h2 class="tool-card-title"><a href="/internet-speed-test/">Internet Speed Test</a></h2>
   <p class="tool-card-desc">Check download speed, upload speed and latency with a free browser-based internet speed test.</p>
   <span class="tool-card-badge">Internet &amp; Network</span>
+</div>
+<div class="tool-card" data-category="csc" data-keywords="csc tools vle common service centre csc calculator digital seva printing documents gst commission application forms photo signature pdf utility">
+  <div class="tool-card-icon">🏪</div>
+  <h2 class="tool-card-title"><a href="/csc-tools/">CSC Tools Hub for VLEs</a></h2>
+  <p class="tool-card-desc">Practical calculators and document helpers for CSC VLEs, digital service centres and everyday assisted-service work.</p>
+  <span class="tool-card-badge">CSC Tools</span>
 </div>`;
 
 if (!html.includes('href="/fence-post-depth-calculator/"')) {
@@ -94,6 +100,10 @@ if (!html.includes('data-category="websites">Website &amp; Creator</button>')) {
   const cricketButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="cricket"[^>]*>Cricket Tools<\/button>)/i;
   if (cricketButton.test(html)) html = html.replace(cricketButton, '$1<button type="button" class="preset-chip category-filter-btn" data-category="websites">Website &amp; Creator</button>');
 }
+if (!html.includes('data-category="csc">CSC Tools</button>')) {
+  const devButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="developer"[^>]*>Developer Tools<\/button>)/i;
+  if (devButton.test(html)) html = html.replace(devButton, '$1<button type="button" class="preset-chip category-filter-btn" data-category="csc">CSC Tools</button>');
+}
 if (!html.includes('data-category="home-diy">Home &amp; DIY</button><button type="button" class="preset-chip category-filter-btn" data-category="developer">Developer Tools</button>')) {
   const websiteButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="websites"[^>]*>Website &amp; Creator<\/button>)/i;
   if (websiteButton.test(html)) html = html.replace(websiteButton, '$1<button type="button" class="preset-chip category-filter-btn" data-category="home-diy">Home &amp; DIY</button>');
@@ -110,7 +120,8 @@ const jsonTools = [
   ['31', 'Taxable Income Calculator', 'https://randomlytools.in/taxable-income-calculator/'],
   ['32', 'Age Calculator', 'https://randomlytools.in/age-calculator/'],
   ['33', 'Concrete Calculator', 'https://randomlytools.in/concrete-calculator/'],
-  ['34', 'JSON Formatter', 'https://randomlytools.in/json-formatter/']
+  ['34', 'JSON Formatter', 'https://randomlytools.in/json-formatter/'],
+  ['35', 'CSC Tools Hub for VLEs', 'https://randomlytools.in/csc-tools/']
 ];
 for (const [position, name, url] of jsonTools) {
   if (!html.includes(`"url":"${url}"`)) {
