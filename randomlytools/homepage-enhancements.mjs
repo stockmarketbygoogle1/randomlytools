@@ -152,6 +152,11 @@ const topBar = `
   </div>
 </div>`;
 
+if (!html.includes('href="/csc-tools/">CSC Tools</a>')) {
+  const studentNav = /(<a href="\/student-tools\/">Student Tools<\/a>)/i;
+  if (studentNav.test(html)) html = html.replace(studentNav, '$1<a href="/csc-tools/">CSC Tools</a>');
+}
+
 if (!html.includes('class="rt-topbar"')) {
   html = html.replace('<header class="site-header">', `${topBar}\n<header class="site-header">`);
 }
