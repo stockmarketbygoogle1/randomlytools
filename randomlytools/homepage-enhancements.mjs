@@ -87,6 +87,12 @@ const homepageCards = `
   <h2 class="tool-card-title"><a href="/csc-tools/print-cost-calculator/">CSC Print Cost Calculator</a></h2>
   <p class="tool-card-desc">Calculate printing cost per page, customer charge and estimated profit using your own paper, printer, electricity and maintenance costs.</p>
   <span class="tool-card-badge">CSC Tools</span>
+</div>
+<div class="tool-card" data-category="csc" data-keywords="csc photocopy cost calculator photocopy cost per page copier cost per page photocopy shop cyber cafe vle paper toner ink electricity maintenance profit">
+  <div class="tool-card-icon">📄</div>
+  <h2 class="tool-card-title"><a href="/csc-tools/photocopy-cost-calculator/">CSC Photocopy Cost Calculator</a></h2>
+  <p class="tool-card-desc">Calculate photocopy cost per page, customer charge and estimated profit using your own paper, copier, toner, electricity and maintenance costs.</p>
+  <span class="tool-card-badge">CSC Tools</span>
 </div>`;
 
 if (!html.includes('href="/fence-post-depth-calculator/"')) {
@@ -128,7 +134,8 @@ const jsonTools = [
   ['33', 'Concrete Calculator', 'https://randomlytools.in/concrete-calculator/'],
   ['34', 'JSON Formatter', 'https://randomlytools.in/json-formatter/'],
   ['35', 'CSC Tools Hub for VLEs', 'https://randomlytools.in/csc-tools/'],
-  ['36', 'CSC Print Cost Calculator', 'https://randomlytools.in/csc-tools/print-cost-calculator/']
+  ['36', 'CSC Print Cost Calculator', 'https://randomlytools.in/csc-tools/print-cost-calculator/'],
+  ['37', 'CSC Photocopy Cost Calculator', 'https://randomlytools.in/csc-tools/photocopy-cost-calculator/']
 ];
 for (const [position, name, url] of jsonTools) {
   if (!html.includes(`"url":"${url}"`)) {
