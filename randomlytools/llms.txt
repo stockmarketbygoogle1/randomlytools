@@ -14,7 +14,8 @@
 
 ## SSC Exam Tools 2026
 
-- SSC MTS Marks Calculator 2026: https://randomlytools.in/student-tools/ssc/ssc-mts-marks-calculator-2026/ — Calculate SSC MTS Session-I and Session-II raw marks, check Session-I qualifying status, negative marking and cutoff/normalization references.\n- SSC GD Marks Calculator 2027: https://randomlytools.in/student-tools/ssc/ssc-gd-marks-calculator-2027/ — Calculate SSC GD raw CBT score from correct and wrong answers, review negative marking, NCC bonus and historical cutoff references.
+- SSC MTS Marks Calculator 2026: https://randomlytools.in/student-tools/ssc/ssc-mts-marks-calculator-2026/ — Calculate SSC MTS Session-I and Session-II raw marks, check Session-I qualifying status, negative marking and cutoff/normalization references.
+- SSC GD Marks Calculator 2027: https://randomlytools.in/student-tools/ssc/ssc-gd-marks-calculator-2027/ — Calculate SSC GD raw CBT score from correct and wrong answers, review negative marking, NCC bonus and historical cutoff references.
 - SSC CHSL Age Calculator 2026: https://randomlytools.in/student-tools/ssc/ssc-chsl-age-calculator-2026/ — Calculate exact age on 1 August 2026 and check the standard SSC CHSL 18–27 age limit and DOB range.
 - SSC CHSL Eligibility Calculator 2026: https://randomlytools.in/student-tools/ssc/ssc-chsl-eligibility-calculator-2026/ — Check basic SSC CHSL age, qualification and post-specific eligibility conditions for 2026.
 - SSC CGL Age Calculator 2026: https://randomlytools.in/student-tools/ssc/ssc-cgl-age-calculator-2026/ — Check SSC CGL age eligibility for common post-wise age bands using date of birth and the crucial date.
@@ -23,6 +24,14 @@
 
 - SSC Exams 2026 Guide: https://randomlytools.in/articles/ssc-exams-guide/ — Practical guide covering SSC eligibility, age, qualification, marks, cutoff, normalization and related calculators.
 
+
+## CSC / VLE Tools
+
+- CSC Tools Hub: https://randomlytools.in/csc-tools/ — Independent tools and calculators for CSC VLEs, cyber cafes and digital service operators. RandomlyTools is not an official CSC or government portal.
+- CSC Print Cost Calculator: https://randomlytools.in/csc-tools/print-cost-calculator/ — Calculate printing cost per page, customer charge and estimated profit using your own paper, printer, electricity, maintenance and other costs.
+- CSC Photocopy Cost Calculator: https://randomlytools.in/csc-tools/photocopy-cost-calculator/ — Calculate photocopy cost per page, customer charge and estimated profit using your own paper, copier or toner, electricity, maintenance and other costs.
+
+- Download & Upload Time Calculator: https://randomlytools.in/download-upload-time-calculator/ — Estimate file download and upload time from file size and internet speed using Mbps, Gbps or MB/s.
 ## Popular Tools
 
 - Random Name Generator: https://randomlytools.in/random-name-generator/ — Generate random names for people, characters, writing, and other creative uses.
