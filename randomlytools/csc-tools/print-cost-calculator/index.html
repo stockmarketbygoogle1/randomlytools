@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSC Print Cost Calculator – Printing Cost Per Page | RandomlyTools</title>
+<meta name="description" content="Calculate printing cost per page for a CSC, cyber cafe or print shop using paper, printer, electricity, maintenance and other costs. Add your selling price to estimate profit.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://randomlytools.in/csc-tools/print-cost-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<meta property="og:title" content="CSC Print Cost Calculator – Printing Cost Per Page">
+<meta property="og:description" content="Estimate your real printing cost per page and customer charge using your own paper, printer, electricity and maintenance costs.">
+<meta property="og:url" content="https://randomlytools.in/csc-tools/print-cost-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RandomlyTools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSC Print Cost Calculator – Printing Cost Per Page">
+<meta name="twitter:description" content="Calculate print cost per page and estimated profit using your own local costs.">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebApplication",
+      "name":"CSC Print Cost Calculator",
+      "url":"https://randomlytools.in/csc-tools/print-cost-calculator/",
+      "applicationCategory":"BusinessApplication",
+      "operatingSystem":"All",
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+      "description":"Free print cost per page calculator for CSC VLEs, cyber cafes and print shops."
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://randomlytools.in/"},
+        {"@type":"ListItem","position":2,"name":"CSC Tools","item":"https://randomlytools.in/csc-tools/"},
+        {"@type":"ListItem","position":3,"name":"CSC Print Cost Calculator","item":"https://randomlytools.in/csc-tools/print-cost-calculator/"}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"What does a print cost calculator calculate?","acceptedAnswer":{"@type":"Answer","text":"It estimates your cost per printed page from paper, printer or toner cost, electricity, maintenance and other costs that you enter."}},
+        {"@type":"Question","name":"Can I use this calculator for a CSC or cyber cafe?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is designed for CSC VLEs, cyber cafes, print shops and other small service counters that want to estimate their own printing costs."}},
+        {"@type":"Question","name":"Does this calculator use official CSC print rates?","acceptedAnswer":{"@type":"Answer","text":"No. The calculator uses the costs and customer charge entered by you. It does not present an unverified amount as an official CSC rate."}},
+        {"@type":"Question","name":"How is printer cost per page calculated?","acceptedAnswer":{"@type":"Answer","text":"Printer or consumable cost per page is estimated by dividing the relevant supply cost by its usable page yield. Paper, electricity, maintenance and other per-page costs can then be added."}}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+.print-card{max-width:980px;margin:0 auto;background:var(--bg-surface);border:1px solid var(--border-color);border-radius:20px;padding:1.4rem;box-shadow:var(--shadow-sm)}
+.print-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.print-field label{display:block;font-weight:750;margin-bottom:.4rem;color:var(--text-primary)}
+.print-field input{width:100%;box-sizing:border-box}
+.print-help{display:block;font-size:.78rem;color:var(--text-muted);margin-top:.3rem}
+.print-section{margin-top:1.25rem;padding:1rem;border:1px solid var(--border-color);border-radius:14px;background:var(--bg-surface-subtle)}
+.print-section h2{font-size:1rem;margin:0 0 .8rem}
+.print-button{width:100%;margin-top:1rem;font-size:1rem}
+.print-error{display:none;margin-top:.75rem;color:var(--accent-red);font-size:.9rem}
+.print-result{display:none;margin-top:1.25rem;padding:1.2rem;border:2px solid var(--primary);border-radius:16px;background:var(--bg-surface)}
+.print-result-main{text-align:center;margin-bottom:1rem}
+.print-result-label{font-size:.86rem;color:var(--text-muted);font-weight:650}
+.print-result-value{font-size:clamp(2rem,6vw,3rem);font-weight:850;line-height:1.15;margin-top:.2rem}
+.print-result-sub{color:var(--text-muted);margin-top:.35rem}
+.print-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem}
+.print-stat{padding:.75rem;border:1px solid var(--border-color);border-radius:10px;background:var(--bg-surface-subtle)}
+.print-stat-label{display:block;font-size:.74rem;color:var(--text-muted);margin-bottom:.2rem}
+.print-stat-value{font-weight:750}
+.print-breakdown{width:100%;border-collapse:collapse;margin-top:1rem}
+.print-breakdown th,.print-breakdown td{border:1px solid var(--border-color);padding:.65rem;text-align:left}
+.print-breakdown th{background:var(--bg-surface-subtle)}
+.print-note{margin:1rem 0 0;padding:.8rem;border-radius:10px;background:var(--bg-surface-subtle);color:var(--text-muted);font-size:.82rem}
+@media(max-width:650px){.print-card{padding:1rem;border-radius:16px}.print-grid,.print-stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container">
+<a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a>
+<button class="mobile-menu-btn" aria-label="Toggle navigation menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+<nav class="nav-links">
+<a href="/">All Tools</a><a href="/random-name-generator/">Names</a><a href="/random-number-picker/">Numbers</a><a href="/random-discord-name-generator/">Usernames</a><a href="/random-company-brand-name-generator/">Brands</a><a href="/student-tools/">Student Tools</a><a href="/csc-tools/" class="active">CSC Tools</a><a href="/articles/">Articles</a><a href="/about/">About</a>
+</nav></div></header>
+
+<main class="container page-intro">
+<div class="breadcrumbs"><a href="/">Home</a> <span>/</span> <a href="/csc-tools/">CSC Tools</a> <span>/</span> <span>Print Cost Calculator</span></div>
+<div class="tool-header" style="text-align:center;max-width:850px;margin:0 auto 1.5rem">
+<h1>CSC Print Cost Calculator</h1>
+<p class="section-subtitle">Calculate your printing cost per page, suggested customer charge and estimated profit using your own paper, printer, electricity and maintenance costs.</p>
+</div>
+
+<div class="ad-slot-container"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-box">Ad Space Available</div></div>
+
+<section class="print-card" aria-labelledby="calculator-heading">
+<h2 id="calculator-heading" style="margin-top:0;text-align:center">Calculate Your Cost Per Printed Page</h2>
+<p style="text-align:center;color:var(--text-muted);margin-top:-.4rem">Enter your actual local costs. No official CSC rate is assumed.</p>
+
+<div class="print-section">
+<h2>1. Paper & Printer Cost</h2>
+<div class="print-grid">
+<div class="print-field"><label for="paper-cost">Paper cost per sheet (₹)</label><input id="paper-cost" type="number" min="0" step="0.01" value="0.50" inputmode="decimal"><span class="print-help">Example: ₹250 for 500 A4 sheets = ₹0.50 per sheet.</span></div>
+<div class="print-field"><label for="printer-cost">Printer / toner cost (₹)</label><input id="printer-cost" type="number" min="0" step="0.01" value="3000" inputmode="decimal"><span class="print-help">Enter the usable printer ink/toner/supply cost for the chosen yield.</span></div>
+<div class="print-field"><label for="yield-pages">Expected page yield</label><input id="yield-pages" type="number" min="1" step="1" value="1500" inputmode="numeric"><span class="print-help">How many pages you expect from that printer/toner supply.</span></div>
+<div class="print-field"><label for="electricity-page">Electricity cost per page (₹)</label><input id="electricity-page" type="number" min="0" step="0.01" value="0.05" inputmode="decimal"><span class="print-help">Use your own estimate if you want to include power consumption.</span></div>
+</div>
+</div>
+
+<div class="print-section">
+<h2>2. Other Operating Cost</h2>
+<div class="print-grid">
+<div class="print-field"><label for="maintenance-page">Maintenance / waste per page (₹)</label><input id="maintenance-page" type="number" min="0" step="0.01" value="0.10" inputmode="decimal"><span class="print-help">Optional allowance for cleaning, failed prints, servicing and wastage.</span></div>
+<div class="print-field"><label for="other-page">Other cost per page (₹)</label><input id="other-page" type="number" min="0" step="0.01" value="0" inputmode="decimal"><span class="print-help">Add any other per-page cost you want to track.</span></div>
+<div class="print-field"><label for="customer-charge">Customer charge per page (₹)</label><input id="customer-charge" type="number" min="0" step="0.01" value="5" inputmode="decimal"><span class="print-help">Your own selling/service price, not an official CSC rate.</span></div>
+<div class="print-field"><label for="pages">Number of pages</label><input id="pages" type="number" min="1" step="1" value="10" inputmode="numeric"><span class="print-help">Use this to calculate the total cost and estimated profit for an order.</span></div>
+</div>
+</div>
+
+<button type="button" id="calculate" class="btn btn-primary print-button">Calculate Print Cost</button>
+<div id="error" class="print-error" role="alert"></div>
+
+<div id="result" class="print-result" aria-live="polite">
+<div class="print-result-main"><div class="print-result-label">Estimated total cost per page</div><div class="print-result-value" id="cost-page">₹0.00</div><div class="print-result-sub" id="cost-sub">Based on the costs you entered</div></div>
+<div class="print-stats">
+<div class="print-stat"><span class="print-stat-label">Customer charge / page</span><span class="print-stat-value" id="charge-page">₹0.00</span></div>
+<div class="print-stat"><span class="print-stat-label">Estimated profit / page</span><span class="print-stat-value" id="profit-page">₹0.00</span></div>
+<div class="print-stat"><span class="print-stat-label">Estimated profit margin</span><span class="print-stat-value" id="margin">0%</span></div>
+</div>
+<table class="print-breakdown">
+<thead><tr><th>Cost component</th><th>Per page</th><th>For this order</th></tr></thead>
+<tbody>
+<tr><td>Paper</td><td id="paper-out">₹0.00</td><td id="paper-total">₹0.00</td></tr>
+<tr><td>Printer / toner</td><td id="printer-out">₹0.00</td><td id="printer-total">₹0.00</td></tr>
+<tr><td>Electricity</td><td id="electricity-out">₹0.00</td><td id="electricity-total">₹0.00</td></tr>
+<tr><td>Maintenance / waste</td><td id="maintenance-out">₹0.00</td><td id="maintenance-total">₹0.00</td></tr>
+<tr><td>Other</td><td id="other-out">₹0.00</td><td id="other-total">₹0.00</td></tr>
+<tr><th>Total</th><th id="total-out">₹0.00</th><th id="total-order">₹0.00</th></tr>
+</tbody>
+</table>
+<div class="print-note">💡 This calculator is rate-independent: it uses the values you enter for your own printer, paper, electricity, maintenance and customer charge.</div>
+</div>
+</section>
+
+<div class="ad-slot-container"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-box">Ad Space Available</div></div>
+
+<article class="article-content" style="max-width:900px;margin:2rem auto">
+<div class="disclaimer-callout"><strong>Important:</strong> RandomlyTools is an independent tools website, not an official CSC or government portal. This calculator does not publish or assume an official CSC printing rate. Use your own current local costs and customer pricing.</div>
+
+<h2>What Is a CSC Print Cost Calculator?</h2>
+<p>A CSC print cost calculator helps a VLE, cyber cafe or print shop estimate the actual cost of producing a printed page. Instead of assuming one fixed rate, this calculator lets you enter your paper cost, printer or toner cost, expected page yield, electricity, maintenance and other expenses.</p>
+
+<h2>How to Calculate Printing Cost Per Page</h2>
+<p>The basic idea is to add the cost of each component used to produce one printed page:</p>
+<p><strong>Print cost per page = paper cost + printer/toner cost per page + electricity cost per page + maintenance/waste + other per-page costs</strong></p>
+<p>Printer or toner cost per page can be estimated as:</p>
+<p><strong>Printer/toner cost per page = printer or toner supply cost ÷ expected page yield</strong></p>
+<p>For example, if a ₹3,000 supply is expected to produce 1,500 pages, its supply cost is ₹2 per page. The actual yield depends on the printer, cartridge, toner, coverage and usage, so use the yield that best matches your own setup.</p>
+
+<h2>Why Use Your Own Costs?</h2>
+<p>Printing costs can vary widely between service counters because paper prices, printer models, consumables, electricity costs, maintenance and wastage are different. A local print shop may also charge different amounts for black-and-white, colour, single-side and double-side printing.</p>
+<p>Using your own numbers makes the result useful for pricing decisions without presenting a changing service rate as an official rule.</p>
+
+<h2>How to Use This Calculator</h2>
+<ol>
+<li>Enter your paper cost per sheet.</li>
+<li>Enter the printer, toner or ink supply cost and expected page yield.</li>
+<li>Add electricity, maintenance/waste and any other per-page costs you want to track.</li>
+<li>Enter your customer charge per page.</li>
+<li>Enter the number of pages and click <strong>Calculate Print Cost</strong>.</li>
+<li>Review your cost per page, estimated profit, margin and order total.</li>
+</ol>
+
+<h2>Print Cost Example</h2>
+<p>Suppose your paper costs ₹0.50 per sheet, your printer/toner supply costs ₹3,000 and gives an expected 1,500 pages, electricity is ₹0.05 per page, and maintenance/waste is ₹0.10 per page. The estimated cost is ₹2.65 per page before any other costs you add. If you charge ₹5 per page, the estimated gross profit is ₹2.35 per page before other business expenses.</p>
+
+<h2>What Can Change Your Printing Cost?</h2>
+<ul>
+<li><strong>Paper:</strong> paper size, GSM, brand and local purchase price can change the cost per sheet.</li>
+<li><strong>Ink or toner:</strong> actual yield can vary with page coverage and print settings.</li>
+<li><strong>Electricity:</strong> power consumption and local electricity cost affect operating cost.</li>
+<li><strong>Maintenance:</strong> cleaning, servicing, replacement parts and failed prints add costs.</li>
+<li><strong>Print type:</strong> colour and black-and-white printing can have very different consumable costs.</li>
+<li><strong>Duplex printing:</strong> double-sided jobs change how many printed sides you produce per sheet.</li>
+</ul>
+
+<h2>CSC Print Cost Calculator vs Official Service Rates</h2>
+<p>This tool is intentionally different from a rate list. It calculates your own operating cost and pricing using your inputs. It does not claim that a particular amount is an official CSC commission or government-mandated print charge.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>Can I use this for a cyber cafe or print shop?</h3>
+<p>Yes. The calculator is useful for any small printing counter where you want to understand cost per page and estimated profit.</p>
+<h3>Can I calculate black-and-white and colour printing separately?</h3>
+<p>You can run the calculator separately for each setup by entering the relevant paper, consumable, yield and other costs for that print type.</p>
+<h3>What is printer cost per page?</h3>
+<p>It is the estimated consumable cost of producing one page. A simple calculation is supply cost divided by expected page yield.</p>
+<h3>Does this calculator use official CSC rates?</h3>
+<p>No. It uses your own inputs. It should not be treated as a source for official CSC commissions, government fees or mandatory customer charges.</p>
+
+<h2>Related CSC Tools</h2>
+<ul>
+<li><a href="/csc-tools/">CSC Tools Hub for VLEs</a> — browse calculators and document helpers planned for CSC and digital-service work.</li>
+<li><a href="/age-calculator/">Age Calculator</a> — calculate exact age from a date of birth.</li>
+<li><a href="/download-upload-time-calculator/">Download &amp; Upload Time Calculator</a> — estimate transfer time for large files.</li>
+<li><a href="/percentage-calculator-for-marks/">Percentage Calculator for Marks</a> — calculate percentages from marks.</li>
+</ul>
+</article>
+</main>
+
+<footer class="site-footer"><div class="container"><div class="footer-grid">
+<div class="footer-brand"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><p>Free calculators and practical browser-based tools. Fast and privacy-focused.</p></div>
+<div class="footer-column"><h4>CSC Tools</h4><ul><li><a href="/csc-tools/">CSC Tools Hub</a></li><li><a href="/csc-tools/print-cost-calculator/">Print Cost Calculator</a></li><li><a href="/age-calculator/">Age Calculator</a></li><li><a href="/attendance-calculator/">Attendance Calculator</a></li></ul></div>
+<div class="footer-column"><h4>Resources</h4><ul><li><a href="/articles/">Guides &amp; Articles</a></li><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+<div class="footer-column"><h4>Trust &amp; Legal</h4><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Service</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div>
+</div><div class="footer-bottom"><p>&copy; 2026 RandomlyTools. All rights reserved.</p><p>Built for speed and user privacy.</p></div></div></footer>
+
+<script src="/assets/js/core/ui.js"></script>
+<script>
+(function(){
+'use strict';
+const ids=['paper-cost','printer-cost','yield-pages','electricity-page','maintenance-page','other-page','customer-charge','pages'];
+const el=Object.fromEntries(ids.map(id=>[id,document.getElementById(id)]));
+const result=document.getElementById('result'),error=document.getElementById('error');
+const money=v=>'₹'+new Intl.NumberFormat('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2}).format(v);
+function num(id){return Number(el[id].value)}
+function calc(){
+ const paper=num('paper-cost'),printer=num('printer-cost'),yieldPages=num('yield-pages'),electricity=num('electricity-page'),maintenance=num('maintenance-page'),other=num('other-page'),charge=num('customer-charge'),pages=num('pages');
+ const values=[paper,printer,yieldPages,electricity,maintenance,other,charge,pages];
+ if(values.some(v=>!Number.isFinite(v)||v<0)||yieldPages<=0||pages<=0){error.textContent='Please enter valid values. Page yield and number of pages must be greater than 0.';error.style.display='block';result.style.display='none';return}
+ const printerPage=printer/yieldPages;
+ const totalPage=paper+printerPage+electricity+maintenance+other;
+ const orderCost=totalPage*pages, revenue=charge*pages, profitPage=charge-totalPage, profit=revenue-orderCost, margin=revenue>0?(profit/revenue)*100:0;
+ error.style.display='none';result.style.display='block';
+ document.getElementById('cost-page').textContent=money(totalPage);
+ document.getElementById('cost-sub').textContent='Estimated operating cost based on your inputs';
+ document.getElementById('charge-page').textContent=money(charge);
+ document.getElementById('profit-page').textContent=money(profitPage);
+ document.getElementById('margin').textContent=(Number.isFinite(margin)?margin:0).toFixed(1)+'%';
+ const rows=[['paper-out',paper],['printer-out',printerPage],['electricity-out',electricity],['maintenance-out',maintenance],['other-out',other],['total-out',totalPage]];
+ rows.forEach(([id,v])=>document.getElementById(id).textContent=money(v));
+ [['paper-total',paper],['printer-total',printerPage],['electricity-total',electricity],['maintenance-total',maintenance],['other-total',other],['total-order',orderCost]].forEach(([id,v])=>document.getElementById(id).textContent=money(v*pages));
+}
+document.getElementById('calculate').addEventListener('click',calc);
+})();
+</script>
+</body>
+</html>
