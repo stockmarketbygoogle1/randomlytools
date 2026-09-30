@@ -30,6 +30,7 @@
 - CSC Tools Hub: https://randomlytools.in/csc-tools/ — Independent tools and calculators for CSC VLEs, cyber cafes and digital service operators. RandomlyTools is not an official CSC or government portal.
 - CSC Print Cost Calculator: https://randomlytools.in/csc-tools/print-cost-calculator/ — Calculate printing cost per page, customer charge and estimated profit using your own paper, printer, electricity, maintenance and other costs.
 - CSC Photocopy Cost Calculator: https://randomlytools.in/csc-tools/photocopy-cost-calculator/ — Calculate photocopy cost per page, customer charge and estimated profit using your own paper, copier or toner, electricity, maintenance and other costs.
+- CSC Scan Cost Calculator: https://randomlytools.in/csc-tools/scan-cost-calculator/
 
 - Download & Upload Time Calculator: https://randomlytools.in/download-upload-time-calculator/ — Estimate file download and upload time from file size and internet speed using Mbps, Gbps or MB/s.
 ## Popular Tools
