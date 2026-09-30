@@ -73,7 +73,7 @@
 .print-breakdown th{background:var(--bg-surface-subtle)}
 .print-note{margin:1rem 0 0;padding:.8rem;border-radius:10px;background:var(--bg-surface-subtle);color:var(--text-muted);font-size:.82rem}
 @media(max-width:650px){.print-card{padding:1rem;border-radius:16px}.print-grid,.print-stats{grid-template-columns:1fr}}
-</style>
+.onpage-tools{max-width:900px;margin:1.5rem auto;padding:1rem 1.15rem;border:1px solid var(--border-color);border-radius:14px;background:var(--bg-surface-subtle)}.onpage-tools h2{font-size:1rem;margin:0 0 .65rem;color:var(--text-primary)}.onpage-tools ul{margin:0;padding-left:1.2rem;columns:2;column-gap:2rem}.onpage-tools li{margin:.35rem 0;break-inside:avoid}.onpage-tools a{font-weight:600}@media(max-width:650px){.onpage-tools ul{columns:1}}</style>
 </head>
 <body>
 <header class="site-header"><div class="container">
@@ -144,23 +144,24 @@
 <div class="ad-slot-container"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-box">Ad Space Available</div></div>
 
 <article class="article-content" style="max-width:900px;margin:2rem auto">
-<div class="disclaimer-callout"><strong>Important:</strong> RandomlyTools is an independent tools website, not an official CSC or government portal. This calculator does not publish or assume an official CSC printing rate. Use your own current local costs and customer pricing.</div>
+<div class="disclaimer-callout"><strong>Important:</strong> RandomlyTools is an independent tools website, not an official CSC or government portal. This calculator does not publish or assume an official CSC printing rate. Use your own current local costs and customer pricing.</div><div class="onpage-tools" aria-label="Table of contents"><h2>On This Page</h2><ul><li><a href="#what-is">What Is This Calculator?</a></li><li><a href="#how-to-calculate">How to Calculate Cost Per Page</a></li><li><a href="#why-own-costs">Why Use Your Own Costs?</a></li><li><a href="#how-to-use">How to Use the Calculator</a></li><li><a href="#cost-example">Cost Example</a></li><li><a href="#cost-factors">What Can Change Your Cost?</a></li><li><a href="#official-rates">Official Service Rates</a></li><li><a href="#faq">Frequently Asked Questions</a></li><li><a href="#related-tools">Related CSC Tools</a></li></ul></div>
 
-<h2>What Is a CSC Print Cost Calculator?</h2>
+
+<h2 id="what-is">What Is a CSC Print Cost Calculator?</h2>
 <p>A CSC print cost calculator helps a VLE, cyber cafe or print shop estimate the actual cost of producing a printed page. Instead of assuming one fixed rate, this calculator lets you enter your paper cost, printer or toner cost, expected page yield, electricity, maintenance and other expenses.</p>
 
-<h2>How to Calculate Printing Cost Per Page</h2>
+<h2 id="how-to-calculate">How to Calculate Printing Cost Per Page</h2>
 <p>The basic idea is to add the cost of each component used to produce one printed page:</p>
 <p><strong>Print cost per page = paper cost + printer/toner cost per page + electricity cost per page + maintenance/waste + other per-page costs</strong></p>
 <p>Printer or toner cost per page can be estimated as:</p>
 <p><strong>Printer/toner cost per page = printer or toner supply cost ÷ expected page yield</strong></p>
 <p>For example, if a ₹3,000 supply is expected to produce 1,500 pages, its supply cost is ₹2 per page. The actual yield depends on the printer, cartridge, toner, coverage and usage, so use the yield that best matches your own setup.</p>
 
-<h2>Why Use Your Own Costs?</h2>
+<h2 id="why-own-costs">Why Use Your Own Costs?</h2>
 <p>Printing costs can vary widely between service counters because paper prices, printer models, consumables, electricity costs, maintenance and wastage are different. A local print shop may also charge different amounts for black-and-white, colour, single-side and double-side printing.</p>
 <p>Using your own numbers makes the result useful for pricing decisions without presenting a changing service rate as an official rule.</p>
 
-<h2>How to Use This Calculator</h2>
+<h2 id="how-to-use">How to Use This Calculator</h2>
 <ol>
 <li>Enter your paper cost per sheet.</li>
 <li>Enter the printer, toner or ink supply cost and expected page yield.</li>
@@ -170,10 +171,10 @@
 <li>Review your cost per page, estimated profit, margin and order total.</li>
 </ol>
 
-<h2>Print Cost Example</h2>
+<h2 id="cost-example">Print Cost Example</h2>
 <p>Suppose your paper costs ₹0.50 per sheet, your printer/toner supply costs ₹3,000 and gives an expected 1,500 pages, electricity is ₹0.05 per page, and maintenance/waste is ₹0.10 per page. The estimated cost is ₹2.65 per page before any other costs you add. If you charge ₹5 per page, the estimated gross profit is ₹2.35 per page before other business expenses.</p>
 
-<h2>What Can Change Your Printing Cost?</h2>
+<h2 id="cost-factors">What Can Change Your Printing Cost?</h2>
 <ul>
 <li><strong>Paper:</strong> paper size, GSM, brand and local purchase price can change the cost per sheet.</li>
 <li><strong>Ink or toner:</strong> actual yield can vary with page coverage and print settings.</li>
@@ -183,21 +184,16 @@
 <li><strong>Duplex printing:</strong> double-sided jobs change how many printed sides you produce per sheet.</li>
 </ul>
 
-<h2>CSC Print Cost Calculator vs Official Service Rates</h2>
+<h2 id="official-rates">CSC Print Cost Calculator vs Official Service Rates</h2>
 <p>This tool is intentionally different from a rate list. It calculates your own operating cost and pricing using your inputs. It does not claim that a particular amount is an official CSC commission or government-mandated print charge.</p>
 
-<h2>Frequently Asked Questions</h2>
-<h3>Can I use this for a cyber cafe or print shop?</h3>
-<p>Yes. The calculator is useful for any small printing counter where you want to understand cost per page and estimated profit.</p>
-<h3>Can I calculate black-and-white and colour printing separately?</h3>
-<p>You can run the calculator separately for each setup by entering the relevant paper, consumable, yield and other costs for that print type.</p>
-<h3>What is printer cost per page?</h3>
-<p>It is the estimated consumable cost of producing one page. A simple calculation is supply cost divided by expected page yield.</p>
-<h3>Does this calculator use official CSC rates?</h3>
-<p>No. It uses your own inputs. It should not be treated as a source for official CSC commissions, government fees or mandatory customer charges.</p>
-
-<h2>Related CSC Tools</h2>
-<ul>
+<h2 id="faq">Frequently Asked Questions</h2><div class="faq-list"><details class="faq-item"><summary>Can I use this for a cyber cafe or print shop?</summary><div class="faq-answer"><p>
+</p></div></details><details class="faq-item"><summary>Can I calculate black-and-white and colour printing separately?</summary><div class="faq-answer"><p>
+</p></div></details><details class="faq-item"><summary>What is printer cost per page?</summary><div class="faq-answer"><p>
+</p></div></details><details class="faq-item"><summary>Does this calculator use official CSC rates?</summary><div class="faq-answer"><p>
+</p></div></details></div>
+<h2 id="related-tools">Related CSC Tools</h2>
+<ul><li><a href="/csc-tools/photocopy-cost-calculator/">CSC Photocopy Cost Calculator</a> — Calculate photocopy cost per page, customer charge and estimated profit using your own paper, copier, toner, electricity and maintenance costs.</li>
 <li><a href="/csc-tools/">CSC Tools Hub for VLEs</a> — browse calculators and document helpers planned for CSC and digital-service work.</li>
 <li><a href="/age-calculator/">Age Calculator</a> — calculate exact age from a date of birth.</li>
 <li><a href="/download-upload-time-calculator/">Download &amp; Upload Time Calculator</a> — estimate transfer time for large files.</li>
@@ -208,7 +204,7 @@
 
 <footer class="site-footer"><div class="container"><div class="footer-grid">
 <div class="footer-brand"><a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a><p>Free calculators and practical browser-based tools. Fast and privacy-focused.</p></div>
-<div class="footer-column"><h4>CSC Tools</h4><ul><li><a href="/csc-tools/">CSC Tools Hub</a></li><li><a href="/csc-tools/print-cost-calculator/">Print Cost Calculator</a></li><li><a href="/age-calculator/">Age Calculator</a></li><li><a href="/attendance-calculator/">Attendance Calculator</a></li></ul></div>
+<div class="footer-column"><h4>CSC Tools</h4><ul><li><a href="/csc-tools/photocopy-cost-calculator/">Photocopy Cost Calculator</a></li><li><a href="/csc-tools/">CSC Tools Hub</a></li><li><a href="/csc-tools/print-cost-calculator/">Print Cost Calculator</a></li><li><a href="/age-calculator/">Age Calculator</a></li><li><a href="/attendance-calculator/">Attendance Calculator</a></li></ul></div>
 <div class="footer-column"><h4>Resources</h4><ul><li><a href="/articles/">Guides &amp; Articles</a></li><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li></ul></div>
 <div class="footer-column"><h4>Trust &amp; Legal</h4><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Service</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div>
 </div><div class="footer-bottom"><p>&copy; 2026 RandomlyTools. All rights reserved.</p><p>Built for speed and user privacy.</p></div></div></footer>
