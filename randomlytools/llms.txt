@@ -33,6 +33,10 @@
 - CSC Scan Cost Calculator: https://randomlytools.in/csc-tools/scan-cost-calculator/
 
 - Download & Upload Time Calculator: https://randomlytools.in/download-upload-time-calculator/ — Estimate file download and upload time from file size and internet speed using Mbps, Gbps or MB/s.
+## Image & Document Tools
+
+- Image Compressor to KB: https://randomlytools.in/image-compressor/ — Compress JPG, PNG and WebP images below a chosen KB limit, optionally resize dimensions, and preview the output using browser-based processing.
+
 ## Popular Tools
 
 - Random Name Generator: https://randomlytools.in/random-name-generator/ — Generate random names for people, characters, writing, and other creative uses.
