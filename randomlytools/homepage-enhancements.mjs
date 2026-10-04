@@ -99,12 +99,33 @@ const homepageCards = `
   <h2 class="tool-card-title"><a href="/csc-tools/scan-cost-calculator/">CSC Scan Cost Calculator</a></h2>
   <p class="tool-card-desc">Calculate scanning cost per page, customer charge and estimated profit using your own scanner, electricity and maintenance costs.</p>
   <span class="tool-card-badge">CSC Tools</span>
+</div>
+<div class="tool-card" data-category="image-tools" data-keywords="image compressor compress image to kb image compressor 20kb 50kb 100kb resize image photo signature compress government form image size reducer jpg png webp">
+  <div class="tool-card-icon">🖼️</div>
+  <h2 class="tool-card-title"><a href="/image-compressor/">Image Compressor to KB</a></h2>
+  <p class="tool-card-desc">Compress JPG, PNG and WebP images below a chosen KB limit, resize dimensions and preview the result privately in your browser.</p>
+  <span class="tool-card-badge">Image Tools</span>
 </div>`;
 
 if (!html.includes('href="/fence-post-depth-calculator/"')) {
   const gridEndMarker = /(<div id="tools-grid-wrapper" class="tools-grid">[\s\S]*?)(<\/div>\s*<div id="no-tools-found")/i;
   if (!gridEndMarker.test(html)) throw new Error('Homepage tools grid end marker not found.');
   html = html.replace(gridEndMarker, `$1${homepageCards}\n$2`);
+}
+
+// Add the image compressor independently so it remains visible even when older
+// homepage cards are already present in the source HTML.
+if (!html.includes('href="/image-compressor/"')) {
+  const imageCompressorCard = `
+<div class="tool-card" data-category="image-tools" data-keywords="image compressor compress image to kb image compressor 20kb 50kb 100kb resize image photo signature compress government form image size reducer jpg png webp">
+  <div class="tool-card-icon">🖼️</div>
+  <h2 class="tool-card-title"><a href="/image-compressor/">Image Compressor to KB</a></h2>
+  <p class="tool-card-desc">Compress JPG, PNG and WebP images below a chosen KB limit, resize dimensions and preview the result privately in your browser.</p>
+  <span class="tool-card-badge">Image Tools</span>
+</div>`;
+  const gridEndMarker = /(<div id="tools-grid-wrapper" class="tools-grid">[\s\S]*?)(<\/div>\s*<div id="no-tools-found")/i;
+  if (!gridEndMarker.test(html)) throw new Error('Homepage tools grid end marker not found for image compressor.');
+  html = html.replace(gridEndMarker, '$1' + imageCompressorCard + '\n$2');
 }
 // Keep the homepage tool count synchronized with the actual generated tool cards.
 const toolCardCount = (html.match(/class="tool-card"/g) || []).length;
@@ -121,6 +142,11 @@ if (!html.includes('data-category="websites">Website &amp; Creator</button>')) {
 if (!html.includes('data-category="csc">CSC Tools</button>')) {
   const devButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="developer"[^>]*>Developer Tools<\/button>)/i;
   if (devButton.test(html)) html = html.replace(devButton, '$1<button type="button" class="preset-chip category-filter-btn" data-category="csc">CSC Tools</button>');
+}
+
+if (!html.includes('data-category="image-tools">Image Tools</button>')) {
+  const studentButton = /(<button[^>]+class="preset-chip[^"]*category-filter-btn"[^>]+data-category="student"[^>]*>Student Tools<\/button>)/i;
+  if (studentButton.test(html)) html = html.replace(studentButton, '$1<button type="button" class="preset-chip category-filter-btn" data-category="image-tools">Image Tools</button>');
 }
 if (!html.includes('data-category="home-diy">Home &amp; DIY</button><button type="button" class="preset-chip category-filter-btn" data-category="developer">Developer Tools</button>')) {
   const websiteButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="websites"[^>]*>Website &amp; Creator<\/button>)/i;
@@ -142,7 +168,8 @@ const jsonTools = [
   ['35', 'CSC Tools Hub for VLEs', 'https://randomlytools.in/csc-tools/'],
   ['36', 'CSC Print Cost Calculator', 'https://randomlytools.in/csc-tools/print-cost-calculator/'],
   ['37', 'CSC Photocopy Cost Calculator', 'https://randomlytools.in/csc-tools/photocopy-cost-calculator/'],
-  ['38', 'CSC Scan Cost Calculator', 'https://randomlytools.in/csc-tools/scan-cost-calculator/']
+  ['38', 'CSC Scan Cost Calculator', 'https://randomlytools.in/csc-tools/scan-cost-calculator/'],
+  ['39', 'Image Compressor to KB', 'https://randomlytools.in/image-compressor/']
 ];
 for (const [position, name, url] of jsonTools) {
   if (!html.includes(`"url":"${url}"`)) {

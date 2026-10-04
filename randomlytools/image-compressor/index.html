@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Compressor to KB – Reduce Image Size Online Free | RandomlyTools</title>
+<meta name="description" content="Compress JPG, PNG and WebP images to under 20KB, 50KB, 100KB, 200KB or a custom size. Resize dimensions, preview quality and download privately in your browser.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://randomlytools.in/image-compressor/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<meta property="og:title" content="Image Compressor to KB – Free Online Image Size Reducer">
+<meta property="og:description" content="Reduce image file size to a chosen KB limit, resize dimensions and download without uploading your photo.">
+<meta property="og:url" content="https://randomlytools.in/image-compressor/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RandomlyTools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Image Compressor to KB – RandomlyTools">
+<meta name="twitter:description" content="Compress images to a selected KB limit with browser-based processing and no account.">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebApplication",
+      "name":"Image Compressor to KB",
+      "url":"https://randomlytools.in/image-compressor/",
+      "applicationCategory":"MultimediaApplication",
+      "operatingSystem":"Any",
+      "browserRequirements":"Requires a modern browser with Canvas and Blob support",
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+      "description":"Free browser-based image compressor for reducing JPG, PNG and WebP images below a chosen file size in KB, with optional dimension resizing."
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://randomlytools.in/"},
+        {"@type":"ListItem","position":2,"name":"Image Compressor","item":"https://randomlytools.in/image-compressor/"}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"How do I compress an image to 50KB?","acceptedAnswer":{"@type":"Answer","text":"Choose the 50KB preset or enter 50 as the custom limit, select an image and press Compress Image. The tool tries quality adjustments and, when needed, reduces dimensions to get the output below the selected limit."}},
+        {"@type":"Question","name":"Are my photos uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"The image is processed in your browser using the Canvas API. This tool does not send the selected image to a RandomlyTools upload server."}},
+        {"@type":"Question","name":"Can I use this for government form photos and signatures?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can target a file-size limit and optionally enter maximum pixel dimensions. Always check the latest official instructions for your specific form because required dimensions, file type and size can vary."}},
+        {"@type":"Question","name":"Will compression always preserve the original quality?","acceptedAnswer":{"@type":"Answer","text":"No. Smaller files usually require lower image quality or smaller dimensions. Preview the result before downloading, especially when the image contains a signature, text or document details."}},
+        {"@type":"Question","name":"Which image formats are supported?","acceptedAnswer":{"@type":"Answer","text":"The tool accepts common JPG, PNG and WebP images that your browser can decode. You can export a compressed result as JPEG or WebP."}}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+.image-compressor-wrap{max-width:1000px;margin:0 auto 3rem}
+.ic-privacy{display:flex;gap:.65rem;align-items:flex-start;padding:1rem;border:1px solid #cfe8d5;border-radius:12px;background:#f3fbf5;color:#174c2c;margin:1rem 0 1.5rem}
+.ic-workbench{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);gap:1.25rem;align-items:start}
+.ic-panel{border:1px solid var(--border-color,#dfe3e8);border-radius:16px;padding:1.25rem;background:var(--card-bg,#fff);min-width:0}
+.ic-panel h2{margin-top:0}
+.ic-upload{display:block;border:2px dashed #a8b5c5;border-radius:14px;padding:1.5rem;text-align:center;cursor:pointer;background:var(--surface-bg,#f8fafc)}
+.ic-upload input{display:block;width:100%;margin-top:1rem}
+.ic-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1.1rem}
+.ic-field{min-width:0}
+.ic-field label{display:block;font-weight:600;margin-bottom:.4rem}
+.ic-field input,.ic-field select{width:100%;min-width:0;padding:.7rem;border:1px solid #cbd5e1;border-radius:9px;background:var(--input-bg,#fff);color:inherit}
+.ic-presets{display:flex;flex-wrap:wrap;gap:.5rem;margin:.8rem 0}
+.ic-preset{border:1px solid #b8c4d3;background:transparent;border-radius:999px;padding:.45rem .8rem;cursor:pointer;color:inherit}
+.ic-preset[aria-pressed="true"]{background:#1d4ed8;border-color:#1d4ed8;color:#fff}
+.ic-primary{width:100%;border:0;border-radius:10px;padding:.9rem 1rem;margin-top:1.2rem;background:#1d4ed8;color:#fff;font-weight:700;cursor:pointer}
+.ic-primary:disabled{opacity:.55;cursor:wait}
+.ic-help{font-size:.9rem;color:var(--muted-color,#64748b);margin:.4rem 0}
+.ic-status{margin-top:1rem;padding:.8rem;border-radius:10px;background:var(--surface-bg,#f8fafc);overflow-wrap:anywhere}
+.ic-preview{width:100%;max-height:260px;object-fit:contain;display:block;border-radius:10px;background:#f1f5f9;margin:.5rem 0}
+.ic-preview[hidden]{display:none}
+.ic-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+.ic-stat{padding:.8rem;border:1px solid var(--border-color,#dfe3e8);border-radius:10px;min-width:0}
+.ic-stat span{display:block;font-size:.84rem;color:var(--muted-color,#64748b)}
+.ic-stat strong{display:block;font-size:1.15rem;overflow-wrap:anywhere}
+.ic-download{display:inline-block;text-decoration:none;background:#15803d;color:#fff;padding:.75rem 1rem;border-radius:9px;font-weight:700;margin-top:1rem}
+.ic-download[hidden]{display:none}
+.ic-result-note{font-size:.9rem;margin-top:.7rem}
+.ic-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1rem 0}
+.ic-step{padding:1rem;border:1px solid var(--border-color,#dfe3e8);border-radius:12px}
+.ic-step strong{display:block;margin-bottom:.35rem}
+.ic-faq details{border-bottom:1px solid var(--border-color,#dfe3e8);padding:.85rem 0}
+.ic-faq summary{font-weight:700;cursor:pointer}
+@media(max-width:700px){.ic-workbench{grid-template-columns:1fr}.ic-fields{grid-template-columns:1fr 1fr}.ic-steps{grid-template-columns:1fr}.ic-panel{padding:1rem}}
+@media(max-width:420px){.ic-fields{grid-template-columns:1fr}.ic-stats{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="brand"><span class="brand-icon">R</span><span class="brand-text">Randomly<span>Tools</span></span></a>
+    <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <nav class="nav-links">
+      <a href="/">All Tools</a><a href="/random-name-generator/">Names</a><a href="/random-number-picker/">Numbers</a><a href="/random-discord-name-generator/">Usernames</a><a href="/random-company-brand-name-generator/">Brands</a><a href="/student-tools/">Student Tools</a><a href="/csc-tools/">CSC Tools</a><a href="/articles/">Articles</a><a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container page-intro image-compressor-wrap">
+  <nav aria-label="Breadcrumb" class="breadcrumbs"><a href="/">Home</a> / <span>Image Compressor</span></nav>
+  <div class="page-heading">
+    <h1>Image Compressor to KB</h1>
+    <p>Compress JPG, PNG and WebP images to under 20KB, 50KB, 100KB, 200KB or a custom file size. Optionally resize pixel dimensions before downloading.</p>
+  </div>
+  <div class="ic-privacy"><span aria-hidden="true">🔒</span><div><strong>Private, browser-based processing</strong><br>Your selected image is processed on this device. It is not uploaded to a RandomlyTools image-processing server.</div></div>
+
+  <section class="ic-workbench" aria-label="Image compressor">
+    <div class="ic-panel">
+      <h2>Choose an image</h2>
+      <label class="ic-upload" for="ic-file"><strong>Choose JPG, PNG or WebP</strong><br><span class="ic-help">Select a photo, signature or image from your device.</span><input id="ic-file" type="file" accept="image/jpeg,image/png,image/webp"></label>
+      <p id="ic-original-info" class="ic-help" aria-live="polite">No image selected yet.</p>
+      <div class="ic-fields">
+        <div class="ic-field"><label for="ic-target">Maximum file size (KB)</label><input id="ic-target" type="number" min="1" max="20000" step="1" value="100" inputmode="numeric"></div>
+        <div class="ic-field"><label for="ic-format">Output format</label><select id="ic-format"><option value="image/jpeg">JPEG (best for photos/forms)</option><option value="image/webp">WebP (smaller web images)</option></select></div>
+        <div class="ic-field"><label for="ic-width">Maximum width (px)</label><input id="ic-width" type="number" min="1" max="12000" placeholder="Keep original"></div>
+        <div class="ic-field"><label for="ic-height">Maximum height (px)</label><input id="ic-height" type="number" min="1" max="12000" placeholder="Keep original"></div>
+      </div>
+      <p class="ic-help">Dimensions are optional. If the image is still too large, the compressor may reduce its dimensions to meet your size limit.</p>
+      <div class="ic-presets" aria-label="Common size presets">
+        <button type="button" class="ic-preset" data-kb="20" aria-pressed="false">20 KB</button>
+        <button type="button" class="ic-preset" data-kb="50" aria-pressed="false">50 KB</button>
+        <button type="button" class="ic-preset" data-kb="100" aria-pressed="true">100 KB</button>
+        <button type="button" class="ic-preset" data-kb="200" aria-pressed="false">200 KB</button>
+        <button type="button" class="ic-preset" data-kb="500" aria-pressed="false">500 KB</button>
+      </div>
+      <button id="ic-compress" type="button" class="ic-primary" disabled>Compress Image</button>
+      <div id="ic-status" class="ic-status" role="status" aria-live="polite">Select an image to begin.</div>
+    </div>
+
+    <div class="ic-panel">
+      <h2>Preview &amp; download</h2>
+      <img id="ic-preview" class="ic-preview" alt="Preview of the compressed image" hidden>
+      <p id="ic-empty-preview" class="ic-help">Your compressed image preview will appear here.</p>
+      <div class="ic-stats">
+        <div class="ic-stat"><span>Original size</span><strong id="ic-before">—</strong></div>
+        <div class="ic-stat"><span>Compressed size</span><strong id="ic-after">—</strong></div>
+        <div class="ic-stat"><span>Output dimensions</span><strong id="ic-dimensions">—</strong></div>
+        <div class="ic-stat"><span>Size reduction</span><strong id="ic-savings">—</strong></div>
+      </div>
+      <a id="ic-download" class="ic-download" href="#" download="compressed-image.jpg" hidden>Download compressed image</a>
+      <p class="ic-result-note">Always preview the result before using it in a form. Small file sizes can reduce clarity, especially for signatures and scanned text.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>How to compress an image to a specific KB size</h2>
+    <div class="ic-steps">
+      <div class="ic-step"><strong>1. Select your image</strong>Choose a JPG, PNG or WebP image from your phone or computer.</div>
+      <div class="ic-step"><strong>2. Set the size limit</strong>Choose a preset such as 50KB or enter your own maximum size. Add optional pixel limits if needed.</div>
+      <div class="ic-step"><strong>3. Preview and download</strong>Compress the image, check the file size and dimensions, then download the result.</div>
+    </div>
+    <article class="article-content">
+      <h2>Use this image compressor for government forms</h2>
+      <p>Some application forms require a photograph or signature to stay below a specific file-size limit. Choose the size stated by the form and, if needed, enter its maximum width and height. The 20KB, 50KB, 100KB and 200KB buttons are convenience presets, not universal government requirements.</p>
+      <p>Requirements can differ between recruitment notices, admission portals and application types. Before uploading, check the latest official instructions for the exact file format, minimum and maximum dimensions, file-size range, background and image clarity. This tool is independent and is not affiliated with any government department, exam authority or CSC portal.</p>
+      <h2>Compress images for websites, email and messaging</h2>
+      <p>Smaller images can be quicker to send or load on a website. For web graphics, WebP may offer a useful size reduction; JPEG is often suitable for photographs and many form-upload workflows. For screenshots, signatures and documents containing small text, compare the preview carefully because aggressive compression can make fine details harder to read.</p>
+      <h2>How the image compression works</h2>
+      <p>The tool uses your browser's canvas encoder to try different quality settings. If quality changes alone cannot fit the selected maximum, it gradually reduces the image dimensions and tries again. It reports the resulting size and dimensions so you can decide whether the image is still clear enough for your purpose.</p>
+      <h2>Related tools</h2>
+      <ul>
+        <li><a href="/csc-tools/">CSC Tools for VLEs and digital service centres</a></li>
+        <li><a href="/csc-tools/scan-cost-calculator/">CSC Scan Cost Calculator</a></li>
+        <li><a href="/download-upload-time-calculator/">Download &amp; Upload Time Calculator</a></li>
+        <li><a href="/json-formatter/">JSON Formatter</a></li>
+      </ul>
+      <h2>Frequently asked questions</h2>
+      <div class="ic-faq">
+        <details><summary>How do I compress an image to 50KB?</summary><p>Select the 50KB preset, choose your image and click Compress Image. The tool tries multiple quality settings and may reduce dimensions to bring the output under 50KB.</p></details>
+        <details><summary>Are my photos uploaded to a server?</summary><p>No. The image is decoded and compressed in your browser. This tool does not send the selected image to a RandomlyTools image-processing server.</p></details>
+        <details><summary>Can I use this for government form photos and signatures?</summary><p>Yes. Set the file-size limit and optional maximum dimensions from your form's instructions. Always confirm the latest official specification because it can vary by application.</p></details>
+        <details><summary>Will compression preserve the original quality?</summary><p>Not always. Smaller output files can require lower quality or smaller dimensions. Check the preview before downloading, particularly for signatures and document scans.</p></details>
+        <details><summary>Which formats are supported?</summary><p>You can select common JPG, PNG and WebP images that your browser can decode. Output is available as JPEG or WebP.</p></details>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-column"><h4>RandomlyTools</h4><p>Free online tools and calculators for everyday tasks.</p></div>
+      <div class="footer-column"><h4>Popular Tools</h4><ul><li><a href="/random-name-generator/">Random Name Generator</a></li><li><a href="/random-number-picker/">Random Number Picker</a></li><li><a href="/age-calculator/">Age Calculator</a></li><li><a href="/image-compressor/">Image Compressor</a></li></ul></div>
+      <div class="footer-column"><h4>More Tools</h4><ul><li><a href="/csc-tools/">CSC Tools</a></li><li><a href="/student-tools/">Student Tools</a></li><li><a href="/download-upload-time-calculator/">Download &amp; Upload Time</a></li><li><a href="/internet-speed-test/">Internet Speed Test</a></li></ul></div>
+      <div class="footer-column"><h4>Trust &amp; Legal</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Service</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 RandomlyTools. All rights reserved.</p><p>Built for speed and user privacy.</p></div>
+  </div>
+</footer>
+<script src="/assets/js/core/ui.js"></script>
+<script>
+(function(){
+  'use strict';
+  var fileInput=document.getElementById('ic-file');
+  var targetInput=document.getElementById('ic-target');
+  var formatInput=document.getElementById('ic-format');
+  var widthInput=document.getElementById('ic-width');
+  var heightInput=document.getElementById('ic-height');
+  var compressButton=document.getElementById('ic-compress');
+  var status=document.getElementById('ic-status');
+  var originalInfo=document.getElementById('ic-original-info');
+  var preview=document.getElementById('ic-preview');
+  var emptyPreview=document.getElementById('ic-empty-preview');
+  var beforeText=document.getElementById('ic-before');
+  var afterText=document.getElementById('ic-after');
+  var dimensionsText=document.getElementById('ic-dimensions');
+  var savingsText=document.getElementById('ic-savings');
+  var downloadLink=document.getElementById('ic-download');
+  var selectedFile=null;
+  var image=null;
+  var inputUrl=null;
+  var outputUrl=null;
+
+  function formatBytes(bytes){
+    if(bytes<1024) return bytes+' B';
+    if(bytes<1024*1024) return (bytes/1024).toFixed(1)+' KB';
+    return (bytes/(1024*1024)).toFixed(2)+' MB';
+  }
+  function setStatus(message){status.textContent=message;}
+  function clearOutput(){
+    if(outputUrl) URL.revokeObjectURL(outputUrl);
+    outputUrl=null;
+    preview.removeAttribute('src');
+    preview.hidden=true;
+    emptyPreview.hidden=false;
+    downloadLink.hidden=true;
+    downloadLink.removeAttribute('href');
+    afterText.textContent='—';
+    dimensionsText.textContent='—';
+    savingsText.textContent='—';
+  }
+  function updatePresets(){
+    var value=Number(targetInput.value);
+    document.querySelectorAll('.ic-preset').forEach(function(button){
+      button.setAttribute('aria-pressed',String(Number(button.getAttribute('data-kb'))===value));
+    });
+  }
+  document.querySelectorAll('.ic-preset').forEach(function(button){
+    button.addEventListener('click',function(){
+      targetInput.value=button.getAttribute('data-kb');
+      updatePresets();
+    });
+  });
+  targetInput.addEventListener('input',updatePresets);
+
+  fileInput.addEventListener('change',function(){
+    clearOutput();
+    var file=fileInput.files&&fileInput.files[0];
+    if(!file){selectedFile=null;image=null;compressButton.disabled=true;originalInfo.textContent='No image selected yet.';beforeText.textContent='—';setStatus('Select an image to begin.');return;}
+    if(!/^image\/(jpeg|png|webp)$/.test(file.type)){
+      selectedFile=null;image=null;compressButton.disabled=true;originalInfo.textContent='';beforeText.textContent='—';setStatus('Please choose a JPG, PNG or WebP image.');return;
+    }
+    if(inputUrl) URL.revokeObjectURL(inputUrl);
+    inputUrl=URL.createObjectURL(file);
+    var img=new Image();
+    img.onload=function(){
+      selectedFile=file;image=img;compressButton.disabled=false;
+      originalInfo.textContent='Original dimensions: '+img.naturalWidth+' × '+img.naturalHeight+' px · '+formatBytes(file.size);
+      beforeText.textContent=formatBytes(file.size);
+      if(!widthInput.value) widthInput.placeholder=String(img.naturalWidth);
+      if(!heightInput.value) heightInput.placeholder=String(img.naturalHeight);
+      setStatus('Image ready. Choose a maximum file size and compress.');
+    };
+    img.onerror=function(){selectedFile=null;image=null;compressButton.disabled=true;setStatus('This image could not be opened by your browser. Try a JPG, PNG or WebP file.');};
+    img.src=inputUrl;
+  });
+
+  function canvasBlob(canvas,type,quality){
+    return new Promise(function(resolve,reject){
+      canvas.toBlob(function(blob){if(blob) resolve(blob);else reject(new Error('Your browser could not export this image format.'));},type,quality);
+    });
+  }
+  async function encodeAtScale(img,type,targetBytes,maxW,maxH,scale){
+    var ratio=Math.min(1,scale,maxW>0?maxW/img.naturalWidth:1,maxH>0?maxH/img.naturalHeight:1);
+    var width=Math.max(1,Math.round(img.naturalWidth*ratio));
+    var height=Math.max(1,Math.round(img.naturalHeight*ratio));
+    var canvas=document.createElement('canvas');
+    canvas.width=width;canvas.height=height;
+    var ctx=canvas.getContext('2d');
+    if(!ctx) throw new Error('Canvas is not available in this browser.');
+    if(type==='image/jpeg'){ctx.fillStyle='#ffffff';ctx.fillRect(0,0,width,height);}
+    ctx.drawImage(img,0,0,width,height);
+    var low=0.05,high=0.98,best=null;
+    for(var i=0;i<13;i++){
+      var quality=(low+high)/2;
+      var blob=await canvasBlob(canvas,type,quality);
+      if(blob.size<=targetBytes){best={blob:blob,width:width,height:height,quality:quality};low=quality;}
+      else high=quality;
+    }
+    if(!best){
+      var lowBlob=await canvasBlob(canvas,type,0.05);
+      if(lowBlob.size<=targetBytes) best={blob:lowBlob,width:width,height:height,quality:0.05};
+    }
+    return best;
+  }
+
+  compressButton.addEventListener('click',async function(){
+    if(!selectedFile||!image)return;
+    var targetKB=Number(targetInput.value);
+    var maxW=widthInput.value.trim()===''?0:Number(widthInput.value);
+    var maxH=heightInput.value.trim()===''?0:Number(heightInput.value);
+    if(!Number.isFinite(targetKB)||targetKB<1||targetKB>20000){setStatus('Enter a maximum size between 1KB and 20,000KB.');return;}
+    if((widthInput.value.trim()!==''&&(!Number.isFinite(maxW)||maxW<1||maxW>12000))||(heightInput.value.trim()!==''&&(!Number.isFinite(maxH)||maxH<1||maxH>12000))){setStatus('Maximum dimensions must be between 1 and 12,000 pixels.');return;}
+    compressButton.disabled=true;compressButton.textContent='Compressing…';clearOutput();setStatus('Finding the best quality that fits your size limit…');
+    try{
+      var type=formatInput.value;
+      var targetBytes=Math.floor(targetKB*1024);
+      var result=null;
+      var scale=1;
+      for(var attempt=0;attempt<12;attempt++){
+        result=await encodeAtScale(image,type,targetBytes,maxW,maxH,scale);
+        if(result)break;
+        scale*=0.82;
+      }
+      if(!result)throw new Error('Could not reach that size with a readable output. Try a larger KB limit or smaller maximum dimensions.');
+      var ext=type==='image/webp'?'webp':'jpg';
+      if(outputUrl)URL.revokeObjectURL(outputUrl);
+      outputUrl=URL.createObjectURL(result.blob);
+      preview.src=outputUrl;preview.hidden=false;emptyPreview.hidden=true;
+      downloadLink.href=outputUrl;downloadLink.download='compressed-image.'+ext;downloadLink.hidden=false;
+      afterText.textContent=formatBytes(result.blob.size);
+      dimensionsText.textContent=result.width+' × '+result.height+' px';
+      var saved=Math.max(0,(1-result.blob.size/selectedFile.size)*100);
+      savingsText.textContent=saved.toFixed(1)+'%';
+      var under=result.blob.size<=targetBytes;
+      setStatus((under?'Success: output is under your selected limit. ':'Output created. ')+ 'Quality setting: '+Math.round(result.quality*100)+'%. Review the preview before downloading.');
+    }catch(error){setStatus(error&&error.message?error.message:'Compression failed. Please try another image or format.');}
+    finally{compressButton.disabled=!selectedFile;compressButton.textContent='Compress Image';}
+  });
+  window.addEventListener('beforeunload',function(){
+    if(inputUrl)URL.revokeObjectURL(inputUrl);
+    if(outputUrl)URL.revokeObjectURL(outputUrl);
+  });
+})();
+</script>
+</body>
+</html>
