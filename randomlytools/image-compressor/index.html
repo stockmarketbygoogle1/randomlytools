@@ -262,25 +262,35 @@
   });
   targetInput.addEventListener('input',updatePresets);
 
+  var selectionVersion=0;
+  var isCompressing=false;
   fileInput.addEventListener('change',function(){
+    var version=++selectionVersion;
     clearOutput();
+    selectedFile=null;image=null;compressButton.disabled=true;
     var file=fileInput.files&&fileInput.files[0];
-    if(!file){selectedFile=null;image=null;compressButton.disabled=true;originalInfo.textContent='No image selected yet.';beforeText.textContent='—';setStatus('Select an image to begin.');return;}
+    if(inputUrl){URL.revokeObjectURL(inputUrl);inputUrl=null;}
+    if(!file){originalInfo.textContent='No image selected yet.';beforeText.textContent='—';setStatus('Select an image to begin.');return;}
     if(!/^image\/(jpeg|png|webp)$/.test(file.type)){
-      selectedFile=null;image=null;compressButton.disabled=true;originalInfo.textContent='';beforeText.textContent='—';setStatus('Please choose a JPG, PNG or WebP image.');return;
+      originalInfo.textContent='';beforeText.textContent='—';setStatus('Please choose a JPG, PNG or WebP image.');return;
     }
-    if(inputUrl) URL.revokeObjectURL(inputUrl);
     inputUrl=URL.createObjectURL(file);
     var img=new Image();
     img.onload=function(){
-      selectedFile=file;image=img;compressButton.disabled=false;
+      if(version!==selectionVersion){return;}
+      if(!img.naturalWidth||!img.naturalHeight){setStatus('This image has invalid dimensions. Please choose another image.');return;}
+      selectedFile=file;image=img;compressButton.disabled=isCompressing;
       originalInfo.textContent='Original dimensions: '+img.naturalWidth+' × '+img.naturalHeight+' px · '+formatBytes(file.size);
       beforeText.textContent=formatBytes(file.size);
       if(!widthInput.value) widthInput.placeholder=String(img.naturalWidth);
       if(!heightInput.value) heightInput.placeholder=String(img.naturalHeight);
       setStatus('Image ready. Choose a maximum file size and compress.');
     };
-    img.onerror=function(){selectedFile=null;image=null;compressButton.disabled=true;setStatus('This image could not be opened by your browser. Try a JPG, PNG or WebP file.');};
+    img.onerror=function(){
+      if(version!==selectionVersion){return;}
+      selectedFile=null;image=null;compressButton.disabled=true;
+      setStatus('This image could not be opened by your browser. Try a JPG, PNG or WebP file.');
+    };
     img.src=inputUrl;
   });
 
@@ -290,7 +300,11 @@
     });
   }
   async function encodeAtScale(img,type,targetBytes,maxW,maxH,scale){
-    var ratio=Math.min(1,scale,maxW>0?maxW/img.naturalWidth:1,maxH>0?maxH/img.naturalHeight:1);
+    // Bound canvas memory use on large phone photos and high-resolution scans.
+    var maxCanvasPixels=16000000;
+    var pixelCount=img.naturalWidth*img.naturalHeight;
+    var safetyRatio=pixelCount>maxCanvasPixels?Math.sqrt(maxCanvasPixels/pixelCount):1;
+    var ratio=Math.min(1,scale,safetyRatio,maxW>0?maxW/img.naturalWidth:1,maxH>0?maxH/img.naturalHeight:1);
     var width=Math.max(1,Math.round(img.naturalWidth*ratio));
     var height=Math.max(1,Math.round(img.naturalHeight*ratio));
     var canvas=document.createElement('canvas');
@@ -314,13 +328,17 @@
   }
 
   compressButton.addEventListener('click',async function(){
-    if(!selectedFile||!image)return;
+    if(!selectedFile||!image||isCompressing)return;
     var targetKB=Number(targetInput.value);
     var maxW=widthInput.value.trim()===''?0:Number(widthInput.value);
     var maxH=heightInput.value.trim()===''?0:Number(heightInput.value);
     if(!Number.isFinite(targetKB)||targetKB<1||targetKB>20000){setStatus('Enter a maximum size between 1KB and 20,000KB.');return;}
     if((widthInput.value.trim()!==''&&(!Number.isFinite(maxW)||maxW<1||maxW>12000))||(heightInput.value.trim()!==''&&(!Number.isFinite(maxH)||maxH<1||maxH>12000))){setStatus('Maximum dimensions must be between 1 and 12,000 pixels.');return;}
-    compressButton.disabled=true;compressButton.textContent='Compressing…';clearOutput();setStatus('Finding the best quality that fits your size limit…');
+    isCompressing=true;
+    compressButton.disabled=true;compressButton.textContent='Compressing…';
+    fileInput.disabled=true;targetInput.disabled=true;formatInput.disabled=true;widthInput.disabled=true;heightInput.disabled=true;
+    document.querySelectorAll('.ic-preset').forEach(function(button){button.disabled=true;});
+    clearOutput();setStatus('Finding the best quality that fits your size limit…');
     try{
       var type=formatInput.value;
       var targetBytes=Math.floor(targetKB*1024);
@@ -344,9 +362,15 @@
       var under=result.blob.size<=targetBytes;
       setStatus((under?'Success: output is under your selected limit. ':'Output created. ')+ 'Quality setting: '+Math.round(result.quality*100)+'%. Review the preview before downloading.');
     }catch(error){setStatus(error&&error.message?error.message:'Compression failed. Please try another image or format.');}
-    finally{compressButton.disabled=!selectedFile;compressButton.textContent='Compress Image';}
+    finally{
+      isCompressing=false;
+      fileInput.disabled=false;targetInput.disabled=false;formatInput.disabled=false;widthInput.disabled=false;heightInput.disabled=false;
+      document.querySelectorAll('.ic-preset').forEach(function(button){button.disabled=false;});
+      compressButton.disabled=!selectedFile;compressButton.textContent='Compress Image';
+    }
   });
   window.addEventListener('beforeunload',function(){
+    selectionVersion++;
     if(inputUrl)URL.revokeObjectURL(inputUrl);
     if(outputUrl)URL.revokeObjectURL(outputUrl);
   });
