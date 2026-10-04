@@ -145,8 +145,8 @@ if (!html.includes('data-category="csc">CSC Tools</button>')) {
 }
 
 if (!html.includes('data-category="image-tools">Image Tools</button>')) {
-  const cscButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="csc"[^>]*>CSC Tools<\/button>)/i;
-  if (cscButton.test(html)) html = html.replace(cscButton, '$1<button type="button" class="preset-chip category-filter-btn" data-category="image-tools">Image Tools</button>');
+  const studentButton = /(<button[^>]+class="preset-chip[^"]*category-filter-btn"[^>]+data-category="student"[^>]*>Student Tools<\/button>)/i;
+  if (studentButton.test(html)) html = html.replace(studentButton, '$1<button type="button" class="preset-chip category-filter-btn" data-category="image-tools">Image Tools</button>');
 }
 if (!html.includes('data-category="home-diy">Home &amp; DIY</button><button type="button" class="preset-chip category-filter-btn" data-category="developer">Developer Tools</button>')) {
   const websiteButton = /(<button[^>]+class="preset-chip category-filter-btn"[^>]+data-category="websites"[^>]*>Website &amp; Creator<\/button>)/i;
