@@ -123,9 +123,9 @@ if (!html.includes('href="/image-compressor/"')) {
   <p class="tool-card-desc">Compress JPG, PNG and WebP images below a chosen KB limit, resize dimensions and preview the result privately in your browser.</p>
   <span class="tool-card-badge">Image Tools</span>
 </div>`;
-  const gridEndMarker = /(<div id="tools-grid-wrapper" class="tools-grid">[\\s\\S]*?)(<\\/div>\\s*<div id="no-tools-found")/i;
+  const gridEndMarker = /(<div id="tools-grid-wrapper" class="tools-grid">[\s\S]*?)(<\/div>\s*<div id="no-tools-found")/i;
   if (!gridEndMarker.test(html)) throw new Error('Homepage tools grid end marker not found for image compressor.');
-  html = html.replace(gridEndMarker, '$1' + imageCompressorCard + '\\n$2');
+  html = html.replace(gridEndMarker, '$1' + imageCompressorCard + '\n$2');
 }
 // Keep the homepage tool count synchronized with the actual generated tool cards.
 const toolCardCount = (html.match(/class="tool-card"/g) || []).length;
