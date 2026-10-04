@@ -83,6 +83,10 @@
 .ic-step strong{display:block;margin-bottom:.35rem}
 .ic-faq details{border-bottom:1px solid var(--border-color,#dfe3e8);padding:.85rem 0}
 .ic-faq summary{font-weight:700;cursor:pointer}
+.ic-onpage{display:flex;flex-wrap:wrap;gap:.55rem .9rem;align-items:center;padding:1rem 1.1rem;margin:1rem 0 1.5rem;border:1px solid var(--border-color,#dfe3e8);border-radius:12px;background:var(--card-bg,#fff)}
+.ic-onpage strong{color:var(--text-primary,#0f172a);margin-right:.25rem}
+.ic-onpage a{font-size:.92rem;text-decoration:underline;text-underline-offset:3px}
+.image-compressor-wrap [id]{scroll-margin-top:90px}
 @media(max-width:700px){.ic-workbench{grid-template-columns:1fr}.ic-fields{grid-template-columns:1fr 1fr}.ic-steps{grid-template-columns:1fr}.ic-panel{padding:1rem}}
 @media(max-width:420px){.ic-fields{grid-template-columns:1fr}.ic-stats{grid-template-columns:1fr 1fr}}
 </style>
@@ -107,6 +111,8 @@
     <p>Compress JPG, PNG and WebP images to under 20KB, 50KB, 100KB, 200KB or a custom file size. Optionally resize pixel dimensions before downloading.</p>
   </div>
   <div class="ic-privacy"><span aria-hidden="true">🔒</span><div><strong>Private, browser-based processing</strong><br>Your selected image is processed on this device. It is not uploaded to a RandomlyTools image-processing server.</div></div>
+
+  <nav class="ic-onpage" aria-label="On this page"><strong>On this page</strong><a href="#ic-government-forms">Government form photos &amp; signatures</a><a href="#ic-how-to">How to compress an image</a><a href="#ic-size-guide">20KB, 50KB, 100KB and 200KB guide</a><a href="#ic-compression-method">How compression works</a><a href="#ic-faq">FAQs</a><a href="#ic-related-tools">Related tools</a></nav>
 
   <section class="ic-workbench" aria-label="Image compressor">
     <div class="ic-panel">
@@ -147,28 +153,37 @@
   </section>
 
   <section class="content-section">
-    <h2>How to compress an image to a specific KB size</h2>
+    <h2 id="ic-how-to">How to compress an image to a specific KB size</h2>
     <div class="ic-steps">
       <div class="ic-step"><strong>1. Select your image</strong>Choose a JPG, PNG or WebP image from your phone or computer.</div>
       <div class="ic-step"><strong>2. Set the size limit</strong>Choose a preset such as 50KB or enter your own maximum size. Add optional pixel limits if needed.</div>
       <div class="ic-step"><strong>3. Preview and download</strong>Compress the image, check the file size and dimensions, then download the result.</div>
     </div>
     <article class="article-content">
-      <h2>Use this image compressor for government forms</h2>
+      <h2 id="ic-government-forms">Use this image compressor for government forms</h2>
       <p>Some application forms require a photograph or signature to stay below a specific file-size limit. Choose the size stated by the form and, if needed, enter its maximum width and height. The 20KB, 50KB, 100KB and 200KB buttons are convenience presets, not universal government requirements.</p>
       <p>Requirements can differ between recruitment notices, admission portals and application types. Before uploading, check the latest official instructions for the exact file format, minimum and maximum dimensions, file-size range, background and image clarity. This tool is independent and is not affiliated with any government department, exam authority or CSC portal.</p>
       <h2>Compress images for websites, email and messaging</h2>
       <p>Smaller images can be quicker to send or load on a website. For web graphics, WebP may offer a useful size reduction; JPEG is often suitable for photographs and many form-upload workflows. For screenshots, signatures and documents containing small text, compare the preview carefully because aggressive compression can make fine details harder to read.</p>
-      <h2>How the image compression works</h2>
+      <h2 id="ic-size-guide">Choosing a 20KB, 50KB, 100KB or 200KB image size</h2>
+      <p>The right target depends on the website or application you are using. These presets are convenient starting points, not a statement that every form accepts the same size. First check the exact maximum file size and pixel dimensions shown in the official instructions.</p>
+      <ul>
+        <li><strong>20KB:</strong> A very small target. It may require noticeably lower quality or smaller dimensions, so inspect fine text and signature strokes carefully.</li>
+        <li><strong>50KB:</strong> Useful when a form specifies a small image limit. If the result looks blurry, try a larger target only when the form permits it.</li>
+        <li><strong>100KB:</strong> A middle starting point for many image-sharing or upload tasks; it is not a universal application requirement.</li>
+        <li><strong>200KB:</strong> Allows more data than smaller targets and may preserve more detail, depending on the original image and dimensions.</li>
+      </ul>
+      <p>For website images, choose the smallest result that still looks clear at its intended display size. For documents, signatures and application photos, prioritize legibility and follow the stated format, dimensions and size limits.</p>
+      <h2 id="ic-compression-method">How the image compression works</h2>
       <p>The tool uses your browser's canvas encoder to try different quality settings. If quality changes alone cannot fit the selected maximum, it gradually reduces the image dimensions and tries again. It reports the resulting size and dimensions so you can decide whether the image is still clear enough for your purpose.</p>
-      <h2>Related tools</h2>
+      <h2 id="ic-related-tools">Related tools</h2>
       <ul>
         <li><a href="/csc-tools/">CSC Tools for VLEs and digital service centres</a></li>
         <li><a href="/csc-tools/scan-cost-calculator/">CSC Scan Cost Calculator</a></li>
         <li><a href="/download-upload-time-calculator/">Download &amp; Upload Time Calculator</a></li>
         <li><a href="/json-formatter/">JSON Formatter</a></li>
       </ul>
-      <h2>Frequently asked questions</h2>
+      <h2 id="ic-faq">Frequently asked questions</h2>
       <div class="ic-faq">
         <details><summary>How do I compress an image to 50KB?</summary><p>Select the 50KB preset, choose your image and click Compress Image. The tool tries multiple quality settings and may reduce dimensions to bring the output under 50KB.</p></details>
         <details><summary>Are my photos uploaded to a server?</summary><p>No. The image is decoded and compressed in your browser. This tool does not send the selected image to a RandomlyTools image-processing server.</p></details>
