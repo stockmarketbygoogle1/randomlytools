@@ -52,42 +52,52 @@
 </script>
 <style>
 .image-compressor-wrap{max-width:1000px;margin:0 auto 3rem}
-.ic-privacy{display:flex;gap:.65rem;align-items:flex-start;padding:1rem;border:1px solid #cfe8d5;border-radius:12px;background:#f3fbf5;color:#174c2c;margin:1rem 0 1.5rem}
-.ic-workbench{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);gap:1.25rem;align-items:start}
-.ic-panel{border:1px solid var(--border-color,#dfe3e8);border-radius:16px;padding:1.25rem;background:var(--card-bg,#fff);min-width:0}
+.image-compressor-wrap .tool-header{max-width:850px;margin:0 auto 1.5rem;text-align:center}
+.ic-privacy{display:flex;gap:.65rem;align-items:flex-start;padding:1rem;border:1px solid #cfe8d5;border-radius:12px;background:#f3fbf5;color:#174c2c;margin:1rem auto 1.5rem;max-width:980px}
+.ic-workbench{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);gap:1.25rem;align-items:start;max-width:980px;margin:0 auto 1.5rem}
+.ic-panel{border:1px solid var(--border-color);border-radius:20px;padding:1.4rem;background:var(--bg-surface);box-shadow:var(--shadow-sm);min-width:0}
+.ic-panel h2{font-size:1.15rem}
+.ic-panel:first-child h2{margin-bottom:1rem}
+.ic-panel:nth-child(2){background:var(--bg-surface)}
+.image-compressor-wrap .ad-slot-container{max-width:980px;margin:0 auto 1.25rem}
+.image-compressor-wrap .ad-slot-box{min-height:90px;display:flex;align-items:center;justify-content:center}
+
 .ic-panel h2{margin-top:0}
-.ic-upload{display:block;border:2px dashed #a8b5c5;border-radius:14px;padding:1.5rem;text-align:center;cursor:pointer;background:var(--surface-bg,#f8fafc)}
+.ic-upload{display:block;border:2px dashed var(--border-color);border-radius:14px;padding:1.5rem;text-align:center;cursor:pointer;background:var(--bg-surface-subtle);transition:border-color .15s,background .15s}
+.ic-upload:hover{border-color:var(--primary)}
+.ic-upload:focus-within{outline:2px solid var(--primary);outline-offset:3px}
 .ic-upload input{display:block;width:100%;margin-top:1rem}
 .ic-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1.1rem}
 .ic-field{min-width:0}
 .ic-field label{display:block;font-weight:600;margin-bottom:.4rem}
-.ic-field input,.ic-field select{width:100%;min-width:0;padding:.7rem;border:1px solid #cbd5e1;border-radius:9px;background:var(--input-bg,#fff);color:inherit}
+.ic-field input,.ic-field select{width:100%;box-sizing:border-box;min-width:0;padding:.7rem;border:1px solid var(--border-color);border-radius:9px;background:var(--bg-surface);color:var(--text-primary)}
 .ic-presets{display:flex;flex-wrap:wrap;gap:.5rem;margin:.8rem 0}
-.ic-preset{border:1px solid #b8c4d3;background:transparent;border-radius:999px;padding:.45rem .8rem;cursor:pointer;color:inherit}
-.ic-preset[aria-pressed="true"]{background:#1d4ed8;border-color:#1d4ed8;color:#fff}
-.ic-primary{width:100%;border:0;border-radius:10px;padding:.9rem 1rem;margin-top:1.2rem;background:#1d4ed8;color:#fff;font-weight:700;cursor:pointer}
+.ic-preset{border:1px solid var(--border-color);background:var(--bg-surface);border-radius:999px;padding:.5rem .9rem;cursor:pointer;color:var(--text-primary);font-weight:650;transition:background .15s,border-color .15s}
+.ic-preset:hover{border-color:var(--primary)}
+.ic-preset[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:#fff}
+.ic-primary{width:100%;border:0;border-radius:10px;padding:.9rem 1rem;margin-top:1.2rem;background:var(--primary);color:#fff;font-weight:750;cursor:pointer;font-size:1rem;transition:opacity .15s}
 .ic-primary:disabled{opacity:.55;cursor:wait}
-.ic-help{font-size:.9rem;color:var(--muted-color,#64748b);margin:.4rem 0}
-.ic-status{margin-top:1rem;padding:.8rem;border-radius:10px;background:var(--surface-bg,#f8fafc);overflow-wrap:anywhere}
+.ic-help{font-size:.88rem;color:var(--text-muted);margin:.4rem 0}
+.ic-status{margin-top:1rem;padding:.85rem;border:1px solid var(--border-color);border-radius:10px;background:var(--bg-surface-subtle);overflow-wrap:anywhere}
 .ic-preview{width:100%;max-height:260px;object-fit:contain;display:block;border-radius:10px;background:#f1f5f9;margin:.5rem 0}
 .ic-preview[hidden]{display:none}
 .ic-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin-top:1rem}
-.ic-stat{padding:.8rem;border:1px solid var(--border-color,#dfe3e8);border-radius:10px;min-width:0}
-.ic-stat span{display:block;font-size:.84rem;color:var(--muted-color,#64748b)}
+.ic-stat{padding:.8rem;border:1px solid var(--border-color);border-radius:10px;background:var(--bg-surface-subtle);min-width:0}
+.ic-stat span{display:block;font-size:.84rem;color:var(--text-muted)}
 .ic-stat strong{display:block;font-size:1.15rem;overflow-wrap:anywhere}
 .ic-download{display:inline-block;text-decoration:none;background:#15803d;color:#fff;padding:.75rem 1rem;border-radius:9px;font-weight:700;margin-top:1rem}
 .ic-download[hidden]{display:none}
 .ic-result-note{font-size:.9rem;margin-top:.7rem}
 .ic-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1rem 0}
-.ic-step{padding:1rem;border:1px solid var(--border-color,#dfe3e8);border-radius:12px}
+.ic-step{padding:1rem;border:1px solid var(--border-color);border-radius:14px;background:var(--bg-surface);box-shadow:var(--shadow-sm)}
 .ic-step strong{display:block;margin-bottom:.35rem}
 .ic-faq details{border-bottom:1px solid var(--border-color,#dfe3e8);padding:.85rem 0}
 .ic-faq summary{font-weight:700;cursor:pointer}
-.ic-onpage{display:flex;flex-wrap:wrap;gap:.55rem .9rem;align-items:center;padding:1rem 1.1rem;margin:1rem 0 1.5rem;border:1px solid var(--border-color,#dfe3e8);border-radius:12px;background:var(--card-bg,#fff)}
-.ic-onpage strong{color:var(--text-primary,#0f172a);margin-right:.25rem}
+.ic-onpage{display:flex;flex-wrap:wrap;gap:.55rem .9rem;align-items:center;padding:1rem 1.1rem;margin:1.25rem auto 1.5rem;max-width:980px;border:1px solid var(--border-color);border-radius:14px;background:var(--bg-surface-subtle)}
+.ic-onpage strong{color:var(--text-primary);margin-right:.25rem}
 .ic-onpage a{font-size:.92rem;text-decoration:underline;text-underline-offset:3px}
 .image-compressor-wrap [id]{scroll-margin-top:90px}
-@media(max-width:700px){.ic-workbench{grid-template-columns:1fr}.ic-fields{grid-template-columns:1fr 1fr}.ic-steps{grid-template-columns:1fr}.ic-panel{padding:1rem}}
+@media(max-width:700px){.ic-workbench{grid-template-columns:1fr}.ic-fields{grid-template-columns:1fr 1fr}.ic-steps{grid-template-columns:1fr}.ic-panel{padding:1rem;border-radius:16px}.image-compressor-wrap .ad-slot-container{margin-bottom:1rem}}
 @media(max-width:420px){.ic-fields{grid-template-columns:1fr}.ic-stats{grid-template-columns:1fr 1fr}}
 </style>
 </head>
@@ -106,13 +116,12 @@
 
 <main class="container page-intro image-compressor-wrap">
   <nav aria-label="Breadcrumb" class="breadcrumbs"><a href="/">Home</a> / <span>Image Compressor</span></nav>
-  <div class="page-heading">
+  <div class="tool-header">
     <h1>Image Compressor to KB</h1>
-    <p>Compress JPG, PNG and WebP images to under 20KB, 50KB, 100KB, 200KB or a custom file size. Optionally resize pixel dimensions before downloading.</p>
+    <p class="section-subtitle">Compress JPG, PNG and WebP images to under 20KB, 50KB, 100KB, 200KB or a custom file size. Optionally resize pixel dimensions before downloading.</p>
   </div>
+  <div class="ad-slot-container"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-box">Ad Space Available</div></div>
   <div class="ic-privacy"><span aria-hidden="true">🔒</span><div><strong>Private, browser-based processing</strong><br>Your selected image is processed on this device. It is not uploaded to a RandomlyTools image-processing server.</div></div>
-
-  <nav class="ic-onpage" aria-label="On this page"><strong>On this page</strong><a href="#ic-government-forms">Government form photos &amp; signatures</a><a href="#ic-how-to">How to compress an image</a><a href="#ic-size-guide">20KB, 50KB, 100KB and 200KB guide</a><a href="#ic-compression-method">How compression works</a><a href="#ic-faq">FAQs</a><a href="#ic-related-tools">Related tools</a></nav>
 
   <section class="ic-workbench" aria-label="Image compressor">
     <div class="ic-panel">
@@ -151,6 +160,8 @@
       <p class="ic-result-note">Always preview the result before using it in a form. Small file sizes can reduce clarity, especially for signatures and scanned text.</p>
     </div>
   </section>
+
+  <nav class="ic-onpage" aria-label="On this page"><strong>On this page</strong><a href="#ic-government-forms">Government form photos &amp; signatures</a><a href="#ic-how-to">How to compress an image</a><a href="#ic-size-guide">20KB, 50KB, 100KB and 200KB guide</a><a href="#ic-compression-method">How compression works</a><a href="#ic-faq">FAQs</a><a href="#ic-related-tools">Related tools</a></nav>
 
   <section class="content-section">
     <h2 id="ic-how-to">How to compress an image to a specific KB size</h2>
