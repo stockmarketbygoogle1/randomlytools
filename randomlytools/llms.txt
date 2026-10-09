@@ -78,6 +78,8 @@ RandomlyTools is designed around client-side utility generation. Users should re
 - UPSSSC PET Answer Key 2026 Guide: https://randomlytools.in/articles/upsssc-pet-answer-key/ — How to verify official answer-key notices, match response sheets and estimate raw score.
 - UPSSSC PET Normalization Guide: https://randomlytools.in/articles/upsssc-pet-normalization/ — Explains raw score, normalized score and percentile without guessing an official formula.
 
+- UPSSSC PET Score Validity & Uses: https://randomlytools.in/articles/upsssc-pet-score-validity-and-uses/ — Explains the three-year validity rule, Group C screening and scorecard access.
+
 ## Crawling
 
 - Sitemap: https://randomlytools.in/sitemap.xml
