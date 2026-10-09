@@ -73,6 +73,11 @@ RandomlyTools is designed around client-side utility generation. Users should re
 - UPSSSC Tools & Calculators Hub: https://randomlytools.in/student-tools/upsssc/ — Browse UPSSSC exam calculators and PET resources.
 - UPSSSC PET Marks Calculator 2026: https://randomlytools.in/student-tools/upsssc/upsssc-pet-marks-calculator/ — Calculate PET raw marks from correct and wrong answers with -0.25 negative marking, view section-wise performance, and download/share a score card. Official answer-key matching remains unavailable until verified official key data is published.
 
+## UPSSSC PET Guides
+
+- UPSSSC PET Answer Key 2026 Guide: https://randomlytools.in/articles/upsssc-pet-answer-key/ — How to verify official answer-key notices, match response sheets and estimate raw score.
+- UPSSSC PET Normalization Guide: https://randomlytools.in/articles/upsssc-pet-normalization/ — Explains raw score, normalized score and percentile without guessing an official formula.
+
 ## Crawling
 
 - Sitemap: https://randomlytools.in/sitemap.xml
