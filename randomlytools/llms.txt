@@ -67,3 +67,12 @@ RandomlyTools is designed around client-side utility generation. Users should re
 - Calculator results are mathematical calculations and do not replace institution-specific academic policies or official game/platform information.
 - SSC exam eligibility information is provided as a screening aid. Users should verify the latest official SSC notification before applying because dates, age rules, qualifications, and post-specific conditions can change.
 - The GTA 6 Download Time Calculator does not claim an official GTA 6 download size. The game-size value is editable because Rockstar Games has not published the final download-size figure.
+
+## UPSSSC PET Exam Tools 2026
+
+- UPSSSC Tools & Calculators Hub: https://randomlytools.in/student-tools/upsssc/ — Browse UPSSSC exam calculators and PET resources.
+- UPSSSC PET Marks Calculator 2026: https://randomlytools.in/student-tools/upsssc/upsssc-pet-marks-calculator/ — Calculate PET raw marks from correct and wrong answers with -0.25 negative marking, view section-wise performance, and download/share a score card. Official answer-key matching remains unavailable until verified official key data is published.
+
+## Crawling
+
+- Sitemap: https://randomlytools.in/sitemap.xml
